@@ -886,8 +886,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a9b1b42fe518b48b43a6f14a1bbefc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyHolder: {fileID: 4508724961646500369, guid: e7983a9ff43b5b841a5391a2e731d050,
-    type: 3}
+  myKeySprites:
+  - {fileID: 21300000, guid: b2b2e8620ec20994ca3337e0ed9aeaf7, type: 3}
+  - {fileID: 21300000, guid: 82bf8459a9c2ab644812c17081cdae10, type: 3}
+  - {fileID: 21300000, guid: b22dec73b010f714a8eb349d009625af, type: 3}
+  - {fileID: 21300000, guid: af4b786d25ca9b94da92c979e840a73b, type: 3}
+  - {fileID: 21300000, guid: e6206a78070af904c90e6184d1c77ed6, type: 3}
+  - {fileID: 21300000, guid: e3753660ed278284d9cf247347364248, type: 3}
+  - {fileID: 21300000, guid: af753e1ffcbf43f43a8af78e557dd1f2, type: 3}
+  - {fileID: 21300000, guid: 5ef63f3091a72914ebc9ddefbf2590dc, type: 3}
+  - {fileID: 21300000, guid: e38c58f8d6d853b4386bd3db35134f5c, type: 3}
+  - {fileID: 21300000, guid: be13db9355173004ca06ec880da00a21, type: 3}
 --- !u!1 &8246722419911597599
 GameObject:
   m_ObjectHideFlags: 0
