@@ -99,6 +99,8 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
 
     }
 
+
+
     private void OnMouseUp()
     {
 
@@ -320,8 +322,9 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
 
             wasLetGoSwitch2 = true;
 
-            myPlayer.GetComponent<PlayerMagic>().ObjectBeingDragged =
-                gameObject;
+            myPlayer.GetComponent<PlayerMagic>().ObjectBeingDragged = gameObject;
+
+            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
             //Debug.Log(gameObject + " dragging begun.");
             OnDraggingBeginsEvent?.Invoke();
