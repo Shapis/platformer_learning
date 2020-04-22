@@ -67,10 +67,12 @@ public class KeyHolder : MonoBehaviour
                 case KeyScript.KeyType.Gray: keyImage.sprite = myKeySprites[2]; break;
                 case KeyScript.KeyType.Green: keyImage.sprite = myKeySprites[3]; break;
                 case KeyScript.KeyType.Purple: keyImage.sprite = myKeySprites[4]; break;
-                case KeyScript.KeyType.Silver: keyImage.sprite = myKeySprites[5]; break;
-                case KeyScript.KeyType.Teal: keyImage.sprite = myKeySprites[6]; break;
-                case KeyScript.KeyType.Violet: keyImage.sprite = myKeySprites[7]; break;
-                case KeyScript.KeyType.White: keyImage.sprite = myKeySprites[8]; break;
+                case KeyScript.KeyType.Red: keyImage.sprite = myKeySprites[5]; break;
+                case KeyScript.KeyType.Silver: keyImage.sprite = myKeySprites[6]; break;
+                case KeyScript.KeyType.Teal: keyImage.sprite = myKeySprites[7]; break;
+                case KeyScript.KeyType.Violet: keyImage.sprite = myKeySprites[8]; break;
+                case KeyScript.KeyType.White: keyImage.sprite = myKeySprites[9]; break;
+
 
             }
             //keyImage.sprite = GameObject.Find("KeyRed").GetComponent<Sprite>();
