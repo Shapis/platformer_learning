@@ -37,7 +37,7 @@ public class KeyHolderScript : MonoBehaviour, IKeyHolderEvents
         if (keyPickup)
         {
             keyPickup = false;
-            Debug.Log("Added key: " + keyType);
+            //Debug.Log("Added key: " + keyType);
             keyList.Add(keyType);
             OnKeysChanged();
         }
@@ -50,7 +50,7 @@ public class KeyHolderScript : MonoBehaviour, IKeyHolderEvents
         if (keyPickup)
         {
             keyPickup = false;
-            Debug.Log("Removed key");
+            // Debug.Log("Removed key");
             keyList.Remove(keyType);
             OnKeysChanged();
         }
