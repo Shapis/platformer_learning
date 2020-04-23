@@ -45,9 +45,9 @@ public class KeyDoorScript : MonoBehaviour
         gameObject.GetComponent<Collider2D>();
         animator.SetBool("isOpen", true);
         LeanTween.delayedCall(0.3f, DisableDoorColliders);
-        LeanTween.scale(keySprite.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.3f);
-        LeanTween.moveLocal(keySprite.gameObject, new Vector3(0f, 1.5f, 0f), 0.3f);
-        Destroy(keySprite.gameObject, 0.3f);
+        // LeanTween.scale(keySprite.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.3f);
+        // LeanTween.moveLocal(keySprite.gameObject, new Vector3(0f, 1.5f, 0f), 0.3f);
+        // Destroy(keySprite.gameObject, 0.3f);
 
 
     }

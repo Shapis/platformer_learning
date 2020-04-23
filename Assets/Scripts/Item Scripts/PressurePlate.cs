@@ -15,12 +15,24 @@ public class PressurePlate : MonoBehaviour
     private float timer;
     private float timeOut;
 
+    [SerializeField] private KeyScript.KeyType keyType;
+
+    private KeyDoorScript[] myDoors;
+
 
     // Start is called before the first frame update
     void Awake()
     {
-        // KeyScript.KeyType keyType = gameObject.GetComponent<KeyScript>().GetKeyType();
-        //gameObject.GetComponent<SpriteRenderer>().color = gameObject.GetComponent<KeyScript>().GetKeyColor32();
+        var temp = GameObject.FindGameObjectsWithTag("Door");
+        myDoors = new KeyDoorScript[temp.Length];
+
+        for (int i = 0; i < temp.Length; i++)
+        {
+            myDoors[i] = temp[i].GetComponent<KeyDoorScript>();
+        }
+
+
+        gameObject.GetComponent<SpriteRenderer>().color = KeyScript.GetKeyColor32(keyType);
 
 
     }
@@ -63,6 +75,14 @@ public class PressurePlate : MonoBehaviour
     {
         timer = Time.time;
         animator.SetBool("isPressed", true);
+
+        foreach (var o in myDoors)
+        {
+            if (o.GetKeyType() == keyType)
+            {
+                o.OpenDoor();
+            }
+        }
 
         Debug.Log("pressed");
     }

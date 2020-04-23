@@ -13,7 +13,7 @@ public class KeyScript : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = GetKeyColor32();
+        gameObject.GetComponent<SpriteRenderer>().color = GetKeyColor32(keyType);
     }
 
 
@@ -38,7 +38,7 @@ public class KeyScript : MonoBehaviour
 
 
     }
-    public Color32 GetKeyColor32()
+    static public Color32 GetKeyColor32(KeyScript.KeyType keyType)
     {
         Color32 myKeyColor;
         switch (keyType)

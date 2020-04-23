@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1734936764878528162}
   m_Layer: 11
   m_Name: SkullGate
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 1734936764878528165}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4b33982bc2957649991bb281c6b016e, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
