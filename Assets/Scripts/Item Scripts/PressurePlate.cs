@@ -6,9 +6,14 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
 
-    private bool isOpen = false;
+    private bool isPressed = false;
 
     private int collisionCount;
+
+    [SerializeField] Animator animator;
+
+    private float timer;
+    private float timeOut;
 
 
     // Start is called before the first frame update
@@ -22,22 +27,22 @@ public class PressurePlate : MonoBehaviour
 
     private void Update()
     {
-        // Debug.DrawRay(transform.position, new Vector2(0, 1));
-        // Debug.DrawRay(transform.position - new Vector3(0.3f, 0, 0), new Vector2(0, 1));
-        // Debug.DrawRay(transform.position + new Vector3(0.3f, 0, 0), new Vector2(0, 1));
-        // Debug.Log(isOpen);
+
+        Debug.DrawRay(transform.position, new Vector2(0, 1));
+        Debug.DrawRay(transform.position - new Vector3(0.3f * transform.localScale.x, 0, 0), new Vector2(0, 1));
+        Debug.DrawRay(transform.position + new Vector3(0.3f * transform.localScale.x, 0, 0), new Vector2(0, 1));
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (!isOpen)
+        if (!isPressed)
         {
             if (Physics2D.Raycast(transform.position, new Vector2(0, 1))
-            || Physics2D.Raycast(transform.position - new Vector3(0.3f, 0, 0), new Vector2(0, 1))
-            || Physics2D.Raycast(transform.position + new Vector3(0.3f, 0, 0), new Vector2(0, 1)))
+            || Physics2D.Raycast(transform.position - new Vector3(0.3f * transform.localScale.x, 0, 0), new Vector2(0, 1))
+            || Physics2D.Raycast(transform.position + new Vector3(0.3f * transform.localScale.x, 0, 0), new Vector2(0, 1)))
             {
-                isOpen = true;
-                WhenOpen();
+                isPressed = true;
+                WhenPressed();
             }
         }
 
@@ -50,16 +55,22 @@ public class PressurePlate : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        isOpen = false;
-        WhenClosed();
-    }
-    private void WhenOpen()
-    {
+        isPressed = false;
+        WhenUnpressed();
 
     }
-    private void WhenClosed()
+    private void WhenPressed()
     {
+        timer = Time.time;
+        animator.SetBool("isPressed", true);
 
+        Debug.Log("pressed");
+    }
+    private void WhenUnpressed()
+    {
+        animator.SetBool("isPressed", false);
+
+        Debug.Log("unpressed");
     }
 
 

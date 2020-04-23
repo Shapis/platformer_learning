@@ -14,23 +14,23 @@ public class KeyDoorScript : MonoBehaviour
 
     private void Awake()
     {
-        keySprite = GameObject.Find("GateKeyType").GetComponent<SpriteRenderer>();
+        // keySprite = GameObject.Find("GateKeyType").GetComponent<SpriteRenderer>();
 
-        switch (keyType)
-        {
-            default:
-            case KeyScript.KeyType.Blue: keySprite.sprite = myKeySprites[0]; break;
-            case KeyScript.KeyType.Brown: keySprite.sprite = myKeySprites[1]; break;
-            case KeyScript.KeyType.Gray: keySprite.sprite = myKeySprites[2]; break;
-            case KeyScript.KeyType.Green: keySprite.sprite = myKeySprites[3]; break;
-            case KeyScript.KeyType.Purple: keySprite.sprite = myKeySprites[4]; break;
-            case KeyScript.KeyType.Silver: keySprite.sprite = myKeySprites[5]; break;
-            case KeyScript.KeyType.Teal: keySprite.sprite = myKeySprites[6]; break;
-            case KeyScript.KeyType.Violet: keySprite.sprite = myKeySprites[7]; break;
-            case KeyScript.KeyType.White: keySprite.sprite = myKeySprites[8]; break;
+        // switch (keyType)
+        // {
+        //     default:
+        //     case KeyScript.KeyType.Blue: keySprite.sprite = myKeySprites[0]; break;
+        //     case KeyScript.KeyType.Brown: keySprite.sprite = myKeySprites[1]; break;
+        //     case KeyScript.KeyType.Gray: keySprite.sprite = myKeySprites[2]; break;
+        //     case KeyScript.KeyType.Green: keySprite.sprite = myKeySprites[3]; break;
+        //     case KeyScript.KeyType.Purple: keySprite.sprite = myKeySprites[4]; break;
+        //     case KeyScript.KeyType.Silver: keySprite.sprite = myKeySprites[5]; break;
+        //     case KeyScript.KeyType.Teal: keySprite.sprite = myKeySprites[6]; break;
+        //     case KeyScript.KeyType.Violet: keySprite.sprite = myKeySprites[7]; break;
+        //     case KeyScript.KeyType.White: keySprite.sprite = myKeySprites[8]; break;
 
-        }
-        //keyImage.sprite = GameObject.Find("KeyRed").GetComponent<Sprite>();
+        // }
+        // //keyImage.sprite = GameObject.Find("KeyRed").GetComponent<Sprite>();
     }
 
 
