@@ -73,14 +73,14 @@ public class PlayerMagic : MonoBehaviour, IDraggableEvents
         myTargetGameObjectHitPoint.transform.position = ObjectBeingDragged.transform.position; // to make sure when it starts the lightning animation, it picks the currently being dragged object.
         //
         m_LightningScript.Begin(gameObject.transform, myTargetGameObjectHitPoint.GetComponent<Transform>());
-        m_OutlineHighlightScript.Begin(ObjectBeingDragged);
+        //m_OutlineHighlightScript.Begin(ObjectBeingDragged);
 
     }
 
     public void OnDraggingEnds()
     {
         m_LightningScript.End();
-        m_OutlineHighlightScript.End();
+        //m_OutlineHighlightScript.End();
 
     }
 
