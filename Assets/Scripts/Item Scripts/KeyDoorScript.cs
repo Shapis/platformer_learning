@@ -49,7 +49,7 @@ public class KeyDoorScript : MonoBehaviour
             m_Animator.SetBool("isOpen", true);
             LeanTween.delayedCall(0.3f, DisableDoorColliders);
             LeanTween.scale(m_KeySpriteRenderer.gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.3f);
-            LeanTween.moveLocal(m_KeySpriteRenderer.gameObject, new Vector3(0f, 1.8f, 0f), 0.6f);
+            LeanTween.moveLocal(m_KeySpriteRenderer.gameObject, new Vector3(0f, 1.8f, 0f), 0.7f);
             // Destroy(keySprite.gameObject, 0.3f);
         }
 
@@ -63,19 +63,16 @@ public class KeyDoorScript : MonoBehaviour
             LeanTween.cancelAll();
             m_Animator.SetBool("isOpen", false);
             LeanTween.delayedCall(0.3f, EnableDoorColliders);
-
+            LeanTween.scale(m_KeySpriteRenderer.gameObject, new Vector3(0.6f, 0.6f, 0.6f), 0.3f);
+            LeanTween.moveLocal(m_KeySpriteRenderer.gameObject, new Vector3(0f, -0.214f, 0f), 0.7f);
             Debug.Log("close door");
         }
     }
 
     public void OpenDoorPermanently()
     {
-        if (!isOpenPermanently)
-        {
-            Debug.Log("close door for good");
-            isOpenPermanently = true;
-            LeanTween.delayedCall(0.3f, EnableDoorColliders);
-        }
+        OpenDoor();
+        isOpenPermanently = true;
     }
 
     private void DisableDoorColliders()

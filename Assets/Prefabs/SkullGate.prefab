@@ -132,8 +132,8 @@ MonoBehaviour:
   m_KeyType: 0
   m_Animator: {fileID: 1734936764878528160}
   m_BoxColliders:
-  - {fileID: 1734936764878528162}
   - {fileID: 1734936765690926067}
+  - {fileID: 1734936764878528162}
   m_KeySpriteRenderer: {fileID: 6183168739210293879}
 --- !u!212 &1734936764878528161
 SpriteRenderer:

@@ -78,7 +78,7 @@ public class KeyHolderScript : MonoBehaviour, IKeyHolderEvents
             {
                 // Currently holding Key to open this door;
                 RemoveKey(keyDoor.GetKeyType());
-                keyDoor.OpenDoor();
+                keyDoor.OpenDoorPermanently();
 
             }
         }
