@@ -14,6 +14,8 @@ public class KeyDoorScript : MonoBehaviour
 
     private void Awake()
     {
+
+        m_KeySpriteRenderer.color = KeyScript.GetKeyColor32(m_KeyType);
         // keySprite = GameObject.Find("GateKeyType").GetComponent<SpriteRenderer>();
 
         // switch (keyType)
@@ -44,12 +46,10 @@ public class KeyDoorScript : MonoBehaviour
         if (!isOpenPermanently)
         {
             LeanTween.cancelAll();
-            //gameObject.SetActive(false);
-            gameObject.GetComponent<Collider2D>();
             m_Animator.SetBool("isOpen", true);
             LeanTween.delayedCall(0.3f, DisableDoorColliders);
-            // LeanTween.scale(keySprite.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.3f);
-            // LeanTween.moveLocal(keySprite.gameObject, new Vector3(0f, 1.5f, 0f), 0.3f);
+            LeanTween.scale(m_KeySpriteRenderer.gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.3f);
+            LeanTween.moveLocal(m_KeySpriteRenderer.gameObject, new Vector3(0f, 1.8f, 0f), 0.6f);
             // Destroy(keySprite.gameObject, 0.3f);
         }
 
@@ -60,6 +60,10 @@ public class KeyDoorScript : MonoBehaviour
     {
         if (!isOpenPermanently)
         {
+            LeanTween.cancelAll();
+            m_Animator.SetBool("isOpen", false);
+            LeanTween.delayedCall(0.3f, EnableDoorColliders);
+
             Debug.Log("close door");
         }
     }
@@ -70,6 +74,7 @@ public class KeyDoorScript : MonoBehaviour
         {
             Debug.Log("close door for good");
             isOpenPermanently = true;
+            LeanTween.delayedCall(0.3f, EnableDoorColliders);
         }
     }
 
@@ -77,7 +82,15 @@ public class KeyDoorScript : MonoBehaviour
     {
         foreach (var o in m_BoxColliders)
         {
-            o.enabled = !o.enabled;
+            o.enabled = false;
+        }
+    }
+
+    private void EnableDoorColliders()
+    {
+        foreach (var o in m_BoxColliders)
+        {
+            o.enabled = true;
         }
     }
 }
