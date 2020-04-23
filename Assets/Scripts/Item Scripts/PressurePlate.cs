@@ -73,9 +73,8 @@ public class PressurePlate : MonoBehaviour
     }
     private void WhenPressed()
     {
-        timer = Time.time;
+        //timer = Time.time;
         animator.SetBool("isPressed", true);
-
         foreach (var o in myDoors)
         {
             if (o.GetKeyType() == keyType)
@@ -89,7 +88,13 @@ public class PressurePlate : MonoBehaviour
     private void WhenUnpressed()
     {
         animator.SetBool("isPressed", false);
-
+        foreach (var o in myDoors)
+        {
+            if (o.GetKeyType() == keyType)
+            {
+                o.CloseDoor();
+            }
+        }
         Debug.Log("unpressed");
     }
 

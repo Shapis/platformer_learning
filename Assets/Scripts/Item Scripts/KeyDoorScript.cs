@@ -2,15 +2,15 @@
 
 public class KeyDoorScript : MonoBehaviour
 {
-    [SerializeField] private KeyScript.KeyType keyType;
+    [SerializeField] private KeyScript.KeyType m_KeyType;
 
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator m_Animator;
 
-    [SerializeField] private BoxCollider2D[] boxColliders;
+    [SerializeField] private BoxCollider2D[] m_BoxColliders;
 
-    [SerializeField] private Sprite[] myKeySprites;
+    [SerializeField] private SpriteRenderer m_KeySpriteRenderer;
 
-    private SpriteRenderer keySprite;
+    private bool isOpenPermanently = false;
 
     private void Awake()
     {
@@ -36,27 +36,48 @@ public class KeyDoorScript : MonoBehaviour
 
     public KeyScript.KeyType GetKeyType()
     {
-        return keyType;
+        return m_KeyType;
     }
 
     public void OpenDoor()
     {
-        //gameObject.SetActive(false);
-        gameObject.GetComponent<Collider2D>();
-        animator.SetBool("isOpen", true);
-        LeanTween.delayedCall(0.3f, DisableDoorColliders);
-        // LeanTween.scale(keySprite.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.3f);
-        // LeanTween.moveLocal(keySprite.gameObject, new Vector3(0f, 1.5f, 0f), 0.3f);
-        // Destroy(keySprite.gameObject, 0.3f);
+        if (!isOpenPermanently)
+        {
+            LeanTween.cancelAll();
+            //gameObject.SetActive(false);
+            gameObject.GetComponent<Collider2D>();
+            m_Animator.SetBool("isOpen", true);
+            LeanTween.delayedCall(0.3f, DisableDoorColliders);
+            // LeanTween.scale(keySprite.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.3f);
+            // LeanTween.moveLocal(keySprite.gameObject, new Vector3(0f, 1.5f, 0f), 0.3f);
+            // Destroy(keySprite.gameObject, 0.3f);
+        }
 
 
     }
 
+    public void CloseDoor()
+    {
+        if (!isOpenPermanently)
+        {
+            Debug.Log("close door");
+        }
+    }
+
+    public void OpenDoorPermanently()
+    {
+        if (!isOpenPermanently)
+        {
+            Debug.Log("close door for good");
+            isOpenPermanently = true;
+        }
+    }
+
     private void DisableDoorColliders()
     {
-        foreach (var o in boxColliders)
+        foreach (var o in m_BoxColliders)
         {
-            o.enabled = false;
+            o.enabled = !o.enabled;
         }
     }
 }
