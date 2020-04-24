@@ -2,7 +2,9 @@
 
 public class CoinScript : MonoBehaviour
 {
-    [SerializeField] private readonly CoinType coinType;
+    [SerializeField] private CoinType coinType;
+
+    public bool Tangible { get; set; } = true;
 
     public enum CoinType
     {

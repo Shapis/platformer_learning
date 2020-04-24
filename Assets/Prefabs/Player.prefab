@@ -275,8 +275,8 @@ MonoBehaviour:
   m_UseVelocityForJumping: 1
   m_AirControl: 1
   m_CoyoteTime: 5
-  m_DoubleJump: 0
-  m_NumberOfDoubleJumps: 1
+  m_DoubleJump: 1
+  m_NumberOfDoubleJumps: 0
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_WhatIsGround:
@@ -458,6 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0a31204d02c0d4ebfcd5ef031a03ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PurpleCoinIntangibleTimer: 2
 --- !u!1 &1385990618516049322
 GameObject:
   m_ObjectHideFlags: 0

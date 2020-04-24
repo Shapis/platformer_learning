@@ -6408,6 +6408,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1385990617669589129, guid: e7983a9ff43b5b841a5391a2e731d050,
+        type: 3}
+      propertyPath: m_DoubleJump
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385990617669589129, guid: e7983a9ff43b5b841a5391a2e731d050,
+        type: 3}
+      propertyPath: m_NumberOfDoubleJumps
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1385990617669589135, guid: e7983a9ff43b5b841a5391a2e731d050,
         type: 3}
       propertyPath: m_LocalPosition.x
