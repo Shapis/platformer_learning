@@ -1,24 +1,26 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHarmfulCollisions : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 4) // If collided with water.
+        if (other.gameObject.GetComponent<BuoyancyEffector2D>() != null) // If collided with water.
         {
-            Debug.Log(gameObject.name + " collided with: " + other.transform.name);
             PlayerDied myPlayerDied = new PlayerDied();
-            //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2();
-            //myPlayerDied.Drowned();
+            myPlayerDied.Drowned();
+            //SlowPlayerDown();
+            //Debug.Log("trigger enter");
         }
+    }
 
-        if (other.gameObject.layer == 12) // If collided with a harmful item.
+    private void SlowPlayerDown()
+    {
+        //Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.y);
+
+        if (gameObject.GetComponent<Rigidbody2D>().velocity.y <= -6f)
         {
-            Debug.Log(gameObject.name + " collided with: " + other.transform.name);
-            PlayerDied myPlayerDied = new PlayerDied();
-            myPlayerDied.Died();
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, -6f);
         }
     }
 }

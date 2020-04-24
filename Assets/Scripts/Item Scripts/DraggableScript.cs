@@ -20,8 +20,6 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
 
     private Rigidbody2D myRigidBody2D;
 
-    private float objectMass;
-
     private GameObject myPlayer;
 
     public UnityEvent OnDraggingBeginsEvent; // When an object begins being dragged.
@@ -37,8 +35,6 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
     private bool wasLetGoSwitch2 = false;
 
     public bool LineOfSightLeniencySwitch { get; set; }
-
-
 
     private float lineOfSightLeniencyInitialTime;
 
@@ -56,10 +52,6 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
         OnDraggingEndsEvent?.AddListener(myPlayer.GetComponent<PlayerMovement>().OnDraggingEnds);
 
         m_Range = myPlayer.GetComponent<PlayerMagic>().m_DraggingRange;
-
-        objectMass = myRigidBody2D.mass;
-
-
     }
 
     void OnMouseDown()
@@ -72,7 +64,6 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
 
     void OnMouseDrag()
     {
-
         //Debug.Log(myRigidBody2D.angularVelocity);
         //Debug.Log(transform.rotation.z);
         //Debug.Log(LineOfSightCheck());
@@ -90,15 +81,10 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
             wasLetGoSwitch = false;
             wasLetGoSwitch2 = false;
         }
-
-
     }
-
-
 
     private void OnMouseUp()
     {
-
         if (wasLetGoSwitch2)
         {
             WasLetGo();
@@ -106,14 +92,11 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
             wasLetGoSwitch = false;
             wasLetGoSwitch2 = false;
         }
-
     }
 
     private void WasLetGo()
     {
         myRigidBody2D.velocity = new Vector3(0f, 0f, 0f);
-
-        myRigidBody2D.mass = objectMass;
 
         myRigidBody2D.angularVelocity = 0;
 
@@ -130,8 +113,6 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
 
         // Store offset = gameobject world pos - mouse world pos
         mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
-
-        myRigidBody2D.mass = objectMass * LevitatingMassScaling;
 
         // Once the gameObject is picked up it zeros its rotation.
         myRigidBody2D.angularVelocity = 0;
@@ -217,41 +198,24 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
 
     private bool LineOfSightCheck()
     {
-        RaycastHit2D
-            myRaycastInfoWandToTargetPosition,
-            myRaycastInfoWandToTargetMousePosition;
-        GetRaycastHitInfo(out myRaycastInfoWandToTargetPosition,
-        out myRaycastInfoWandToTargetMousePosition);
+        GetRaycastHitInfo(out RaycastHit2D myRaycastInfoWandToTargetPosition,
+        out RaycastHit2D myRaycastInfoWandToTargetMousePosition);
 
         DrawDebugRaycasts();
 
-        if (myRaycastInfoWandToTargetPosition)
+        if (myRaycastInfoWandToTargetPosition && myRaycastInfoWandToTargetPosition.transform.gameObject == gameObject)
         {
-            if (
-                myRaycastInfoWandToTargetPosition.transform.gameObject ==
-                this.gameObject
-            )
-            {
-                lineOfSightSwitch = true;
-                LineOfSightLeniencySwitch = false;
-                return true;
-            }
+            lineOfSightSwitch = true;
+            LineOfSightLeniencySwitch = false;
+            return true;
         }
 
-        if (myRaycastInfoWandToTargetMousePosition)
+        if (myRaycastInfoWandToTargetMousePosition && (myRaycastInfoWandToTargetMousePosition.transform.gameObject == gameObject)
+        && Time.time <= initialTime + m_LineOfSightLeniency)
         {
-            if (
-                (
-                myRaycastInfoWandToTargetMousePosition.transform.gameObject ==
-                this.gameObject
-                ) &&
-                Time.time <= initialTime + m_LineOfSightLeniency
-            )
-            {
-                lineOfSightSwitch = true;
-                LineOfSightLeniencySwitch = false;
-                return true;
-            }
+            lineOfSightSwitch = true;
+            LineOfSightLeniencySwitch = false;
+            return true;
         }
 
         // if it gets to this point it means that the object is no longer in line of sight, so we turn the was let go switch on and the line of sight switch off.
@@ -264,14 +228,7 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
         lineOfSightSwitch = false;
 
         // if less than m_LineOfSightLeniency seconds has passed since the object went line of sight, turn the line of sight leniency switch on, else turn it off.
-        if (Time.time <= lineOfSightLeniencyInitialTime + m_LineOfSightLeniency)
-        {
-            LineOfSightLeniencySwitch = true;
-        }
-        else
-        {
-            LineOfSightLeniencySwitch = false;
-        }
+        LineOfSightLeniencySwitch = Time.time <= lineOfSightLeniencyInitialTime + m_LineOfSightLeniency;
 
         return false;
     }
@@ -289,7 +246,7 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
         myRaycastInfoWandToTargetMousePosition =
             Physics2D
                 .Raycast(myPlayer.transform.position,
-                (GetMouseAsWorldPoint() - myPlayer.transform.position),
+                GetMouseAsWorldPoint() - myPlayer.transform.position,
                 m_Range);
     }
 
