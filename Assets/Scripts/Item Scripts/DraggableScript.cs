@@ -4,18 +4,13 @@ using UnityEngine.Events;
 
 public class DraggableScript : MonoBehaviour, IDraggableEvents
 {
-
     private const float LevitatingMassScaling = 0.03f;
-
 
     float m_Speed = 5;
 
-
     float m_MaxSpeed = 15;
 
-
     float m_LineOfSightLeniency = 1.5f;
-
 
     private float m_Range;
 

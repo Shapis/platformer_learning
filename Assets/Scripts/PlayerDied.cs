@@ -1,30 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerDied
 {
-    private GameObject myPlayer;
-    private void Start()
-    {
-        myPlayer = GameObject.Find("Player");
-    }
     public void Died()
     {
-        myPlayer.GetComponent<Animator>().SetBool("isJumping", false);
-        myPlayer.GetComponent<Animator>().SetBool("isAirbourne", false);
-        myPlayer.GetComponent<Animator>().SetBool("isDead", true);
-        myPlayer.GetComponent<PlayerMovement>().enabled = false;
-
-        if (GameObject.Find("UnderneathTrigger") != null)
-        {
-            GameObject.Find("UnderneathTrigger").gameObject.SetActive(false);
-        }
-
-        Debug.Log("Player died");
-
-        SceneHandler.ReloadCurrentScene();
+        GameObject.Find("Player").GetComponent<Animator>().SetBool("isJumping", false);
+        GameObject.Find("Player").GetComponent<Animator>().SetBool("isAirbourne", false);
+        GameObject.Find("Player").GetComponent<Animator>().SetBool("isDead", true);
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+        // Debug.Log("Player died");
+        LeanTween.cancelAll();
+        //SceneHandler.ReloadCurrentScene();
     }
     public void Drowned()
     {
