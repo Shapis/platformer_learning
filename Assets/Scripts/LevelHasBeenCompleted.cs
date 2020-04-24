@@ -1,11 +1,6 @@
-﻿public class LevelHasBeenCompleted 
+﻿public class LevelHasBeenCompleted
 {
-   
     private void HasBeenCompleted()
     {
-
     }
-
-
-
 }

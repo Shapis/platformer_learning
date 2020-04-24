@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class PlayerDied
 {
+    private GameObject myPlayer;
+    private void Start()
+    {
+        myPlayer = GameObject.Find("Player");
+    }
     public void Died()
     {
-        GameObject.Find("Player").GetComponent<Animator>().SetBool("isJumping", false);
-        GameObject.Find("Player").GetComponent<Animator>().SetBool("isAirbourne", false);
-        GameObject.Find("Player").GetComponent<Animator>().SetBool("isDead", true);
-        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+        myPlayer.GetComponent<Animator>().SetBool("isJumping", false);
+        myPlayer.GetComponent<Animator>().SetBool("isAirbourne", false);
+        myPlayer.GetComponent<Animator>().SetBool("isDead", true);
+        myPlayer.GetComponent<PlayerMovement>().enabled = false;
 
         if (GameObject.Find("UnderneathTrigger") != null)
         {
