@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
 {
-
     [SerializeField] private CharacterController2D controller;
 
     private float horizontalMove = 0f;
@@ -23,11 +22,8 @@ public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
 
     private bool isCasting;
 
-
-
     private void Update()
     {
-
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         if (!isCasting)
@@ -47,7 +43,6 @@ public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
             myPlayerDied.Died();
             Time.timeScale = 1;
         }
-
     }
 
     private void Jump()
@@ -63,10 +58,6 @@ public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
         animator.SetBool("isJumping", true);
         //OnAirbourne();
     }
-
-
-
-
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);
@@ -80,21 +71,16 @@ public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
         //Debug.Log("OnAirbourneEventCallback");
     }
 
-
     public void OnFalling()
     {
-
     }
-
 
     public void OnCrouching()
     {
-
     }
 
     public void OnDraggingBegins()
     {
-
         isCasting = true;
         animator.SetFloat("speed", 0);
     }
@@ -106,8 +92,6 @@ public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
 
     private void FixedUpdate()
     {
-
-
         if (!isCasting)
         {
             controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump, collisionJump);
@@ -120,23 +104,5 @@ public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
             jump = false;
             collisionJump = false;
         }
-
-
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-
-
-
-    //    //if (collision.gameObject.layer == 9) // 9 is the layer for enemies. 
-    //    //{
-    //    //    Jump();
-    //    //    //Destroy(collision.gameObject);
-    //    //}
-
-
-
-    //}
-
 }

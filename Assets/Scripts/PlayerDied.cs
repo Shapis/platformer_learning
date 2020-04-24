@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class PlayerDied
 {
-   
     public void Died()
     {
-
         GameObject.Find("Player").GetComponent<Animator>().SetBool("isJumping", false);
         GameObject.Find("Player").GetComponent<Animator>().SetBool("isAirbourne", false);
         GameObject.Find("Player").GetComponent<Animator>().SetBool("isDead", true);
@@ -18,31 +16,17 @@ public class PlayerDied
         {
             GameObject.Find("UnderneathTrigger").gameObject.SetActive(false);
         }
-       
 
         Debug.Log("Player died");
 
-
         SceneHandler.ReloadCurrentScene();
-
     }
-
-    
-
     public void Drowned()
     {
-
         PlayerDied myPlayerDied = new PlayerDied();
 
         myPlayerDied.Died();
 
         Debug.Log("Player drowned.");
-
     }
-
-    
-
-
-
-
 }
