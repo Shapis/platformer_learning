@@ -7013,28 +7013,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1422035188}
     m_ColliderPaths:
-    - - X: 80000041
-        Y: -99999900
-      - X: 39999959
-        Y: -99999900
-      - X: 39999900
-        Y: -99999959
-      - X: 39999900
-        Y: -140000041
-      - X: 39999959
-        Y: -140000100
-      - X: 80000041
-        Y: -140000100
-      - X: 80000100
-        Y: -140000041
-      - X: 80000100
-        Y: -99999959
+    - - X: 80000000
+        Y: -143000000
+      - X: 80000000
+        Y: -103000000
+      - X: 40000000
+        Y: -103000000
+      - X: 40000000
+        Y: -143000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 7.9999747, y: -14.400009}
-      - {x: 7.9999747, y: -10.39999}
-      - {x: 3.99999, y: -10.400025}
-      - {x: 4.0000253, y: -14.400009}
+    - - {x: 7.9999704, y: -14.7}
+      - {x: 7.9999704, y: -10.7}
+      - {x: 4, y: -10.700029}
+      - {x: 4.000029, y: -14.7}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1422035187
@@ -7071,7 +7063,7 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.3}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1422035189
@@ -7110,9 +7102,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1359784751
-  m_SortingLayer: -1
-  m_SortingOrder: 8
+  m_SortingLayerID: 646397429
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
