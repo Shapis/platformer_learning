@@ -14,6 +14,15 @@ public class PlayerHarmfulCollisions : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.transform.tag == "HarmfulItem")
+        {
+            PlayerDied myPlayerDied = new PlayerDied();
+            myPlayerDied.Died();
+        }
+    }
+
     private void SlowPlayerDown()
     {
         //Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.y);
@@ -24,3 +33,6 @@ public class PlayerHarmfulCollisions : MonoBehaviour
         }
     }
 }
+
+
+
