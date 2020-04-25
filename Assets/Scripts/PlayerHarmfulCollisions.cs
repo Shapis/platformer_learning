@@ -16,7 +16,7 @@ public class PlayerHarmfulCollisions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.transform.tag == "HarmfulItem")
+        if (other.gameObject.transform.CompareTag("HarmfulItem"))
         {
             PlayerDied myPlayerDied = new PlayerDied();
             myPlayerDied.Died();
