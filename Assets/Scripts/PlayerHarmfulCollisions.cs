@@ -22,16 +22,15 @@ public class PlayerHarmfulCollisions : MonoBehaviour
             myPlayerDied.Died();
         }
     }
+    // private void SlowPlayerDown()
+    // {
+    //     //Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.y);
 
-    private void SlowPlayerDown()
-    {
-        //Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.y);
-
-        if (gameObject.GetComponent<Rigidbody2D>().velocity.y <= -6f)
-        {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, -6f);
-        }
-    }
+    //     if (gameObject.GetComponent<Rigidbody2D>().velocity.y <= -6f)
+    //     {
+    //         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, -6f);
+    //     }
+    // }
 }
 
 
