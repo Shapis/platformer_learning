@@ -81,12 +81,9 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         {
             OnFallingEvent = new UnityEvent();
         }
-
-
     }
     private void Start()
     {
-
         OnLandingEvent?.AddListener(OnLandingListener);
         OnFallingEvent?.AddListener(OnFallingListener);
         OnAirbourneEvent?.AddListener(OnAirbourneListener);
@@ -98,12 +95,9 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////// Events
 
-
-
         bool previouslyGrounded = grounded; // previouslyGrounded keeps the information of whether the unit was grounded the previous frame.
 
         grounded = GroundedCheck(); // Checks whether the unit is currently grounded and assigns it to the grounded field.
-
 
         if (LandingCheck(previouslyGrounded))
             OnLanding(); // If the unit has landed invokes the OnLandingEvent.
@@ -122,10 +116,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////// //Events//
 
-
-
         CoyoteTime();
-
     }
 
     private void CoyoteTime()
@@ -143,21 +134,17 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
             //isFalling = false;
 
         }
-
     }
 
     private void OnLandingListener()
     {
         DoubleJumpsRemaining = m_NumberOfDoubleJumps;
         isFalling = false;
-
     }
 
     private void OnAirbourneListener()
     {
-
     }
-
 
     private void OnFallingListener()
     {
@@ -167,84 +154,58 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         //Debug.Log(gameObject + "OnFallingListener called.");
         //Debug.Log(myCoyoteJump && Time.time >= m_CoyoteTime + myCoyoteStartTime);
 
-
         m_DoubleJumpsRemaining++;
-
     }
 
     private void OnCrouchingListener()
     {
-
     }
 
     private bool GroundedCheck()
     {
-
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as to be considered as ground, checking for which layers are ground m_WhatIsGround
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 
-        if (colliders.Length > 0)
-        {
-
-            return true;
-
-        }
-        else
-        {
-            return false;
-        }
-
+        return colliders.Length > 0;
     }
 
     private bool LandingCheck(bool previouslyGrounded)
     {
-        return (grounded && !previouslyGrounded);
+        return grounded && !previouslyGrounded;
     }
 
     public void OnLanding()
     {
-
-
         OnLandingEvent?.Invoke();
         //Debug.Log(gameObject.name + " landed at: " + gameObject.transform.position + " Time: " + Time.time);
-
 
     }
 
     private bool AirbourneCheck(bool previouslyGrounded)
     {
-        return (!grounded && previouslyGrounded);
+        return !grounded && previouslyGrounded;
     }
 
     public void OnAirbourne()
     {
-
         OnAirbourneEvent?.Invoke();
         //Debug.Log(gameObject.name + " airbourne at: " + gameObject.transform.position + " Time: " + Time.time);
 
         // If double jumps are enabled max out the number of max double jumps left when unit becomes airbourne
 
-
         // Checks if the unit is falling and implementation of coyote time.
-
 
     }
 
     private bool FallingCheck(bool isAirbourne, float previousFeetPosition)
     {
-
-        return (isAirbourne && (m_GroundCheck.transform.position.y < previousFeetPosition));
+        return isAirbourne && (m_GroundCheck.transform.position.y < previousFeetPosition);
     }
 
     public void OnFalling()
     {
-
-
         OnFallingEvent?.Invoke();
         //Debug.Log(gameObject.name + " falling at: " + gameObject.transform.position + " Time: " + Time.time);
-
-
-
 
     }
 
@@ -255,10 +216,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
     public void OnCrouching()
     {
-
     }
-
-
 
     public void Move(float move, bool crouch, bool jump, bool collisionJump)
     {
@@ -275,7 +233,6 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         //only control the player if grounded or airControl is turned on
         if (grounded || m_AirControl)
         {
-
             // If crouching
             if (crouch)
             {
@@ -328,7 +285,6 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         if ((grounded && jump) || (myCoyoteJump && jump) || ((DoubleJumpsRemaining > 0) && jump && m_DoubleJump))
 
         {
-
             // Only reduces charges of double jumps if you're currently not ground jumping and not coyote jumping
             if (!grounded && !myCoyoteJump)
             {
@@ -348,17 +304,12 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
             // Add vertical force/velocity to the unit.
             Jump();
-
-
-
         }
         else if (collisionJump)
 
         {
-
             if (m_DoubleJump)
             {
-
                 //while (DoubleJumpsRemaining < m_NumberOfDoubleJumps)
                 //{
                 DoubleJumpsRemaining++;
@@ -366,30 +317,11 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
             }
 
-
             // Add vertical force/velocity to the unit.
             Jump();
 
             collisionJump = false;
         }
-
-        // Add vertical force/velocity to the unit.
-        void Jump()
-        {
-            if (m_UseVelocityForJumping)
-            {
-                m_Rigidbody2D.velocity = new Vector3(m_Rigidbody2D.velocity.x, m_JumpIntensity / 50, 0);
-            }
-            else
-            {
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpIntensity));
-            }
-
-            // After the unit jumps it is no longer falling.
-            isFalling = false;
-            myCoyoteJump = false;
-        }
-
     }
 
     private void Flip()
@@ -400,7 +332,22 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         transform.Rotate(0f, 180f, 0f);
     }
 
+    // Add vertical force/velocity to the unit.
+    private void Jump()
+    {
+        if (m_UseVelocityForJumping)
+        {
+            m_Rigidbody2D.velocity = new Vector3(m_Rigidbody2D.velocity.x, m_JumpIntensity / 50, 0);
+        }
+        else
+        {
+            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpIntensity));
+        }
 
+        // After the unit jumps it is no longer falling.
+        isFalling = false;
+        myCoyoteJump = false;
+    }
     public void Casting()
     {
         m_Rigidbody2D.velocity = new Vector3(0, 0, 0);
@@ -413,8 +360,5 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         {
             Flip();
         }
-
     }
-
-
 }

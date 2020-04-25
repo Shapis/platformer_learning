@@ -8,7 +8,6 @@ public class CoinHolder : MonoBehaviour
     [SerializeField] private float m_PurpleCoinIntangibleTimer;
     private List<CoinScript> coinList = new List<CoinScript>();
 
-    private CoinScript coinForTheAlphaChange;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<CoinScript>() != null)
@@ -46,35 +45,35 @@ public class CoinHolder : MonoBehaviour
     {
         if (myCoin.Tangible)
         {
-            coinForTheAlphaChange = myCoin;
             coinList.Add(myCoin);
             coinList = coinList.Distinct().ToList();
             //Debug.Log("Purple coin added!");
             myCoin.Tangible = false;
-            ChangeAlpha();
-            LeanTween.delayedCall(m_PurpleCoinIntangibleTimer, TurnTangible);
-            gameObject.GetComponent<CharacterController2D>().DoubleJumpsRemaining++;
+
+            LeanTween.delayedCall(0 * (m_PurpleCoinIntangibleTimer / 2), LowerAlpha).setOnCompleteParam(myCoin.gameObject);
+            LeanTween.delayedCall(m_PurpleCoinIntangibleTimer / 2, RaiseAlpha).setOnCompleteParam(myCoin.gameObject);
+
+            LeanTween.delayedCall(m_PurpleCoinIntangibleTimer, TurnTangible).setOnCompleteParam(myCoin.gameObject); // Set tangible.
+            //gameObject.GetComponent<CharacterController2D>().DoubleJumpsRemaining++;
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, 14f);
         }
     }
 
-    private void TurnTangible()
+    private void TurnTangible(object o)
     {
-        coinForTheAlphaChange.Tangible = true;
-        //Debug.Log("tangible!");
+        GameObject temp = (GameObject)o;
+        temp.GetComponent<CoinScript>().Tangible = true;
     }
 
-    private void ChangeAlpha()
+    private void LowerAlpha(object o)
     {
-        LeanTween.delayedCall(0 * (m_PurpleCoinIntangibleTimer / 2), LowerAlpha);
-        LeanTween.delayedCall(m_PurpleCoinIntangibleTimer / 2, RaiseAlpha);
-    }
-    private void LowerAlpha()
-    {
-        LeanTween.alpha(coinForTheAlphaChange.gameObject, 0f, m_PurpleCoinIntangibleTimer / 2);
+        GameObject temp = (GameObject)o;
+        LeanTween.alpha(temp, 0f, m_PurpleCoinIntangibleTimer / 2);
     }
 
-    private void RaiseAlpha()
+    private void RaiseAlpha(object o)
     {
-        LeanTween.alpha(coinForTheAlphaChange.gameObject, 1f, m_PurpleCoinIntangibleTimer / 2);
+        GameObject temp = (GameObject)o;
+        LeanTween.alpha(temp, 1f, m_PurpleCoinIntangibleTimer / 2);
     }
 }
