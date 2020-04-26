@@ -65,7 +65,6 @@ public class KeyDoorScript : MonoBehaviour
             LeanTween.delayedCall(0.3f, EnableDoorColliders);
             LeanTween.scale(m_KeySpriteRenderer.gameObject, new Vector3(0.6f, 0.6f, 0.6f), 0.3f);
             LeanTween.moveLocal(m_KeySpriteRenderer.gameObject, new Vector3(0f, -0.214f, 0f), 0.7f);
-            Debug.Log("close door");
         }
     }
 

@@ -16,10 +16,6 @@ public class CoinHolder : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-    }
-
     private void PickUpCoin(CoinScript myCoin)
     {
         switch (myCoin.GetComponent<CoinScript>().GetCoinType())
@@ -48,32 +44,16 @@ public class CoinHolder : MonoBehaviour
             coinList.Add(myCoin);
             coinList = coinList.Distinct().ToList();
             //Debug.Log("Purple coin added!");
+
             myCoin.Tangible = false;
 
-            LeanTween.delayedCall(0 * (m_PurpleCoinIntangibleTimer / 2), LowerAlpha).setOnCompleteParam(myCoin.gameObject);
-            LeanTween.delayedCall(m_PurpleCoinIntangibleTimer / 2, RaiseAlpha).setOnCompleteParam(myCoin.gameObject);
+            //DelayHandler myDelayHandler = new DelayHandler();
 
-            LeanTween.delayedCall(m_PurpleCoinIntangibleTimer, TurnTangible).setOnCompleteParam(myCoin.gameObject); // Set tangible.
+            StartCoroutine(DelayHandler.DelayAction(1f, () => myCoin.Tangible = true));
+
+            //Debug.Log("Intangible: " + myCoin.transform.name);
             //gameObject.GetComponent<CharacterController2D>().DoubleJumpsRemaining++;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, 14f);
         }
-    }
-
-    private void TurnTangible(object o)
-    {
-        GameObject temp = (GameObject)o;
-        temp.GetComponent<CoinScript>().Tangible = true;
-    }
-
-    private void LowerAlpha(object o)
-    {
-        GameObject temp = (GameObject)o;
-        LeanTween.alpha(temp, 0f, m_PurpleCoinIntangibleTimer / 2);
-    }
-
-    private void RaiseAlpha(object o)
-    {
-        GameObject temp = (GameObject)o;
-        LeanTween.alpha(temp, 1f, m_PurpleCoinIntangibleTimer / 2);
     }
 }

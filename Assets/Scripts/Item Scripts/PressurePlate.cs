@@ -69,7 +69,6 @@ public class PressurePlate : MonoBehaviour
     {
         isPressed = false;
         WhenUnpressed();
-
     }
     private void WhenPressed()
     {
@@ -83,7 +82,7 @@ public class PressurePlate : MonoBehaviour
             }
         }
 
-        Debug.Log("pressed");
+        //Debug.Log("pressed");
     }
     private void WhenUnpressed()
     {
@@ -95,7 +94,7 @@ public class PressurePlate : MonoBehaviour
                 o.CloseDoor();
             }
         }
-        Debug.Log("unpressed");
+        //Debug.Log("unpressed");
     }
 
 
