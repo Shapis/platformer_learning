@@ -47,9 +47,11 @@ public class CoinHolder : MonoBehaviour
 
             myCoin.Tangible = false;
 
-            //DelayHandler myDelayHandler = new DelayHandler();
+            LeanTween.alpha(myCoin.gameObject, 0f, m_PurpleCoinIntangibleTimer / 2);
 
-            StartCoroutine(DelayHandler.DelayAction(1f, () => myCoin.Tangible = true));
+            StartCoroutine(DelayHandler.DelayAction(m_PurpleCoinIntangibleTimer / 2, () => LeanTween.alpha(myCoin.gameObject, 1f, m_PurpleCoinIntangibleTimer / 2)));
+
+            StartCoroutine(DelayHandler.DelayAction(m_PurpleCoinIntangibleTimer, () => myCoin.Tangible = true)); // Sets the CoinScript back to Tangible = true after a delay.
 
             //Debug.Log("Intangible: " + myCoin.transform.name);
             //gameObject.GetComponent<CharacterController2D>().DoubleJumpsRemaining++;
