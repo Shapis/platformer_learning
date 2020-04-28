@@ -7,7 +7,7 @@ public static class SaveHandler<T>
 
     public enum SaveFileName
     {
-        highScoreTable,
+        levelCompletionInfo,
         audioSettings,
         c,
         d,
