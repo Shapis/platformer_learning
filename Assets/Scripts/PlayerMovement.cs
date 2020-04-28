@@ -12,8 +12,6 @@ public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
 
     [SerializeField] private Animator animator;
 
-    public int currentScore = 0;
-
     [SerializeField] private float m_FellThroughWorldReset = 200f;
 
     private bool jump = false;

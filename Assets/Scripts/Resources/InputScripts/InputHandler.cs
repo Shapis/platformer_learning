@@ -21,21 +21,16 @@ public class InputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (Input.GetButtonDown("Cancel"))
         {
             if (!m_EscMenu.GetComponent<PopupMenuController>().IsActive)
             {
-                OnEscapePress[0].Invoke();
+                OnEscapePress[0]?.Invoke();
             }
             else
             {
                 OnEscapePress[1].Invoke();
             }
         }
-
-
-
     }
 }

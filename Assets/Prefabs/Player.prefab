@@ -91,6 +91,8 @@ GameObject:
   - component: {fileID: 4508724961646500369}
   - component: {fileID: 216569746927924417}
   - component: {fileID: 3277797399873134746}
+  - component: {fileID: 6860306909180361820}
+  - component: {fileID: 3382179397979517409}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -183,7 +185,6 @@ MonoBehaviour:
   controller: {fileID: 1385990617669589129}
   runSpeed: 30
   animator: {fileID: 1385990617669589168}
-  currentScore: 0
   m_FellThroughWorldReset: -100
 --- !u!114 &1385990617669589129
 MonoBehaviour:
@@ -379,6 +380,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d42ff984da77c1448f4ddfa2f9da99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6860306909180361820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385990617669589128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5268ae254ca066240ae527c23f9229b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3382179397979517409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385990617669589128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b321f64f91c819468002aa98ac1b5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1385990618516049322

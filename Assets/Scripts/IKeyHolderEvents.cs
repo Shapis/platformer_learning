@@ -1,4 +1,4 @@
 ﻿public interface IKeyHolderEvents
 {
-    void OnKeysChanged();
+    void OnKeysChanged(object sender, System.EventArgs e);
 }

@@ -134,7 +134,9 @@ MonoBehaviour:
   m_BoxColliders:
   - {fileID: 1734936765690926067}
   - {fileID: 1734936764878528162}
-  m_KeySpriteRenderer: {fileID: 6183168739210293879}
+  m_GateKeyType: {fileID: 1593385441645640663}
+  CurrentScoreUIObject: {fileID: 5324721276801490420, guid: 88001edf41128be4dafd73a22d1b19f8,
+    type: 3}
 --- !u!212 &1734936764878528161
 SpriteRenderer:
   m_ObjectHideFlags: 0

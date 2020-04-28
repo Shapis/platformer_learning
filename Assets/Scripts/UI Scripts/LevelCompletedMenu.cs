@@ -1,17 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class EscMenu : MonoBehaviour
+public class LevelCompletedMenu : MonoBehaviour
 {
-    public void ResumeGame()
+    [SerializeField] GameObject myPlayer;
+    public void Proceed()
     {
-        GameHandler.Resume();
-    }
-
-    public void ExitToMap()
-    {
+        SceneHandler.Load(myPlayer.GetComponent<GemGrabber>().MyNextScene);
 
     }
     public void ExitToMainMenu()

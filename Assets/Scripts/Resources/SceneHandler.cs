@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using UnityEngine.SceneManagement;
 
 public static class SceneHandler
@@ -19,24 +17,34 @@ public static class SceneHandler
         SceneManager.LoadScene(scene.ToString());
     }
 
-    public static void Load(string currentScene)
-    {
-        SceneManager.LoadScene(currentScene);
-    }
-
     public static void ReloadCurrentScene()
     {
-        SceneHandler.Load(SceneManager.GetActiveScene().name);
+        SceneHandler.Load(GetActiveSceneEnum());
 
     }
 
-    //public static string CurrentSceneName()
-    //{
+    public static Scene GetActiveSceneEnum()
+    {
+        Scene sceneEnum;
+        Enum.TryParse(SceneManager.GetActiveScene().name, out sceneEnum);
 
+        return sceneEnum;
+    }
 
+    public static string GetActiveSceneString()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
 
-    //    //return this.Scene;
-    //}
+    public static bool DoesSceneExist(string myScene)
+    {
+        return Enum.IsDefined(typeof(Scene), myScene);
+    }
 
-
+    public static Scene StringToScene(string myScene)
+    {
+        Scene sceneEnum;
+        Enum.TryParse(myScene, out sceneEnum);
+        return sceneEnum;
+    }
 }

@@ -14,7 +14,6 @@ public class PopupMenuController : MonoBehaviour
     public bool IsActive { get; set; }
 
 
-
     private void Awake()
     {
         closeButton = this.gameObject.transform.GetChild(0).gameObject;  // set exitButton to the background exit button.
@@ -32,40 +31,29 @@ public class PopupMenuController : MonoBehaviour
 
     public void OpenMenu()
     {
-
-        if (LeanTween.isTweening(mainPanel))
-        {
-            LeanTween.cancel(mainPanel);
-        }
+        // if (LeanTween.isTweening(mainPanel))
+        // {
+        //     LeanTween.cancel(mainPanel);
+        // }
 
         this.gameObject.SetActive(true);
         closeButton.SetActive(true);
-        LeanTween.scale(mainPanel, new Vector3(1f, 1f, 1f), transitionTime).setUseEstimatedTime(true); ;
-
+        LeanTween.scale(mainPanel, new Vector3(1f, 1f, 1f), transitionTime).setUseEstimatedTime(true);
 
         IsActive = true;
-
-
-
-
     }
 
     public void CloseMenu()
     {
-
-
         if (LeanTween.isTweening(mainPanel))
         {
             LeanTween.cancel(mainPanel);
-
         }
         closeButton.SetActive(false);
         LeanTween.scale(mainPanel, new Vector3(0f, 0f, 0f), transitionTime).setUseEstimatedTime(true);
         IsActive = false;
 
         LeanTween.delayedCall(transitionTime, SetObjectInactiveAfterTweenIsOver).setUseEstimatedTime(true);
-
-
     }
 
     private void SetObjectInactiveAfterTweenIsOver()
@@ -76,35 +64,4 @@ public class PopupMenuController : MonoBehaviour
 
         }
     }
-
-
-
-
-
-    //StartCoroutine(SetInactiveAfterTime(transitionTime));
-    // IEnumerator SetInactiveAfterTime(float time)
-    // {
-    //     yield return new WaitForSeconds(time);
-
-    //     // Code to execute after the delay
-    //     if (!IsActive && !LeanTween.isTweening(mainPanel))
-    //     {
-    //         this.gameObject.SetActive(false);
-
-    //     }
-    // }
-
-    // IEnumerator AsyncExecution(float time)
-    // {
-    //     yield return new WaitForSeconds(time);
-
-    //     // Code to execute after the delay
-    //     if (!IsActive && !LeanTween.isTweening(mainPanel))
-    //     {
-    //         this.gameObject.SetActive(false);
-
-    //     }
-    // }
-
-
 }

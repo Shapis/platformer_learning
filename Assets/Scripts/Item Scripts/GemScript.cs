@@ -1,30 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GemScript : MonoBehaviour
 {
+    public bool Tangible { get; set; } = true;
 
-    private bool hasBeenCollided = false;
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Awake()
     {
-        if (!hasBeenCollided)
-        {
 
+        //Debug.Log(SceneHandler.GetActiveSceneEnum());
 
-            Debug.Log("Gem collided with: " + collision);
-
-
-
-
-
-            hasBeenCollided = true;
-
-        }
-
-
+        //SceneHandler.Load(SceneHandler.GetSceneEnum());
 
     }
+
 }

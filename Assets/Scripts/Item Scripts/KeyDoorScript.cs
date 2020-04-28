@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class KeyDoorScript : MonoBehaviour
+public class KeyDoorScript : MonoBehaviour, IKeyDoorEvents
 {
     [SerializeField] private KeyScript.KeyType m_KeyType;
 
@@ -8,33 +9,20 @@ public class KeyDoorScript : MonoBehaviour
 
     [SerializeField] private BoxCollider2D[] m_BoxColliders;
 
-    [SerializeField] private SpriteRenderer m_KeySpriteRenderer;
+    [SerializeField] private GameObject m_GateKeyType;
 
     private bool isOpenPermanently = false;
 
+    public event EventHandler OnDoorOpenEvent;
+
+    public event EventHandler OnDoorCloseEvent;
+
+    public event EventHandler OnDoorOpenPermanentlyEvent;
+
     private void Awake()
     {
-
-        m_KeySpriteRenderer.color = KeyScript.GetKeyColor32(m_KeyType);
-        // keySprite = GameObject.Find("GateKeyType").GetComponent<SpriteRenderer>();
-
-        // switch (keyType)
-        // {
-        //     default:
-        //     case KeyScript.KeyType.Blue: keySprite.sprite = myKeySprites[0]; break;
-        //     case KeyScript.KeyType.Brown: keySprite.sprite = myKeySprites[1]; break;
-        //     case KeyScript.KeyType.Gray: keySprite.sprite = myKeySprites[2]; break;
-        //     case KeyScript.KeyType.Green: keySprite.sprite = myKeySprites[3]; break;
-        //     case KeyScript.KeyType.Purple: keySprite.sprite = myKeySprites[4]; break;
-        //     case KeyScript.KeyType.Silver: keySprite.sprite = myKeySprites[5]; break;
-        //     case KeyScript.KeyType.Teal: keySprite.sprite = myKeySprites[6]; break;
-        //     case KeyScript.KeyType.Violet: keySprite.sprite = myKeySprites[7]; break;
-        //     case KeyScript.KeyType.White: keySprite.sprite = myKeySprites[8]; break;
-
-        // }
-        // //keyImage.sprite = GameObject.Find("KeyRed").GetComponent<Sprite>();
+        m_GateKeyType.GetComponent<SpriteRenderer>().color = KeyScript.GetKeyColor32(m_KeyType);
     }
-
 
     public KeyScript.KeyType GetKeyType()
     {
@@ -45,26 +33,24 @@ public class KeyDoorScript : MonoBehaviour
     {
         if (!isOpenPermanently)
         {
-            LeanTween.cancelAll();
             m_Animator.SetBool("isOpen", true);
             LeanTween.delayedCall(0.3f, DisableDoorColliders);
-            LeanTween.scale(m_KeySpriteRenderer.gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.3f);
-            LeanTween.moveLocal(m_KeySpriteRenderer.gameObject, new Vector3(0f, 1.8f, 0f), 0.7f);
+            LeanTween.scale(m_GateKeyType, new Vector3(1.2f, 1.2f, 1.2f), 0.3f);
+            LeanTween.moveLocal(m_GateKeyType, new Vector3(0f, 1.8f, 0f), 0.7f);
             // Destroy(keySprite.gameObject, 0.3f);
+            OnDoorOpen();
         }
-
-
     }
 
     public void CloseDoor()
     {
         if (!isOpenPermanently)
         {
-            LeanTween.cancelAll();
             m_Animator.SetBool("isOpen", false);
             LeanTween.delayedCall(0.3f, EnableDoorColliders);
-            LeanTween.scale(m_KeySpriteRenderer.gameObject, new Vector3(0.6f, 0.6f, 0.6f), 0.3f);
-            LeanTween.moveLocal(m_KeySpriteRenderer.gameObject, new Vector3(0f, -0.214f, 0f), 0.7f);
+            LeanTween.scale(m_GateKeyType, new Vector3(0.6f, 0.6f, 0.6f), 0.3f);
+            LeanTween.moveLocal(m_GateKeyType, new Vector3(0f, -0.214f, 0f), 0.7f);
+            OnDoorClose();
         }
     }
 
@@ -72,6 +58,7 @@ public class KeyDoorScript : MonoBehaviour
     {
         OpenDoor();
         isOpenPermanently = true;
+        OnDoorOpenPermanently();
     }
 
     private void DisableDoorColliders()
@@ -88,6 +75,36 @@ public class KeyDoorScript : MonoBehaviour
         {
             o.enabled = true;
         }
+    }
+
+    private void OnDoorOpen()
+    {
+        OnDoorOpenEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnDoorClose()
+    {
+        OnDoorCloseEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnDoorOpenPermanently()
+    {
+        OnDoorOpenPermanentlyEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void OnDoorOpen(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnDoorClose(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnDoorOpenPermanently(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
     }
 }
 

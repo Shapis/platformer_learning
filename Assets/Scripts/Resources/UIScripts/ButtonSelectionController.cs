@@ -63,7 +63,7 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
 
             if (i != selectedButtonIndex)
             {
-                myButtonList[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+                myButtonList[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().color = m_UnselectedColor;
 
                 if ((myButtonList[i].gameObject.GetComponent<RectTransform>().localScale != new Vector3(1, 1, 1)))
                 {
@@ -76,7 +76,7 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
             }
             else if (i == selectedButtonIndex)
             {
-                myButtonList[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().color = Color.yellow;
+                myButtonList[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().color = m_SelectedColor;
 
                 if (myButtonList[i].gameObject.GetComponent<RectTransform>().localScale != new Vector3(enlargeButtonTo, enlargeButtonTo, enlargeButtonTo))
                 {
@@ -150,14 +150,14 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        //Debug.Log(eventData);
         for (int i = 0; i < myButtonList.Count; i++)
         {
 
             if (myButtonList[i] == eventData.pointerEnter.GetComponent<Button>())
             {
                 selectedButtonIndex = i;
-                //                Debug.Log(i);
+                // Debug.Log(i);
             }
 
         }

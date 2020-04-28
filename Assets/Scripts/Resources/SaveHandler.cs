@@ -7,7 +7,7 @@ public static class SaveHandler<T>
 
     public enum SaveFileName
     {
-        highScoreTable,
+        levelCompletionInfo,
         audioSettings,
         c,
         d,
@@ -39,7 +39,4 @@ public static class SaveHandler<T>
         return JsonUtility.FromJson<T>(json);
 
     }
-
-
-
 }
