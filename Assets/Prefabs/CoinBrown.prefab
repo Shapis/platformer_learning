@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3374235829591988560}
   - component: {fileID: 3374235829591988556}
   - component: {fileID: 200076193656712240}
-  - component: {fileID: -3758983427948910266}
   m_Layer: 11
   m_Name: CoinBrown
   m_TagString: Untagged
@@ -117,7 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99bd41962b627f546940f6326ba59f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinType: 0
+  m_CoinScoreValue: 1
+  m_PurpleCoinExtraJumps: 1
+  m_CoinPurple: {fileID: 3703671235013618744, guid: f907e7788d736b848adaf7cd0de4cee0,
+    type: 3}
 --- !u!61 &200076193656712240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,15 +146,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.50101423, y: 0.5052128}
   m_EdgeRadius: 0
---- !u!114 &-3758983427948910266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3374235829591988563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37cf000958a6df942a56dcc2b681ebc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

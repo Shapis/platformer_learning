@@ -118,9 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c7fadc8f038424ca77803e10890d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LootHandler: {fileID: -917895023941688831, guid: 2c79754585cf6c24db00a4f73cc1abec,
-    type: 3}
   m_CoinsContainer: {fileID: 0}
+  m_PurpleCoinDrops: []
 --- !u!50 &5234023370660527166
 Rigidbody2D:
   serializedVersion: 4
