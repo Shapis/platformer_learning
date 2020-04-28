@@ -29,7 +29,6 @@ public class KeyDoorScript : MonoBehaviour
     {
         if (!isOpenPermanently)
         {
-            //LeanTween.cancelAll();
             m_Animator.SetBool("isOpen", true);
             LeanTween.delayedCall(0.3f, DisableDoorColliders);
             LeanTween.scale(m_GateKeyType, new Vector3(1.2f, 1.2f, 1.2f), 0.3f);
