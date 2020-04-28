@@ -6,7 +6,8 @@ public class ChestGrabber : MonoBehaviour
     {
         if (other.gameObject.GetComponent<ChestScript>() != null)
         {
-            Debug.Log(other.gameObject);
+            // Debug.Log(other.gameObject);
+            other.gameObject.GetComponent<ChestScript>().OnOpen();
         }
     }
 }
