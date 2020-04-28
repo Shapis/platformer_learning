@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: -7754916391781405406}
   - component: {fileID: 4508724961646500369}
   - component: {fileID: 216569746927924417}
+  - component: {fileID: 3277797399873134746}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -278,7 +279,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1
+  m_Mass: 0.8408763
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 3
@@ -368,6 +369,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PurpleCoinIntangibleTimer: 2
+--- !u!114 &3277797399873134746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385990617669589128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d42ff984da77c1448f4ddfa2f9da99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1385990618516049322
 GameObject:
   m_ObjectHideFlags: 0
