@@ -23,28 +23,28 @@ public class LevelCompletionInfo
         return myTempLevelCompletionInfo;
     }
 
-    public void AddLevelCompletionInfo(int score)
+    public void AddLevelCompletionInfo(SceneHandler.Scene scene, int score, float time)
     {
 
-        LevelCompletionEntry levelCompletionEntry = new LevelCompletionEntry { score = score };
+        LevelCompletionEntry levelCompletionEntry = new LevelCompletionEntry { scene = scene, score = score, time = time };
 
-        HighScores highScores = new HighScores();
+        LevelCompletionInfo levelCompletionInfo = new LevelCompletionInfo();
 
-        highScores = highScores.Load();
+        levelCompletionInfo = levelCompletionInfo.Load();
 
-        highScores.highScoreEntryList.Add(highScoreEntry);
+        levelCompletionInfo.LevelCompletionEntryList.Add(levelCompletionEntry);
 
-        highScores.SortAndTrim(highScores);
+        // highScores.SortAndTrim(highScores);
 
-        SaveHandler<HighScores>.Save(highScores, SaveHandler<HighScores>.SaveFileName.highScoreTable);
+        SaveHandler<LevelCompletionInfo>.Save(levelCompletionInfo, SaveHandler<LevelCompletionInfo>.SaveFileName.levelCompletionInfo);
 
 
     }
 
     public class LevelCompletionEntry
     {
+        public SceneHandler.Scene scene;
         public int score;
-
         public float time;
     }
 

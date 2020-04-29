@@ -39,7 +39,4 @@ public static class SaveHandler<T>
         return JsonUtility.FromJson<T>(json);
 
     }
-
-
-
 }

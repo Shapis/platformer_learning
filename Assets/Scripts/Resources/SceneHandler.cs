@@ -1,4 +1,5 @@
-﻿using UnityEngine.SceneManagement;
+﻿using System;
+using UnityEngine.SceneManagement;
 
 public static class SceneHandler
 {
@@ -27,13 +28,11 @@ public static class SceneHandler
 
     }
 
-    //public static string CurrentSceneName()
-    //{
+    public static Scene GetSceneEnum()
+    {
+        Scene sceneEnum;
+        Enum.TryParse("Level01", out sceneEnum);
 
-
-
-    //    //return this.Scene;
-    //}
-
-
+        return sceneEnum;
+    }
 }
