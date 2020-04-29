@@ -10,7 +10,7 @@ public class GemScript : MonoBehaviour
 
         Debug.Log(SceneHandler.GetSceneEnum());
 
-        SceneHandler.Load(SceneHandler.GetSceneEnum());
+        //SceneHandler.Load(SceneHandler.GetSceneEnum());
 
     }
 

@@ -3110,7 +3110,8 @@ GameObject:
   - component: {fileID: 956359476}
   - component: {fileID: 956359475}
   - component: {fileID: 956359478}
-  m_Layer: 0
+  - component: {fileID: 956359479}
+  m_Layer: 11
   m_Name: EndMapGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3213,6 +3214,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cac619f2819354fb4ae351e9e90964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &956359479
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956359474}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.09183502}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.81632996}
+  m_EdgeRadius: 0
 --- !u!4 &962324536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7037759441732935352, guid: 881fc30c7a000494499f11cd6f06f7ab,
@@ -21657,7 +21684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452283950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83000046, y: -0.31, z: -10}
+  m_LocalPosition: {x: 0.5699995, y: 17.61, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1282275943}
@@ -22058,12 +22085,12 @@ PrefabInstance:
     - target: {fileID: 1385990617669589135, guid: e7983a9ff43b5b841a5391a2e731d050,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.83
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 1385990617669589135, guid: e7983a9ff43b5b841a5391a2e731d050,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.31
+      value: 17.61
       objectReference: {fileID: 0}
     - target: {fileID: 1385990617669589135, guid: e7983a9ff43b5b841a5391a2e731d050,
         type: 3}

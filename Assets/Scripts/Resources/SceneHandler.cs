@@ -24,14 +24,14 @@ public static class SceneHandler
 
     public static void ReloadCurrentScene()
     {
-        SceneHandler.Load(SceneManager.GetActiveScene().name);
+        SceneHandler.Load(GetSceneEnum());
 
     }
 
     public static Scene GetSceneEnum()
     {
         Scene sceneEnum;
-        Enum.TryParse("Level01", out sceneEnum);
+        Enum.TryParse(SceneManager.GetActiveScene().name, out sceneEnum);
 
         return sceneEnum;
     }
