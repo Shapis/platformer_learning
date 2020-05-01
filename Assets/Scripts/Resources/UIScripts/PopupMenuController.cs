@@ -6,62 +6,64 @@ public class PopupMenuController : MonoBehaviour
 
     [SerializeField] private float transitionTime = 0.3f;
 
-    GameObject closeButton;
-    GameObject mainPanel;
+    [SerializeField] private bool m_ObeyTimeScale = true;
 
-    [SerializeField] Vector3 initialScale = new Vector3(0, 0, 0);
+    [SerializeField] private bool m_StartMinimized = true;
 
-    public bool IsActive { get; set; }
+    int myTweenScaleUp;
 
+    int myTweenScaleDown;
 
-    private void Awake()
-    {
-        closeButton = this.gameObject.transform.GetChild(0).gameObject;  // set exitButton to the background exit button.
-        mainPanel = this.gameObject.transform.GetChild(1).gameObject;   // set mainPanel to the main pop up panel.
-        mainPanel.GetComponent<RectTransform>().localScale = initialScale;      // Awakes the Main Panel scaled to 0.
-    }
+    int myTweenDelayedCall;
+
 
     private void Start()
     {
 
-
+        if (m_StartMinimized)
+        {
+            gameObject.transform.localScale = new Vector3(0, 0, 0);
+            gameObject.SetActive(false);
+        }
     }
-
-
 
     public void OpenMenu()
     {
-        // if (LeanTween.isTweening(mainPanel))
-        // {
-        //     LeanTween.cancel(mainPanel);
-        // }
-
-        this.gameObject.SetActive(true);
-        closeButton.SetActive(true);
-        LeanTween.scale(mainPanel, new Vector3(1f, 1f, 1f), transitionTime).setUseEstimatedTime(true);
-
-        IsActive = true;
+        MinimizedSettings();
+        LeanTween.cancel(myTweenScaleDown);
+        LeanTween.cancel(myTweenDelayedCall);
+        gameObject.SetActive(true);
+        myTweenScaleUp = LeanTween.scale(gameObject, new Vector3(1, 1, 1), transitionTime).setUseEstimatedTime(true).id;
     }
+
+
 
     public void CloseMenu()
     {
-        if (LeanTween.isTweening(mainPanel))
-        {
-            LeanTween.cancel(mainPanel);
-        }
-        closeButton.SetActive(false);
-        LeanTween.scale(mainPanel, new Vector3(0f, 0f, 0f), transitionTime).setUseEstimatedTime(true);
-        IsActive = false;
-
-        LeanTween.delayedCall(transitionTime, SetObjectInactiveAfterTweenIsOver).setUseEstimatedTime(true);
+        MinimizedSettings();
+        LeanTween.cancel(myTweenScaleUp);
+        myTweenScaleDown = LeanTween.scale(gameObject, new Vector3(0f, 0f, 0f), transitionTime).setUseEstimatedTime(true).id;
+        myTweenDelayedCall = LeanTween.delayedCall(transitionTime, SetGameObjectInactive).setUseEstimatedTime(true).id;
     }
 
-    private void SetObjectInactiveAfterTweenIsOver()
+    public void StartOpenAndMaximized()
     {
-        if (!IsActive && !LeanTween.isTweening(mainPanel))
-        {
-            this.gameObject.SetActive(false);
+        this.m_StartMinimized = false;
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        gameObject.SetActive(true);
+    }
 
+    private void SetGameObjectInactive()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void MinimizedSettings()
+    {
+        if (m_StartMinimized)
+        {
+            gameObject.transform.localScale = new Vector3(0, 0, 0);
+            m_StartMinimized = false;
         }
     }
 }

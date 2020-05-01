@@ -7,7 +7,7 @@ public class LevelCompletedMenu : MonoBehaviour
     [SerializeField] GameObject myPlayer;
     public void Proceed()
     {
-        SceneHandler.Load(myPlayer.GetComponent<GemGrabber>().MyNextScene);
+        //SceneHandler.Load(myPlayer.GetComponent<GemGrabber>().MyNextScene);
 
     }
     public void ExitToMainMenu()

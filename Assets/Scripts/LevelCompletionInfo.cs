@@ -2,7 +2,7 @@
 public class LevelCompletionInfo
 {
 
-    public List<LevelCompletionEntry> LevelCompletionEntryList;
+    public List<LevelCompletionEntry> LevelCompletionEntryList = new List<LevelCompletionEntry>();
 
 
     public LevelCompletionInfo Load()
@@ -15,10 +15,13 @@ public class LevelCompletionInfo
         {
             myTempLevelCompletionInfo = new LevelCompletionInfo();
 
-            myTempLevelCompletionInfo.LevelCompletionEntryList = new List<LevelCompletionEntry>()
-            {
-                new LevelCompletionEntry {scene = SceneHandler.Scene.Level01, score = 0, time = 0} // If the list is empty initialize the first level as the first entry
-            };
+
+            // myTempLevelCompletionInfo.LevelCompletionEntryList.Add(new LevelCompletionEntry { scene = SceneHandler.Scene.Level01, score = 4, time = 7 });
+            // myTempLevelCompletionInfo.LevelCompletionEntryList.Add(new LevelCompletionEntry { scene = SceneHandler.Scene.Level02, score = 5, time = 12 });
+            // myTempLevelCompletionInfo.LevelCompletionEntryList = new List<LevelCompletionEntry>()
+            // {
+            //     new LevelCompletionEntry {scene = SceneHandler.Scene.Level01, score = 0, time = 0} // If the list is empty initialize the first level as the first entry
+            // };
 
             SaveHandler<LevelCompletionInfo>.Save(myTempLevelCompletionInfo, SaveHandler<LevelCompletionInfo>.SaveFileName.levelCompletionInfo);
 

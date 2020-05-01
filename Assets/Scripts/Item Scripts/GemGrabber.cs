@@ -6,7 +6,6 @@ public class GemGrabber : MonoBehaviour, ILevelEndedEvents
 
     [SerializeField] private PopupMenuController levelCompletedPopUp;
 
-    public SceneHandler.Scene MyNextScene { get; set; }
     //public SceneHandler.Scene MyNextScene;
 
     public event EventHandler OnLevelEndsEvent;
@@ -20,7 +19,7 @@ public class GemGrabber : MonoBehaviour, ILevelEndedEvents
                 other.gameObject.GetComponent<GemScript>().Tangible = false;
                 gameObject.GetComponent<PlayerScoreKeeper>().TotalTime = Time.timeSinceLevelLoad;
                 LevelCompletion levelCompletion = new LevelCompletion();
-                MyNextScene = levelCompletion.LevelHasBeenCompleted();
+                levelCompletion.LevelHasBeenCompleted();
                 levelCompletedPopUp.OpenMenu();
                 OnLevelEnd();
             }

@@ -5,9 +5,24 @@ using UnityEngine;
 
 public class Node : MonoBehaviour, INodeable
 {
-    [Header("Level Info")]
-    [SerializeField] private string m_LevelName;
+    [Header("Node Information")]
+    [SerializeField] private string m_NodeName = "Level Name";
+
+    public string GetNodeName()
+    {
+        return m_NodeName;
+    }
+
     [SerializeField] private SceneHandler.Scene m_Scene;
+
+    public SceneHandler.Scene GetScene()
+    {
+        return m_Scene;
+    }
+
+    public int? BestScore { get; set; } = null; // These are nullables so the nodelogichandler knows they havent been initialized.
+
+    public float? BestTime { get; set; } = null; // These are nullables so the nodelogichandler knows they havent been initialized.
 
     [Header("Node Destinations")]
 

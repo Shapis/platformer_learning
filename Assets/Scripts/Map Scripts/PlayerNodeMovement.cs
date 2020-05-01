@@ -4,42 +4,54 @@ using UnityEngine;
 
 public class PlayerNodeMovement : MonoBehaviour
 {
-    [SerializeField] private InputHandler myInputHandler;
+    [SerializeField] private InputHandler m_InputHandler;
 
-    [SerializeField] private Node myCurrentNode;
+    [SerializeField] private Node m_CurrentNode;
 
-    [SerializeReference] private bool m_DebugLoggingEnabled = false;
+    public Node GetCurrentNode()
+    {
+        return m_CurrentNode;
+    }
 
-    event EventHandler<GameObject> OnTravelNodeReachedEvent;
-    event EventHandler<GameObject> OnTravelNodeDepartedEvent;
-    event EventHandler<GameObject> OnDestinationNodeReachedEvent;
-    event EventHandler<GameObject> OnDestinationNodeDepartedEvent;
-    event EventHandler<GameObject> OnDestinationNotAccessibleEvent;
-    event EventHandler<string> OnNoDestinationFoundEvent;
+    [SerializeField] private bool m_DebugLoggingEnabled = false;
+
+    [SerializeField] private float m_Speed = 2f;
+
+
+
+    public event EventHandler<GameObject> OnTravelNodeReachedEvent;
+    public event EventHandler<GameObject> OnTravelNodeDepartedEvent;
+    public event EventHandler<GameObject> OnDestinationNodeReachedEvent;
+    public event EventHandler<GameObject> OnDestinationNodeDepartedEvent;
+    public event EventHandler<GameObject> OnDestinationNotAccessibleEvent;
+    public event EventHandler<string> OnNoDestinationFoundEvent;
 
 
     void Start()
     {
-        myInputHandler.OnVerticalUpPressedEvent += MoveUp;
-        myInputHandler.OnVerticalDownPressedEvent += MoveDown;
-        myInputHandler.OnHorizontalLeftPressedEvent += MoveLeft;
-        myInputHandler.OnHorizontalRightPressedEvent += MoveRight;
+        m_InputHandler.OnVerticalUpPressedEvent += MoveUp;
+        m_InputHandler.OnVerticalDownPressedEvent += MoveDown;
+        m_InputHandler.OnHorizontalLeftPressedEvent += MoveLeft;
+        m_InputHandler.OnHorizontalRightPressedEvent += MoveRight;
+
+
+        gameObject.transform.position = m_CurrentNode.gameObject.transform.position;
     }
     private void MoveUp(object sender, EventArgs e)
     {
-        if (myCurrentNode.m_UpDestination != null)
+        if (m_CurrentNode.m_UpDestination != null)
         {
-            if (gameObject.transform.position == myCurrentNode.transform.position && myCurrentNode.m_UpDestination.GetComponent<Node>().IsAccessible)
+            if (gameObject.transform.position == m_CurrentNode.transform.position && m_CurrentNode.m_UpDestination.GetComponent<Node>().IsAccessible)
             {
                 OnDestinationNodeDeparted();
                 StartCoroutine(DoUp());
             }
-            else if (gameObject.transform.position == myCurrentNode.transform.position)
+            else if (gameObject.transform.position == m_CurrentNode.transform.position)
             {
-                OnDestinationNotAccessible(myCurrentNode.m_UpDestination);
+                OnDestinationNotAccessible(m_CurrentNode.m_UpDestination);
             }
         }
-        else if (gameObject.transform.position == myCurrentNode.transform.position)
+        else if (gameObject.transform.position == m_CurrentNode.transform.position)
         {
             OnNoDestinationFound("up");
         }
@@ -47,19 +59,19 @@ public class PlayerNodeMovement : MonoBehaviour
 
     private void MoveDown(object sender, EventArgs e)
     {
-        if (myCurrentNode.m_DownDestination != null)
+        if (m_CurrentNode.m_DownDestination != null)
         {
-            if (gameObject.transform.position == myCurrentNode.transform.position && myCurrentNode.m_DownDestination.GetComponent<Node>().IsAccessible)
+            if (gameObject.transform.position == m_CurrentNode.transform.position && m_CurrentNode.m_DownDestination.GetComponent<Node>().IsAccessible)
             {
                 OnDestinationNodeDeparted();
                 StartCoroutine(DoDown());
             }
-            else if (gameObject.transform.position == myCurrentNode.transform.position)
+            else if (gameObject.transform.position == m_CurrentNode.transform.position)
             {
-                OnDestinationNotAccessible(myCurrentNode.m_DownDestination);
+                OnDestinationNotAccessible(m_CurrentNode.m_DownDestination);
             }
         }
-        else if (gameObject.transform.position == myCurrentNode.transform.position)
+        else if (gameObject.transform.position == m_CurrentNode.transform.position)
         {
             OnNoDestinationFound("down");
         }
@@ -67,19 +79,19 @@ public class PlayerNodeMovement : MonoBehaviour
 
     private void MoveLeft(object sender, EventArgs e)
     {
-        if (myCurrentNode.m_LeftDestination != null)
+        if (m_CurrentNode.m_LeftDestination != null)
         {
-            if (gameObject.transform.position == myCurrentNode.transform.position && myCurrentNode.m_LeftDestination.GetComponent<Node>().IsAccessible)
+            if (gameObject.transform.position == m_CurrentNode.transform.position && m_CurrentNode.m_LeftDestination.GetComponent<Node>().IsAccessible)
             {
                 OnDestinationNodeDeparted();
                 StartCoroutine(DoLeft());
             }
-            else if (gameObject.transform.position == myCurrentNode.transform.position)
+            else if (gameObject.transform.position == m_CurrentNode.transform.position)
             {
-                OnDestinationNotAccessible(myCurrentNode.m_LeftDestination);
+                OnDestinationNotAccessible(m_CurrentNode.m_LeftDestination);
             }
         }
-        else if (gameObject.transform.position == myCurrentNode.transform.position)
+        else if (gameObject.transform.position == m_CurrentNode.transform.position)
         {
             OnNoDestinationFound("left");
         }
@@ -87,19 +99,19 @@ public class PlayerNodeMovement : MonoBehaviour
 
     private void MoveRight(object sender, EventArgs e)
     {
-        if (myCurrentNode.m_RightDestination != null)
+        if (m_CurrentNode.m_RightDestination != null)
         {
-            if (gameObject.transform.position == myCurrentNode.transform.position && myCurrentNode.m_RightDestination.GetComponent<Node>().IsAccessible)
+            if (gameObject.transform.position == m_CurrentNode.transform.position && m_CurrentNode.m_RightDestination.GetComponent<Node>().IsAccessible)
             {
                 OnDestinationNodeDeparted();
                 StartCoroutine(DoRight());
             }
-            else if (gameObject.transform.position == myCurrentNode.transform.position)
+            else if (gameObject.transform.position == m_CurrentNode.transform.position)
             {
-                OnDestinationNotAccessible(myCurrentNode.m_RightDestination);
+                OnDestinationNotAccessible(m_CurrentNode.m_RightDestination);
             }
         }
-        else if (gameObject.transform.position == myCurrentNode.transform.position)
+        else if (gameObject.transform.position == m_CurrentNode.transform.position)
         {
             OnNoDestinationFound("right");
         }
@@ -108,49 +120,49 @@ public class PlayerNodeMovement : MonoBehaviour
     IEnumerator DoUp()
     {
         yield return new WaitForSeconds(1 / 60);
-        while (gameObject.transform.position != myCurrentNode.m_UpDestination.transform.position)
+        while (gameObject.transform.position != m_CurrentNode.m_UpDestination.transform.position)
         {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, myCurrentNode.m_UpDestination.transform.position, 2f * Time.deltaTime);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, m_CurrentNode.m_UpDestination.transform.position, m_Speed * Time.deltaTime);
 
 
             yield return null;
         }
 
-        NodeReachedDecider(myCurrentNode.m_UpDestination);
+        NodeReachedDecider(m_CurrentNode.m_UpDestination);
     }
     IEnumerator DoDown()
     {
         yield return new WaitForSeconds(1 / 60);
-        while (gameObject.transform.position != myCurrentNode.m_DownDestination.transform.position)
+        while (gameObject.transform.position != m_CurrentNode.m_DownDestination.transform.position)
         {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, myCurrentNode.m_DownDestination.transform.position, 2f * Time.deltaTime);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, m_CurrentNode.m_DownDestination.transform.position, m_Speed * Time.deltaTime);
 
             yield return null;
         }
 
-        NodeReachedDecider(myCurrentNode.m_DownDestination);
+        NodeReachedDecider(m_CurrentNode.m_DownDestination);
     }
     IEnumerator DoLeft()
     {
         yield return new WaitForSeconds(1 / 60);
-        while (gameObject.transform.position != myCurrentNode.m_LeftDestination.transform.position)
+        while (gameObject.transform.position != m_CurrentNode.m_LeftDestination.transform.position)
         {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, myCurrentNode.m_LeftDestination.transform.position, 2f * Time.deltaTime);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, m_CurrentNode.m_LeftDestination.transform.position, m_Speed * Time.deltaTime);
             yield return null;
         }
 
-        NodeReachedDecider(myCurrentNode.m_LeftDestination);
+        NodeReachedDecider(m_CurrentNode.m_LeftDestination);
     }
     IEnumerator DoRight()
     {
         yield return new WaitForSeconds(1 / 60);
-        while (gameObject.transform.position != myCurrentNode.m_RightDestination.transform.position)
+        while (gameObject.transform.position != m_CurrentNode.m_RightDestination.transform.position)
         {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, myCurrentNode.m_RightDestination.transform.position, 2f * Time.deltaTime);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, m_CurrentNode.m_RightDestination.transform.position, m_Speed * Time.deltaTime);
             yield return null;
         }
 
-        NodeReachedDecider(myCurrentNode.m_RightDestination);
+        NodeReachedDecider(m_CurrentNode.m_RightDestination);
 
     }
 
@@ -160,33 +172,33 @@ public class PlayerNodeMovement : MonoBehaviour
         string myDirection = "";
 
 
-        if (myCurrentNode.m_DownDestination != null)
+        if (m_CurrentNode.m_DownDestination != null)
         {
-            if (myCurrentNode.m_DownDestination.GetComponent<Node>() != previousNode)
+            if (m_CurrentNode.m_DownDestination.GetComponent<Node>() != previousNode)
             {
                 myDirection = "down";
             }
         }
 
-        if (myCurrentNode.m_UpDestination != null)
+        if (m_CurrentNode.m_UpDestination != null)
         {
-            if (myCurrentNode.m_UpDestination.GetComponent<Node>() != previousNode)
+            if (m_CurrentNode.m_UpDestination.GetComponent<Node>() != previousNode)
             {
                 myDirection = "up";
             }
         }
 
-        if (myCurrentNode.m_LeftDestination != null)
+        if (m_CurrentNode.m_LeftDestination != null)
         {
-            if (myCurrentNode.m_LeftDestination.GetComponent<Node>() != previousNode)
+            if (m_CurrentNode.m_LeftDestination.GetComponent<Node>() != previousNode)
             {
                 myDirection = "left";
             }
         }
 
-        if (myCurrentNode.m_RightDestination != null)
+        if (m_CurrentNode.m_RightDestination != null)
         {
-            if (myCurrentNode.m_RightDestination.GetComponent<Node>() != previousNode)
+            if (m_CurrentNode.m_RightDestination.GetComponent<Node>() != previousNode)
             {
                 myDirection = "right";
             }
@@ -198,7 +210,7 @@ public class PlayerNodeMovement : MonoBehaviour
             case "down": OnTravelNodeDeparted(); StartCoroutine(DoDown()); break;
             case "left": OnTravelNodeDeparted(); StartCoroutine(DoLeft()); break;
             case "right": OnTravelNodeDeparted(); StartCoroutine(DoRight()); break;
-            default: Debug.Log("Couldnt figure out which direction to go from the travel node! ps, if this happened, assign destinations at the node: " + myCurrentNode); break;
+            default: Debug.Log("Couldnt figure out which direction to go from the travel node! ps, if this happened, assign destinations at the node: " + m_CurrentNode); break;
         }
     }
 
@@ -207,13 +219,13 @@ public class PlayerNodeMovement : MonoBehaviour
     {
         if ((gameObject.transform.position == destination.transform.position) && !destination.GetComponent<Node>().IsTravelNode)
         {
-            myCurrentNode = destination.GetComponent<Node>();
+            m_CurrentNode = destination.GetComponent<Node>();
             OnDestinationNodeReached();
         }
         else if ((gameObject.transform.position == destination.transform.position) && destination.GetComponent<Node>().IsTravelNode)
         {
-            Node previousNode = myCurrentNode;
-            myCurrentNode = destination.GetComponent<Node>();
+            Node previousNode = m_CurrentNode;
+            m_CurrentNode = destination.GetComponent<Node>();
             OnTravelNodeReached();
             DoFollow(previousNode);
         }
@@ -223,36 +235,36 @@ public class PlayerNodeMovement : MonoBehaviour
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Destination node reached: " + myCurrentNode);
+            Debug.Log("Destination node reached: " + m_CurrentNode);
         }
-        OnDestinationNodeReachedEvent?.Invoke(this, myCurrentNode.gameObject);
+        OnDestinationNodeReachedEvent?.Invoke(this, m_CurrentNode.gameObject);
     }
 
     private void OnDestinationNodeDeparted()
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Destination node departed: " + myCurrentNode);
+            Debug.Log("Destination node departed: " + m_CurrentNode);
         }
-        OnDestinationNodeDepartedEvent?.Invoke(this, myCurrentNode.gameObject);
+        OnDestinationNodeDepartedEvent?.Invoke(this, m_CurrentNode.gameObject);
     }
 
     private void OnTravelNodeReached()
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Travel node reached: " + myCurrentNode);
+            Debug.Log("Travel node reached: " + m_CurrentNode);
         }
-        OnTravelNodeReachedEvent?.Invoke(this, myCurrentNode.gameObject);
+        OnTravelNodeReachedEvent?.Invoke(this, m_CurrentNode.gameObject);
     }
 
     private void OnTravelNodeDeparted()
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Destination node departed: " + myCurrentNode);
+            Debug.Log("Destination node departed: " + m_CurrentNode);
         }
-        OnTravelNodeDepartedEvent?.Invoke(this, myCurrentNode.gameObject);
+        OnTravelNodeDepartedEvent?.Invoke(this, m_CurrentNode.gameObject);
     }
 
     private void OnNoDestinationFound(string targetDestination)
