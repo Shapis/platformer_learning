@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] private bool m_DebugLogsEnabled = false;
+    [SerializeField] private bool m_DebugLoggingEnabled = false;
 
     // Cancel events //////////////////////////////////////////////////////
     public event EventHandler OnCancelPressedEvent;
@@ -40,7 +40,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             OnCancelPressed();
-            if (m_DebugLogsEnabled)
+            if (m_DebugLoggingEnabled)
             {
                 Debug.Log("Cancel button pressed!");
             }
@@ -48,7 +48,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetButtonUp("Cancel"))
         {
             OnCancelUnpressed();
-            if (m_DebugLogsEnabled)
+            if (m_DebugLoggingEnabled)
             {
                 Debug.Log("Cancel button unpressed!");
             }
@@ -65,7 +65,7 @@ public class InputHandler : MonoBehaviour
                 {
                     OnHorizontalLeftPressed();
                     horizontalDirection = -1;
-                    if (m_DebugLogsEnabled)
+                    if (m_DebugLoggingEnabled)
                     {
                         Debug.Log("Left button pressed!");
                     }
@@ -74,7 +74,7 @@ public class InputHandler : MonoBehaviour
                 {
                     OnHorizontalRightPressed();
                     horizontalDirection = 1;
-                    if (m_DebugLogsEnabled)
+                    if (m_DebugLoggingEnabled)
                     {
                         Debug.Log("Right button pressed!");
                     }
@@ -87,7 +87,7 @@ public class InputHandler : MonoBehaviour
             {
                 OnHorizontalLeftUnpressed();
                 horizontalBusy = false;
-                if (m_DebugLogsEnabled)
+                if (m_DebugLoggingEnabled)
                 {
                     Debug.Log("Left button unpressed!");
                 }
@@ -96,7 +96,7 @@ public class InputHandler : MonoBehaviour
             {
                 OnHorizontalRightUnpressed();
                 horizontalBusy = false;
-                if (m_DebugLogsEnabled)
+                if (m_DebugLoggingEnabled)
                 {
                     Debug.Log("Right button unpressed!");
                 }
@@ -114,7 +114,7 @@ public class InputHandler : MonoBehaviour
                 {
                     OnVerticalDownPressed();
                     verticalDirection = -1;
-                    if (m_DebugLogsEnabled)
+                    if (m_DebugLoggingEnabled)
                     {
                         Debug.Log("Down button pressed!");
                     }
@@ -123,7 +123,7 @@ public class InputHandler : MonoBehaviour
                 {
                     OnVerticalUpPressed();
                     verticalDirection = 1;
-                    if (m_DebugLogsEnabled)
+                    if (m_DebugLoggingEnabled)
                     {
                         Debug.Log("Up button pressed!");
                     }
@@ -137,7 +137,7 @@ public class InputHandler : MonoBehaviour
             {
                 OnVerticalDownUnpressed();
                 verticalBusy = false;
-                if (m_DebugLogsEnabled)
+                if (m_DebugLoggingEnabled)
                 {
                     Debug.Log("Down button unpressed!");
                 }
@@ -146,7 +146,7 @@ public class InputHandler : MonoBehaviour
             {
                 OnVerticalUpUnpressed();
                 verticalBusy = false;
-                if (m_DebugLogsEnabled)
+                if (m_DebugLoggingEnabled)
                 {
                     Debug.Log("Up button unpressed!");
                 }
@@ -158,7 +158,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             OnJumpPressed();
-            if (m_DebugLogsEnabled)
+            if (m_DebugLoggingEnabled)
             {
                 Debug.Log("Jump button pressed!");
             }
@@ -167,7 +167,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             OnJumpUnpressed();
-            if (m_DebugLogsEnabled)
+            if (m_DebugLoggingEnabled)
             {
                 Debug.Log("Jump button unpressed!");
             }

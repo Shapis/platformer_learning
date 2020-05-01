@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Corner : MonoBehaviour
+public class Corner : MonoBehaviour, INodeable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Corner Destination")]
+    [SerializeField] public GameObject m_Destination;
+    [SerializeField] public GameObject m_DestinationReverse;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
