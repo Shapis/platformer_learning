@@ -13,6 +13,12 @@ public class PlayerNodeMovement : MonoBehaviour
         return m_CurrentNode;
     }
 
+    public void SetCurrentNode(Node myTargetNode)
+    {
+        m_CurrentNode = myTargetNode;
+        gameObject.transform.position = m_CurrentNode.gameObject.transform.position;
+    }
+
     [SerializeField] private bool m_DebugLoggingEnabled = false;
 
     [SerializeField] private float m_Speed = 2f;

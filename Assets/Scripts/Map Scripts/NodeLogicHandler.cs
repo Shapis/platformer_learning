@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+
 public class NodeLogicHandler : MonoBehaviour
 {
     [Header("Dependencies")]
@@ -17,15 +21,17 @@ public class NodeLogicHandler : MonoBehaviour
 
     [SerializeField] private Button m_PlayButton;
 
+    Node[] nodeArray;
+
     // Start is called before the first frame update
     void Start()
     {
         m_PlayerNodeMovement.OnDestinationNodeReachedEvent += OnDestinationNodeReached;
         m_PlayerNodeMovement.OnDestinationNodeDepartedEvent += OnDestinationNodeDeparted;
         m_PlayerNodeMovement.OnTravelNodeReachedEvent += OnTravelNodeReached;
-        //PlayerPrefs.DeleteAll();
-        PopulateNodeMap();
 
+        PopulateNodeMap();
+        LoadPlayerCurrentNode();
         PopulateNodeMenu();
         m_NodeMenu.StartOpenAndMaximized();
     }
@@ -33,13 +39,16 @@ public class NodeLogicHandler : MonoBehaviour
 
     private void OnTravelNodeReached(object sender, GameObject destination)
     {
-        MakeThisNodeAccessible(destination.GetComponent<Node>());
+        //MakeThisNodeAccessible(destination.GetComponent<Node>());
+        //SaveAccessibleTravelNodes();
     }
 
     private void OnDestinationNodeReached(object sender, GameObject destination)
     {
         PopulateNodeMenu();
         m_NodeMenu.OpenMenu();
+        SavePlayerCurrentNode();
+        //LoadPlayerCurrentNode();
     }
 
     private void OnDestinationNodeDeparted(object sender, GameObject destination)
@@ -64,26 +73,70 @@ public class NodeLogicHandler : MonoBehaviour
 
     }
 
+    private void LoadPlayerCurrentNode()
+    {
+        CurrentNodeInfo myNodeInfo = new CurrentNodeInfo();
+        try
+        {
+            myNodeInfo = SaveHandler<CurrentNodeInfo>.Load(SaveHandler<CurrentNodeInfo>.SaveFileName.currentPlayerNode);
+
+            foreach (var o in nodeArray)
+            {
+                if (o.transform.position == myNodeInfo.currentNodePosition)
+                {
+                    m_PlayerNodeMovement.SetCurrentNode(o);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Failed at loading the player current saved position. Probably because the SavePlayerCurrentNode method hasnt been executed yet.");
+            Debug.Log(e);
+        }
+
+        // try
+        // {
+        //     foreach (var o in nodeArray)
+        //     {
+        //         if (o.transform.position == myNodeInfo.currentNodePosition)
+        //         {
+        //             m_PlayerNodeMovement.SetCurrentNode(o);
+        //         }
+        //     }
+        // }
+        // catch (UnityException)
+        // {
+        //     Debug.Log("Empty!");
+        // }
+    }
+
+    private void SavePlayerCurrentNode()
+    {
+        CurrentNodeInfo myCurrentNodeInfo = new CurrentNodeInfo();
+        myCurrentNodeInfo.currentNodePosition = m_PlayerNodeMovement.GetCurrentNode().transform.position;
+        SaveHandler<CurrentNodeInfo>.Save(myCurrentNodeInfo, SaveHandler<CurrentNodeInfo>.SaveFileName.currentPlayerNode);
+    }
+
     private void PopulateNodeMap()
     {
         LevelCompletionInfo levelCompletionInfo = new LevelCompletionInfo();
         levelCompletionInfo = levelCompletionInfo.Load();
 
         var temp = GameObject.FindGameObjectsWithTag("Node");
-        Node[] myNodeArray = new Node[temp.Length];
+        nodeArray = new Node[temp.Length];
 
         for (int i = 0; i < temp.Length; i++)
         {
-            myNodeArray[i] = temp[i].GetComponent<Node>();
+            nodeArray[i] = temp[i].GetComponent<Node>();
         }
 
-        foreach (var o in myNodeArray)
+        foreach (var o in nodeArray)
         {
             o.IsAccessible = false;
         }
 
 
-        foreach (var o in myNodeArray)
+        foreach (var o in nodeArray)
         {
             if (!o.IsTravelNode)
             {
@@ -93,40 +146,82 @@ public class NodeLogicHandler : MonoBehaviour
                     {
                         o.BestScore = i.score;
                         o.BestTime = i.time;
-                        MakeAllNearbyAccessible(o);
+                        MakeThisAndAllNearbyAccessible(o);
                     }
                 }
             }
         }
-
-        MakeThisNodeAccessible(m_PlayerNodeMovement.GetCurrentNode());
     }
 
-    private static void MakeThisNodeAccessible(Node myNode)
+    private static void MakeThisAndAllNearbyAccessible(Node myNode)
     {
         myNode.IsAccessible = true;
-    }
 
-    private static void MakeAllNearbyAccessible(Node myNode)
-    {
         if (myNode.m_UpDestination != null)
         {
-            myNode.m_UpDestination.GetComponent<Node>().IsAccessible = true;
+            if (!myNode.m_UpDestination.GetComponent<Node>().IsTravelNode)
+            {
+                myNode.m_UpDestination.GetComponent<Node>().IsAccessible = true;
+            }
+            else
+            {
+                if (!myNode.m_UpDestination.GetComponent<Node>().IsAccessible)
+                {
+                    MakeThisAndAllNearbyAccessible(myNode.m_UpDestination.GetComponent<Node>());
+                }
+            }
         }
 
         if (myNode.m_DownDestination != null)
         {
-            myNode.m_DownDestination.GetComponent<Node>().IsAccessible = true;
+            if (!myNode.m_DownDestination.GetComponent<Node>().IsTravelNode)
+            {
+                myNode.m_DownDestination.GetComponent<Node>().IsAccessible = true;
+            }
+            else
+            {
+                if (!myNode.m_DownDestination.GetComponent<Node>().IsAccessible)
+                {
+                    MakeThisAndAllNearbyAccessible(myNode.m_DownDestination.GetComponent<Node>());
+                }
+            }
         }
 
         if (myNode.m_LeftDestination != null)
         {
-            myNode.m_LeftDestination.GetComponent<Node>().IsAccessible = true;
+            if (!myNode.m_LeftDestination.GetComponent<Node>().IsTravelNode)
+            {
+                myNode.m_LeftDestination.GetComponent<Node>().IsAccessible = true;
+            }
+            else
+            {
+                if (!myNode.m_LeftDestination.GetComponent<Node>().IsAccessible)
+                {
+                    MakeThisAndAllNearbyAccessible(myNode.m_LeftDestination.GetComponent<Node>());
+                }
+            }
         }
 
         if (myNode.m_RightDestination != null)
         {
-            myNode.m_RightDestination.GetComponent<Node>().IsAccessible = true;
+            if (!myNode.m_RightDestination.GetComponent<Node>().IsTravelNode)
+            {
+                myNode.m_RightDestination.GetComponent<Node>().IsAccessible = true;
+            }
+            else
+            {
+                if (!myNode.m_RightDestination.GetComponent<Node>().IsAccessible)
+                {
+                    MakeThisAndAllNearbyAccessible(myNode.m_RightDestination.GetComponent<Node>());
+                }
+            }
         }
     }
+
+    [System.Serializable]
+    public struct CurrentNodeInfo
+    {
+        public Vector3 currentNodePosition; // I'd have prefered to save the actual <Node> instead of the position, but apparentyl monobehaviours cant be serialized.
+    }
+
 }

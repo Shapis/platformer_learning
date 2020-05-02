@@ -11,7 +11,6 @@ public class LevelCompletion
         myLevelCompletionInfo.AddLevelCompletionInfo(SceneHandler.GetActiveSceneEnum(),
         GameObject.Find("Player").GetComponent<PlayerScoreKeeper>().TotalScore,
         GameObject.Find("Player").GetComponent<PlayerScoreKeeper>().TotalTime);
-        GameHandler.Pause();
         return;
     }
 }

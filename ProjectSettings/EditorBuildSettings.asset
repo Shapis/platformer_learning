@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: 21344fa9f6634cc4489cd472811afbd1
+  - enabled: 1
+    path: Assets/Scenes/OverworldMap.unity
+    guid: 6a59df4a8d345a54d9925bc75272dbf0
   m_configObjects: {}

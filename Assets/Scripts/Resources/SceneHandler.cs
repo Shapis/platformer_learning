@@ -10,6 +10,7 @@ public static class SceneHandler
         Level02,
         Level03,
         MainMenu,
+        OverworldMap,
     }
 
     public static void Load(Scene scene)

@@ -4,7 +4,7 @@ using UnityEngine;
 public class GemGrabber : MonoBehaviour, ILevelEndedEvents
 {
 
-    [SerializeField] private PopupMenuController levelCompletedPopUp;
+    [SerializeField] private PopupMenuController m_LevelCompletedMenu;
 
     //public SceneHandler.Scene MyNextScene;
 
@@ -20,7 +20,7 @@ public class GemGrabber : MonoBehaviour, ILevelEndedEvents
                 gameObject.GetComponent<PlayerScoreKeeper>().TotalTime = Time.timeSinceLevelLoad;
                 LevelCompletion levelCompletion = new LevelCompletion();
                 levelCompletion.LevelHasBeenCompleted();
-                levelCompletedPopUp.OpenMenu();
+                m_LevelCompletedMenu.OpenMenu();
                 OnLevelEnd();
             }
         }
