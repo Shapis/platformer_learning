@@ -1,17 +1,6 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GemScript : MonoBehaviour
-{
+public class GemScript : MonoBehaviour {
     public bool Tangible { get; set; } = true;
-
-    private void Awake()
-    {
-
-        //Debug.Log(SceneHandler.GetActiveSceneEnum());
-
-        //SceneHandler.Load(SceneHandler.GetSceneEnum());
-
-    }
-
 }

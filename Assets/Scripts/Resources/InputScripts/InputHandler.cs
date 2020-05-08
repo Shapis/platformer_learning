@@ -5,38 +5,37 @@ public class InputHandler : MonoBehaviour
 {
     [SerializeField] private bool m_DebugLoggingEnabled = false;
 
-    // Cancel events //////////////////////////////////////////////////////
-    public event EventHandler OnCancelPressedEvent;
+    #region Cancel events
+    public event EventHandler OnCancelPressedEvent; // Escape on PC, Back button on Android.
     public event EventHandler OnCancelUnpressedEvent;
-    ///////////////////////////////////////////////////////////////////////
+    #endregion
 
-    // Horizontal events //////////////////////////////////////////////////
+    #region Horizontal events
     public event EventHandler OnHorizontalLeftPressedEvent;
     public event EventHandler OnHorizontalLeftUnpressedEvent;
     public event EventHandler OnHorizontalRightPressedEvent;
     public event EventHandler OnHorizontalRightUnpressedEvent;
     private int horizontalDirection;
     private bool horizontalBusy;
-    ///////////////////////////////////////////////////////////////////////
+    #endregion
 
-    // Vertical Events ////////////////////////////////////////////////////
+    #region Vertical Events
     public event EventHandler OnVerticalUpPressedEvent;
     public event EventHandler OnVerticalUpUnpressedEvent;
     public event EventHandler OnVerticalDownPressedEvent;
     public event EventHandler OnVerticalDownUnpressedEvent;
     private int verticalDirection;
     private bool verticalBusy;
-    ///////////////////////////////////////////////////////////////////////
+    #endregion
 
-    // Jump Events ////////////////////////////////////////////////////////
+    #region Jump Events
     public event EventHandler OnJumpPressedEvent;
     public event EventHandler OnJumpUnpressedEvent;
-    ///////////////////////////////////////////////////////////////////////
+    #endregion
 
-    // Update is called once per frame
     void Update()
     {
-        // Cancel events //////////////////////////////////////////////////////
+        #region Cancel events
         if (Input.GetButtonDown("Cancel"))
         {
             OnCancelPressed();
@@ -53,9 +52,9 @@ public class InputHandler : MonoBehaviour
                 Debug.Log("Cancel button unpressed!");
             }
         }
-        ///////////////////////////////////////////////////////////////////////
+        #endregion
 
-        // Horizontal events //////////////////////////////////////////////////
+        #region Horizontal events
         if (Input.GetButton("Horizontal"))
         {
             if (!horizontalBusy)
@@ -102,9 +101,9 @@ public class InputHandler : MonoBehaviour
                 }
             }
         }
-        ///////////////////////////////////////////////////////////////////////
+        #endregion
 
-        // Vertical Events ////////////////////////////////////////////////////
+        #region  Vertical Events
         if (Input.GetButton("Vertical"))
         {
             if (!verticalBusy)
@@ -152,9 +151,9 @@ public class InputHandler : MonoBehaviour
                 }
             }
         }
-        ///////////////////////////////////////////////////////////////////////
+        #endregion
 
-        // Jump Events ////////////////////////////////////////////////////////
+        #region Jump Events
         if (Input.GetButtonDown("Jump"))
         {
             OnJumpPressed();
@@ -172,10 +171,10 @@ public class InputHandler : MonoBehaviour
                 Debug.Log("Jump button unpressed!");
             }
         }
-        ///////////////////////////////////////////////////////////////////////
+        #endregion
     }
 
-    // Cancel events //////////////////////////////////////////////////////
+    #region Cancel events invoker
     private void OnCancelPressed()
     {
         OnCancelPressedEvent?.Invoke(this, EventArgs.Empty);
@@ -184,9 +183,9 @@ public class InputHandler : MonoBehaviour
     {
         OnCancelUnpressedEvent?.Invoke(this, EventArgs.Empty);
     }
-    ///////////////////////////////////////////////////////////////////////
+    #endregion
 
-    // Vertical Events ////////////////////////////////////////////////////
+    #region Vertical Events invoker
     private void OnVerticalUpPressed()
     {
         OnVerticalUpPressedEvent?.Invoke(this, EventArgs.Empty);
@@ -203,9 +202,9 @@ public class InputHandler : MonoBehaviour
     {
         OnVerticalDownUnpressedEvent?.Invoke(this, EventArgs.Empty);
     }
-    ///////////////////////////////////////////////////////////////////////
+    #endregion
 
-    // Horizontal events //////////////////////////////////////////////////
+    #region Horizontal events invoker
     private void OnHorizontalLeftPressed()
     {
         OnHorizontalLeftPressedEvent?.Invoke(this, EventArgs.Empty);
@@ -222,9 +221,9 @@ public class InputHandler : MonoBehaviour
     {
         OnHorizontalRightUnpressedEvent?.Invoke(this, EventArgs.Empty);
     }
-    ///////////////////////////////////////////////////////////////////////
+    #endregion
 
-    // Jump Events ////////////////////////////////////////////////////////
+    #region Jump Events invoker
     private void OnJumpPressed()
     {
         OnJumpPressedEvent?.Invoke(this, EventArgs.Empty);
@@ -233,5 +232,5 @@ public class InputHandler : MonoBehaviour
     {
         OnJumpUnpressedEvent?.Invoke(this, EventArgs.Empty);
     }
-    ///////////////////////////////////////////////////////////////////////
+    #endregion
 }

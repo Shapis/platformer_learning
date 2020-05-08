@@ -1,26 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-public class LevelCompletedMenu : MonoBehaviour
-{
 
-    [SerializeField] TextMeshProUGUI m_NewBestScore;
+public class LevelCompletedMenu : MonoBehaviour {
+    [SerializeField] private InputHandler m_InputHandler;
 
-    [SerializeField] TextMeshProUGUI m_OldBestScore;
+    [SerializeField] private PopupMenuController m_LevelCompletedMenuPopUp;
 
-    [SerializeField] TextMeshProUGUI m_NewTime;
+    [SerializeField] private GameObject m_Player;
 
-    [SerializeField] TextMeshProUGUI m_OldBestTime;
+    [SerializeField] TextMeshProUGUI m_FinalScore;
 
-    [SerializeField] Button m_ContinueButton;
+    [SerializeField] TextMeshProUGUI m_FinalTime;
 
-    [SerializeField] Button m_QuitButton;
+    [SerializeField] Button m_QuitToWorldMap;
 
-    private void Start()
-    {
-        m_ContinueButton.onClick.AddListener(() => { SceneHandler.Load(SceneHandler.Scene.OverworldMap); });
-        m_QuitButton.onClick.AddListener(() => { SceneHandler.Load(SceneHandler.Scene.MainMenu); });
+    private bool levelHasEnded = false;
+
+    private void Awake () {
+        m_InputHandler.OnCancelPressedEvent += (a, b) => {
+            if (levelHasEnded) {
+                SceneHandler.Load (SceneHandler.Scene.OverworldMap);
+            };
+        };
+        m_QuitToWorldMap.onClick.AddListener (ReturnToWorldMap);
+    }
+
+    private void Start () {
+        m_Player.GetComponent<GemGrabber> ().OnLevelEndsEvent += OnLevelEnd;
+    }
+
+    private void OnLevelEnd (object sender, EventArgs e) {
+        m_LevelCompletedMenuPopUp.OpenMenu ();
+        GameHandler.Pause ();
+        m_FinalTime.text = String.Format ("{0:0.00}", m_Player.GetComponent<PlayerScoreKeeper> ().FinalTotalTime);
+        m_FinalScore.text = m_Player.GetComponent<PlayerScoreKeeper> ().TotalScore.ToString ();
+        levelHasEnded = true;
+    }
+
+    private void ReturnToWorldMap () {
+        SceneHandler.Load (SceneHandler.Scene.OverworldMap);
     }
 }

@@ -1,38 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-public class GemGrabber : MonoBehaviour, ILevelEndedEvents
-{
-
-    [SerializeField] private PopupMenuController m_LevelCompletedMenu;
-
-    //public SceneHandler.Scene MyNextScene;
-
+public class GemGrabber : MonoBehaviour {
     public event EventHandler OnLevelEndsEvent;
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    private void OnTriggerEnter2D (Collider2D other) {
 
-        if (other.gameObject.GetComponent<GemScript>() != null)
-        {
-            if (other.gameObject.GetComponent<GemScript>().Tangible)
-            {
-                other.gameObject.GetComponent<GemScript>().Tangible = false;
-                gameObject.GetComponent<PlayerScoreKeeper>().TotalTime = Time.timeSinceLevelLoad;
-                LevelCompletion levelCompletion = new LevelCompletion();
-                levelCompletion.LevelHasBeenCompleted();
-                m_LevelCompletedMenu.OpenMenu();
-                OnLevelEnd();
+        if (other.gameObject.GetComponent<GemScript> () != null) {
+            if (other.gameObject.GetComponent<GemScript> ().Tangible) {
+                OnLevelEnd ();
+                other.gameObject.GetComponent<GemScript> ().Tangible = false;
+                LevelCompletion levelCompletion = new LevelCompletion ();
+                levelCompletion.LevelHasBeenCompleted ();
             }
         }
     }
 
-    private void OnLevelEnd()
-    {
-        OnLevelEndsEvent?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void OnLevelEnd(object sender, EventArgs e)
-    {
-        throw new NotImplementedException();
+    private void OnLevelEnd () {
+        OnLevelEndsEvent?.Invoke (this, EventArgs.Empty);
     }
 }

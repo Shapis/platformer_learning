@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node : MonoBehaviour, INodeable
+public class Node : MonoBehaviour
 {
     [Header("Node Information")]
     [SerializeField] private string m_NodeName = "Level Name";

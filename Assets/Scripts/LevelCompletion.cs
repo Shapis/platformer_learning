@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Linq;
-using System;
 
 public class LevelCompletion
 {
@@ -10,7 +8,7 @@ public class LevelCompletion
         myLevelCompletionInfo = myLevelCompletionInfo.Load();
         myLevelCompletionInfo.AddLevelCompletionInfo(SceneHandler.GetActiveSceneEnum(),
         GameObject.Find("Player").GetComponent<PlayerScoreKeeper>().TotalScore,
-        GameObject.Find("Player").GetComponent<PlayerScoreKeeper>().TotalTime);
+        GameObject.Find("Player").GetComponent<PlayerScoreKeeper>().FinalTotalTime);
         return;
     }
 }
