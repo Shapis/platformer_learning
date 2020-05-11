@@ -36,6 +36,6 @@ public class Node : MonoBehaviour
 
     private void Start()
     {
-        gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        //gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
     }
 }

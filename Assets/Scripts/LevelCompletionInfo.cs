@@ -16,7 +16,7 @@ public class LevelCompletionInfo
             myTempLevelCompletionInfo = new LevelCompletionInfo();
 
 
-            myTempLevelCompletionInfo.LevelCompletionEntryList.Add(new LevelCompletionEntry { scene = SceneHandler.Scene.Level01, score = 4, time = 7 });
+            //myTempLevelCompletionInfo.LevelCompletionEntryList.Add(new LevelCompletionEntry { scene = SceneHandler.Scene.Level01, score = 4, time = 7 });
             // myTempLevelCompletionInfo.LevelCompletionEntryList.Add(new LevelCompletionEntry { scene = SceneHandler.Scene.Level02, score = 5, time = 12 });
             // myTempLevelCompletionInfo.LevelCompletionEntryList = new List<LevelCompletionEntry>()
             // {

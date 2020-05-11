@@ -21,7 +21,7 @@ public class PlayerNodeMovement : MonoBehaviour
 
     [SerializeField] private bool m_DebugLoggingEnabled = false;
 
-    [SerializeField] private float m_Speed = 2f;
+    [SerializeField] private float m_Speed = 3f;
 
 
 
