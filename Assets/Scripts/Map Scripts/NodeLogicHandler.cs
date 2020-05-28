@@ -28,7 +28,7 @@ public class NodeLogicHandler : MonoBehaviour
     {
         m_PlayerNodeMovement.OnDestinationNodeReachedEvent += OnDestinationNodeReached;
         m_PlayerNodeMovement.OnDestinationNodeDepartedEvent += OnDestinationNodeDeparted;
-        m_PlayerNodeMovement.OnTravelNodeReachedEvent += OnTravelNodeReached;
+        //m_PlayerNodeMovement.OnTravelNodeReachedEvent += OnTravelNodeReached;
 
         GameHandler.Resume(); // Unpauses the game, in case it's reaching the WorldMap after ending a level and pausing it.
 
