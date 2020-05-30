@@ -1,26 +1,15 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LightningScript : MonoBehaviour
 {
     [SerializeField] private GameObject m_EffectsContainer;
     [SerializeField] private int m_LightningLines = 5;
-
     [SerializeField] private float m_LineWidth = 0.03f;
     [SerializeField] private float updateTimer = 0.05f;
-
     [SerializeField] private Color[] m_PossibleColors;
-
-
-
     [SerializeField] private float randomnessFactor;
-
-
-
     private GameObject[] myLightningLinesArray;
     private Vector3[] myPoints;
-
     private Transform startingTransform;
     private Transform endingTransform;
     private GeometryHandler myGeometryHandler;

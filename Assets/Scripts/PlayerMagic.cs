@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerMagic : MonoBehaviour, IDraggableEvents
+public class PlayerMagic : MonoBehaviour
 {
     public GameObject ObjectBeingDragged { get; set; }
 
@@ -22,6 +22,10 @@ public class PlayerMagic : MonoBehaviour, IDraggableEvents
         myTargetGameObjectHitPoint = new GameObject();
         myTargetGameObjectHitPoint.transform.name = "lightningEffectHitPoint";
         myTargetGameObjectHitPoint.transform.parent = GameObject.Find("EffectsContainer").transform;
+    }
+
+    private void Start()
+    {
 
     }
 

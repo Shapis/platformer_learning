@@ -1,7 +1,8 @@
 ﻿public interface ICharacterEvents
 {
-    void OnLanding();
-    void OnAirbourne();
-    void OnFalling();
-    void OnCrouching();
+    void OnLanding(object sender, System.EventArgs e);
+    void OnAirbourne(object sender, System.EventArgs e);
+    void OnFalling(object sender, System.EventArgs e);
+    void OnJump(object sender, System.EventArgs e);
+    void OnHorizontalMovementChanges(object sender, int movementDirection);
 }

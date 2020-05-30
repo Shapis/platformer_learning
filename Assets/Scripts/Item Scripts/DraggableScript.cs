@@ -43,20 +43,20 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
         myRigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         myPlayer = GameObject.Find("Player");
 
-        OnDraggingBeginsEvent?.AddListener(myPlayer.GetComponent<PlayerMagic>().OnDraggingBegins);
+        // OnDraggingBeginsEvent?.AddListener(myPlayer.GetComponent<PlayerMagic>().OnDraggingBegins);
 
-        OnDraggingEndsEvent?.AddListener(myPlayer.GetComponent<PlayerMagic>().OnDraggingEnds);
+        // OnDraggingEndsEvent?.AddListener(myPlayer.GetComponent<PlayerMagic>().OnDraggingEnds);
 
-        OnDraggingBeginsEvent?.AddListener(myPlayer.GetComponent<PlayerMovement>().OnDraggingBegins);
+        // OnDraggingBeginsEvent?.AddListener(myPlayer.GetComponent<PlayerMovement>().OnDraggingBegins);
 
-        OnDraggingEndsEvent?.AddListener(myPlayer.GetComponent<PlayerMovement>().OnDraggingEnds);
+        // OnDraggingEndsEvent?.AddListener(myPlayer.GetComponent<PlayerMovement>().OnDraggingEnds);
 
         m_Range = myPlayer.GetComponent<PlayerMagic>().m_DraggingRange;
     }
 
     void OnMouseDown()
     {
-        if (myPlayer.GetComponent<CharacterController2D>().Grounded)
+        if (myPlayer.GetComponent<CharacterController2D>().IsGrounded)
         {
             OnDraggingBegins();
         }
@@ -68,7 +68,7 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
         //Debug.Log(transform.rotation.z);
         //Debug.Log(LineOfSightCheck());
         if (
-            ((LineOfSightCheck() && lineOfSightSwitch) || LineOfSightLeniencySwitch) && wasLetGoSwitch2 && myPlayer.GetComponent<CharacterController2D>().Grounded)
+            ((LineOfSightCheck() && lineOfSightSwitch) || LineOfSightLeniencySwitch) && wasLetGoSwitch2 && myPlayer.GetComponent<CharacterController2D>().IsGrounded)
         {
             DragObjectToMousePointer();
 
@@ -239,10 +239,7 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
     )
     {
         myRaycastInfoWandToTargetPosition =
-            Physics2D
-                .Raycast(myPlayer.transform.position,
-                transform.position - myPlayer.transform.position,
-                m_Range);
+            Physics2D.Raycast(myPlayer.transform.position, transform.position - myPlayer.transform.position, m_Range);
         myRaycastInfoWandToTargetMousePosition =
             Physics2D
                 .Raycast(myPlayer.transform.position,
@@ -287,5 +284,25 @@ public class DraggableScript : MonoBehaviour, IDraggableEvents
     {
         //Debug.Log(gameObject + " dragging ended.");
         OnDraggingEndsEvent?.Invoke();
+    }
+
+    public void OnDraggingBegins(object sender, GameObject selectedObject)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnDraggingEnds(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.LineOfSightArgs lineOfSightArgs)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnLineOfSightUnblocked(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
     }
 }

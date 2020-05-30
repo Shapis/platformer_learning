@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpsRemainingUI : MonoBehaviour, ICharacterEvents
+public class JumpsRemainingUI : MonoBehaviour
 {
     [SerializeField]
     private Transform myTransform;
@@ -44,9 +45,11 @@ public class JumpsRemainingUI : MonoBehaviour, ICharacterEvents
 
         myJumpChargeContainer.GetComponent<SpriteRenderer>().sprite = null;
 
-        myPlayer.GetComponent<CharacterController2D>().OnLandingEvent.AddListener(OnLanding);
-        myPlayer.GetComponent<CharacterController2D>().OnAirbourneEvent.AddListener(OnAirbourne);
-        myPlayer.GetComponent<CharacterController2D>().OnFallingEvent.AddListener(OnFalling);
+
+
+        myPlayer.GetComponent<CharacterController2D>().OnLandingEvent += OnLanding;
+        myPlayer.GetComponent<CharacterController2D>().OnAirbourneEvent += OnAirbourne;
+        myPlayer.GetComponent<CharacterController2D>().OnFallingEvent += OnFalling;
         //myPlayer.GetComponent<CharacterController2D>().OnCrouchingEvent.AddListener(OnCrouching);
     }
 
@@ -55,73 +58,70 @@ public class JumpsRemainingUI : MonoBehaviour, ICharacterEvents
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(GameObject.Find("Player").GetComponent<CharacterController2D>().DoubleJumpsRemaining);
-        //Debug.Log(GameObject.Find("Player").GetComponent<CharacterController2D>().Grounded);
-        myNumberOfJumpsLeft =
-            myPlayer.GetComponent<CharacterController2D>().DoubleJumpsRemaining;
+        // myNumberOfJumpsLeft = myPlayer.GetComponent<CharacterController2D>().DoubleJumpsRemaining;
 
-        if (myPlayerIsGrounded && myPlayer.GetComponent<CharacterController2D>().DoubleJumpsRemaining <
-            myPlayer.GetComponent<CharacterController2D>().NumberOfDoubleJumps + 1)
-        {
-            myNumberOfJumpsLeft =
-                myPlayer
-                    .GetComponent<CharacterController2D>()
-                    .NumberOfDoubleJumps +
-                1;
-        }
+        // if (myPlayerIsGrounded && myPlayer.GetComponent<CharacterController2D>().DoubleJumpsRemaining <
+        //     myPlayer.GetComponent<CharacterController2D>().NumberOfDoubleJumps + 1)
+        // {
+        //     myNumberOfJumpsLeft =
+        //         myPlayer
+        //             .GetComponent<CharacterController2D>()
+        //             .NumberOfDoubleJumps +
+        //         1;
+        // }
 
-        int tempArraySize = myJumpChargeArray.Length;
+        // int tempArraySize = myJumpChargeArray.Length;
 
-        // If myJumpChargeArray cant fill all the current jump charges, create a new myJumpChargeArray that can.
-        TrimArray();
+        // // If myJumpChargeArray cant fill all the current jump charges, create a new myJumpChargeArray that can.
+        // TrimArray();
 
-        FillArray();
+        // FillArray();
 
-        //foreach(GameObject o in myJumpChargeArray)
-        //{
-        //    o.GetComponent<Transform>().position = new Vector3(2f, 2f, 2f);
-        //}
-        if (myNumberOfJumpsLeft != myJumpChargeArray.Length)
-        {
-            Debug.Log("Number of jumps left and array size out of sync!");
-        }
+        // //foreach(GameObject o in myJumpChargeArray)
+        // //{
+        // //    o.GetComponent<Transform>().position = new Vector3(2f, 2f, 2f);
+        // //}
+        // if (myNumberOfJumpsLeft != myJumpChargeArray.Length)
+        // {
+        //     Debug.Log("Number of jumps left and array size out of sync!");
+        // }
 
-        for (int i = 0; i < myJumpChargeArray.Length; i++)
-        {
-            myJumpChargeArray[i].transform.localPosition =
-                new Vector2(i *
-                    m_JumpChargeOffset.x /
-                    ((myTransform.localScale.x) / 10),
-                    i *
-                    m_JumpChargeOffset.y /
-                    ((myTransform.localScale.y) / 10));
-            myJumpChargeArray[i].transform.localScale = m_JumpChargeSize;
+        // for (int i = 0; i < myJumpChargeArray.Length; i++)
+        // {
+        //     myJumpChargeArray[i].transform.localPosition =
+        //         new Vector2(i *
+        //             m_JumpChargeOffset.x /
+        //             ((myTransform.localScale.x) / 10),
+        //             i *
+        //             m_JumpChargeOffset.y /
+        //             ((myTransform.localScale.y) / 10));
+        //     myJumpChargeArray[i].transform.localScale = m_JumpChargeSize;
 
-            if (
-                i <=
-                myPlayer
-                    .GetComponent<CharacterController2D>()
-                    .NumberOfDoubleJumps
-            )
-            {
-                Color tempColor = Color.yellow;
-                tempColor.a = m_JumpChargeAlpha.x;
-                myJumpChargeArray[i].GetComponent<SpriteRenderer>().color =
-                    tempColor;
-            }
-            else
-            {
-                Color tempColor = Color.green;
-                tempColor.a = m_JumpChargeAlpha.y;
-                myJumpChargeArray[i].GetComponent<SpriteRenderer>().color =
-                    tempColor;
-            }
-        }
+        //     if (
+        //         i <=
+        //         myPlayer
+        //             .GetComponent<CharacterController2D>()
+        //             .NumberOfDoubleJumps
+        //     )
+        //     {
+        //         Color tempColor = Color.yellow;
+        //         tempColor.a = m_JumpChargeAlpha.x;
+        //         myJumpChargeArray[i].GetComponent<SpriteRenderer>().color =
+        //             tempColor;
+        //     }
+        //     else
+        //     {
+        //         Color tempColor = Color.green;
+        //         tempColor.a = m_JumpChargeAlpha.y;
+        //         myJumpChargeArray[i].GetComponent<SpriteRenderer>().color =
+        //             tempColor;
+        //     }
+        // }
 
-        //foreach (GameObject o in myJumpChargeArray)
-        //{
-        //    o.transform.localPosition = new Vector2(0.3f, 0.3f);
-        //}
+        // //foreach (GameObject o in myJumpChargeArray)
+        // //{
+        // //    o.transform.localPosition = new Vector2(0.3f, 0.3f);
+        // //}
     }
 
     private GameObject CreateNewJumpChargeObject()
@@ -189,17 +189,17 @@ public class JumpsRemainingUI : MonoBehaviour, ICharacterEvents
         }
     }
 
-    public void OnLanding()
+    public void OnLanding(object sender, EventArgs e)
     {
         myPlayerIsGrounded = true;
     }
 
-    public void OnAirbourne()
+    public void OnAirbourne(object sender, EventArgs e)
     {
         myPlayerIsGrounded = false;
     }
 
-    public void OnFalling()
+    public void OnFalling(object sender, EventArgs e)
     {
 
     }

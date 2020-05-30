@@ -26,7 +26,7 @@ public class PlayerScoreKeeper : MonoBehaviour
 
         gameObject.GetComponent<CoinHolder>().OnCoinsChangedEvent += UpdateScore;
         gameObject.GetComponent<KeyHolderScript>().OnKeysChangedEvent += UpdateScore;
-        gameObject.GetComponent<GemGrabber>().OnLevelEndsEvent += (a, b) => { FinalTotalTime = CurrentTotalTime; Debug.Log(FinalTotalTime); };
+        gameObject.GetComponent<GemGrabber>().OnLevelEndsEvent += (a, b) => { FinalTotalTime = CurrentTotalTime; };
     }
 
     private void Update()

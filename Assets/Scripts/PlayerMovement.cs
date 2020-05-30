@@ -1,16 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
+public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private CharacterController2D controller;
+    [SerializeField] private CharacterController2D m_CharacterController2D;
+    [SerializeField] private InputHandler m_InputHandler;
 
-    private float horizontalMove = 0f;
-
-    [SerializeField] private float runSpeed = 40f;
-
-    [SerializeField] private Animator animator;
+    private int horizontalMovementDirection = 0;
 
     [SerializeField] private float m_FellThroughWorldReset = 200f;
 
@@ -18,89 +14,51 @@ public class PlayerMovement : MonoBehaviour, ICharacterEvents, IDraggableEvents
 
     private bool collisionJump = false;
 
-    private bool isCasting;
-
-    private void Update()
+    private void Start()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        m_InputHandler.OnHorizontalRightPressedEvent += OnHorizontalRightPressed;
+        m_InputHandler.OnHorizontalRightUnpressedEvent += OnHorizontalUnpressed;
+        m_InputHandler.OnHorizontalLeftPressedEvent += OnHorizontalLeftPressed;
+        m_InputHandler.OnHorizontalLeftUnpressedEvent += OnHorizontalUnpressed;
 
-        if (!isCasting)
-        {
-            animator.SetFloat("speed", Mathf.Abs(horizontalMove));
-        }
+        m_InputHandler.OnJumpPressedEvent += OnJumpPressed;
+    }
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
+    private void OnJumpPressed(object sender, EventArgs e)
+    {
+        jump = true;
+    }
 
+    private void OnHorizontalUnpressed(object sender, EventArgs e)
+    {
+        horizontalMovementDirection = 0;
+    }
+
+    private void OnHorizontalRightPressed(object sender, EventArgs e)
+    {
+        horizontalMovementDirection = 1;
+    }
+
+    private void OnHorizontalLeftPressed(object sender, EventArgs e)
+    {
+        horizontalMovementDirection = -1;
+    }
+
+    private void FixedUpdate()
+    {
+        m_CharacterController2D.Move(horizontalMovementDirection, jump);
+        jump = false;
+        PlayerFellThroughWorldFailsafe();
+    }
+
+    private void PlayerFellThroughWorldFailsafe()
+    {
         if (gameObject.transform.position.y <= m_FellThroughWorldReset)
         {
             //Debug.Log(SceneHandler.CurrentSceneName);
             PlayerDied myPlayerDied = new PlayerDied();
             myPlayerDied.Died();
             Time.timeScale = 1;
-        }
-    }
-
-    private void Jump()
-    {
-        jump = true;
-        animator.SetBool("isJumping", true);
-        //OnAirbourne();
-    }
-
-    public void CollisionJump()
-    {
-        collisionJump = true;
-        animator.SetBool("isJumping", true);
-        //OnAirbourne();
-    }
-    public void OnLanding()
-    {
-        animator.SetBool("isJumping", false);
-        animator.SetBool("isAirbourne", false);
-        //Debug.Log("OnLandingEventCallback");
-    }
-
-    public void OnAirbourne()
-    {
-        animator.SetBool("isAirbourne", true);
-        //Debug.Log("OnAirbourneEventCallback");
-    }
-
-    public void OnFalling()
-    {
-    }
-
-    public void OnCrouching()
-    {
-    }
-
-    public void OnDraggingBegins()
-    {
-        isCasting = true;
-        animator.SetFloat("speed", 0);
-    }
-
-    public void OnDraggingEnds()
-    {
-        isCasting = false;
-    }
-
-    private void FixedUpdate()
-    {
-        if (!isCasting)
-        {
-            controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump, collisionJump);
-            jump = false;
-            collisionJump = false;
-        }
-        else
-        {
-            controller.Casting();
-            jump = false;
-            collisionJump = false;
         }
     }
 }

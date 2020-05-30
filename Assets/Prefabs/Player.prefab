@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385990617669589135}
   - component: {fileID: 1385990617669589134}
-  - component: {fileID: 1385990617669589171}
+  - component: {fileID: 6410106372462491843}
   - component: {fileID: 1385990617669589129}
   - component: {fileID: 1385990617669589132}
   - component: {fileID: 1385990617669589168}
@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 3277797399873134746}
   - component: {fileID: 6860306909180361820}
   - component: {fileID: 3382179397979517409}
+  - component: {fileID: 6628287101067338054}
+  - component: {fileID: 8586847101269091669}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -170,7 +172,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1385990617669589171
+--- !u!114 &6410106372462491843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,10 +184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 746af3ed4f6dc02408dbb8e32ceecf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1385990617669589129}
-  runSpeed: 30
-  animator: {fileID: 1385990617669589168}
-  m_FellThroughWorldReset: -100
+  m_CharacterController2D: {fileID: 1385990617669589129}
+  m_InputHandler: {fileID: 5819201307959209104, guid: 20fd6ee4bf2074344b91c78c80329437,
+    type: 3}
+  m_FellThroughWorldReset: -500
 --- !u!114 &1385990617669589129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,76 +200,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de46894c841dad4e9d57f2fae5fe556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpIntensity: 500
-  m_UseVelocityForJumping: 1
-  m_AirControl: 1
-  m_CoyoteTime: 5
-  m_DoubleJump: 1
-  m_NumberOfDoubleJumps: 0
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
+  m_Rigidbody2D: {fileID: 1385990617669589132}
+  m_CeilingCheck: {fileID: 1385990618652526992}
+  m_GroundCheck: {fileID: 1385990618516049323}
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1537
-  m_GroundCheck: {fileID: 1385990618516049323}
-  m_CeilingCheck: {fileID: 1385990618652526992}
-  m_CrouchDisableCollider: {fileID: 0}
-  OnLandingEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1385990617669589171}
-        m_MethodName: OnLanding
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAirbourneEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1385990617669589171}
-        m_MethodName: OnAirbourne
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnFallingEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1385990617669589171}
-        m_MethodName: OnFalling
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnCrouchingEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1385990617669589171}
-        m_MethodName: OnCrouching
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  movementSpeed: 6
+  m_AirControl: 1
+  m_JumpIntensity: 500
+  m_UseVelocityForJumping: 1
+  m_CoyoteTime: 0.2
+  m_DoubleJump: 0
+  m_NumberOfDoubleJumps: 1
+  m_MovementSmoothing: 0.05
 --- !u!50 &1385990617669589132
 Rigidbody2D:
   serializedVersion: 4
@@ -406,6 +352,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b321f64f91c819468002aa98ac1b5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6628287101067338054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385990617669589128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f176368f120864649becc319b94797fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InputHandler: {fileID: 5819201307959209104, guid: 20fd6ee4bf2074344b91c78c80329437,
+    type: 3}
+  m_DraggingSpeed: 50
+--- !u!114 &8586847101269091669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385990617669589128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77047c4dc5ed494da13d7c9a68d11d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 1385990617669589168}
+  m_CharacterController2D: {fileID: 1385990617669589129}
 --- !u!1 &1385990618516049322
 GameObject:
   m_ObjectHideFlags: 0

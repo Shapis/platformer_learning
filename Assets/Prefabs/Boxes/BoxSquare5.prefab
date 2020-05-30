@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7037759441732935353}
   - component: {fileID: 7037759441732935354}
   - component: {fileID: 7037759441732935355}
-  - component: {fileID: 7037759441732935356}
+  - component: {fileID: -558044499425113348}
   m_Layer: 10
   m_Name: BoxSquare5
   m_TagString: Untagged
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7037759441732935356
+--- !u!114 &-558044499425113348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,12 +141,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7037759441732935357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb4883209fceb94397f61fe380c79eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a7e54768a3007a40882af327afd0e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDraggingBeginsEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDraggingEndsEvent:
-    m_PersistentCalls:
-      m_Calls: []

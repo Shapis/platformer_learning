@@ -58,8 +58,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller
-            .Move(horizontalMove * Time.fixedDeltaTime, false, jump, false);
+        //controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
 
         //Debug.Log(gameObject + ": is jumping? " + jump);
     }

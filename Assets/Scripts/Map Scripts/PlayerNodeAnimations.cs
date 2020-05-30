@@ -26,12 +26,12 @@ public class PlayerNodeAnimations : MonoBehaviour
 
     private void OnDestinationNodeReached(object sender, GameObject e)
     {
-        m_Animator.SetFloat("speed", 0);
+        m_Animator.SetBool("isMoving", false);
     }
 
     private void OnDestinationNodeDeparted(object sender, GameObject e)
     {
-        m_Animator.SetFloat("speed", 1);
+        m_Animator.SetBool("isMoving", true);
         previousPosition = e.transform.position;
         StopAllCoroutines();
         StartCoroutine("DirectionCheckingCoroutine");
