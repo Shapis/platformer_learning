@@ -33,6 +33,12 @@ public class InputHandler : MonoBehaviour
     public event EventHandler OnJumpUnpressedEvent;
     #endregion
 
+    #region Mouse Events
+    public event EventHandler<Vector2> OnMouseHoverEvent;
+    public event EventHandler<Vector2> OnMouseButtonLeftPressedEvent;
+    public event EventHandler<Vector2> OnMouseButtonLeftUnpressedEvent;
+    #endregion
+
     void Update()
     {
         #region Cancel events
@@ -103,7 +109,7 @@ public class InputHandler : MonoBehaviour
         }
         #endregion
 
-        #region  Vertical Events
+        #region  Vertical events
         if (Input.GetButton("Vertical"))
         {
             if (!verticalBusy)
@@ -153,7 +159,7 @@ public class InputHandler : MonoBehaviour
         }
         #endregion
 
-        #region Jump Events
+        #region Jump events
         if (Input.GetButtonDown("Jump"))
         {
             OnJumpPressed();
@@ -172,6 +178,28 @@ public class InputHandler : MonoBehaviour
             }
         }
         #endregion
+
+        #region Mouse events
+        OnMouseHover(Input.mousePosition); // This fires off every update for passing the current mouse position.
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            OnMouseButtonLeftPressed(Input.mousePosition);
+            if (m_DebugLoggingEnabled)
+            {
+                Debug.Log("Mouse button left pressed! At position: " + Input.mousePosition);
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            OnMouseButtonLeftUnpressed(Input.mousePosition);
+            if (m_DebugLoggingEnabled)
+            {
+                Debug.Log("Mouse button left unpressed! At position: " + Input.mousePosition);
+            }
+        }
+        #endregion
     }
 
     #region Cancel events invoker
@@ -185,7 +213,7 @@ public class InputHandler : MonoBehaviour
     }
     #endregion
 
-    #region Vertical Events invoker
+    #region Vertical events invoker
     private void OnVerticalUpPressed()
     {
         OnVerticalUpPressedEvent?.Invoke(this, EventArgs.Empty);
@@ -223,7 +251,7 @@ public class InputHandler : MonoBehaviour
     }
     #endregion
 
-    #region Jump Events invoker
+    #region Jump events invoker
     private void OnJumpPressed()
     {
         OnJumpPressedEvent?.Invoke(this, EventArgs.Empty);
@@ -231,6 +259,23 @@ public class InputHandler : MonoBehaviour
     private void OnJumpUnpressed()
     {
         OnJumpUnpressedEvent?.Invoke(this, EventArgs.Empty);
+    }
+    #endregion
+
+    #region Mouse events invoker
+    // If the mouse position is negative or larger than the length/width of the screen resolution it means the mouse is out of bounds of the gamescreen.
+    private void OnMouseHover(Vector2 myMousePosition)
+    {
+        OnMouseHoverEvent?.Invoke(this, myMousePosition);
+    }
+
+    private void OnMouseButtonLeftPressed(Vector2 myMousePosition)
+    {
+        OnMouseButtonLeftPressedEvent?.Invoke(this, myMousePosition);
+    }
+    private void OnMouseButtonLeftUnpressed(Vector2 myMousePosition)
+    {
+        OnMouseButtonLeftUnpressedEvent?.Invoke(this, myMousePosition);
     }
     #endregion
 }
