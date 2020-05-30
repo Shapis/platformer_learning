@@ -63,12 +63,6 @@ public class PlayerNodeAnimations : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void Flip()
     {
         isFacingRight = !isFacingRight;
