@@ -266,8 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a3001f02f7cc74da718908eb157f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerItemDragger: {fileID: 6628287101067338054}
   m_LightningScript: {fileID: -7754916391781405406}
-  m_OutlineHighlightScript: {fileID: 0}
 --- !u!114 &-7754916391781405406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +366,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InputHandler: {fileID: 5819201307959209104, guid: 20fd6ee4bf2074344b91c78c80329437,
     type: 3}
+  m_WandTransform: {fileID: 0}
+  m_WhatAreBarriers:
+    serializedVersion: 2
+    m_Bits: 0
   m_DraggingSpeed: 50
+  m_LineOfSightLeniencyTimer: 2
 --- !u!114 &8586847101269091669
 MonoBehaviour:
   m_ObjectHideFlags: 0

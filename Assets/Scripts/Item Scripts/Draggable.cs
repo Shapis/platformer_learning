@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour, IDraggableEvents
 {
-    public void OnDraggingBegins(object sender, GameObject selectedObject)
+    public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
     {
         throw new NotImplementedException();
     }
@@ -13,7 +13,7 @@ public class Draggable : MonoBehaviour, IDraggableEvents
         throw new NotImplementedException();
     }
 
-    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.LineOfSightArgs lineOfSightArgs)
+    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
     {
         throw new NotImplementedException();
     }

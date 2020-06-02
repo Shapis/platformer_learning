@@ -13,13 +13,15 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
     [Header("Settings")]
     [SerializeField] private float m_DraggingSpeed = 15f;
     [SerializeField] private float m_LineOfSightLeniencyTimer = 2f;
-    public event EventHandler<GameObject> OnDraggingBeginsEvent;
+    public event EventHandler<DraggingEventArgs> OnDraggingBeginsEvent;
     public event EventHandler OnDraggingEndsEvent;
-    public event EventHandler<LineOfSightArgs> OnLineOfSightBlockedEvent;
+    public event EventHandler<DraggingEventArgs> OnLineOfSightBlockedEvent;
     public event EventHandler OnLineOfSightUnblockedEvent;
-    public class LineOfSightArgs : EventArgs
+    public class DraggingEventArgs : EventArgs
     {
-        public GameObject ClosestBlockingObject { get; set; }
+        public GameObject OriginGameObject { get; set; }
+        public GameObject TargetGameObject { get; set; }
+        public GameObject ClosestBlockingGameObject { get; set; }
         public float LineOfSightLeniencyTimer { get; set; }
     }
     private GameObject currentlyLineOfSightBlockingObject = null;
@@ -86,7 +88,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         if (myClosestBlockingObject != null && currentlyLineOfSightBlockingObject != myClosestBlockingObject)
         {
             currentlyLineOfSightBlockingObject = myClosestBlockingObject;
-            LineOfSightArgs myLosArgs = new LineOfSightArgs { ClosestBlockingObject = myClosestBlockingObject, LineOfSightLeniencyTimer = m_LineOfSightLeniencyTimer };
+            DraggingEventArgs myLosArgs = new DraggingEventArgs { OriginGameObject = m_WandTransform.gameObject, TargetGameObject = selectedObject, ClosestBlockingGameObject = myClosestBlockingObject, LineOfSightLeniencyTimer = m_LineOfSightLeniencyTimer };
             lineOfSightSwitch = false;
             Invoke("SetLeniencySwitch", m_LineOfSightLeniencyTimer);
             OnLineOfSightBlocked(this, myLosArgs);
@@ -175,18 +177,19 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         if (selectedObject != null)
         {
             offset = selectedObject.transform.position - GetMouseAsWorldPoint(mousePosition);
-            timeCount = 0f;
-            OnDraggingBegins(this, selectedObject);
+            DraggingEventArgs myDraggingEventArgs = new DraggingEventArgs { OriginGameObject = m_WandTransform.gameObject, TargetGameObject = selectedObject, ClosestBlockingGameObject = null, LineOfSightLeniencyTimer = m_LineOfSightLeniencyTimer };
+            OnDraggingBegins(this, myDraggingEventArgs);
         }
     }
 
-    public void OnDraggingBegins(object sender, GameObject selectedObject)
+    public void OnDraggingBegins(object sender, DraggingEventArgs draggingEventArgs)
     {
+        timeCount = 0f;
         lineOfSightLeniencySwitch = true;
         lineOfSightSwitch = true;
         brokeLineOfSightPermanently = false;
         currentlyLineOfSightBlockingObject = null;
-        OnDraggingBeginsEvent?.Invoke(this, selectedObject);
+        OnDraggingBeginsEvent?.Invoke(this, draggingEventArgs);
     }
 
     public void OnDraggingEnds(object sender, EventArgs e)
@@ -194,7 +197,6 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         selectedObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
         selectedObject = null;
-        Debug.Log("ended");
         OnDraggingEndsEvent?.Invoke(this, EventArgs.Empty);
     }
 
@@ -203,7 +205,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
-    public void OnLineOfSightBlocked(object sender, LineOfSightArgs lineOfSightArgs)
+    public void OnLineOfSightBlocked(object sender, DraggingEventArgs lineOfSightArgs)
     {
         OnLineOfSightBlockedEvent?.Invoke(this, lineOfSightArgs);
     }

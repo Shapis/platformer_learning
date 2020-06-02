@@ -2,6 +2,7 @@
 
 public class LightningScript : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] private GameObject m_EffectsContainer;
     [SerializeField] private int m_LightningLines = 5;
     [SerializeField] private float m_LineWidth = 0.03f;
@@ -10,58 +11,58 @@ public class LightningScript : MonoBehaviour
     [SerializeField] private float randomnessFactor;
     private GameObject[] myLightningLinesArray;
     private Vector3[] myPoints;
-    private Transform startingTransform;
-    private Transform endingTransform;
+    private Transform originTransform;
+    private Transform targetTransform;
+    private Transform tempTargetTransform;
     private GeometryHandler myGeometryHandler;
     private bool hasBegun;
     private float timer;
     private float randomness;
-
-    private void Awake()
-    {
-        myLightningLinesArray = new GameObject[m_LightningLines];
-        myPoints = new Vector3[m_LightningLines];
-
-        myGeometryHandler = new GeometryHandler();
-
-        m_EffectsContainer = GameObject.Find("EffectsContainer");
-
-        //myPlayerMagic = gameObject.GetComponent<PlayerMagic>();
-    }
+    public GameObject ClosestBlockingGameObject { get; set; } = null;
 
     private void Start()
     {
+        myLightningLinesArray = new GameObject[m_LightningLines];
+        myPoints = new Vector3[m_LightningLines];
+        myGeometryHandler = new GeometryHandler();
+        m_EffectsContainer = GameObject.Find("EffectsContainer");
     }
 
     private void Update()
     {
+
         if (hasBegun)
         {
             foreach (var o in myLightningLinesArray)
             {
-                CalculatePoints(o.GetComponent<LineRenderer>());
+                CalculatePoints(o.GetComponent<LineRenderer>(), originTransform, TargetHitPoint());
             }
         }
     }
 
-    public void Begin(Transform startingTransform, Transform endingTransform)
+    private Vector2 TargetHitPoint()
     {
-        this.startingTransform = startingTransform;
-        this.endingTransform = endingTransform;
+        RaycastHit2D[] myRayInfoArray = Physics2D.RaycastAll(originTransform.position, (Vector2)targetTransform.position - (Vector2)originTransform.position);
+
+        foreach (var o in myRayInfoArray)
+        {
+            if (o.transform.gameObject == targetTransform.gameObject)
+            {
+                return o.point;
+            }
+        }
+
+        return Vector2.zero; // this should never happen
+    }
+
+    public void Begin(Transform originTransform, Transform targetTransform)
+    {
+        this.originTransform = originTransform;
+        this.targetTransform = targetTransform;
         hasBegun = true;
-
-
-
-        myPoints[0] = startingTransform.position;
-        myPoints[4] = endingTransform.position;
-        myPoints[2] = myGeometryHandler.GetCenter(myPoints[0], myPoints[4]);
-        myPoints[1] = myGeometryHandler.GetCenter(myPoints[0], myPoints[2]);
-        myPoints[3] = myGeometryHandler.GetCenter(myPoints[2], myPoints[4]);
-
         for (int i = 0; i < m_LightningLines; i++)
         {
             myLightningLinesArray[i] = myGeometryHandler.DrawLine(m_EffectsContainer, myPoints, new Vector2(m_LineWidth, m_LineWidth), m_PossibleColors[0]);
-            AdjustSortingLayerToTargetSortingLayer(myLightningLinesArray[i].GetComponent<LineRenderer>());
         }
     }
 
@@ -75,35 +76,26 @@ public class LightningScript : MonoBehaviour
         }
     }
 
-    private void CalculatePoints(LineRenderer myLineRenderer)
+    private void CalculatePoints(LineRenderer myLineRenderer, Transform origin, Vector2 target)
     {
         timer += Time.deltaTime;
 
         if (timer > updateTimer)
         {
             timer = 0;
-            myLineRenderer.SetPosition(0, startingTransform.position);
-            myLineRenderer.SetPosition(4, endingTransform.position);
+            myLineRenderer.SetPosition(0, origin.position);
+            myLineRenderer.SetPosition(4, target);
             myLineRenderer.SetPosition(2, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(0), myLineRenderer.GetPosition(4)));
             myLineRenderer.SetPosition(1, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(0), myLineRenderer.GetPosition(2)));
             myLineRenderer.SetPosition(3, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(2), myLineRenderer.GetPosition(4)));
-
-            float distance = Vector3.Distance(startingTransform.position, endingTransform.position) / myLineRenderer.positionCount;
-
+            float distance = Vector3.Distance(origin.position, target) / myLineRenderer.positionCount;
             randomness = randomnessFactor * distance / (myLineRenderer.positionCount * 2);
-
             SetRandomness(myLineRenderer);
             ChangeToRandomColor(myLineRenderer);
-
             AdjustSortingLayerToTargetSortingLayer(myLineRenderer);
         }
-
-
-
-
-
-        myLineRenderer.SetPosition(0, startingTransform.position);
-        myLineRenderer.SetPosition(4, endingTransform.position);
+        myLineRenderer.SetPosition(0, origin.position);
+        myLineRenderer.SetPosition(4, target);
     }
 
     private void ChangeToRandomColor(LineRenderer myLineRenderer)
@@ -111,7 +103,7 @@ public class LightningScript : MonoBehaviour
         System.Random rnd = new System.Random();
         int myRnd = 0;
 
-        if (!gameObject.GetComponent<PlayerMagic>().ObjectBeingDragged.GetComponent<DraggableScript>().LineOfSightLeniencySwitch)
+        if (ClosestBlockingGameObject == null)
         {
             myRnd = rnd.Next(0, 2);
         }
@@ -120,17 +112,13 @@ public class LightningScript : MonoBehaviour
             myRnd = rnd.Next(3, m_PossibleColors.Length);
 
         }
-
-
         myLineRenderer.material.color = m_PossibleColors[myRnd];
-
-
     }
 
     private void AdjustSortingLayerToTargetSortingLayer(LineRenderer myLineRenderer)
     {
-        myLineRenderer.sortingLayerID = gameObject.GetComponent<PlayerMagic>().ObjectBeingDragged.GetComponent<SpriteRenderer>().sortingLayerID;
-        myLineRenderer.sortingOrder = gameObject.GetComponent<PlayerMagic>().ObjectBeingDragged.GetComponent<SpriteRenderer>().sortingOrder;
+        // myLineRenderer.sortingLayerID = gameObject.GetComponent<PlayerMagic>().ObjectBeingDragged.GetComponent<SpriteRenderer>().sortingLayerID;
+        // myLineRenderer.sortingOrder = gameObject.GetComponent<PlayerMagic>().ObjectBeingDragged.GetComponent<SpriteRenderer>().sortingOrder;
     }
 
     private void SetRandomness(LineRenderer myLineRenderer)

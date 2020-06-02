@@ -29771,7 +29771,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 794333189}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 6
@@ -30164,6 +30164,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7754916391781405406, guid: e7983a9ff43b5b841a5391a2e731d050,
+        type: 3}
+      propertyPath: updateTimer
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1385990617669589128, guid: e7983a9ff43b5b841a5391a2e731d050,
         type: 3}
       propertyPath: m_Name

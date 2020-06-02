@@ -20,14 +20,14 @@ public class OutlineHighlightScript : MonoBehaviour
     {
         if (myGameObject != null)
         {
-            if (!gameObject.GetComponent<PlayerMagic>().ObjectBeingDragged.GetComponent<DraggableScript>().LineOfSightLeniencySwitch)
-            {
-                myGameObject.GetComponent<SpriteRenderer>().material.SetColor("_OutlineColor", myColors[0]);
-            }
-            else
-            {
-                myGameObject.GetComponent<SpriteRenderer>().material.SetColor("_OutlineColor", myColors[1]);
-            }
+            // if (!gameObject.GetComponent<PlayerMagic>().ObjectBeingDragged.GetComponent<DraggableScript>().LineOfSightLeniencySwitch)
+            // {
+            //     myGameObject.GetComponent<SpriteRenderer>().material.SetColor("_OutlineColor", myColors[0]);
+            // }
+            // else
+            // {
+            //     myGameObject.GetComponent<SpriteRenderer>().material.SetColor("_OutlineColor", myColors[1]);
+            // }
         }
     }
     public void Begin(GameObject myGameObject)
@@ -35,10 +35,6 @@ public class OutlineHighlightScript : MonoBehaviour
         this.myGameObject = myGameObject;
         tempMaterial = myGameObject.GetComponent<SpriteRenderer>().material;
         myGameObject.GetComponent<SpriteRenderer>().material = m_OutlineHighlight;
-
-
-
-
     }
 
 
