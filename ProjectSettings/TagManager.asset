@@ -19,8 +19,9 @@ TagManager:
   - Player
   - Enemies
   - Items
-  - ItemsPassThrough
-  - HarmfulItems
+  - ItemsPassthrough
+  - Tiles
+  - Barrier
   - 
   - 
   - 
@@ -38,7 +39,6 @@ TagManager:
   - 
   - 
   - 
-  - Intangible
   - 
   m_SortingLayers:
   - name: Background
@@ -52,9 +52,6 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 978524385
     locked: 0
   - name: Foreground
     uniqueID: 646397429

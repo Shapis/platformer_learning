@@ -3,16 +3,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Dependencies")]
     [SerializeField] private CharacterController2D m_CharacterController2D;
-    [SerializeField] private InputHandler m_InputHandler;
+    private InputHandler m_InputHandler;
 
-    private int horizontalMovementDirection = 0;
-
+    [Header("Settings")]
     [SerializeField] private float m_FellThroughWorldReset = 200f;
-
+    private int horizontalMovementDirection = 0;
     private bool jump = false;
-
     private bool collisionJump = false;
+
+    private void Awake()
+    {
+        m_InputHandler = FindObjectOfType<InputHandler>();
+    }
 
     private void Start()
     {

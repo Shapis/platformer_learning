@@ -6,8 +6,6 @@ public class PopupMenuController : MonoBehaviour
 
     [SerializeField] private float transitionTime = 0.3f;
 
-    [SerializeField] private bool m_ObeyTimeScale = true;
-
     [SerializeField] private bool m_StartMinimized = true;
 
     int myTweenScaleUp;
