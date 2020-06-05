@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 459375612260146499}
   - component: {fileID: 6183168739210293879}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: GateKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1734936764878528160}
   - component: {fileID: 1734936764878528162}
   - component: {fileID: 2931172591601905627}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: SkullGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

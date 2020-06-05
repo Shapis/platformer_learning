@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3381567588686406602}
   - component: {fileID: 3381567588686406603}
   - component: {fileID: 3381567588686406604}
-  - component: {fileID: 3381567588686406601}
   - component: {fileID: 3381567588686406600}
+  - component: {fileID: 253217095723437393}
   m_Layer: 0
   m_Name: EndMapGem
   m_TagString: Untagged
@@ -104,18 +104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3381567588686406601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3381567588686406605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9cac619f2819354fb4ae351e9e90964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &3381567588686406600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,3 +130,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.81632996}
   m_EdgeRadius: 0
+--- !u!114 &253217095723437393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381567588686406605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a956f20557cbaff4f9e353d0622bbf50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -38,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - IntangibleToPlayer
   - 
   m_SortingLayers:
   - name: Background

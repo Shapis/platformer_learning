@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Coin : BaseItem
 {
     [SerializeField] private ColorPalette.ColorName coinType;
-    public bool Tangible { get; set; } = true;
-
     public ColorPalette.ColorName GetCoinType()
     {
         return coinType;

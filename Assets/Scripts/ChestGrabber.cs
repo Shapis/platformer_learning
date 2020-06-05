@@ -9,6 +9,7 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
     private GameObject m_CoinsContainer;
     public event EventHandler OnChestOpenedEvent;
     private List<GameObject> instancedDrops = new List<GameObject>();
+    private int brownCoinCount = 0;
 
     void Start()
     {
@@ -34,7 +35,6 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
         {
             if (instancedDrops[i].GetComponent<Coin>() != null)
             {
-                Debug.Log("a");
                 instancedDrops[i].GetComponent<Coin>().Tangible = false;
             }
             switch (instancedDrops[i].GetComponent<LootTable>().GetItemType())
@@ -47,21 +47,44 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
         void PurpleCoin(int i)
         {
             LeanTween.move(instancedDrops[i], myInitialPositions[i], 1);
+            instancedDrops[i].transform.SetParent(m_CoinsContainer.transform);
             StartCoroutine(DelayHandler.DelayAction(1, () => instancedDrops[i].GetComponent<Coin>().Tangible = true));
         }
 
         void BrownCoin(int i)
         {
-            instancedDrops[i].AddComponent<Rigidbody2D>();
+            Rigidbody2D rb = instancedDrops[i].AddComponent<Rigidbody2D>();
+            BoxCollider2D boxTriggerCollider2D = instancedDrops[i].GetComponent<BoxCollider2D>();
+
+            GameObject container = new GameObject();
+            container.transform.parent = instancedDrops[i].transform;
+            container.layer = 30; // The layer that only interacts with tiles/barriers/water
+            BoxCollider2D myTileCollider = container.AddComponent<BoxCollider2D>();
+
+            myTileCollider.transform.position = instancedDrops[i].transform.position;
+            myTileCollider.size = instancedDrops[i].GetComponent<BoxCollider2D>().size;
+
+            rb.useAutoMass = true;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            instancedDrops[i].transform.parent = m_CoinsContainer.transform;
+            if (i % 2 == 0)
+            {
+                rb.AddForce(new Vector2((brownCoinCount) * 4, 60));
+            }
+            else
+            {
+                rb.AddForce(new Vector2(-(brownCoinCount) * 4, 60));
+            }
+            brownCoinCount++;
             StartCoroutine(DelayHandler.DelayAction(1, () => instancedDrops[i].GetComponent<Coin>().Tangible = true));
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.GetComponent<Chest>() != null && other.gameObject.GetComponent<Chest>().IsOpen)
+        if (other.gameObject.GetComponent<Chest>() != null && other.gameObject.GetComponent<Chest>().Tangible)
         {
-            other.gameObject.GetComponent<Chest>().IsOpen = false;
+            other.gameObject.GetComponent<Chest>().Tangible = false;
             OpenChest(other.gameObject.GetComponent<Chest>());
         }
     }

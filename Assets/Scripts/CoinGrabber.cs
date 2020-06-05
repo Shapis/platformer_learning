@@ -30,6 +30,19 @@ public class CoinGrabber : MonoBehaviour
         Coin coin = other.GetComponent<Coin>();
         if (coin != null && coin.Tangible)
         {
+            Debug.Log("a");
+            coin.Tangible = false;
+            AddCoin(coin.GetCoinType());
+            Destroy(coin.gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Coin coin = other.GetComponent<Coin>();
+        if (coin != null && coin.Tangible)
+        {
+            Debug.Log("a");
             coin.Tangible = false;
             AddCoin(coin.GetCoinType());
             Destroy(coin.gameObject);

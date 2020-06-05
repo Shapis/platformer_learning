@@ -18,10 +18,7 @@ public class KeyDoor : MonoBehaviour, IKeyDoorEvents
     public event EventHandler OnDoorOpenEvent;
     public event EventHandler OnDoorCloseEvent;
     public event EventHandler OnDoorOpenPermanentlyEvent;
-
     private bool isOpenPermanently = false;
-
-
 
     private void Start()
     {
@@ -33,9 +30,9 @@ public class KeyDoor : MonoBehaviour, IKeyDoorEvents
         if (!isOpenPermanently)
         {
             m_Animator.SetBool("isOpen", true);
-            LeanTween.delayedCall(0.3f, DisableDoorColliders);
-            LeanTween.scale(m_GateKeyGameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.3f);
-            LeanTween.moveLocal(m_GateKeyGameObject, new Vector3(0f, 1.8f, 0f), 0.7f);
+            //LeanTween.delayedCall(0.3f, DisableDoorColliders);
+            // LeanTween.scale(m_GateKeyGameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.3f);
+            // LeanTween.moveLocal(m_GateKeyGameObject, new Vector3(0f, 1.8f, 0f), 0.7f);
             // Destroy(keySprite.gameObject, 0.3f);
             OnDoorOpen(this, EventArgs.Empty);
         }
@@ -46,9 +43,9 @@ public class KeyDoor : MonoBehaviour, IKeyDoorEvents
         if (!isOpenPermanently)
         {
             m_Animator.SetBool("isOpen", false);
-            LeanTween.delayedCall(0.3f, EnableDoorColliders);
-            LeanTween.scale(m_GateKeyGameObject, new Vector3(0.6f, 0.6f, 0.6f), 0.3f);
-            LeanTween.moveLocal(m_GateKeyGameObject, new Vector3(0f, -0.214f, 0f), 0.7f);
+            //LeanTween.delayedCall(0.3f, EnableDoorColliders);
+            // LeanTween.scale(m_GateKeyGameObject, new Vector3(0.6f, 0.6f, 0.6f), 0.3f);
+            // LeanTween.moveLocal(m_GateKeyGameObject, new Vector3(0f, -0.214f, 0f), 0.7f);
             OnDoorClose(this, EventArgs.Empty);
         }
     }

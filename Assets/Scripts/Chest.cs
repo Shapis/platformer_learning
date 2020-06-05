@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Chest : MonoBehaviour
+public class Chest : BaseItem
 {
-    public bool IsOpen { get; set; } = true;
     public List<Transform> ChestLoot { get; private set; } = new List<Transform>();
     public List<Vector3> ChestLootInitialPositions { get; private set; } = new List<Vector3>();
 

@@ -78,22 +78,22 @@ public class LightningScript : MonoBehaviour
 
     private void CalculatePoints(LineRenderer myLineRenderer, Transform origin, Vector2 target)
     {
-        timer += Time.deltaTime;
+        // timer += Time.deltaTime;
 
-        if (timer > updateTimer)
-        {
-            timer = 0;
-            myLineRenderer.SetPosition(0, origin.position);
-            myLineRenderer.SetPosition(4, target);
-            myLineRenderer.SetPosition(2, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(0), myLineRenderer.GetPosition(4)));
-            myLineRenderer.SetPosition(1, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(0), myLineRenderer.GetPosition(2)));
-            myLineRenderer.SetPosition(3, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(2), myLineRenderer.GetPosition(4)));
-            float distance = Vector3.Distance(origin.position, target) / myLineRenderer.positionCount;
-            randomness = randomnessFactor * distance / (myLineRenderer.positionCount * 2);
-            SetRandomness(myLineRenderer);
-            ChangeToRandomColor(myLineRenderer);
-            AdjustSortingLayerToTargetSortingLayer(myLineRenderer);
-        }
+        // if (timer > updateTimer)
+        // {
+        timer = 0;
+        myLineRenderer.SetPosition(0, origin.position);
+        myLineRenderer.SetPosition(4, target);
+        myLineRenderer.SetPosition(2, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(0), myLineRenderer.GetPosition(4)));
+        myLineRenderer.SetPosition(1, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(0), myLineRenderer.GetPosition(2)));
+        myLineRenderer.SetPosition(3, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(2), myLineRenderer.GetPosition(4)));
+        float distance = Vector3.Distance(origin.position, target) / myLineRenderer.positionCount;
+        randomness = randomnessFactor * distance / (myLineRenderer.positionCount * 2);
+        SetRandomness(myLineRenderer);
+        ChangeToRandomColor(myLineRenderer);
+        AdjustSortingLayerToTargetSortingLayer(myLineRenderer);
+        // }
         myLineRenderer.SetPosition(0, origin.position);
         myLineRenderer.SetPosition(4, target);
     }

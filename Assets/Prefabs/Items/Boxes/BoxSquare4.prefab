@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9060342944553958721}
   - component: {fileID: 9060342944553958726}
   - component: {fileID: -4955509091480799996}
+  - component: {fileID: 1588221507297504243}
   m_Layer: 0
   m_Name: BoxSquare4
   m_TagString: Untagged
@@ -96,7 +97,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
+  m_UseAutoMass: 0
   m_Mass: 40
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -142,5 +143,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a7e54768a3007a40882af327afd0e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1588221507297504243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060342944553958724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b69ba0df040ca309835e8eaaaff40de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
