@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class PressurePlate : BaseItem
+public class PressurePlate : BaseItem, IPressurePlateEvents
 {
     [SerializeField] private Animator m_Animator;
     [SerializeField] private ColorPalette.ColorName keyType;
@@ -34,5 +34,15 @@ public class PressurePlate : BaseItem
                 o.CloseDoor();
             }
         }
+    }
+
+    public void OnPressurePlateActivated(object sender, KeyDoor doorList)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnPressurePlateDeactivated(object sender, KeyDoor doorList)
+    {
+        throw new NotImplementedException();
     }
 }
