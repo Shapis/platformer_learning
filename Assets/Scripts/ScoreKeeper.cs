@@ -1,29 +1,61 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreKeeper : MonoBehaviour, IKeyGrabberEvents, IKeyDoorEvents
+public class ScoreKeeper : MonoBehaviour, IKeyGrabberEvents, IKeyDoorEvents, IScoreKeeperEvents
 {
-    [SerializeField] private GameObject m_Player;
+    [SerializeField] private KeyGrabber m_KeyGrabber;
+
+    public EventHandler<int> OnScoreUpdateEvent;
+
+    private int doorScore = 0;
+    private int keyListScore = 0;
+
+    private void Start()
+    {
+        m_KeyGrabber.OnKeysChangedEvent += OnKeysChanged;
+
+        var myDoors = GameObject.FindObjectsOfType<KeyDoor>();
+
+        foreach (var o in myDoors)
+        {
+            o.OnDoorOpenEvent += OnDoorOpen;
+            o.OnDoorCloseEvent += OnDoorClose;
+            o.OnDoorOpenPermanentlyEvent += OnDoorOpenPermanently;
+        }
+    }
 
     public void OnDoorClose(object sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+        //UpdateScore();
     }
 
     public void OnDoorOpen(object sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+        //UpdateScore();
     }
 
     public void OnDoorOpenPermanently(object sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        doorScore += 6;
+        UpdateScore();
     }
 
     public void OnKeysChanged(object sender, List<ColorPalette.ColorName> keyList)
     {
-        throw new System.NotImplementedException();
+        keyListScore = keyList.Count * 3;
+        UpdateScore();
+    }
+
+    private void UpdateScore()
+    {
+        OnScoreUpdate(this, doorScore + keyListScore);
+    }
+
+    public void OnScoreUpdate(object sender, int totalScore)
+    {
+        OnScoreUpdateEvent?.Invoke(this, totalScore);
     }
 }

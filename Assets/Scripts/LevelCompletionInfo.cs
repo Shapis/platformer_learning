@@ -32,6 +32,10 @@ public class LevelCompletionInfo
                     levelCompletionInfo.LevelCompletionEntryList[i] = levelCompletionEntry;
 
                 }
+                else if (levelCompletionInfo.LevelCompletionEntryList[i].score == score && levelCompletionInfo.LevelCompletionEntryList[i].time > time)
+                {
+                    levelCompletionInfo.LevelCompletionEntryList[i] = levelCompletionEntry;
+                }
             }
         }
 

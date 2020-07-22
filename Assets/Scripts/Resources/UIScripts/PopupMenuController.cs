@@ -41,7 +41,7 @@ public class PopupMenuController : MonoBehaviour
         MinimizedSettings();
         LeanTween.cancel(myTweenScaleUp);
         myTweenScaleDown = LeanTween.scale(gameObject, new Vector3(0f, 0f, 0f), transitionTime).setUseEstimatedTime(true).id;
-        myTweenDelayedCall = LeanTween.delayedCall(transitionTime, SetGameObjectInactive).setUseEstimatedTime(true).id;
+        //myTweenDelayedCall = LeanTween.delayedCall(transitionTime, SetGameObjectInactive).setUseEstimatedTime(true).id;
     }
 
     public void StartOpenAndMaximized()
@@ -51,10 +51,10 @@ public class PopupMenuController : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    private void SetGameObjectInactive()
-    {
-        gameObject.SetActive(false);
-    }
+    // private void SetGameObjectInactive()
+    // {
+    //     gameObject.SetActive(false);
+    // }
 
     private void MinimizedSettings()
     {

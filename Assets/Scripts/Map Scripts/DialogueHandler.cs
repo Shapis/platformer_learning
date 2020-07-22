@@ -5,6 +5,11 @@ public class DialogueHandler
 {
     private readonly Queue<string> sentences = new Queue<string>();
 
+    public int GetSentencesCount()
+    {
+        return sentences.Count;
+    }
+
     public event EventHandler OnInitializeDialogueEvent;
     public event EventHandler OnNextSentenceEvent;
     public event EventHandler OnEndDialogueEvent;
@@ -36,6 +41,9 @@ public class DialogueHandler
     private string EndDialogue()
     {
         OnEndDialogueEvent?.Invoke(this, EventArgs.Empty);
+
+        // Ideally you want to avoid this outcome being possible by checking how many sentences are left with GetSentencesCount()
+        // And coding the proper behavior for what happens when you're on the last sentence of your dialogue instead of defaulting to this.
         return "Dialogue ended";
     }
 }
