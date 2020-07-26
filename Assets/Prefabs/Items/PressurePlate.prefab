@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 624954950377507730}
   - component: {fileID: 624954950377507731}
   - component: {fileID: 624954950377507728}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PressurePlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 624954950377507731}
-  keyType: 3
+  m_KeyType: 0
 --- !u!212 &624954950377507730
 SpriteRenderer:
   m_ObjectHideFlags: 0

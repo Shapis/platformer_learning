@@ -7,8 +7,8 @@ public class PressurePlate : BaseItem, IPressurePlateEvents
     [SerializeField] private ColorPalette.ColorName m_KeyType;
     private KeyDoor[] myDoors;
     private int numberOfColliders = 0;
-    public event EventHandler<KeyDoor[]> OnPressurePlateActivatedEvent;
-    public event EventHandler<KeyDoor[]> OnPressurePlateDeactivatedEvent;
+    public event EventHandler<ColorPalette.ColorName> OnPressurePlateActivatedEvent;
+    public event EventHandler<ColorPalette.ColorName> OnPressurePlateDeactivatedEvent;
 
     void Awake()
     {
@@ -33,7 +33,7 @@ public class PressurePlate : BaseItem, IPressurePlateEvents
                     o.OpenDoor();
                 }
             }
-            OnPressurePlateActivated(this, myDoors);
+            OnPressurePlateActivated(this, m_KeyType);
         }
         numberOfColliders++;
     }
@@ -51,21 +51,21 @@ public class PressurePlate : BaseItem, IPressurePlateEvents
                     o.CloseDoor();
                 }
             }
-            OnPressurePlateDeactivated(this, myDoors);
+            OnPressurePlateDeactivated(this, m_KeyType);
         }
     }
 
     // TODO: Make it so th matchingcolordoorlist is an array of doors matching the color of the specific pressure plate
     // Right now it's just an array with -all- doors.
-    public void OnPressurePlateActivated(object sender, KeyDoor[] matchingColorDoorList)
+    public void OnPressurePlateActivated(object sender, ColorPalette.ColorName pressurePlateColor)
     {
         m_Animator.SetBool("isPressed", true);
-        OnPressurePlateActivatedEvent?.Invoke(this, matchingColorDoorList);
+        OnPressurePlateActivatedEvent?.Invoke(this, pressurePlateColor);
     }
 
-    public void OnPressurePlateDeactivated(object sender, KeyDoor[] matchingColorDoorList)
+    public void OnPressurePlateDeactivated(object sender, ColorPalette.ColorName pressurePlateColor)
     {
         m_Animator.SetBool("isPressed", false);
-        OnPressurePlateDeactivatedEvent?.Invoke(this, matchingColorDoorList);
+        OnPressurePlateDeactivatedEvent?.Invoke(this, pressurePlateColor);
     }
 }

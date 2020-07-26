@@ -37,7 +37,7 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
 
     private void OnMouseButtonLeftPressed(object sender, Vector2 e)
     {
-        if (m_ClickAnywhereForNext)
+        if (m_ClickAnywhereForNext && (myDialogueHandler != null))
         {
             NextSentence();
         }
@@ -58,7 +58,6 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
 
     private void NextSentence()
     {
-
         if (m_CanGoToNextBeforeTextIsDone || CanGoToNextBeforeTextIsDoneSwitch)
         {
             CanGoToNextBeforeTextIsDoneSwitch = false;
