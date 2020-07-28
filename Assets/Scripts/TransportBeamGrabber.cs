@@ -8,7 +8,6 @@ public class TransportBeamGrabber : MonoBehaviour, ITransportBeamEvents
     private TransportBeam transportBeam;
     private TransportBeam[] myTransportBeams;
     private bool insideBeam = false;
-
     private float upwardsVelocity = 0f;
 
     private void Start()

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1889873849686323736}
   - component: {fileID: -6061097012270211642}
   - component: {fileID: -3156110929702840559}
+  - component: {fileID: 8826748584686584840}
   m_Layer: 10
   m_Name: BoxSquare3
   m_TagString: Untagged
@@ -172,3 +173,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxVelocity: 2
+--- !u!114 &8826748584686584840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148931831794623227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac7556ba758cfdfbacaccc04d6ce59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
