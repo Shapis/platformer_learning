@@ -10,8 +10,9 @@ public class ChatBoxTrigger : BaseItem, IChatBoxTriggerEvents, IDialogueBoxEvent
 
     private int myEscapeSwitch = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    // Awake instead of Start because of https://forum.unity.com/threads/why-does-gameobject-find-getcomponent-not-work-when-a-new-scene-is-loaded.428460/
+    // I was having issues with the m_DialogueBox not being found properly after a scene reload, need to investigate this.
+    void Awake()
     {
         m_ChatBoxTriggerGrabber = GameObject.Find("Player").GetComponent<ChatBoxTriggerGrabber>();
 

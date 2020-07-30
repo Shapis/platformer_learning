@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4004214590764179834}
   - component: {fileID: 4004214590764179812}
   - component: {fileID: -1763302934514921671}
+  - component: {fileID: 4636320743107868940}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -48,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -121,4 +123,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce7084536f06424985b80a0649ad5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyColor: 0
+  keyType: 0
+--- !u!114 &4636320743107868940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004214590764179832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cf000958a6df942a56dcc2b681ebc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ItemType: 2

@@ -2,5 +2,5 @@
 
 public interface IChestGrabberEvents
 {
-    void OnChestOpened(object sender, EventArgs e);
+    void OnChestOpened(object sender, EventArgs e); // Invoked in ChestGrabber.cs
 }

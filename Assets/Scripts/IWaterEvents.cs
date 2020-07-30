@@ -2,6 +2,6 @@
 
 public interface IWaterEvents
 {
-    void OnWaterTriggerEnter2D(object sender, EventArgs e); // Implemented in WaterGrabber.cs
-    void OnWaterTriggerExit2D(object sender, EventArgs e); // Implemented in WaterGrabber.cs
+    void OnWaterTriggerEnter2D(object sender, EventArgs e); // Invoked in WaterGrabber.cs
+    void OnWaterTriggerExit2D(object sender, EventArgs e); // Invoked in WaterGrabber.cs
 }

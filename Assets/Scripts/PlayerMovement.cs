@@ -52,17 +52,5 @@ public class PlayerMovement : MonoBehaviour
     {
         m_CharacterController2D.Move(horizontalMovementDirection, jump);
         jump = false;
-        PlayerFellThroughWorldFailsafe();
-    }
-
-    private void PlayerFellThroughWorldFailsafe()
-    {
-        if (gameObject.transform.position.y <= m_FellThroughWorldReset)
-        {
-            //Debug.Log(SceneHandler.CurrentSceneName);
-            PlayerDied myPlayerDied = new PlayerDied();
-            myPlayerDied.Died();
-            Time.timeScale = 1;
-        }
     }
 }

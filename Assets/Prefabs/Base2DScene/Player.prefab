@@ -99,6 +99,8 @@ GameObject:
   - component: {fileID: 173299398603654844}
   - component: {fileID: 5625713214919154616}
   - component: {fileID: 2727542231350681100}
+  - component: {fileID: 9125579572119435597}
+  - component: {fileID: 5776186670015209560}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -437,6 +439,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac7556ba758cfdfbacaccc04d6ce59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9125579572119435597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385990617669589128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5944a34610126728f148881255d77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5776186670015209560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385990617669589128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d2dd1a8f4d66a469caef84c41ce081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerAnimator: {fileID: 1385990617669589168}
+  m_PlayerMovement: {fileID: 6410106372462491843}
+  m_BloodySpikesGrabber: {fileID: 9125579572119435597}
+  m_WaterGrabber: {fileID: 2727542231350681100}
 --- !u!1 &1385990618516049322
 GameObject:
   m_ObjectHideFlags: 0

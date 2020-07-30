@@ -4,6 +4,7 @@ public class LootHandler : MonoBehaviour
 {
     [SerializeField] private GameObject m_BrownCoin;
     [SerializeField] private GameObject m_PurpleCoin;
+    [SerializeField] private GameObject m_Key;
 
     private Transform temp;
 
@@ -13,6 +14,7 @@ public class LootHandler : MonoBehaviour
         {
             case LootTable.ItemType.BrownCoin: temp = m_BrownCoin.transform; break;
             case LootTable.ItemType.PurpleCoin: temp = m_PurpleCoin.transform; break;
+            case LootTable.ItemType.Key: temp = m_Key.transform; break;
         }
 
         return InstantiateLoot(temp.gameObject, position, quaternion);

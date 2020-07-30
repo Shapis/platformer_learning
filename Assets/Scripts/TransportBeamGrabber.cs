@@ -59,7 +59,7 @@ public class TransportBeamGrabber : MonoBehaviour, ITransportBeamEvents
     {
         insideBeam = false;
         transportBeam = null;
-        Debug.Log(gameObject.transform.name + " left the trigger area");
+        //Debug.Log(gameObject.transform.name + " left the trigger area");
         //upwardsVelocity = 0f;
     }
 

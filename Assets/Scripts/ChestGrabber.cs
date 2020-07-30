@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
 {
+    // This whole thing needs to be rewritten. the Chest.cs class also needs to be rewritten.
+
     [Header("Dependencies")]
     private LootHandler m_LootHandler;
     private GameObject m_CoinsContainer;
+    private GameObject m_KeysContainer;
     public event EventHandler OnChestOpenedEvent;
-    private List<GameObject> instancedDrops = new List<GameObject>();
     private int brownCoinCount = 0;
 
     void Start()
     {
+        m_KeysContainer = GameObject.Find("Keys&Gates&Plates");
         m_CoinsContainer = GameObject.Find("CoinsContainer");
         m_LootHandler = FindObjectOfType<LootHandler>();
     }
 
     public void OpenChest(Chest myChest)
     {
-        myChest.gameObject.GetComponent<Animator>().SetBool("isOpen", true);
-        myChest.gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(myChest.gameObject.GetComponent<BoxCollider2D>().offset.x, -4.947186e-05f);
-        myChest.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(myChest.gameObject.GetComponent<BoxCollider2D>().size.x, 0.5637438f);
+        brownCoinCount = 0;
+        List<GameObject> instancedDrops = new List<GameObject>();
+
+        myChest.gameObject.GetComponent<Animator>().SetBool("isOpen", true); // The animation also changes the BoxCollider2D
+
         foreach (var o in myChest.ChestLoot)
         {
             instancedDrops.Add(m_LootHandler.DropLoot(o.gameObject.GetComponent<LootTable>().GetItemType(), myChest.transform.position, Quaternion.identity));
         }
-        MoveDrops(myChest.ChestLootInitialPositions);
+        MoveDrops(myChest.ChestLootInitialPositions, instancedDrops);
     }
 
-    private void MoveDrops(List<Vector3> myInitialPositions)
+    private void MoveDrops(List<Vector3> myInitialPositions, List<GameObject> instancedDrops)
     {
         for (int i = 0; i < instancedDrops.Count; i++)
         {
@@ -37,11 +42,22 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
             {
                 instancedDrops[i].GetComponent<Coin>().Tangible = false;
             }
+            if (instancedDrops[i].GetComponent<Key>() != null)
+            {
+                instancedDrops[i].GetComponent<Key>().Tangible = false;
+            }
             switch (instancedDrops[i].GetComponent<LootTable>().GetItemType())
             {
                 case LootTable.ItemType.BrownCoin: BrownCoin(i); break;
                 case LootTable.ItemType.PurpleCoin: PurpleCoin(i); break;
+                case LootTable.ItemType.Key: Key(i); break;
             }
+        }
+        void Key(int i)
+        {
+            LeanTween.move(instancedDrops[i], myInitialPositions[i], 1);
+            instancedDrops[i].transform.SetParent(m_KeysContainer.transform);
+            StartCoroutine(DelayHandler.DelayAction(1, () => instancedDrops[i].GetComponent<Key>().Tangible = true));
         }
 
         void PurpleCoin(int i)

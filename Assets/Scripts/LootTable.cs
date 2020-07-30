@@ -12,6 +12,7 @@ public class LootTable : MonoBehaviour
     {
         BrownCoin,
         PurpleCoin,
+        Key,
     }
 
 
