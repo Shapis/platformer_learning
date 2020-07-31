@@ -17,7 +17,11 @@ public class DialogueNodeTrigger : MonoBehaviour
     {
         m_PlayerNodeMovement.OnDestinationNodeReachedEvent += OnDestinationNodeReachedTrigger;
         m_PlayerNodeMovement.OnDestinationNodeDepartedEvent += OnDestinationNodeDepartedTrigger;
-        m_DialogueBox.StartDialogueBox(this, m_PlayerNodeMovement.GetCurrentNode().gameObject.GetComponent<Dialogue>());
+        if (m_PlayerNodeMovement.GetCurrentNode() == this.gameObject.GetComponent<Node>())
+        {
+            Debug.Log(this.gameObject.GetComponent<Node>());
+            m_DialogueBox.StartDialogueBox(this, m_PlayerNodeMovement.GetCurrentNode().gameObject.GetComponent<Dialogue>());
+        }
     }
 
     private void OnDestinationNodeReachedTrigger(object sender, GameObject e)

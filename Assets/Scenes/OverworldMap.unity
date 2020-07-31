@@ -4494,7 +4494,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Aqui eh o level 02 meu caro
-  - 
 --- !u!114 &378412059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8117,7 +8116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - You know. I've always felt like exploring the world.
-  - abc213451abc213451abc213451abc213451abc213451
 --- !u!114 &743780661
 MonoBehaviour:
   m_ObjectHideFlags: 0
