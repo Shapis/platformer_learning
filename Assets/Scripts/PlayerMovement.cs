@@ -24,8 +24,14 @@ public class PlayerMovement : MonoBehaviour
         m_InputHandler.OnHorizontalRightUnpressedEvent += OnHorizontalUnpressed;
         m_InputHandler.OnHorizontalLeftPressedEvent += OnHorizontalLeftPressed;
         m_InputHandler.OnHorizontalLeftUnpressedEvent += OnHorizontalUnpressed;
+        m_InputHandler.OnVerticalUpPressedEvent += OnVerticalUpPressed;
 
         m_InputHandler.OnJumpPressedEvent += OnJumpPressed;
+    }
+
+    private void OnVerticalUpPressed(object sender, EventArgs e)
+    {
+        jump = true;
     }
 
     private void OnJumpPressed(object sender, EventArgs e)

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-public class InputHandler : MonoBehaviour
+public class InputHandler : MonoBehaviour, IMobileJoystickEvents
 {
     [SerializeField] private bool m_DebugLoggingEnabled = false;
 
-    #region Cancel events
+    #region Cancel Events
     public event EventHandler OnCancelPressedEvent; // Escape on PC, Back button on Android.
     public event EventHandler OnCancelUnpressedEvent;
     #endregion
 
-    #region Horizontal events
+    #region Horizontal Events
     public event EventHandler OnHorizontalLeftPressedEvent;
     public event EventHandler OnHorizontalLeftUnpressedEvent;
     public event EventHandler OnHorizontalRightPressedEvent;
@@ -39,6 +39,29 @@ public class InputHandler : MonoBehaviour
     public event EventHandler<Vector2> OnMouseButtonLeftUnpressedEvent;
     #endregion
 
+    #region Mobile Joystick Dependencies
+    private MobileJoystick m_MobileJoystick;
+    #endregion
+
+    private void Awake()
+    {
+        m_MobileJoystick = GameObject.FindObjectOfType<MobileJoystick>();
+    }
+
+    private void Start()
+    {
+        if (m_MobileJoystick != null)
+        {
+            m_MobileJoystick.OnJoystickHorizontalLeftPressedEvent += OnJoystickHorizontalLeftPressed;
+            m_MobileJoystick.OnJoystickHorizontalLeftUnpressedEvent += OnJoystickHorizontalLeftUnpressed;
+            m_MobileJoystick.OnJoystickHorizontalRightPressedEvent += OnJoystickHorizontalRightPressed;
+            m_MobileJoystick.OnJoystickHorizontalRightUnpressedEvent += OnJoystickHorizontalRightUnpressed;
+            m_MobileJoystick.OnJoystickVerticalDownPressedEvent += OnJoystickVerticalDownPressed;
+            m_MobileJoystick.OnJoystickVerticalDownUnpressedEvent += OnJoystickVerticalDownUnpressed;
+            m_MobileJoystick.OnJoystickVerticalUpPressedEvent += OnJoystickVerticalUpPressed;
+            m_MobileJoystick.OnJoystickVerticalUpUnpressedEvent += OnJoystickVerticalUpUnpressed;
+        }
+    }
     void Update()
     {
         #region Cancel events
@@ -68,7 +91,7 @@ public class InputHandler : MonoBehaviour
                 horizontalBusy = true;
                 if (Input.GetAxisRaw("Horizontal") < 0)
                 {
-                    OnHorizontalLeftPressed();
+                    OnHorizontalLeftPressed(this, EventArgs.Empty);
                     horizontalDirection = -1;
                     if (m_DebugLoggingEnabled)
                     {
@@ -77,7 +100,7 @@ public class InputHandler : MonoBehaviour
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0)
                 {
-                    OnHorizontalRightPressed();
+                    OnHorizontalRightPressed(this, EventArgs.Empty);
                     horizontalDirection = 1;
                     if (m_DebugLoggingEnabled)
                     {
@@ -90,7 +113,7 @@ public class InputHandler : MonoBehaviour
         {
             if ((Input.GetAxisRaw("Horizontal") >= 0 && horizontalDirection < 0))
             {
-                OnHorizontalLeftUnpressed();
+                OnHorizontalLeftUnpressed(this, EventArgs.Empty);
                 horizontalBusy = false;
                 if (m_DebugLoggingEnabled)
                 {
@@ -99,7 +122,7 @@ public class InputHandler : MonoBehaviour
             }
             else if (Input.GetAxisRaw("Horizontal") <= 0 && horizontalDirection > 0)
             {
-                OnHorizontalRightUnpressed();
+                OnHorizontalRightUnpressed(this, EventArgs.Empty);
                 horizontalBusy = false;
                 if (m_DebugLoggingEnabled)
                 {
@@ -117,7 +140,7 @@ public class InputHandler : MonoBehaviour
                 verticalBusy = true;
                 if (Input.GetAxisRaw("Vertical") < 0)
                 {
-                    OnVerticalDownPressed();
+                    OnVerticalDownPressed(this, EventArgs.Empty);
                     verticalDirection = -1;
                     if (m_DebugLoggingEnabled)
                     {
@@ -126,7 +149,7 @@ public class InputHandler : MonoBehaviour
                 }
                 if (Input.GetAxisRaw("Vertical") > 0)
                 {
-                    OnVerticalUpPressed();
+                    OnVerticalUpPressed(this, EventArgs.Empty);
                     verticalDirection = 1;
                     if (m_DebugLoggingEnabled)
                     {
@@ -140,7 +163,7 @@ public class InputHandler : MonoBehaviour
 
             if ((Input.GetAxisRaw("Vertical") >= 0 && verticalDirection < 0))
             {
-                OnVerticalDownUnpressed();
+                OnVerticalDownUnpressed(this, EventArgs.Empty);
                 verticalBusy = false;
                 if (m_DebugLoggingEnabled)
                 {
@@ -149,7 +172,7 @@ public class InputHandler : MonoBehaviour
             }
             else if (Input.GetAxisRaw("Vertical") <= 0 && verticalDirection > 0)
             {
-                OnVerticalUpUnpressed();
+                OnVerticalUpUnpressed(this, EventArgs.Empty);
                 verticalBusy = false;
                 if (m_DebugLoggingEnabled)
                 {
@@ -214,40 +237,40 @@ public class InputHandler : MonoBehaviour
     #endregion
 
     #region Vertical events invoker
-    private void OnVerticalUpPressed()
+    private void OnVerticalUpPressed(object sender, EventArgs e)
     {
-        OnVerticalUpPressedEvent?.Invoke(this, EventArgs.Empty);
+        OnVerticalUpPressedEvent?.Invoke(sender, EventArgs.Empty);
     }
-    private void OnVerticalUpUnpressed()
+    private void OnVerticalUpUnpressed(object sender, EventArgs e)
     {
-        OnVerticalUpUnpressedEvent?.Invoke(this, EventArgs.Empty);
+        OnVerticalUpUnpressedEvent?.Invoke(sender, EventArgs.Empty);
     }
-    private void OnVerticalDownPressed()
+    private void OnVerticalDownPressed(object sender, EventArgs e)
     {
-        OnVerticalDownPressedEvent?.Invoke(this, EventArgs.Empty);
+        OnVerticalDownPressedEvent?.Invoke(sender, EventArgs.Empty);
     }
-    private void OnVerticalDownUnpressed()
+    private void OnVerticalDownUnpressed(object sender, EventArgs e)
     {
-        OnVerticalDownUnpressedEvent?.Invoke(this, EventArgs.Empty);
+        OnVerticalDownUnpressedEvent?.Invoke(sender, EventArgs.Empty);
     }
     #endregion
 
     #region Horizontal events invoker
-    private void OnHorizontalLeftPressed()
+    private void OnHorizontalLeftPressed(object sender, EventArgs e)
     {
-        OnHorizontalLeftPressedEvent?.Invoke(this, EventArgs.Empty);
+        OnHorizontalLeftPressedEvent?.Invoke(sender, EventArgs.Empty);
     }
-    private void OnHorizontalLeftUnpressed()
+    private void OnHorizontalLeftUnpressed(object sender, EventArgs e)
     {
-        OnHorizontalLeftUnpressedEvent?.Invoke(this, EventArgs.Empty);
+        OnHorizontalLeftUnpressedEvent?.Invoke(sender, EventArgs.Empty);
     }
-    private void OnHorizontalRightPressed()
+    private void OnHorizontalRightPressed(object sender, EventArgs e)
     {
-        OnHorizontalRightPressedEvent?.Invoke(this, EventArgs.Empty);
+        OnHorizontalRightPressedEvent?.Invoke(sender, EventArgs.Empty);
     }
-    private void OnHorizontalRightUnpressed()
+    private void OnHorizontalRightUnpressed(object sender, EventArgs e)
     {
-        OnHorizontalRightUnpressedEvent?.Invoke(this, EventArgs.Empty);
+        OnHorizontalRightUnpressedEvent?.Invoke(sender, EventArgs.Empty);
     }
     #endregion
 
@@ -276,6 +299,48 @@ public class InputHandler : MonoBehaviour
     private void OnMouseButtonLeftUnpressed(Vector2 myMousePosition)
     {
         OnMouseButtonLeftUnpressedEvent?.Invoke(this, myMousePosition);
+    }
+    #endregion
+
+    #region Mobile Joystick methods to invoke the equivalent mouse events
+    public void OnJoystickHorizontalLeftPressed(object sender, EventArgs e)
+    {
+        OnHorizontalLeftPressed(sender, e);
+    }
+
+    public void OnJoystickHorizontalLeftUnpressed(object sender, EventArgs e)
+    {
+        OnHorizontalLeftUnpressed(sender, e);
+    }
+
+    public void OnJoystickHorizontalRightPressed(object sender, EventArgs e)
+    {
+        OnHorizontalRightPressed(sender, e);
+    }
+
+    public void OnJoystickHorizontalRightUnpressed(object sender, EventArgs e)
+    {
+        OnHorizontalRightUnpressed(sender, e);
+    }
+
+    public void OnJoystickVerticalUpPressed(object sender, EventArgs e)
+    {
+        OnVerticalUpPressed(sender, e);
+    }
+
+    public void OnJoystickVerticalUpUnpressed(object sender, EventArgs e)
+    {
+        OnVerticalUpUnpressed(sender, e);
+    }
+
+    public void OnJoystickVerticalDownPressed(object sender, EventArgs e)
+    {
+        OnVerticalDownPressed(sender, e);
+    }
+
+    public void OnJoystickVerticalDownUnpressed(object sender, EventArgs e)
+    {
+        OnVerticalDownUnpressed(sender, e);
     }
     #endregion
 }

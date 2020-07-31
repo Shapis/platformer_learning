@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DialogueNodeTrigger : MonoBehaviour
 {
@@ -19,7 +16,6 @@ public class DialogueNodeTrigger : MonoBehaviour
         m_PlayerNodeMovement.OnDestinationNodeDepartedEvent += OnDestinationNodeDepartedTrigger;
         if (m_PlayerNodeMovement.GetCurrentNode() == this.gameObject.GetComponent<Node>())
         {
-            Debug.Log(this.gameObject.GetComponent<Node>());
             m_DialogueBox.StartDialogueBox(this, m_PlayerNodeMovement.GetCurrentNode().gameObject.GetComponent<Dialogue>());
         }
     }
