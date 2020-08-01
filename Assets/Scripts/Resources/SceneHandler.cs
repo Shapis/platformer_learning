@@ -9,6 +9,7 @@ public static class SceneHandler
         Level01,
         Level02,
         Level03,
+        Level04,
         MainMenu,
         OverworldMap,
     }
