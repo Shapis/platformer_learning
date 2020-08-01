@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6896927481153906962}
   - component: {fileID: -1793817190951328804}
   - component: {fileID: -5056374923795127085}
+  - component: {fileID: -7923658308016130995}
   m_Layer: 10
   m_Name: BoxSquare7
   m_TagString: Untagged
@@ -183,5 +184,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ac7556ba758cfdfbacaccc04d6ce59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7923658308016130995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454326085193310499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8078567e103b97fefb00fcfd71cc8260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

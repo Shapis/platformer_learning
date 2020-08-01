@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6297008122846938416}
   - component: {fileID: 2892928058483366437}
   - component: {fileID: -3995668751788421621}
+  - component: {fileID: 5836101215027763901}
   m_Layer: 10
   m_Name: BoxSquare8
   m_TagString: Untagged
@@ -183,5 +184,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ac7556ba758cfdfbacaccc04d6ce59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5836101215027763901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909609398820656410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8078567e103b97fefb00fcfd71cc8260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

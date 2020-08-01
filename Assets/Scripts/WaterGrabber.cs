@@ -78,13 +78,11 @@ public class WaterGrabber : MonoBehaviour, IWaterEvents
 
     public void OnWaterTriggerEnter2D(object sender, EventArgs e)
     {
-        Debug.Log("a");
         OnWaterTriggerEnter2DEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public void OnWaterTriggerExit2D(object sender, EventArgs e)
     {
-        Debug.Log("b");
         OnWaterTriggerExit2DEvent?.Invoke(this, EventArgs.Empty);
     }
 }
