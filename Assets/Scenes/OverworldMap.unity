@@ -11337,8 +11337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Empty Level
-  m_Scene: 20
+  m_NodeName: Level11
+  m_Scene: 10
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 1146887052}
@@ -11423,7 +11423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Empty dialogue!
+  - Here be level 11
 --- !u!1 &1017750396
 GameObject:
   m_ObjectHideFlags: 0
@@ -13666,8 +13666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Empty Level
-  m_Scene: 20
+  m_NodeName: Level08
+  m_Scene: 7
   m_UpDestination: {fileID: 2068960170}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 759195600}
@@ -13752,7 +13752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Empty dialogue!
+  - here be level 8
 --- !u!1 &1297794520
 GameObject:
   m_ObjectHideFlags: 0
