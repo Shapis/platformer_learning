@@ -7881,8 +7881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Empty Level
-  m_Scene: 20
+  m_NodeName: Level09
+  m_Scene: 8
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 0}
@@ -7967,7 +7967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Empty dialogue!
+  - here be lvl 9
 --- !u!1 &700397245
 GameObject:
   m_ObjectHideFlags: 0
@@ -10606,8 +10606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Empty Level
-  m_Scene: 20
+  m_NodeName: Level10
+  m_Scene: 9
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 857366043}
   m_LeftDestination: {fileID: 44180207}
@@ -10692,7 +10692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Empty dialogue!
+  - here be level 10 yer scallywager
 --- !u!1 &956390313
 GameObject:
   m_ObjectHideFlags: 0
