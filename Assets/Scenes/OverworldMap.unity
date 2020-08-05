@@ -275,8 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Empty Level
-  m_Scene: 20
+  m_NodeName: Level12
+  m_Scene: 11
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 1571715091}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Empty dialogue!
+  - here be level 12 heathen!
 --- !u!1 &49455953
 GameObject:
   m_ObjectHideFlags: 0
