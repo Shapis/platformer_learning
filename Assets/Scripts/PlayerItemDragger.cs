@@ -49,7 +49,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
     {
         if (selectedObject != null)
         {
-            if (LineOfSightCheck())     // Will only allow objects to be dragged if line of sight doesnt break through grounds/barriers
+            if (LineOfSightLeniencyCheck())     // Will only allow objects to be dragged if line of sight doesnt break through grounds/barriers
             {
                 DragObjectToMousePointer(mousePosition);
                 RotateTheObjectToFaceUpwards();
@@ -58,21 +58,13 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         }
     }
 
-    private bool LineOfSightCheck()
+    private bool LineOfSightLeniencyCheck()
     {
-        RaycastHit2D[] hitInfoArray = Physics2D.RaycastAll(m_WandTransform.position, selectedObject.transform.position - m_WandTransform.position, Vector2.Distance(m_WandTransform.position, selectedObject.transform.position));
-        List<GameObject> myGameObjects = new List<GameObject>();
-        foreach (var o in hitInfoArray)
-        {
-            // if any of the objects in the hitInfoArray are in the m_WhatAreBarriers layer, return that the selectedObject is out of line of sight.
-            if (m_WhatAreBarriers == (m_WhatAreBarriers | (1 << o.transform.gameObject.layer)))
-            {
-                myGameObjects.Add(o.transform.gameObject);
-            }
-        }
+        List<GameObject> myGameObjects = LineOfSightCheck(); // Returns all the objects between the starting point and the selected object
 
+        // Check through all GameObjects between the starting point and the selectedObject which one is the closest, and point the myClosestBlockingObject
+        // variable to it, if no objects are between the starting point and the selectedObject thhen keep myClosestBlockingObject as null.
         GameObject myClosestBlockingObject = null;
-
         foreach (var o in myGameObjects)
         {
             if (myClosestBlockingObject == null)
@@ -90,6 +82,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
             }
         }
 
+        // Updates the currentlyLineOfSightBlockingObject to myClosestBlockingObject if they are different.
         if (myClosestBlockingObject != null && currentlyLineOfSightBlockingObject != myClosestBlockingObject)
         {
             currentlyLineOfSightBlockingObject = myClosestBlockingObject;
@@ -113,6 +106,26 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         }
 
         return lineOfSightLeniencySwitch;
+    }
+
+    private List<GameObject> LineOfSightCheck()
+    {
+        List<GameObject> myGameObjects = new List<GameObject>();
+
+        if (selectedObject != null)
+        {
+            RaycastHit2D[] hitInfoArray = Physics2D.RaycastAll(m_WandTransform.position, selectedObject.transform.position - m_WandTransform.position, Vector2.Distance(m_WandTransform.position, selectedObject.transform.position));
+            foreach (var o in hitInfoArray)
+            {
+                // if any of the objects in the hitInfoArray are in the m_WhatAreBarriers layer, return that the selectedObject is out of line of sight.
+                if (m_WhatAreBarriers == (m_WhatAreBarriers | (1 << o.transform.gameObject.layer)))
+                {
+                    myGameObjects.Add(o.transform.gameObject);
+                }
+            }
+        }
+
+        return myGameObjects;
     }
 
     private void SetLeniencySwitch()
@@ -161,9 +174,11 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
 
     private void OnMouseButtonLeftPressed(object sender, Vector2 mousePosition)
     {
-        RaycastHit2D[] hitInfoArray = Physics2D.RaycastAll(GetMouseAsWorldPoint(mousePosition), Vector2.zero); // Get all objects that are at the position of the pointer click and return them to an array.
+        // Get all objects that are at the position of the pointer click and return them to an array.
+        RaycastHit2D[] hitInfoArray = Physics2D.RaycastAll(GetMouseAsWorldPoint(mousePosition), Vector2.zero);
 
-        // Run through all the objects that were at the position of the pointer click, and add the one with the highest sorting order to the mySelectedObject variable.
+        // Run through all the objects that were at the position of the pointer click, and add the one with the highest sorting 
+        // order to the mySelectedObject variable.
         foreach (var hitInfo in hitInfoArray)
         {
             if (hitInfo.transform.gameObject.GetComponent<Draggable>())
@@ -177,6 +192,11 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
                     selectedObject = hitInfo.transform.gameObject;
                 }
             }
+        }
+
+        if (LineOfSightCheck().Count != 0)
+        {
+            selectedObject = null;
         }
 
         if (selectedObject != null)
