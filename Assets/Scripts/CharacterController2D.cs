@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour, ICharacterEvents
@@ -11,27 +12,22 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
     [Header("Settings")]
     [SerializeField] private float movementSpeed = 30f;
-    [SerializeField] private bool m_AirControl = false; // Whether or not a player can steer while jumping;
+    [SerializeField] private bool m_AirControl = true; // Whether or not a player can steer while jumping;
     [SerializeField] private float m_JumpIntensity = 400f; // Amount of force/velocity added when the unit jumps.
-    [SerializeField] private bool m_UseVelocityForJumping = false; // Change the unit's y axis velocity instead of adding y force when jumping.
+    [SerializeField] private bool m_UseVelocityForJumping = true; // Change the unit's y axis velocity instead of adding y force when jumping.
     [SerializeField] [Range(0.0f, 5f)] private float m_CoyoteTime = 0.2f; // Duration of coyote time.
-    [SerializeField] private bool m_DoubleJump = false; // Whether the player can double jump.
-    [SerializeField] private int m_NumberOfDoubleJumps = 1; // If Double jumps are enabled, this is the amount of times a player is allowed to double jump by default.
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
 
-    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-    const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-
-    private bool m_FacingRight = true; // For determining which way the player is currently facing.
+    private const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    private const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Vector3 m_Velocity = Vector3.zero;
 
     private float myCoyoteStartTime;
     private bool myCoyoteJump = false;
-
-    public int DoubleJumpsRemaining { get; private set; }
-    public bool IsGrounded { get; private set; }
-    public int IsMovingHorizontally { get; private set; }
-    public bool IsFalling { get; private set; }
+    private bool isFalling;
+    private bool isGrounded;
+    private bool jumpKeyPressed = false;
+    private bool previouslyJumpKeyPressed = false;
 
     private Vector3 previousFeetPosition;
     private int previousMovementDirection;
@@ -42,26 +38,36 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
     public event EventHandler<int> OnHorizontalMovementChangesEvent;
     public event EventHandler OnJumpEvent;
 
+
     private void Start()
     {
         previousFeetPosition = m_GroundCheck.transform.position;
-        DoubleJumpsRemaining = m_NumberOfDoubleJumps;
+        //OnJumpEvent += FallWhenLetGoOfJump;
+    }
 
+    private void FallWhenLetGoOfJump(object sender, EventArgs e)
+    {
+        jumpKeyPressed = true;
+        Debug.Log(jumpKeyPressed);
+    }
 
-        if (!m_DoubleJump)
-        {
-            m_NumberOfDoubleJumps = 0;
-            DoubleJumpsRemaining = 0;
-        }
+    private void Update()
+    {
+        // if (previouslyJumpKeyPressed && !jumpKeyPressed)
+        // {
+        //     Debug.Log("let go of jump key!");
+        // }
+
+        // previouslyJumpKeyPressed = jumpKeyPressed;
     }
 
     private void FixedUpdate()
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////// Events
 
-        bool previouslyGrounded = IsGrounded; // previouslyGrounded keeps the information of whether the unit was grounded the previous frame.
+        bool previouslyGrounded = isGrounded; // previouslyGrounded keeps the information of whether the unit was grounded the previous frame.
 
-        IsGrounded = GroundedCheck(); // Checks whether the unit is currently grounded and assigns it to the grounded property.
+        isGrounded = GroundedCheck(); // Checks whether the unit is currently grounded and assigns it to the grounded property.
 
         if (LandingCheck(previouslyGrounded))
             OnLanding(this, EventArgs.Empty); // If the unit has landed invokes the OnLandingEvent.
@@ -87,10 +93,6 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         {
             myCoyoteJump = false;
         }
-        if (!myCoyoteJump && IsFalling)
-        {
-            DoubleJumpsRemaining = 0;
-        }
     }
 
     private bool GroundedCheck()
@@ -102,20 +104,18 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
     private bool LandingCheck(bool previouslyGrounded)
     {
-        return IsGrounded && !previouslyGrounded;
+        return isGrounded && !previouslyGrounded;
     }
 
     public void OnLanding(object sender, EventArgs e)
     {
-        DoubleJumpsRemaining = m_NumberOfDoubleJumps;
-        IsFalling = false;
-
+        isFalling = false;
         OnLandingEvent?.Invoke(this, EventArgs.Empty);
     }
 
     private bool AirbourneCheck(bool previouslyGrounded)
     {
-        return !IsGrounded && previouslyGrounded;
+        return !isGrounded && previouslyGrounded;
     }
 
     public void OnAirbourne(object sender, EventArgs e)
@@ -130,7 +130,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
     public void OnFalling(object sender, EventArgs e)
     {
-        IsFalling = true;
+        isFalling = true;
         myCoyoteStartTime = Time.time;
         myCoyoteJump = true;
         OnFallingEvent?.Invoke(this, EventArgs.Empty);
@@ -146,10 +146,10 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         OnJumpEvent?.Invoke(this, EventArgs.Empty);
     }
 
-    public void Move(int movementDirection, bool jump)
+    public void Move(int movementDirection, bool jumpKeyPressed)
     {
         //only control the player if grounded or m_AirControl is turned on
-        if (IsGrounded || m_AirControl)
+        if (isGrounded || m_AirControl)
         {
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(movementDirection * movementSpeed, m_Rigidbody2D.velocity.y);
@@ -159,27 +159,36 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
             MovementDirectionChangesChecker(movementDirection);
         }
         // If the player should jump...
-        if ((IsGrounded && jump) || (myCoyoteJump && jump) || ((DoubleJumpsRemaining > 0) && jump && m_DoubleJump))
+        if ((isGrounded && jumpKeyPressed && !previouslyJumpKeyPressed) || (myCoyoteJump && jumpKeyPressed && !previouslyJumpKeyPressed))
         {
-            // Only reduces charges of double jumps if you're currently not ground jumping and not coyote jumping
-            if (!IsGrounded && !myCoyoteJump)
-            {
-                DoubleJumpsRemaining--;
-            }
-
             // If unit is falling and outside of coyote time then don't jump.
-            if (IsFalling && !myCoyoteJump)
+            if (isFalling && !myCoyoteJump)
             {
                 return;
             }
-
-            if (IsFalling && myCoyoteJump)
-            {
-                DoubleJumpsRemaining--;
-            }
-
             // Add vertical force/velocity to the unit.
             Jump();
+        }
+
+        if (previouslyJumpKeyPressed && !jumpKeyPressed)
+        {
+            previouslyJumpKeyPressed = false;
+            if (m_Rigidbody2D.velocity.y > 0)
+            {
+                m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_Rigidbody2D.velocity.y * 0.9f);
+
+                StartCoroutine("SlowDown");
+            }
+        }
+    }
+
+    IEnumerator SlowDown()
+    {
+        yield return new WaitForFixedUpdate();
+        while (m_Rigidbody2D.velocity.y > 0)
+        {
+            m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_Rigidbody2D.velocity.y * 0.95f);
+            yield return null;
         }
     }
 
@@ -217,6 +226,8 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
     {
         OnJump(this, EventArgs.Empty);
 
+        this.previouslyJumpKeyPressed = true;
+
         if (m_UseVelocityForJumping)
         {
             m_Rigidbody2D.velocity = new Vector3(m_Rigidbody2D.velocity.x, m_JumpIntensity / 50, 0);
@@ -227,7 +238,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         }
 
         // After the unit jumps it is no longer falling.
-        IsFalling = false;
+        isFalling = false;
         myCoyoteJump = false;
     }
 }
