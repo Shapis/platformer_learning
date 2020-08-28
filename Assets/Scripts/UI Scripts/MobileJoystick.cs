@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 
 public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
 {
@@ -10,7 +11,7 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
     [SerializeField] private Transform joystickCenterBall;
     private bool touchStarted = false;
     private Vector2 mousePosition = new Vector2();
-    [SerializeField] private float m_SensitivityTreshold = 10f;
+    private float m_SensitivityTreshold = Screen.height / 30f;
     public event EventHandler OnJoystickHorizontalLeftPressedEvent;
     public event EventHandler OnJoystickHorizontalLeftUnpressedEvent;
     public event EventHandler OnJoystickHorizontalRightPressedEvent;
@@ -20,6 +21,10 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
     public event EventHandler OnJoystickVerticalDownPressedEvent;
     public event EventHandler OnJoystickVerticalDownUnpressedEvent;
     private Vector2Int direction = new Vector2Int(0, 0);
+    private Coroutine returnToCenterCoroutine;
+
+
+    private float timer;
 
     private void Awake()
     {
@@ -41,7 +46,7 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
     private void OnMouseButtonLeftUnpressed(object sender, Vector2 e)
     {
         touchStarted = false;
-        joystickCenterBall.position = (Vector2)joystickBackgroundCenter.position;
+        returnToCenterCoroutine = StartCoroutine("ReturnToCenter");
 
 
         if (direction.x == 1)
@@ -67,9 +72,28 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         direction.y = 0;
     }
 
+    IEnumerator ReturnToCenter()
+    {
+        yield return new WaitForSeconds(1 / 60f);
+        while (joystickCenterBall.position != joystickBackgroundCenter.position)
+        {
+            timer += 1 / 60f;
+            joystickCenterBall.position = Vector2.Lerp(joystickCenterBall.position, joystickBackgroundCenter.position, timer / 1f);
+            yield return null;
+        }
+        timer = 0f;
+
+    }
+
     private void OnMouseButtonLeftPressed(object sender, Vector2 e)
     {
-        if ((e - (Vector2)joystickBackgroundCenter.position).magnitude < 60f)
+        if (returnToCenterCoroutine != null)
+        {
+            StopCoroutine(returnToCenterCoroutine);
+        }
+
+
+        if ((e - (Vector2)joystickBackgroundCenter.position).magnitude < Screen.height / 6f)
         {
             touchStarted = true;
         }
@@ -81,7 +105,7 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         if (touchStarted)
         {
             Vector2 offset = mousePosition - (Vector2)joystickBackgroundCenter.position;
-            joystickCenterBall.position = (Vector2)joystickBackgroundCenter.position + Vector2.ClampMagnitude(offset, 45f);
+            joystickCenterBall.position = (Vector2)joystickBackgroundCenter.position + Vector2.ClampMagnitude(offset, Screen.height / 9f);
 
             // Horizontal movement
             if (offset.x >= m_SensitivityTreshold && direction.x != 1)
@@ -107,12 +131,12 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
             }
 
             // Vertical movement
-            if (offset.y >= m_SensitivityTreshold * 2 && direction.y != 1)
+            if (offset.y >= m_SensitivityTreshold && direction.y != 1)
             {
                 direction.y = 1;
                 OnJoystickVerticalUpPressed(this, EventArgs.Empty);
             }
-            else if (offset.y < m_SensitivityTreshold * 2 && direction.y == 1)
+            else if (offset.y < m_SensitivityTreshold && direction.y == 1)
             {
                 direction.y = 0;
                 OnJoystickVerticalUpUnpressed(this, EventArgs.Empty);
