@@ -4,19 +4,20 @@ using UnityEngine;
 public class PopupMenuController : MonoBehaviour
 {
 
+    [Header("Settings")]
     [SerializeField] private float transitionTime = 0.3f;
-
     [SerializeField] private bool m_StartMinimized = true;
 
-    int myTweenScaleUp;
+    private int myTweenScaleUp;
+    private int myTweenScaleDown;
+    private int myTweenDelayedCall;
 
-    int myTweenScaleDown;
-
-    int myTweenDelayedCall;
+    private Vector3 myInitialScale;
 
 
     private void Start()
     {
+        myInitialScale = gameObject.transform.localScale;
 
         if (m_StartMinimized)
         {
@@ -27,11 +28,12 @@ public class PopupMenuController : MonoBehaviour
 
     public void OpenMenu()
     {
+        myInitialScale = gameObject.transform.localScale;
         MinimizedSettings();
         LeanTween.cancel(myTweenScaleDown);
         LeanTween.cancel(myTweenDelayedCall);
         gameObject.SetActive(true);
-        myTweenScaleUp = LeanTween.scale(gameObject, new Vector3(1, 1, 1), transitionTime).setUseEstimatedTime(true).id;
+        myTweenScaleUp = LeanTween.scale(gameObject, myInitialScale, transitionTime).setUseEstimatedTime(true).id;
     }
 
 
@@ -47,7 +49,7 @@ public class PopupMenuController : MonoBehaviour
     public void StartOpenAndMaximized()
     {
         this.m_StartMinimized = false;
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        gameObject.transform.localScale = myInitialScale;
         gameObject.SetActive(true);
     }
 
