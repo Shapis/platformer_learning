@@ -5,19 +5,16 @@ public class PopupMenuController : MonoBehaviour
 {
 
     [Header("Settings")]
-    [SerializeField] private float transitionTime = 0.3f;
+    [SerializeField] private float m_TransitionTime = 0.3f;
     [SerializeField] private bool m_StartMinimized = true;
-
-    private int myTweenScaleUp;
-    private int myTweenScaleDown;
-    private int myTweenDelayedCall;
-
     private Vector3 myInitialScale;
-
+    private float timer = 0f;
+    private Coroutine myScalingCoroutine;
 
     private void Start()
     {
         myInitialScale = gameObject.transform.localScale;
+        Debug.Log(myInitialScale);
 
         if (m_StartMinimized)
         {
@@ -28,42 +25,54 @@ public class PopupMenuController : MonoBehaviour
 
     public void OpenMenu()
     {
-        myInitialScale = gameObject.transform.localScale;
-        MinimizedSettings();
-        LeanTween.cancel(myTweenScaleDown);
-        LeanTween.cancel(myTweenDelayedCall);
+        CancelScalingCoroutine();
         gameObject.SetActive(true);
-        myTweenScaleUp = LeanTween.scale(gameObject, myInitialScale, transitionTime).setUseEstimatedTime(true).id;
+        myScalingCoroutine = StartCoroutine("ScaleUp");
+
     }
 
-
+    private IEnumerator ScaleUp()
+    {
+        Vector3 localScaleBeforeScalingUp = gameObject.transform.localScale;
+        if (timer < 0f)
+        {
+            timer = 0f;
+        }
+        while (gameObject.transform.localScale != myInitialScale)
+        {
+            gameObject.transform.localScale = Vector3.Lerp(localScaleBeforeScalingUp, myInitialScale, timer / m_TransitionTime);
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
+    }
 
     public void CloseMenu()
     {
-        MinimizedSettings();
-        LeanTween.cancel(myTweenScaleUp);
-        myTweenScaleDown = LeanTween.scale(gameObject, new Vector3(0f, 0f, 0f), transitionTime).setUseEstimatedTime(true).id;
-        //myTweenDelayedCall = LeanTween.delayedCall(transitionTime, SetGameObjectInactive).setUseEstimatedTime(true).id;
+        CancelScalingCoroutine();
+        myScalingCoroutine = StartCoroutine("ScaleDown");
     }
 
-    public void StartOpenAndMaximized()
+    private IEnumerator ScaleDown()
     {
-        this.m_StartMinimized = false;
-        gameObject.transform.localScale = myInitialScale;
-        gameObject.SetActive(true);
-    }
-
-    // private void SetGameObjectInactive()
-    // {
-    //     gameObject.SetActive(false);
-    // }
-
-    private void MinimizedSettings()
-    {
-        if (m_StartMinimized)
+        Vector3 localScaleBeforeScalingDown = gameObject.transform.localScale;
+        if (timer > 1f)
         {
-            gameObject.transform.localScale = new Vector3(0, 0, 0);
-            m_StartMinimized = false;
+            timer = 1f;
+        }
+        while (gameObject.transform.localScale != Vector3.zero)
+        {
+            gameObject.transform.localScale = Vector3.Lerp(localScaleBeforeScalingDown, Vector3.zero, (1f - timer) / m_TransitionTime);
+            timer -= Time.unscaledDeltaTime;
+            yield return null;
+        }
+        gameObject.SetActive(false);
+    }
+
+    private void CancelScalingCoroutine()
+    {
+        if (myScalingCoroutine != null)
+        {
+            StopCoroutine(myScalingCoroutine);
         }
     }
 }

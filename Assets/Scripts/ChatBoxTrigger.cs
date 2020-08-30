@@ -15,9 +15,7 @@ public class ChatBoxTrigger : BaseItem, IChatBoxTriggerEvents, IDialogueBoxEvent
     void Awake()
     {
         m_ChatBoxTriggerGrabber = GameObject.Find("Player").GetComponent<ChatBoxTriggerGrabber>();
-
         m_DialogueBox = GameObject.Find("Canvas_Overlay").GetComponentInChildren<DialogueBox>();
-        m_DialogueBox.gameObject.GetComponent<PopupMenuController>().gameObject.transform.localScale = new Vector3(0, 0, 0);
 
         m_ChatBoxTriggerGrabber.OnChatBoxTriggerEvent += OnChatBoxTriggerCollided;
 

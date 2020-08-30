@@ -35,7 +35,7 @@ public class NodeLogicHandler : MonoBehaviour
         PopulateNodeMap();
         LoadPlayerCurrentNode();
         PopulateNodeMenu();
-        m_NodeMenu.StartOpenAndMaximized();
+        //m_NodeMenu.StartOpenAndMaximized();
 
         m_PlayerNodeMovement.GetCurrentNode().IsAccessible = true;
     }

@@ -155,6 +155,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Overlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3057961085914580838, guid: 91e774d36885b0043aad7d71584a3c47,
+        type: 3}
+      propertyPath: m_StartMinimized
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4028644944317876477, guid: 91e774d36885b0043aad7d71584a3c47,
         type: 3}
       propertyPath: m_textInfo.characterCount

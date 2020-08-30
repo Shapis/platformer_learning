@@ -15,16 +15,6 @@ public class ChatBoxTriggerGrabber : MonoBehaviour, IChatBoxTriggerEvents
         }
     }
 
-    // private void OnTriggerStay2D(Collider2D other)
-    // {
-    //     ChatBoxTrigger chatBoxTrigger = other.gameObject.GetComponent<ChatBoxTrigger>();
-    //     if (chatBoxTrigger != null && chatBoxTrigger.Tangible)
-    //     {
-    //         //chatBoxTrigger.Tangible = false;
-    //         OnChatBoxTriggerCollided(this, EventArgs.Empty);
-    //     }
-    // }
-
     public void OnChatBoxTriggerCollided(object sender, ChatBoxTrigger chatBoxTrigger)
     {
         OnChatBoxTriggerEvent?.Invoke(this, chatBoxTrigger);
