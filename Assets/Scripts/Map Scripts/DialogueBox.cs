@@ -24,6 +24,7 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
     [SerializeField] private bool m_ClickOnDialogueBoxForNext = false;
     [SerializeField] private bool m_CanGoToNextBeforeTextIsDone = false;
     private bool CanGoToNextBeforeTextIsDoneSwitch = true;
+    private bool dialogueBoxIsActive = false;
 
     private void Start()
     {
@@ -47,6 +48,8 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
     {
         OnDialogueBoxStarts(this, EventArgs.Empty);
         m_PopUpMenuController.OpenMenu();
+        dialogueBoxIsActive = true;
+        ResizeDialogueBoxAccordingToTextSize(myDialogue.sentences);
 
         if (myDialogue != null)
         {
@@ -56,9 +59,37 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
         }
     }
 
+    private void ResizeDialogueBoxAccordingToTextSize(string[] sentence)
+    {
+        string longestString = "";
+        int numberOfLines = 0;
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            if (longestString.Length < sentence[i].Length)
+            {
+                longestString = sentence[i];
+            }
+        }
+        dialogueText.text = longestString;
+        dialogueText.ForceMeshUpdate();
+        numberOfLines = dialogueText.textInfo.lineCount;
+        dialogueText.text = "";
+        dialogueText.ForceMeshUpdate();
+
+        float textHeight = 0;
+        switch (numberOfLines)
+        {
+            case 0: textHeight = 11 + 2 * 22.5f; break;
+            case 1: textHeight = 11 + 2 * 22.5f; break;
+            default: textHeight = 11 + numberOfLines * 22.5f; break;
+        }
+
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(gameObject.GetComponent<RectTransform>().sizeDelta.x, textHeight);
+    }
+
     private void NextSentence()
     {
-        if (m_CanGoToNextBeforeTextIsDone || CanGoToNextBeforeTextIsDoneSwitch)
+        if (m_CanGoToNextBeforeTextIsDone && dialogueBoxIsActive || CanGoToNextBeforeTextIsDoneSwitch && dialogueBoxIsActive)
         {
             CanGoToNextBeforeTextIsDoneSwitch = false;
             if (myDialogueHandler.GetSentencesCount() > 0)
@@ -78,10 +109,11 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
     {
         OnDialogueBoxEnds(this, EventArgs.Empty);
         m_PopUpMenuController.CloseMenu();
+        dialogueBoxIsActive = false;
         CanGoToNextBeforeTextIsDoneSwitch = true;
     }
 
-    IEnumerator TypeSentence(string sentence)
+    private IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
@@ -120,4 +152,3 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
         OnDialogueBoxTextCompletesEvent?.Invoke(this, EventArgs.Empty);
     }
 }
-

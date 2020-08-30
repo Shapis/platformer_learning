@@ -160,6 +160,11 @@ PrefabInstance:
       propertyPath: m_StartMinimized
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3057961085914580838, guid: 91e774d36885b0043aad7d71584a3c47,
+        type: 3}
+      propertyPath: m_TransitionTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4028644944317876477, guid: 91e774d36885b0043aad7d71584a3c47,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -335,7 +340,8 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7829729807908715485, guid: 91e774d36885b0043aad7d71584a3c47, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 91e774d36885b0043aad7d71584a3c47, type: 3}
 --- !u!1001 &198048354
 PrefabInstance:
