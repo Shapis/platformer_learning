@@ -3,12 +3,11 @@ using UnityEngine;
 
 public class PopupMenuController : MonoBehaviour
 {
-
     [Header("Settings")]
     [SerializeField] private float m_TransitionTime = 0.3f;
     [SerializeField] private bool m_StartMinimized = true;
     private Vector3 myInitialScale;
-    private float timer = 0f;
+    private float timer;
     private Coroutine myScalingCoroutine;
 
     private void Start()
@@ -26,7 +25,6 @@ public class PopupMenuController : MonoBehaviour
         CancelScalingCoroutine();
         gameObject.SetActive(true);
         myScalingCoroutine = StartCoroutine("ScaleUp");
-
     }
 
     private IEnumerator ScaleUp()

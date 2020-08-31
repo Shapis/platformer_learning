@@ -33,9 +33,18 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
 
     private void Start()
     {
-        m_InputHandler.OnMouseButtonLeftPressedEvent += OnMouseButtonLeftPressed;
-        m_InputHandler.OnMouseButtonLeftUnpressedEvent += OnMouseButtonLeftUnpressed;
-        m_InputHandler.OnMouseHoverEvent += OnMouseHover;
+        // This should be set to DeviceType.Handheld. Only use desktop while debugging.
+        if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            gameObject.SetActive(true);
+            m_InputHandler.OnMouseButtonLeftPressedEvent += OnMouseButtonLeftPressed;
+            m_InputHandler.OnMouseButtonLeftUnpressedEvent += OnMouseButtonLeftUnpressed;
+            m_InputHandler.OnMouseHoverEvent += OnMouseHover;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnMouseHover(object sender, Vector2 e)

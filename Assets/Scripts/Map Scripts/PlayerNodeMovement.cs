@@ -20,10 +20,7 @@ public class PlayerNodeMovement : MonoBehaviour
     }
 
     [SerializeField] private bool m_DebugLoggingEnabled = false;
-
     [SerializeField] private float m_Speed = 3f;
-
-
 
     public event EventHandler<GameObject> OnTravelNodeReachedEvent;
     public event EventHandler<GameObject> OnTravelNodeDepartedEvent;
@@ -31,7 +28,6 @@ public class PlayerNodeMovement : MonoBehaviour
     public event EventHandler<GameObject> OnDestinationNodeDepartedEvent;
     public event EventHandler<GameObject> OnDestinationNotAccessibleEvent;
     public event EventHandler<string> OnNoDestinationFoundEvent;
-
 
     void Start()
     {
@@ -123,9 +119,8 @@ public class PlayerNodeMovement : MonoBehaviour
         }
     }
 
-    IEnumerator DoUp()
+    private IEnumerator DoUp()
     {
-        yield return new WaitForSeconds(1 / 60);
         while (gameObject.transform.position != m_CurrentNode.m_UpDestination.transform.position)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, m_CurrentNode.m_UpDestination.transform.position, m_Speed * Time.deltaTime);
@@ -136,9 +131,8 @@ public class PlayerNodeMovement : MonoBehaviour
 
         NodeReachedDecider(m_CurrentNode.m_UpDestination);
     }
-    IEnumerator DoDown()
+    private IEnumerator DoDown()
     {
-        yield return new WaitForSeconds(1 / 60);
         while (gameObject.transform.position != m_CurrentNode.m_DownDestination.transform.position)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, m_CurrentNode.m_DownDestination.transform.position, m_Speed * Time.deltaTime);
@@ -148,9 +142,8 @@ public class PlayerNodeMovement : MonoBehaviour
 
         NodeReachedDecider(m_CurrentNode.m_DownDestination);
     }
-    IEnumerator DoLeft()
+    private IEnumerator DoLeft()
     {
-        yield return new WaitForSeconds(1 / 60);
         while (gameObject.transform.position != m_CurrentNode.m_LeftDestination.transform.position)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, m_CurrentNode.m_LeftDestination.transform.position, m_Speed * Time.deltaTime);
@@ -159,9 +152,8 @@ public class PlayerNodeMovement : MonoBehaviour
 
         NodeReachedDecider(m_CurrentNode.m_LeftDestination);
     }
-    IEnumerator DoRight()
+    private IEnumerator DoRight()
     {
-        yield return new WaitForSeconds(1 / 60);
         while (gameObject.transform.position != m_CurrentNode.m_RightDestination.transform.position)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, m_CurrentNode.m_RightDestination.transform.position, m_Speed * Time.deltaTime);

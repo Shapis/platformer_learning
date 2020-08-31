@@ -17,7 +17,6 @@ public class NodeInnerCircleColor : MonoBehaviour
     {
         mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         InvokeRepeating("ChangeColors", 0, m_RepeatRate);
-
     }
 
     void ChangeColors()
