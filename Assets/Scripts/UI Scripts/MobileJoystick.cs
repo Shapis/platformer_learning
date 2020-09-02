@@ -33,18 +33,23 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
 
     private void Start()
     {
-        // This should be set to DeviceType.Handheld. Only use desktop while debugging.
-        if (SystemInfo.deviceType == DeviceType.Desktop)
-        {
-            gameObject.SetActive(true);
-            m_InputHandler.OnMouseButtonLeftPressedEvent += OnMouseButtonLeftPressed;
-            m_InputHandler.OnMouseButtonLeftUnpressedEvent += OnMouseButtonLeftUnpressed;
-            m_InputHandler.OnMouseHoverEvent += OnMouseHover;
-        }
-        else
-        {
-            gameObject.SetActive(false);
-        }
+        // This should be set to DeviceType.Handheld. Only use desktop while debugging on a Computer.
+        // if (SystemInfo.deviceType == DeviceType.Handheld)
+        // {
+        gameObject.SetActive(true);
+        m_InputHandler.OnMouseButtonLeftPressedEvent += OnMouseButtonLeftPressed;
+        m_InputHandler.OnMouseButtonLeftUnpressedEvent += OnMouseButtonLeftUnpressed;
+        m_InputHandler.OnMouseHoverEvent += OnMouseHover;
+
+        // Doing this to make the joystick only detect the first touch, if this isn't enabled 
+        // if multitouch is enabled then you could hold the joystick and touch the screen elsewhere 
+        // and the joystick consider that secondary touch as a joystick moving touch
+        Input.multiTouchEnabled = false;
+        // }
+        //     else
+        //     {
+        //         gameObject.SetActive(false);
+        //     }
     }
 
     private void OnMouseHover(object sender, Vector2 e)
@@ -83,7 +88,6 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
 
     IEnumerator ReturnToCenter()
     {
-        yield return new WaitForSeconds(1 / 60f);
         while (joystickCenterBall.position != joystickBackgroundCenter.position)
         {
             timer += 1 / 60f;
@@ -91,7 +95,6 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
             yield return null;
         }
         timer = 0f;
-
     }
 
     private void OnMouseButtonLeftPressed(object sender, Vector2 e)

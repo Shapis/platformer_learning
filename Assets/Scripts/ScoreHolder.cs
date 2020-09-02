@@ -14,6 +14,7 @@ public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
     {
         GameObject.Find("Player").GetComponent<ScoreKeeper>().OnScoreUpdateEvent += OnScoreUpdate;
         GameObject.Find("Player").GetComponent<GemGrabber>().OnLevelEndsEvent += OnLevelEnds;
+        OnScoreUpdate(this, 0); // Initializing and refreshing the scoreboard as 0.
     }
 
     public void OnScoreUpdate(object sender, int totalScore)

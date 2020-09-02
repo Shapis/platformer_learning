@@ -4,19 +4,15 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Dependencies")]
     [SerializeField] private Button m_PlayButton;
     [SerializeField] private Button m_OptionsButton;
     [SerializeField] private Button m_QuitButton;
     [SerializeField] private InputHandler m_InputHandler;
-
     [SerializeField] private PopupMenuController m_PanelOptions;
-
     [SerializeField] private Button m_BackgroundBackButton;
-
     [SerializeField] private Button m_PanelOptionsReset;
-
     [SerializeField] private GameObject m_LeftBackButton;
-
     [SerializeField] private GameObject m_RightBackButton;
 
     private void Start()
@@ -39,9 +35,18 @@ public class MainMenu : MonoBehaviour
 
     private void CloseOptionsMenu(object sender, EventArgs e)
     {
-        m_PanelOptions.CloseMenu();
-        m_LeftBackButton.GetComponent<PopupMenuController>().CloseMenu();
-        m_RightBackButton.GetComponent<PopupMenuController>().CloseMenu();
+        if (m_PanelOptions.gameObject.activeSelf)
+        {
+            m_PanelOptions.CloseMenu();
+        }
+        if (m_LeftBackButton.activeSelf)
+        {
+            m_LeftBackButton.GetComponent<PopupMenuController>().CloseMenu();
+        }
+        if (m_RightBackButton.gameObject.activeSelf)
+        {
+            m_RightBackButton.GetComponent<PopupMenuController>().CloseMenu();
+        }
     }
 
 

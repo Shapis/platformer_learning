@@ -20,22 +20,16 @@ public class NodeMenuBottom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("ChangeColors", 0f, 1f);
-        //StartCoroutine("VaryColor");
+        StartCoroutine("ChangeColorsEverySecond");
     }
 
-
-    private IEnumerator VaryColor()
+    private IEnumerator ChangeColorsEverySecond()
     {
-        float timer = 0f;
-        Color temp = m_BackgroundCenter.color;
-        while (m_BackgroundCenter.color != m_PlayBackgroundCenterColors[1])
+        while (true)
         {
-            m_BackgroundCenter.color = Color.Lerp(temp, m_PlayBackgroundCenterColors[1], timer / 10f);
-            timer += Time.unscaledDeltaTime;
-            yield return null;
+            ChangeColors();
+            yield return new WaitForSecondsRealtime(1f);
         }
-        Debug.Log(timer);
     }
 
     private void ChangeColors()

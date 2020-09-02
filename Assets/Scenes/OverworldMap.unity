@@ -412,7 +412,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &49455956
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -609,7 +608,6 @@ GameObject:
   - component: {fileID: 51247524}
   - component: {fileID: 51247526}
   - component: {fileID: 51247525}
-  - component: {fileID: 51247527}
   m_Layer: 5
   m_Name: Panel_NodeMenuBottom
   m_TagString: Untagged
@@ -631,7 +629,6 @@ RectTransform:
   - {fileID: 183402469}
   - {fileID: 397584928}
   - {fileID: 2094269715}
-  - {fileID: 970323058}
   m_Father: {fileID: 1666246639}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -674,26 +671,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TransitionTime: 0.3
   m_StartMinimized: 0
---- !u!114 &51247527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51247523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7853930296042f7c6a88c29a58e252b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BackgroundCenter: {fileID: 183402470}
-  m_PlayText: {fileID: 827717254}
-  m_PlayTextColors:
-  - {r: 0.57254905, g: 0.3372549, b: 0.16862746, a: 1}
-  - {r: 0.6117647, g: 0.8, b: 0.2784314, a: 1}
-  m_PlayBackgroundColors:
-  - {r: 0.5137255, g: 0.52156866, b: 0.8117647, a: 1}
-  - {r: 0.4627451, g: 0.33333334, b: 0.63529414, a: 1}
 --- !u!1 &69397907
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +959,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &83191224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1084,7 +1060,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &92510786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1186,7 +1161,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &96248357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1422,7 +1396,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &138028581
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1836,7 +1809,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &161265607
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2072,7 +2044,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &171721197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2174,7 +2145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5137255, g: 0.52156866, b: 0.8117647, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2559,7 +2530,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &223252513
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2710,7 +2680,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &231953318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2812,7 +2781,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &238585492
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2914,7 +2882,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &253188612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3016,7 +2983,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &257930484
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3193,7 +3159,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &276021567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3503,7 +3468,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &285054618
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3605,7 +3569,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &287255791
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3667,6 +3630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 302450986}
   - component: {fileID: 302450987}
+  - component: {fileID: 302450988}
   m_Layer: 5
   m_Name: UIScriptsHandler
   m_TagString: Untagged
@@ -3706,6 +3670,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InputHandler: {fileID: 589640474}
+--- !u!114 &302450988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302450985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7853930296042f7c6a88c29a58e252b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BackgroundCenter: {fileID: 183402470}
+  m_BackgroundOutline: {fileID: 397584929}
+  m_PlayText: {fileID: 827717254}
+  m_PlayTextColors:
+  - {r: 0.92941177, g: 0.9019608, b: 0.78431374, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  m_PlayBackgroundCenterColors:
+  - {r: 0.5137255, g: 0.52156866, b: 0.8117647, a: 1}
+  - {r: 0.5137255, g: 0.52156866, b: 0.8117647, a: 1}
+  m_PlayBackgroundOutlineColors:
+  - {r: 0.4627451, g: 0.33333334, b: 0.63529414, a: 1}
+  - {r: 0.4627451, g: 0.33333334, b: 0.63529414, a: 1}
 --- !u!1 &303509165
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,7 +4160,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &331620167
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4351,7 +4338,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &359590629
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4729,7 +4715,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &413587393
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5039,7 +5024,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &434874154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5275,7 +5259,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &482902683
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5377,7 +5360,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &494764532
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5759,7 +5741,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &521572619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5965,7 +5946,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &542291561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6067,7 +6047,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &548012527
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6169,7 +6148,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &551952544
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6271,7 +6249,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &552312431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6417,7 +6394,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &606425803
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6899,7 +6875,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &638321084
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7001,7 +6976,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &642068853
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7386,7 +7360,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &677640584
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7488,7 +7461,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &678068483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7590,7 +7562,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &681204936
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8378,7 +8349,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &757010572
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8792,7 +8762,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &768398626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9133,7 +9102,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &781837397
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9339,7 +9307,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &788389420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9608,7 +9575,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &809043136
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9831,8 +9797,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4291356397
+  m_fontColor: {r: 0.92941177, g: 0.9019608, b: 0.78431374, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9949,7 +9915,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &830331379
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10441,7 +10406,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &854393114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10855,7 +10819,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &926306778
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11270,7 +11233,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &956390316
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11322,83 +11284,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &970323057
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 970323058}
-  - component: {fileID: 970323059}
-  m_Layer: 5
-  m_Name: Point Light 2D
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &970323058
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970323057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 51247524}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96.5, y: -133.4}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &970323059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970323057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 7bcedd395fd39ad22fab0c5100000000f53d87267734e89c
-  m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 7
-  m_PointLightOuterRadius: 7
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &980654811
 GameObject:
   m_ObjectHideFlags: 0
@@ -11449,7 +11334,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &980654814
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11730,7 +11614,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &993963326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11832,7 +11715,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1010904731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12361,7 +12243,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1030714255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12463,7 +12344,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1032185205
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12751,7 +12631,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1123036236
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13136,7 +13015,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1201159559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13396,7 +13274,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1228537802
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13498,7 +13375,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1244146788
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13839,7 +13715,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1284020868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14597,7 +14472,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1314976554
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14699,7 +14573,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1322726731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14801,7 +14674,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1323074003
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14954,7 +14826,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1358562725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15175,7 +15046,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1391668209
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15381,7 +15251,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1405687879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15483,7 +15352,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1406897200
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15585,7 +15453,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1408504422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15970,7 +15837,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1417410772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16072,7 +15938,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1424125489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16174,7 +16039,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1440568209
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16276,7 +16140,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1443928940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16378,7 +16241,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1463928354
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16480,7 +16342,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1466558253
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16681,7 +16542,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1497567951
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17364,7 +17224,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1518416419
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18362,7 +18221,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1665433894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18584,7 +18442,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1676650943
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18686,7 +18543,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1687294339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18892,7 +18748,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1701410961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18994,7 +18849,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1717811026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19542,7 +19396,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1783417033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19748,7 +19601,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1789184212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19850,7 +19702,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1795641990
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19952,7 +19803,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1826149954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20395,7 +20245,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1855228043
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20676,7 +20525,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1900712447
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20778,7 +20626,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1920035046
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21014,7 +20861,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1936086220
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21116,7 +20962,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1938902606
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21352,7 +21197,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1971982702
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21454,7 +21298,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &1972211831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21838,7 +21681,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &2017314580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22044,7 +21886,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &2051283999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22354,7 +22195,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &2085847661
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22888,7 +22728,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &2103572254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23066,7 +22905,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &2125512311
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23168,7 +23006,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &2136851314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23270,7 +23107,6 @@ MonoBehaviour:
   m_AccessibleColors:
   - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
   - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
-  m_RepeatRate: 1
 --- !u!212 &2139843167
 SpriteRenderer:
   m_ObjectHideFlags: 0
