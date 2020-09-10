@@ -102,6 +102,7 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
         {
             other.gameObject.GetComponent<Chest>().Tangible = false;
             OpenChest(other.gameObject.GetComponent<Chest>());
+            OnChestOpened(this, EventArgs.Empty);
         }
     }
 

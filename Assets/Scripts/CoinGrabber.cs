@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinGrabber : MonoBehaviour
+public class CoinGrabber : MonoBehaviour, ICoinEvents
 {
     private readonly List<ColorPalette.ColorName> coinList = new List<ColorPalette.ColorName>();
     public event EventHandler<List<ColorPalette.ColorName>> OnCoinsChangedEvent;

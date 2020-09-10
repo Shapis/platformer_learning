@@ -387,6 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_KeyGrabber: {fileID: -5273289893096482691}
+  m_CoinGrabber: {fileID: 6689860931852863811}
+  m_ChestGrabber: {fileID: 3277797399873134746}
 --- !u!114 &3856598008970999445
 MonoBehaviour:
   m_ObjectHideFlags: 0
