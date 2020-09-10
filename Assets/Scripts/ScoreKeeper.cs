@@ -102,7 +102,6 @@ public class ScoreKeeper : MonoBehaviour, IKeyGrabberEvents, IKeyDoorEvents, ISc
 
     public void OnChestOpened(object sender, EventArgs e)
     {
-        Debug.Log("a");
         chestScore += 3;
         UpdateScore();
     }
