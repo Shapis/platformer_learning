@@ -11,7 +11,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
     [SerializeField] private LayerMask m_WhatIsGround; // A mask determining what is ground to the character A position marking where to check for ceilings
 
     [Header("Settings")]
-    [SerializeField] private float movementSpeed = 30f;
+    [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private bool m_AirControl = true; // Whether or not a player can steer while jumping;
     [SerializeField] private float m_JumpIntensity = 400f; // Amount of force/velocity added when the unit jumps.
     [SerializeField] private bool m_UseVelocityForJumping = true; // Change the unit's y axis velocity instead of adding y force when jumping.

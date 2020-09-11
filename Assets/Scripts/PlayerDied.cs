@@ -16,8 +16,6 @@ public class PlayerDied : MonoBehaviour, IBloodySpikesEvents, IWaterEvents
     }
     public void Died()
     {
-        m_PlayerAnimator.SetBool("isAirbourne", false);
-        m_PlayerAnimator.SetBool("isDead", true);
         m_PlayerMovement.enabled = false;
         StartCoroutine(DelayHandler.DelayAction(2f, () => SceneHandler.ReloadCurrentScene()));
     }
