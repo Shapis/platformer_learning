@@ -12,6 +12,9 @@ public class WaterGrabber : MonoBehaviour, IWaterEvents
     private Coroutine waterTriggerEnter2DCoroutine = null;
     public event EventHandler OnWaterTriggerEnter2DEvent;
     public event EventHandler OnWaterTriggerExit2DEvent;
+    private Coroutine waterStabilization = null;
+
+    private float timeCount = 0f;
 
     private void Start()
     {
@@ -47,12 +50,20 @@ public class WaterGrabber : MonoBehaviour, IWaterEvents
     private IEnumerator WaterTriggerEnter2D()
     {
         yield return new WaitForSeconds(0.2f);
+        timeCount = 0f;
+        waterStabilization = StartCoroutine("StabilizeRotation");
         OnWaterTriggerEnter2D(this, EventArgs.Empty);
     }
 
     private IEnumerator WaterTriggerExit2D()
     {
         yield return new WaitForSeconds(0.4f);
+        upwardsVelocity = 0f;
+        if (waterStabilization != null)
+        {
+            StopCoroutine(waterStabilization);
+        }
+        gameObject.GetComponent<Rigidbody2D>().freezeRotation = false;
         OnWaterTriggerExit2D(this, EventArgs.Empty);
     }
 
@@ -68,6 +79,11 @@ public class WaterGrabber : MonoBehaviour, IWaterEvents
             {
                 upwardsVelocity++;
                 rb.velocity += Vector2.up * upwardsVelocity * Time.fixedDeltaTime;
+
+                if (rb.velocity.y > 1.5f * m_MaxVelocity)
+                {
+                    rb.velocity = Vector2.up * m_MaxVelocity * 1.5f;
+                }
             }
         }
         else if (upwardsVelocity > 0)
@@ -75,6 +91,18 @@ public class WaterGrabber : MonoBehaviour, IWaterEvents
             upwardsVelocity -= 0.5f;
         }
     }
+
+    private IEnumerator StabilizeRotation()
+    {
+        while (gameObject.transform.rotation != Quaternion.Euler(0, 0, 0))
+        {
+            gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, Quaternion.Euler(0, 0, 0), timeCount / 1.5f);
+            timeCount += Time.deltaTime;
+            yield return null;
+        }
+        gameObject.GetComponent<Rigidbody2D>().freezeRotation = true;
+    }
+
 
     public void OnWaterTriggerEnter2D(object sender, EventArgs e)
     {
