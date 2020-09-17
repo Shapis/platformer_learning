@@ -70,6 +70,7 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
         void BrownCoin(int i)
         {
             Rigidbody2D rb = instancedDrops[i].AddComponent<Rigidbody2D>();
+            instancedDrops[i].AddComponent<Magnet>();
             BoxCollider2D boxTriggerCollider2D = instancedDrops[i].GetComponent<BoxCollider2D>();
 
             GameObject container = new GameObject();

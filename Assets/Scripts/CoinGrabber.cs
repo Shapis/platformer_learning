@@ -11,7 +11,6 @@ public class CoinGrabber : MonoBehaviour, ICoinEvents
     {
         coinList.Add(coinType);
         OnCoinsChanged(this, coinList);
-
     }
 
     public void RemoveCoin(ColorPalette.ColorName coinType)
@@ -23,6 +22,17 @@ public class CoinGrabber : MonoBehaviour, ICoinEvents
     public bool ContainsCoin(ColorPalette.ColorName coinType)
     {
         return coinList.Contains(coinType);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Coin coin = other.gameObject.GetComponent<Coin>();
+        if (coin != null && coin.Tangible)
+        {
+            coin.Tangible = false;
+            AddCoin(coin.GetCoinType());
+            Destroy(coin.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
