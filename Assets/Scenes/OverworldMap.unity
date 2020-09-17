@@ -4558,7 +4558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - It's funny how a few steps away from home can feel so far away.
+  - A few steps away from home can feel so far away...
 --- !u!114 &378412059
 MonoBehaviour:
   m_ObjectHideFlags: 0
