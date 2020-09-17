@@ -95,7 +95,7 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
         while (dialogueText.text != "")
         {
             dialogueText.text = dialogueText.text.Remove(dialogueText.text.Length - 1);
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.015f);
         }
 
         if (myDialogueHandler.GetSentencesCount() > 0)
@@ -113,7 +113,7 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
         {
             dialogueText.text += letter;
             readingTime += 0.06f;
-            yield return new WaitForSeconds(0.04f);
+            yield return new WaitForSeconds(0.03f);
         }
 
         if (readingTime >= 4f)

@@ -213,6 +213,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         lineOfSightLeniencySwitch = true;
         lineOfSightSwitch = true;
         brokeLineOfSightPermanently = false;
+        //selectedObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
         currentlyLineOfSightBlockingObject = null;
         OnDraggingBeginsEvent?.Invoke(this, draggingEventArgs);
     }
@@ -221,6 +222,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
     {
         selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         selectedObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+        //selectedObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
         selectedObject = null;
         OnDraggingEndsEvent?.Invoke(this, EventArgs.Empty);
     }
