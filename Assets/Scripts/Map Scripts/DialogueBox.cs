@@ -26,6 +26,8 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
     private bool CanGoToNextBeforeTextIsDoneSwitch = true;
     private bool dialogueBoxIsActive = false;
 
+    private Coroutine typeSentenceCoroutine;
+
     private void Start()
     {
         m_InputHandler = GameObject.Find("InputHandler").GetComponent<InputHandler>();
@@ -94,8 +96,11 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
             CanGoToNextBeforeTextIsDoneSwitch = false;
             if (myDialogueHandler.GetSentencesCount() > 0)
             {
-                StopAllCoroutines();
-                StartCoroutine(TypeSentence(myDialogueHandler.NextSentence()));
+                if (typeSentenceCoroutine != null)
+                {
+                    StopCoroutine(typeSentenceCoroutine);
+                }
+                typeSentenceCoroutine = StartCoroutine(TypeSentence(myDialogueHandler.NextSentence()));
             }
             else if (myDialogueHandler.GetSentencesCount() == 0 && m_CloseAfterDialogueOver)
             {
