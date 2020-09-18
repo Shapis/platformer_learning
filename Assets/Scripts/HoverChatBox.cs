@@ -95,7 +95,7 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
         while (dialogueText.text != "")
         {
             dialogueText.text = dialogueText.text.Remove(dialogueText.text.Length - 1);
-            yield return new WaitForSeconds(0.015f);
+            yield return new WaitForSeconds(0.0125f);
         }
 
         if (myDialogueHandler.GetSentencesCount() > 0)
@@ -112,8 +112,8 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            readingTime += 0.06f;
-            yield return new WaitForSeconds(0.03f);
+            readingTime += 0.04f;
+            yield return new WaitForSeconds(0.025f);
         }
 
         if (readingTime >= 4f)
@@ -122,7 +122,7 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
         }
         else
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(3f);
         }
         NextSentence();
     }
