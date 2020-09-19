@@ -6,8 +6,6 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 {
     [Header("Dependencies")]
     [SerializeField] private Rigidbody2D m_Rigidbody2D;
-    [SerializeField] private Transform m_CeilingCheck; // A position marking where to check for ceilings
-    [SerializeField] private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
     [SerializeField] private LayerMask m_WhatIsGround; // A mask determining what is ground to the character A position marking where to check for ceilings
 
     [Header("Settings")]
@@ -25,11 +23,11 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
     private float myCoyoteStartTime;
     private bool myCoyoteJump = false;
     private bool isFalling;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool jumpKeyPressed = false;
     private bool previouslyJumpKeyPressed = false;
 
-    private Vector3 previousFeetPosition;
+    private Vector3 previousPosition;
     private int previousMovementDirection;
 
     public event EventHandler OnAirbourneEvent; // When the unit first becomes airbourne.
@@ -41,7 +39,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
     private void Start()
     {
-        previousFeetPosition = m_GroundCheck.transform.position;
+        previousPosition = transform.position;
         //OnJumpEvent += FallWhenLetGoOfJump;
     }
 
@@ -49,16 +47,6 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
     {
         jumpKeyPressed = true;
         Debug.Log(jumpKeyPressed);
-    }
-
-    private void Update()
-    {
-        // if (previouslyJumpKeyPressed && !jumpKeyPressed)
-        // {
-        //     Debug.Log("let go of jump key!");
-        // }
-
-        // previouslyJumpKeyPressed = jumpKeyPressed;
     }
 
     private void FixedUpdate()
@@ -75,11 +63,11 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         if (AirbourneCheck(previouslyGrounded))
             OnAirbourne(this, EventArgs.Empty); // If the unit is airbourne invokes the OnAirbourneEvent.
 
-        if (FallingCheck(AirbourneCheck(previouslyGrounded), previousFeetPosition.y))
+        if (FallingCheck(AirbourneCheck(previouslyGrounded), previousPosition.y))
             OnFalling(this, EventArgs.Empty); // If the unit is airbourne, falling and wasnt explicitly because of a jump run invokes the OnFallingEvent.
 
         // Updates the previous feet position to the current feet ground position so you can check if the unit is falling while airbourne the next frame.
-        previousFeetPosition = m_GroundCheck.transform.position;
+        previousPosition = transform.position;
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////// //Events//
 
@@ -97,9 +85,11 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
 
     private bool GroundedCheck()
     {
-        // The player is grounded if a circlecast to the groundcheck position hits anything designated as to be considered as ground, checking for which layers are ground m_WhatIsGround
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-        return colliders.Length > 0;
+        float rayCastLength = 0.55f;
+        Debug.DrawRay(transform.position + Vector3.left * 0.25f, Vector3.down * rayCastLength, Color.red);
+        Debug.DrawRay(transform.position + Vector3.right * 0.15f, Vector3.down * rayCastLength, Color.red);
+        //RaycastHit2D abc = Physics2D.Raycast(transform.position + Vector3.left * 0.25f, Vector2.down, rayCastLength, m_WhatIsGround);
+        return Physics2D.Raycast(transform.position + Vector3.left * 0.25f, Vector2.down, rayCastLength, m_WhatIsGround) || Physics2D.Raycast(transform.position + Vector3.right * 0.15f, Vector2.down, rayCastLength, m_WhatIsGround);
     }
 
     private bool LandingCheck(bool previouslyGrounded)
@@ -123,9 +113,9 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         OnAirbourneEvent?.Invoke(this, EventArgs.Empty);
     }
 
-    private bool FallingCheck(bool isAirbourne, float previousFeetPosition)
+    private bool FallingCheck(bool isAirbourne, float previousPositionY)
     {
-        return isAirbourne && (m_GroundCheck.transform.position.y < previousFeetPosition);
+        return isAirbourne && (transform.position.y < previousPositionY);
     }
 
     public void OnFalling(object sender, EventArgs e)

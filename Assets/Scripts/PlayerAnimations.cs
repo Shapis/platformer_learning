@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEvents, IWaterEvents, IDraggableEvents
@@ -10,6 +11,7 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
     [SerializeField] private PlayerItemDragger m_PlayerItemDragger;
     private GameObject gameObjectCurrentlyBeingDragged = null;
     private bool isFacingRight = true;
+    private Coroutine squeezeCoroutine;
 
     private void Start()
     {
@@ -45,11 +47,22 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
 
     public void OnAirbourne(object sender, EventArgs e)
     {
+        if (squeezeCoroutine != null)
+        {
+            StopCoroutine(squeezeCoroutine);
+        }
+        squeezeCoroutine = StartCoroutine(JumpSqueeze(0.7f, 1.25f, 0.1f));
         m_Animator.SetBool("isAirbourne", true);
     }
 
     public void OnLanding(object sender, EventArgs e)
     {
+        if (squeezeCoroutine != null)
+        {
+            StopCoroutine(squeezeCoroutine);
+        }
+        squeezeCoroutine = StartCoroutine(JumpSqueeze(1.25f, 0.6f, 0.06f));
+        gameObject.transform.localScale = new Vector2(1f, 1f);
         m_Animator.SetBool("isAirbourne", false);
     }
 
@@ -87,6 +100,28 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         {
             transform.Rotate(0f, 180f, 0f);
             isFacingRight = !isFacingRight;
+        }
+    }
+
+    private IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
+    {
+        Vector3 originalSize = transform.localScale;
+        Vector3 newSize = new Vector3(xSqueeze, ySqueeze, originalSize.z);
+        float timer = 0f;
+        while (timer <= 1f)
+        {
+            timer += Time.deltaTime / seconds;
+            transform.localScale = Vector3.Lerp(originalSize, newSize, timer);
+            transform.localPosition = new Vector2(transform.localPosition.x, -(1 - transform.localScale.y) / 2);
+            yield return null;
+        }
+        timer = 0f;
+        while (timer <= 1f)
+        {
+            timer += Time.deltaTime / seconds;
+            transform.localScale = Vector3.Lerp(newSize, Vector3.one, timer);
+            transform.localPosition = new Vector2(transform.localPosition.x, -(1 - transform.localScale.y) / 2);
+            yield return null;
         }
     }
 

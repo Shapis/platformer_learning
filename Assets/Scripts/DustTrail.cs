@@ -39,7 +39,7 @@ public class DustTrail : MonoBehaviour, ICharacterEvents
         {
             StopCoroutine(landingDustCoroutine);
         }
-        if (!isAirbourne)
+        if (!isAirbourne && movementDirection != 0)
         {
             CreateDust();
         }
