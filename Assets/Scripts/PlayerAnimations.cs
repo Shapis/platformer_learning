@@ -26,24 +26,6 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         m_PlayerItemDragger.OnDraggingEndsEvent += OnDraggingEnds;
     }
 
-    private void Update()
-    {
-        if (m_Animator.GetBool("isCasting"))
-        {
-            if (gameObjectCurrentlyBeingDragged != null)
-            {
-                if (gameObject.transform.position.x - gameObjectCurrentlyBeingDragged.transform.position.x > 0)
-                {
-                    //Flip(-1); // If the player is to the left of the object being dragged, make the player face left if he isn't currently facing left.
-                }
-                else
-                {
-                    //Flip(1); // If the player is to the right of the object being dragged, make the player face right if he isn't currently facing righht.
-                }
-            }
-        }
-    }
-
     public void OnAirbourne(object sender, EventArgs e)
     {
         m_Animator.SetBool("isAirbourne", true);
@@ -83,8 +65,6 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
             isMoving = true;
         }
         m_Animator.SetBool("isMoving", isMoving);
-
-        //Flip(movementDirection);
     }
 
     private IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)

@@ -69,6 +69,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
 
         CoyoteTime();
         FaceTheObjectBeingDragged(); // ? I'm not sure if this should be in FixedUpdate() or in Update() but it seems to be workign fine in here ?
+
     }
 
     private void FaceTheObjectBeingDragged()
