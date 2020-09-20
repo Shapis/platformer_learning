@@ -7,7 +7,6 @@ public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
     [SerializeField] private PlayerItemDragger m_PlayerItemDragger;
     private GameObject selectedObject = null;
     private bool inRange = false;
-    private bool belowGoingUp = false;
 
     // Start is called before the first frame update
     void Start()

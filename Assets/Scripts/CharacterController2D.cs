@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class CharacterController2D : MonoBehaviour, ICharacterEvents
+public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggableEvents
 {
     [Header("Dependencies")]
     [SerializeField] private Rigidbody2D m_Rigidbody2D;
     [SerializeField] private LayerMask m_WhatIsGround; // A mask determining what is ground to the character A position marking where to check for ceilings
+    [SerializeField] private PlayerItemDragger m_PlayerItemDragger; // Dependency so we know when to flip the character to face the direction of the item that is being dragged.
 
     [Header("Settings")]
     [SerializeField] private float movementSpeed = 5f;
@@ -36,23 +37,20 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
     public event EventHandler<int> OnHorizontalMovementChangesEvent;
     public event EventHandler OnJumpEvent;
 
+    private bool isFacingRight = true;
+    GameObject gameObjectCurrentlyBeingDragged = null;
+
 
     private void Start()
     {
         previousPosition = transform.position;
-        //OnJumpEvent += FallWhenLetGoOfJump;
-    }
 
-    private void FallWhenLetGoOfJump(object sender, EventArgs e)
-    {
-        jumpKeyPressed = true;
-        Debug.Log(jumpKeyPressed);
+        m_PlayerItemDragger.OnDraggingBeginsEvent += OnDraggingBegins;
+        m_PlayerItemDragger.OnDraggingEndsEvent += OnDraggingEnds;
     }
 
     private void FixedUpdate()
     {
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////// Events
-
         bool previouslyGrounded = isGrounded; // previouslyGrounded keeps the information of whether the unit was grounded the previous frame.
 
         isGrounded = GroundedCheck(); // Checks whether the unit is currently grounded and assigns it to the grounded property.
@@ -69,11 +67,24 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         // Updates the previous feet position to the current feet ground position so you can check if the unit is falling while airbourne the next frame.
         previousPosition = transform.position;
 
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////// //Events//
-
         CoyoteTime();
+        FaceTheObjectBeingDragged(); // ? I'm not sure if this should be in FixedUpdate() or in Update() but it seems to be workign fine in here ?
     }
 
+    private void FaceTheObjectBeingDragged()
+    {
+        if (gameObjectCurrentlyBeingDragged != null)
+        {
+            if (gameObject.transform.position.x - gameObjectCurrentlyBeingDragged.transform.position.x > 0)
+            {
+                Flip(-1); // If the player is to the left of the object being dragged, make the player face left if he isn't currently facing left.
+            }
+            else
+            {
+                Flip(1); // If the player is to the right of the object being dragged, make the player face right if he isn't currently facing righht.
+            }
+        }
+    }
 
     private void CoyoteTime()
     {
@@ -209,6 +220,22 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         {
             previousMovementDirection = 0;
         }
+
+        Flip(movementDirection);
+    }
+
+    private void Flip(int movementDirection)
+    {
+        if (movementDirection > 0 && !isFacingRight)
+        {
+            transform.Rotate(0f, 180f, 0f);
+            isFacingRight = !isFacingRight;
+        }
+        else if (movementDirection < 0 && isFacingRight)
+        {
+            transform.Rotate(0f, 180f, 0f);
+            isFacingRight = !isFacingRight;
+        }
     }
 
     // Add vertical force/velocity to the unit.
@@ -230,5 +257,25 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents
         // After the unit jumps it is no longer falling.
         isFalling = false;
         myCoyoteJump = false;
+    }
+
+    public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    {
+        gameObjectCurrentlyBeingDragged = draggingEventArgs.TargetGameObject;
+    }
+
+    public void OnDraggingEnds(object sender, EventArgs e)
+    {
+        gameObjectCurrentlyBeingDragged = null;
+    }
+
+    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnLineOfSightUnblocked(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
     }
 }

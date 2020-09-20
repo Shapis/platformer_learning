@@ -4968,6 +4968,7 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 5120
+  m_PlayerItemDragger: {fileID: 6628287101067338054}
   movementSpeed: 6
   m_AirControl: 1
   m_JumpIntensity: 500

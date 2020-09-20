@@ -10,7 +10,6 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
     [SerializeField] private WaterGrabber m_WaterGrabber;
     [SerializeField] private PlayerItemDragger m_PlayerItemDragger;
     private GameObject gameObjectCurrentlyBeingDragged = null;
-    private bool isFacingRight = true;
     private Coroutine squeezeCoroutine;
 
     private void Start()
@@ -18,7 +17,7 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         m_CharacterController2D.OnAirbourneEvent += OnAirbourne;
         m_CharacterController2D.OnLandingEvent += OnLanding;
         m_CharacterController2D.OnFallingEvent += OnFalling;
-        //m_CharacterController2D.OnJumpEvent += OnJump;
+        m_CharacterController2D.OnJumpEvent += OnJump;
         m_CharacterController2D.OnHorizontalMovementChangesEvent += OnHorizontalMovementChanges;
 
         m_BloodySpikesGrabber.OnBloodySpikesCollisionEnter2DEvent += OnBloodySpikesCollisionEnter2D;
@@ -35,11 +34,11 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
             {
                 if (gameObject.transform.position.x - gameObjectCurrentlyBeingDragged.transform.position.x > 0)
                 {
-                    Flip(-1); // If the player is to the left of the object being dragged, make the player face left if he isn't currently facing left.
+                    //Flip(-1); // If the player is to the left of the object being dragged, make the player face left if he isn't currently facing left.
                 }
                 else
                 {
-                    Flip(1); // If the player is to the right of the object being dragged, make the player face right if he isn't currently facing righht.
+                    //Flip(1); // If the player is to the right of the object being dragged, make the player face right if he isn't currently facing righht.
                 }
             }
         }
@@ -47,11 +46,6 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
 
     public void OnAirbourne(object sender, EventArgs e)
     {
-        if (squeezeCoroutine != null)
-        {
-            StopCoroutine(squeezeCoroutine);
-        }
-        squeezeCoroutine = StartCoroutine(JumpSqueeze(0.7f, 1.25f, 0.1f));
         m_Animator.SetBool("isAirbourne", true);
     }
 
@@ -61,18 +55,23 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         {
             StopCoroutine(squeezeCoroutine);
         }
-        squeezeCoroutine = StartCoroutine(JumpSqueeze(1.25f, 0.6f, 0.06f));
-        gameObject.transform.localScale = new Vector2(1f, 1f);
+        squeezeCoroutine = StartCoroutine(JumpSqueeze(1.25f, 0.6f, 0.07f));
         m_Animator.SetBool("isAirbourne", false);
     }
 
     public void OnFalling(object sender, EventArgs e)
     {
+
         m_Animator.SetBool("isAirbourne", true);
     }
 
     public void OnJump(object sender, EventArgs e)
     {
+        if (squeezeCoroutine != null)
+        {
+            StopCoroutine(squeezeCoroutine);
+        }
+        squeezeCoroutine = StartCoroutine(JumpSqueeze(0.7f, 1.2f, 0.1f));
     }
 
     public void OnHorizontalMovementChanges(object sender, int movementDirection)
@@ -85,22 +84,7 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         }
         m_Animator.SetBool("isMoving", isMoving);
 
-        Flip(movementDirection);
-    }
-
-
-    private void Flip(int movementDirection)
-    {
-        if (movementDirection > 0 && !isFacingRight)
-        {
-            transform.Rotate(0f, 180f, 0f);
-            isFacingRight = !isFacingRight;
-        }
-        else if (movementDirection < 0 && isFacingRight)
-        {
-            transform.Rotate(0f, 180f, 0f);
-            isFacingRight = !isFacingRight;
-        }
+        //Flip(movementDirection);
     }
 
     private IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
@@ -142,13 +126,11 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
 
     public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
     {
-        gameObjectCurrentlyBeingDragged = draggingEventArgs.TargetGameObject;
         m_Animator.SetBool("isCasting", true);
     }
 
     public void OnDraggingEnds(object sender, EventArgs e)
     {
-        gameObjectCurrentlyBeingDragged = null;
         m_Animator.SetBool("isCasting", false);
     }
 
