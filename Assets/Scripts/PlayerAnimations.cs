@@ -11,6 +11,7 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
     [SerializeField] private PlayerItemDragger m_PlayerItemDragger;
     private GameObject gameObjectCurrentlyBeingDragged = null;
     private Coroutine squeezeCoroutine;
+    private float airbourneTimer;
 
     private void Start()
     {
@@ -28,16 +29,21 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
 
     public void OnAirbourne(object sender, EventArgs e)
     {
+        airbourneTimer = Time.time;
         m_Animator.SetBool("isAirbourne", true);
     }
 
     public void OnLanding(object sender, EventArgs e)
     {
-        if (squeezeCoroutine != null)
+        if (Time.time >= airbourneTimer + 0.15f)
         {
-            StopCoroutine(squeezeCoroutine);
+            if (squeezeCoroutine != null)
+            {
+                StopCoroutine(squeezeCoroutine);
+            }
+
+            squeezeCoroutine = StartCoroutine(JumpSqueeze(1.25f, 0.6f, 0.07f));
         }
-        squeezeCoroutine = StartCoroutine(JumpSqueeze(1.25f, 0.6f, 0.07f));
         m_Animator.SetBool("isAirbourne", false);
     }
 

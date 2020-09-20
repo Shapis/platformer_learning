@@ -20,6 +20,10 @@ public class NodeInnerCircleColor : MonoBehaviour
 
     private IEnumerator ChangeColorsEverySecond()
     {
+        // This is necessary to avoid some initialization issues, since this Coroutine is called on Start(), and some calculations
+        // are still happening to figure out which nodes are accessible and which aren't.
+        yield return new WaitForEndOfFrame();
+
         while (true)
         {
             ChangeColors();

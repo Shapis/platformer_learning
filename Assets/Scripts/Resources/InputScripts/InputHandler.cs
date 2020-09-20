@@ -39,6 +39,9 @@ public class InputHandler : MonoBehaviour, IMobileJoystickEvents
     public event EventHandler<Vector2> OnMouseButtonLeftUnpressedEvent;
     #endregion
 
+    #region Touch Events
+    #endregion
+
     #region Mobile Joystick Dependencies
     private MobileJoystick m_MobileJoystick;
     #endregion
