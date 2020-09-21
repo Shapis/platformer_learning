@@ -23,16 +23,14 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         public GameObject OriginGameObject { get; set; }
         public GameObject TargetGameObject { get; set; }
         public GameObject ClosestBlockingGameObject { get; set; }
-        public float LineOfSightLeniencyTimer { get; set; }
     }
-    private GameObject currentlyLineOfSightBlockingObject = null;
     private GameObject selectedObject = null;
-    private bool lineOfSightSwitch = true;
-    private bool lineOfSightLeniencySwitch = true;
-    private bool brokeLineOfSightPermanently = false;
-    private Vector3 offset;
-    private bool isLineOfSightBlocked;
-    private float timeCount = 0f;
+    private GameObject closestBlockingObject = null;
+    private float leniencyTimer = 0f;
+    private float leniencyTime = 1.5f;
+    private float rotationTimer = 0f;
+    private bool initiallyInLos = false; // ! This isn't a good name for this variable.
+    private bool lineOfSightForGood = false; // ! This isn't a good name for this variable either.
 
     private void Awake()
     {
@@ -45,129 +43,54 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         m_InputHandler.OnMouseHoverEvent += OnMouseHover;
     }
 
-    private void OnMouseHover(object sender, Vector2 mousePosition)    // This will run every frame that an object is being held until the mouse left button is left go off.
-    {
-        if (selectedObject != null)
-        {
-            if (LineOfSightLeniencyCheck())     // Will only allow objects to be dragged if line of sight doesnt break through grounds/barriers
-            {
-                DragObjectToMousePointer(mousePosition);
-                RotateTheObjectToFaceUpwards();
-                DrawDebugRaycasts(mousePosition);
-            }
-        }
-    }
-
-    private bool LineOfSightLeniencyCheck()
-    {
-        List<GameObject> myGameObjects = LineOfSightCheck(); // Returns all the objects between the starting point and the selected object
-
-        // Check through all GameObjects between the starting point and the selectedObject which one is the closest, and point the myClosestBlockingObject
-        // variable to it, if no objects are between the starting point and the selectedObject thhen keep myClosestBlockingObject as null.
-        GameObject myClosestBlockingObject = null;
-        foreach (var o in myGameObjects)
-        {
-            if (myClosestBlockingObject == null)
-            {
-                myClosestBlockingObject = o;
-            }
-            else
-            {
-                if (
-                Vector2.Distance(myClosestBlockingObject.transform.position, m_WandTransform.position) >
-                Vector2.Distance(o.transform.position, m_WandTransform.position))
-                {
-                    myClosestBlockingObject = o;
-                }
-            }
-        }
-
-        // Updates the currentlyLineOfSightBlockingObject to myClosestBlockingObject if they are different.
-        if (myClosestBlockingObject != null && currentlyLineOfSightBlockingObject != myClosestBlockingObject)
-        {
-            currentlyLineOfSightBlockingObject = myClosestBlockingObject;
-            DraggingEventArgs myLosArgs = new DraggingEventArgs { OriginGameObject = m_WandTransform.gameObject, TargetGameObject = selectedObject, ClosestBlockingGameObject = myClosestBlockingObject, LineOfSightLeniencyTimer = m_LineOfSightLeniencyTimer };
-            lineOfSightSwitch = false;
-            Invoke("SetLeniencySwitch", m_LineOfSightLeniencyTimer);
-            OnLineOfSightBlocked(this, myLosArgs);
-        }
-        else if (myClosestBlockingObject == null && !lineOfSightSwitch)
-        {
-            CancelInvoke();
-            lineOfSightSwitch = true;
-            currentlyLineOfSightBlockingObject = null;
-            OnLineOfSightUnblocked(this, EventArgs.Empty);
-        }
-
-        if (!lineOfSightLeniencySwitch && !brokeLineOfSightPermanently)
-        {
-            brokeLineOfSightPermanently = true;
-            OnDraggingEnds(this, EventArgs.Empty);
-        }
-
-        return lineOfSightLeniencySwitch;
-    }
-
-    private List<GameObject> LineOfSightCheck()
-    {
-        List<GameObject> myGameObjects = new List<GameObject>();
-
-        if (selectedObject != null)
-        {
-            RaycastHit2D[] hitInfoArray = Physics2D.RaycastAll(m_WandTransform.position, selectedObject.transform.position - m_WandTransform.position, Vector2.Distance(m_WandTransform.position, selectedObject.transform.position));
-            foreach (var o in hitInfoArray)
-            {
-                // if any of the objects in the hitInfoArray are in the m_WhatAreBarriers layer, return that the selectedObject is out of line of sight.
-                if (m_WhatAreBarriers == (m_WhatAreBarriers | (1 << o.transform.gameObject.layer)))
-                {
-                    myGameObjects.Add(o.transform.gameObject);
-                }
-            }
-        }
-
-        return myGameObjects;
-    }
-
-    private void SetLeniencySwitch()
-    {
-        lineOfSightLeniencySwitch = false;
-    }
-
-    private void DrawDebugRaycasts(Vector2 mousePosition)
-    {
-        Debug.DrawRay(m_WandTransform.position, selectedObject.transform.position - m_WandTransform.position);
-
-        Debug.DrawRay(m_WandTransform.position, GetMouseAsWorldPoint(mousePosition) - m_WandTransform.position);
-    }
-
-    private void DragObjectToMousePointer(Vector2 mousePosition)
-    {
-        // calc velocity necessary to follow the mouse pointer
-        var vel = ((GetMouseAsWorldPoint(mousePosition) + offset) - selectedObject.transform.position) * m_DraggingSpeed;
-
-        // lower the offset so it centers on the pointer over time
-        offset *= 0.92f;
-
-        // limit max velocity to avoid pass through objects
-        if (vel.magnitude > m_DraggingSpeed)
-        {
-            vel *= m_DraggingSpeed / vel.magnitude;
-        }
-
-        // set object velocity
-        selectedObject.GetComponent<Rigidbody2D>().velocity = vel;
-    }
-
     private void RotateTheObjectToFaceUpwards()
     {
-        selectedObject.transform.rotation = Quaternion.Slerp(selectedObject.transform.rotation, Quaternion.Euler(0, 0, 0), timeCount / 1.5f);
-        timeCount += Time.deltaTime;
+        selectedObject.transform.rotation = Quaternion.Slerp(selectedObject.transform.rotation, Quaternion.Euler(0, 0, 0), rotationTimer / 1.5f);
+        rotationTimer += Time.deltaTime;
     }
 
-    private void OnMouseButtonLeftUnpressed(object sender, Vector2 e)
+    private void OnMouseHover(object sender, Vector2 mousePosition)    // This will run every frame that an object is being held until the mouse left button is left go off.
     {
-        if (selectedObject != null && !brokeLineOfSightPermanently)
+        if (selectedObject != null && LineOfSightCheck(m_WandTransform.position, selectedObject.transform.position) == null && !lineOfSightForGood)
         {
+            if (closestBlockingObject != null)
+            {
+                OnLineOfSightUnblocked(this, EventArgs.Empty);
+                closestBlockingObject = null;
+            }
+            leniencyTimer = 0f;
+            initiallyInLos = true;
+            DragObjectToMousePointer(mousePosition);
+            RotateTheObjectToFaceUpwards();
+            DrawDebugRaycasts(mousePosition);
+        }
+        else if (selectedObject != null && leniencyTimer < leniencyTime && initiallyInLos)
+        {
+            leniencyTimer += Time.deltaTime;
+            DragObjectToMousePointer(mousePosition);
+            RotateTheObjectToFaceUpwards();
+            DrawDebugRaycasts(mousePosition);
+            if (closestBlockingObject != LineOfSightCheck(m_WandTransform.position, selectedObject.transform.position))
+            {
+                DraggingEventArgs lineOfSightArgs = new DraggingEventArgs()
+                {
+                    OriginGameObject = m_WandTransform.gameObject,
+                    TargetGameObject = selectedObject,
+                    ClosestBlockingGameObject = LineOfSightCheck(m_WandTransform.position, selectedObject.transform.position),
+                };
+                OnLineOfSightBlocked(this, lineOfSightArgs);
+            }
+            closestBlockingObject = LineOfSightCheck(m_WandTransform.position, selectedObject.transform.position);
+        }
+        else if (selectedObject != null && leniencyTimer < leniencyTime && !initiallyInLos)
+        {
+            leniencyTimer += Time.deltaTime;
+        }
+        else if (selectedObject != null && leniencyTimer != 5000)
+        {
+            initiallyInLos = false;
+            lineOfSightForGood = true;
+            leniencyTimer = 5000;
             OnDraggingEnds(this, EventArgs.Empty);
         }
     }
@@ -175,10 +98,14 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
     private void OnMouseButtonLeftPressed(object sender, Vector2 mousePosition)
     {
         // Get all objects that are at the position of the pointer click and return them to an array.
-        RaycastHit2D[] hitInfoArray = Physics2D.RaycastAll(GetMouseAsWorldPoint(mousePosition), Vector2.zero);
+        RaycastHit2D[] hitInfoArray = Physics2D.RaycastAll(GetPointerAsWorldPoint(mousePosition), Vector2.zero);
+        selectedObject = null;
+        //closestBlockingObject = null; // ? Not sure if this is necessary, putting it here just in case ?
+        leniencyTimer = 0f;
+        lineOfSightForGood = false;
 
         // Run through all the objects that were at the position of the pointer click, and add the one with the highest sorting 
-        // order to the mySelectedObject variable.
+        // order to the selectedObject variable.
         foreach (var hitInfo in hitInfoArray)
         {
             if (hitInfo.transform.gameObject.GetComponent<Draggable>())
@@ -193,28 +120,89 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
                 }
             }
         }
-
-        if (LineOfSightCheck().Count != 0)
-        {
-            selectedObject = null;
-        }
-
+        DraggingEventArgs myDraggingEventArgs = new DraggingEventArgs();
         if (selectedObject != null)
         {
-            offset = selectedObject.transform.position - GetMouseAsWorldPoint(mousePosition);
-            DraggingEventArgs myDraggingEventArgs = new DraggingEventArgs { OriginGameObject = m_WandTransform.gameObject, TargetGameObject = selectedObject, ClosestBlockingGameObject = null, LineOfSightLeniencyTimer = m_LineOfSightLeniencyTimer };
+            myDraggingEventArgs = new DraggingEventArgs
+            {
+                OriginGameObject = m_WandTransform.gameObject,
+                TargetGameObject = selectedObject,
+                ClosestBlockingGameObject = LineOfSightCheck(m_WandTransform.position, selectedObject.transform.position),
+            };
+            closestBlockingObject = myDraggingEventArgs.ClosestBlockingGameObject;
             OnDraggingBegins(this, myDraggingEventArgs);
+        }
+    }
+
+    private void DrawDebugRaycasts(Vector2 mousePosition)
+    {
+        Debug.DrawRay(m_WandTransform.position, selectedObject.transform.position - m_WandTransform.position);
+
+        Debug.DrawRay(m_WandTransform.position, GetPointerAsWorldPoint(mousePosition) - m_WandTransform.position);
+    }
+
+    private void DragObjectToMousePointer(Vector2 mousePosition)
+    {
+        // calc velocity necessary to follow the mouse pointer
+        var vel = ((GetPointerAsWorldPoint(mousePosition)) - selectedObject.transform.position) * m_DraggingSpeed;
+
+        // lower the offset so it centers on the pointer over time
+        // offset *= 0.92f;
+
+        // limit max velocity to avoid pass through objects
+        if (vel.magnitude > m_DraggingSpeed)
+        {
+            vel *= m_DraggingSpeed / vel.magnitude;
+        }
+
+        // set object velocity
+        selectedObject.GetComponent<Rigidbody2D>().velocity = vel;
+    }
+
+    private GameObject LineOfSightCheck(Vector3 origin, Vector3 target)
+    {
+        List<GameObject> myClosestBlockingObjects = new List<GameObject>();
+
+        RaycastHit2D[] hitInfoArray = Physics2D.RaycastAll(origin, target - origin, Vector2.Distance(origin, target));
+        foreach (var o in hitInfoArray)
+        {
+            // if any of the objects in the hitInfoArray are in the m_WhatAreBarriers layer, return that the selectedObject is out of line of sight.
+            if (m_WhatAreBarriers == (m_WhatAreBarriers | (1 << o.transform.gameObject.layer)))
+            {
+                myClosestBlockingObjects.Add(o.transform.gameObject);
+            }
+        }
+
+        // Loops through all the objects in myClosestBlockObjects and determines the myClosestBlockingObject
+        GameObject myClosestBlockingObject = null;
+        foreach (var o in myClosestBlockingObjects)
+        {
+            if (myClosestBlockingObject == null)
+            {
+                myClosestBlockingObject = o;
+            }
+            else
+            {
+                if (Vector2.Distance(myClosestBlockingObject.transform.position, origin) > Vector2.Distance(o.transform.position, origin))
+                {
+                    myClosestBlockingObject = o;
+                }
+            }
+        }
+
+        return myClosestBlockingObject; // Returns the closest blocking object.
+    }
+
+    private void OnMouseButtonLeftUnpressed(object sender, Vector2 e)
+    {
+        if (selectedObject != null)
+        {
+            OnDraggingEnds(this, EventArgs.Empty);
         }
     }
 
     public void OnDraggingBegins(object sender, DraggingEventArgs draggingEventArgs)
     {
-        timeCount = 0f;
-        lineOfSightLeniencySwitch = true;
-        lineOfSightSwitch = true;
-        brokeLineOfSightPermanently = false;
-        //selectedObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
-        currentlyLineOfSightBlockingObject = null;
         OnDraggingBeginsEvent?.Invoke(this, draggingEventArgs);
     }
 
@@ -222,14 +210,15 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
     {
         selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         selectedObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
-        //selectedObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
+        rotationTimer = 0f;
+        initiallyInLos = false;
         selectedObject = null;
         OnDraggingEndsEvent?.Invoke(this, EventArgs.Empty);
     }
 
-    private Vector3 GetMouseAsWorldPoint(Vector2 mousePoint)
+    private Vector3 GetPointerAsWorldPoint(Vector2 pointerPosition)
     {
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+        return Camera.main.ScreenToWorldPoint(pointerPosition);
     }
 
     public void OnLineOfSightBlocked(object sender, DraggingEventArgs lineOfSightArgs)

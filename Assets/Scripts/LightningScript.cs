@@ -13,12 +13,12 @@ public class LightningScript : MonoBehaviour
     private Vector3[] myPoints;
     private Transform originTransform;
     private Transform targetTransform;
-    private Transform tempTargetTransform;
+    public GameObject ClosestBlockingObject { get; set; }
     private GeometryHandler myGeometryHandler;
     private bool hasBegun;
     private float timer;
     private float randomness;
-    public GameObject ClosestBlockingGameObject { get; set; } = null;
+
 
     private void Start()
     {
@@ -30,7 +30,6 @@ public class LightningScript : MonoBehaviour
 
     private void Update()
     {
-
         if (hasBegun)
         {
             foreach (var o in myLightningLinesArray)
@@ -46,6 +45,7 @@ public class LightningScript : MonoBehaviour
 
         foreach (var o in myRayInfoArray)
         {
+
             if (o.transform.gameObject == targetTransform.gameObject)
             {
                 return o.point;
@@ -55,15 +55,16 @@ public class LightningScript : MonoBehaviour
         return Vector2.zero; // this should never happen
     }
 
-    public void Begin(Transform originTransform, Transform targetTransform)
+    public void Begin(Transform originTransform, Transform targetTransform, GameObject closestBlockingTransform)
     {
         this.originTransform = originTransform;
         this.targetTransform = targetTransform;
-        hasBegun = true;
+        this.ClosestBlockingObject = closestBlockingTransform;
         for (int i = 0; i < m_LightningLines; i++)
         {
-            myLightningLinesArray[i] = myGeometryHandler.DrawLine(m_EffectsContainer, myPoints, new Vector2(m_LineWidth, m_LineWidth), m_PossibleColors[0]);
+            myLightningLinesArray[i] = myGeometryHandler.DrawLine(m_EffectsContainer, myPoints, new Vector2(m_LineWidth, m_LineWidth), ReturnRandomColor());
         }
+        hasBegun = true;
     }
 
     public void End()
@@ -91,19 +92,19 @@ public class LightningScript : MonoBehaviour
         float distance = Vector3.Distance(origin.position, target) / myLineRenderer.positionCount;
         randomness = randomnessFactor * distance / (myLineRenderer.positionCount * 2);
         SetRandomness(myLineRenderer);
-        ChangeToRandomColor(myLineRenderer);
+        myLineRenderer.material.color = ReturnRandomColor();
         AdjustSortingLayerToTargetSortingLayer(myLineRenderer);
         // }
         myLineRenderer.SetPosition(0, origin.position);
         myLineRenderer.SetPosition(4, target);
     }
 
-    private void ChangeToRandomColor(LineRenderer myLineRenderer)
+    private Color ReturnRandomColor()
     {
         System.Random rnd = new System.Random();
         int myRnd = 0;
 
-        if (ClosestBlockingGameObject == null)
+        if (ClosestBlockingObject == null)
         {
             myRnd = rnd.Next(0, 2);
         }
@@ -112,7 +113,7 @@ public class LightningScript : MonoBehaviour
             myRnd = rnd.Next(3, m_PossibleColors.Length);
 
         }
-        myLineRenderer.material.color = m_PossibleColors[myRnd];
+        return m_PossibleColors[myRnd];
     }
 
     private void AdjustSortingLayerToTargetSortingLayer(LineRenderer myLineRenderer)

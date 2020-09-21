@@ -16,8 +16,7 @@ public class PlayerMagic : MonoBehaviour, IDraggableEvents
 
     public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
     {
-        m_LightningScript.ClosestBlockingGameObject = null;
-        m_LightningScript.Begin(draggingEventArgs.OriginGameObject.transform, draggingEventArgs.TargetGameObject.transform);
+        m_LightningScript.Begin(draggingEventArgs.OriginGameObject.transform, draggingEventArgs.TargetGameObject.transform, draggingEventArgs.ClosestBlockingGameObject);
     }
 
     public void OnDraggingEnds(object sender, EventArgs e)
@@ -27,11 +26,11 @@ public class PlayerMagic : MonoBehaviour, IDraggableEvents
 
     public void OnLineOfSightBlocked(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
     {
-        m_LightningScript.ClosestBlockingGameObject = draggingEventArgs.ClosestBlockingGameObject;
+        m_LightningScript.ClosestBlockingObject = draggingEventArgs.ClosestBlockingGameObject;
     }
 
     public void OnLineOfSightUnblocked(object sender, EventArgs e)
     {
-        m_LightningScript.ClosestBlockingGameObject = null;
+        m_LightningScript.ClosestBlockingObject = null;
     }
 }

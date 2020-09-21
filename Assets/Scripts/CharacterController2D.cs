@@ -20,14 +20,12 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
     private const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Vector3 m_Velocity = Vector3.zero;
-
     private float myCoyoteStartTime;
     private bool myCoyoteJump = false;
     private bool isFalling;
     public bool isGrounded;
     private bool jumpKeyPressed = false;
     private bool previouslyJumpKeyPressed = false;
-
     private Vector3 previousPosition;
     private int previousMovementDirection;
 
@@ -97,7 +95,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
 
     private bool GroundedCheck()
     {
-        float rayCastLength = 0.55f;
+        float rayCastLength = 0.54f;
         Debug.DrawRay(transform.position + Vector3.left * 0.25f, Vector3.down * rayCastLength, Color.red);
         Debug.DrawRay(transform.position + Vector3.right * 0.15f, Vector3.down * rayCastLength, Color.red);
         //RaycastHit2D abc = Physics2D.Raycast(transform.position + Vector3.left * 0.25f, Vector2.down, rayCastLength, m_WhatIsGround);
