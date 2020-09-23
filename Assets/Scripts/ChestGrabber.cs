@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -55,16 +56,22 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
         }
         void Key(int i)
         {
-            LeanTween.move(instancedDrops[i], myInitialPositions[i], 1);
+            StartCoroutine(MoveOverTime(instancedDrops[i], myInitialPositions[i], 1f));
             instancedDrops[i].transform.SetParent(m_KeysContainer.transform);
             StartCoroutine(DelayHandler.DelayAction(1, () => instancedDrops[i].GetComponent<Key>().Tangible = true));
         }
 
         void PurpleCoin(int i)
         {
-            LeanTween.move(instancedDrops[i], myInitialPositions[i], 1);
+            StartCoroutine(MoveOverTime(instancedDrops[i], myInitialPositions[i], 1f));
             instancedDrops[i].transform.SetParent(m_CoinsContainer.transform);
             StartCoroutine(DelayHandler.DelayAction(1, () => instancedDrops[i].GetComponent<Coin>().Tangible = true));
+        }
+
+        // TODO: This.
+        IEnumerator MoveOverTime(GameObject gameObject, Vector3 targetPosition, float timeInterval)
+        {
+            yield return null;
         }
 
         void BrownCoin(int i)
