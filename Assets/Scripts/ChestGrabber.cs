@@ -71,7 +71,12 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
         // TODO: This.
         IEnumerator MoveOverTime(GameObject gameObject, Vector3 targetPosition, float timeInterval)
         {
-            yield return null;
+            Vector3 initialPosition = gameObject.transform.position;
+            while (gameObject.transform.position != targetPosition)
+            {
+                gameObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, timeInterval);
+                yield return null;
+            }
         }
 
         void BrownCoin(int i)
