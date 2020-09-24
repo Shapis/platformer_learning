@@ -101,19 +101,14 @@ public class LightningScript : MonoBehaviour
 
     private Color ReturnRandomColor()
     {
-        System.Random rnd = new System.Random();
-        int myRnd = 0;
-
         if (ClosestBlockingObject == null)
         {
-            myRnd = rnd.Next(0, 2);
+            return m_PossibleColors[Random.Range(0, 2)];
         }
         else
         {
-            myRnd = rnd.Next(3, m_PossibleColors.Length);
-
+            return m_PossibleColors[Random.Range(3, m_PossibleColors.Length)];
         }
-        return m_PossibleColors[myRnd];
     }
 
     private void AdjustSortingLayerToTargetSortingLayer(LineRenderer myLineRenderer)
