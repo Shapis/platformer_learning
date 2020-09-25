@@ -8,7 +8,7 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
     [Header("Dependencies")]
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Transform m_Player;
-    private Vector2 uiOffset;
+    private float textOffset;
 
     public event EventHandler OnHoverChatBoxEndsEvent;
     public event EventHandler OnHoverChatBoxNextEvent;
@@ -34,7 +34,7 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
 
     private void MoveToAbovePlayer()
     {
-        Vector3 offset = new Vector3(0f, 45f, 0f);
+        Vector3 offset = new Vector3(0f, textOffset, 0f);
         Vector3 abc = new Vector3();
         GetComponent<RectTransform>().position = Vector3.SmoothDamp(GetComponent<RectTransform>().position,
         Camera.main.WorldToScreenPoint(m_Player.transform.position) + offset,
@@ -95,7 +95,7 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
         while (dialogueText.text != "")
         {
             dialogueText.text = dialogueText.text.Remove(dialogueText.text.Length - 1);
-            yield return new WaitForSeconds(0.0125f);
+            yield return new WaitForSeconds(0.01f);
         }
 
         if (myDialogueHandler.GetSentencesCount() > 0)
@@ -107,16 +107,16 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
 
     private IEnumerator TypeSentence(string sentence)
     {
+        ResizeDialogueBoxAccordingToTextSize(sentence);
         float readingTime = 0f;
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             readingTime += 0.04f;
-            yield return new WaitForSeconds(0.025f);
+            yield return new WaitForSeconds(0.02f);
         }
-
-        if (readingTime >= 4f)
+        if (readingTime > 3f)
         {
             yield return new WaitForSeconds(readingTime);
         }
@@ -125,5 +125,28 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
             yield return new WaitForSeconds(3f);
         }
         NextSentence();
+    }
+
+    private void ResizeDialogueBoxAccordingToTextSize(string sentence)
+    {
+        int numberOfLines = 0;
+        float letterHeight = 17.83f;
+        float padding = 0f;
+
+        dialogueText.text = sentence;
+        dialogueText.ForceMeshUpdate();
+        numberOfLines = dialogueText.textInfo.lineCount;
+        dialogueText.text = "";
+        dialogueText.ForceMeshUpdate();
+
+        float textHeight = 0;
+        switch (numberOfLines)
+        {
+            case 0: textHeight = padding + 2 * letterHeight; break;
+            case 1: textHeight = padding + 2 * letterHeight; break;
+            default: textHeight = padding + numberOfLines * letterHeight; break;
+        }
+
+        textOffset = textHeight;
     }
 }

@@ -87,7 +87,7 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
 
             GameObject container = new GameObject();
             container.transform.parent = instancedDrops[i].transform;
-            container.layer = 30; // The layer that only interacts with tiles/barriers/water
+            container.layer = 29; // The layer that only interacts with tiles/barriers/water
             BoxCollider2D myTileCollider = container.AddComponent<BoxCollider2D>();
 
             myTileCollider.transform.position = instancedDrops[i].transform.position;

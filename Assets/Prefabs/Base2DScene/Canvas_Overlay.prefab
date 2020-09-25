@@ -1761,7 +1761,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 40}
+  m_SizeDelta: {x: 42, y: 40}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1502779085286239411
 CanvasRenderer:
@@ -2027,9 +2027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '12:51
-
-'
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81981579227fee3bca7228b690bd88ac, type: 2}
   m_sharedMaterial: {fileID: -8645796487322104227, guid: 81981579227fee3bca7228b690bd88ac,
@@ -2262,7 +2260,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -15, y: 0}
-  m_SizeDelta: {x: 155, y: 44}
+  m_SizeDelta: {x: 125, y: 44}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &5232163085417528084
 CanvasRenderer:
@@ -2292,7 +2290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 312
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81981579227fee3bca7228b690bd88ac, type: 2}
   m_sharedMaterial: {fileID: -8645796487322104227, guid: 81981579227fee3bca7228b690bd88ac,
@@ -4785,7 +4783,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 130, y: 40}
+  m_SizeDelta: {x: 102, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &6345301035150570980
 CanvasRenderer:
@@ -4935,7 +4933,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CurrentScore: {fileID: 827138043576159030}
+  m_PanelScore: {fileID: 4137330264798177782}
   m_CurrentTime: {fileID: 8103189321141027774}
+  m_PanelTime: {fileID: 4734233502827132001}
 --- !u!1 &8549462037235855496
 GameObject:
   m_ObjectHideFlags: 0
