@@ -28,13 +28,11 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
     private bool previouslyJumpKeyPressed = false;
     private Vector3 previousPosition;
     private int previousMovementDirection;
-
     public event EventHandler OnAirbourneEvent; // When the unit first becomes airbourne.
     public event EventHandler OnLandingEvent; // When a unit initially lands.
     public event EventHandler OnFallingEvent; // When a unit starts falling. As in, your first airbourne position.y is lower than your previous position.y or your first airbourne position after reaching peak is lower than the previous one.
     public event EventHandler<int> OnHorizontalMovementChangesEvent;
     public event EventHandler OnJumpEvent;
-
     private bool isFacingRight = true;
     GameObject gameObjectCurrentlyBeingDragged = null;
 
