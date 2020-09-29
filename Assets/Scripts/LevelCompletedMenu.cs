@@ -12,6 +12,7 @@ public class LevelCompletedMenu : MonoBehaviour, ILevelEndsEvents, IScoreKeeperE
     [SerializeField] Button m_QuitToWorldMap;
     private InputHandler m_InputHandler;
     private GameObject m_Player;
+    private readonly TimeFormatHandler timeFormatHandler = new TimeFormatHandler();
 
     private int totalScore;
 
@@ -40,8 +41,8 @@ public class LevelCompletedMenu : MonoBehaviour, ILevelEndsEvents, IScoreKeeperE
     public void OnLevelEnds(object sender, EventArgs e)
     {
         m_LevelCompletedMenuPopUp.OpenMenu();
-        m_FinalTime.text = String.Format("{0:0.00}", Time.timeSinceLevelLoad);
-        m_FinalScore.text = totalScore.ToString();
+        m_FinalTime.text = "TIME: " + timeFormatHandler.FormatTime(Time.timeSinceLevelLoad);
+        m_FinalScore.text = "SCORE: " + totalScore.ToString();
         GameHandler.Pause();
         // levelHasEnded = true;
     }

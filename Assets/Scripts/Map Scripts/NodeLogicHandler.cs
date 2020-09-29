@@ -63,13 +63,13 @@ public class NodeLogicHandler : MonoBehaviour
         m_LevelNameText.text = m_PlayerNodeMovement.GetCurrentNode().GetNodeName();
         if ((m_PlayerNodeMovement.GetCurrentNode().BestScore != null) && (m_PlayerNodeMovement.GetCurrentNode().BestTime != null))
         {
-            m_BestScoreText.text = m_PlayerNodeMovement.GetCurrentNode().BestScore.ToString();
-            m_BestTimeText.text = String.Format("{0:0.00}", m_PlayerNodeMovement.GetCurrentNode().BestTime);
+            m_BestScoreText.text = "SCORE: " + m_PlayerNodeMovement.GetCurrentNode().BestScore.ToString();
+            m_BestTimeText.text = "TIME: " + new TimeFormatHandler().FormatTime((float)m_PlayerNodeMovement.GetCurrentNode().BestTime);
         }
         else
         {
-            m_BestScoreText.text = "N/A";
-            m_BestTimeText.text = "N/A";
+            m_BestScoreText.text = "SCORE: N/A";
+            m_BestTimeText.text = "TIME: N/A";
         }
         m_PlayButton.onClick.AddListener(() => { SceneHandler.Load(m_PlayerNodeMovement.GetCurrentNode().GetScene()); });
 

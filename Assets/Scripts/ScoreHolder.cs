@@ -11,6 +11,7 @@ public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
     [SerializeField] private RectTransform m_PanelTime;
     private Vector2 initialScoreHolderSize;
     private Vector2 initialTimeHolderSize;
+    private readonly TimeFormatHandler timeFormatter = new TimeFormatHandler();
 
     private bool myLevelEndsSwitch = false;
 
@@ -20,12 +21,12 @@ public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
         GameObject.Find("Player").GetComponent<GemGrabber>().OnLevelEndsEvent += OnLevelEnds;
         initialScoreHolderSize = new Vector2(m_PanelScore.rect.width, m_PanelScore.rect.height);
         initialTimeHolderSize = new Vector2(m_PanelTime.rect.width, m_PanelTime.rect.height);
-        OnScoreUpdate(this, 0); // Initializing and refreshing the scoreboard as 0.
+        OnScoreUpdate(this, 500); // Initializing and refreshing the scoreboard as 0.
     }
 
     public void OnScoreUpdate(object sender, int totalScore)
     {
-        m_CurrentScore.text = totalScore.ToString();
+        m_CurrentScore.text = "SCORE: " + totalScore.ToString();
         m_PanelScore.sizeDelta = new Vector2(ResizeHolder(m_CurrentScore.text.Length, initialScoreHolderSize.x), initialScoreHolderSize.y);
         //Debug.Log(initialScoreHolderSize);
     }
@@ -40,7 +41,7 @@ public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
     {
         if (!myLevelEndsSwitch)
         {
-            m_CurrentTime.text = String.Format("{0:0.00}", Time.timeSinceLevelLoad);
+            m_CurrentTime.text = timeFormatter.FormatTime(Time.timeSinceLevelLoad);
             m_PanelTime.sizeDelta = new Vector2(ResizeHolder(m_CurrentTime.text.Length, initialTimeHolderSize.x), initialTimeHolderSize.y);
         }
     }
