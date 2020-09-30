@@ -105,10 +105,15 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         }
 
 
-        if ((e - (Vector2)joystickBackgroundCenter.position).magnitude < Screen.height / 6f)
+        if (IsTheTouchInsideJoystick(e))
         {
             touchStarted = true;
         }
+    }
+
+    public bool IsTheTouchInsideJoystick(Vector2 e)
+    {
+        return (e - (Vector2)joystickBackgroundCenter.position).magnitude < Screen.height / 6f;
     }
 
     // I'm not 100% positive if this should be Update() or FixedUpdate(), I'm doing update because this is dealing with inputs and rendering, not physics directly.

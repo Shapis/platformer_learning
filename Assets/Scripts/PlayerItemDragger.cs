@@ -8,6 +8,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
     [Header("Dependencies")]
     [SerializeField] private Transform m_WandTransform;
     [SerializeField] private LayerMask m_WhatAreBarriers;
+    [SerializeField] private MobileJoystick m_MobileJoystick;
 
     private InputHandler m_InputHandler;
 
@@ -34,6 +35,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
 
     private void Awake()
     {
+        m_MobileJoystick = FindObjectOfType<MobileJoystick>();
         m_InputHandler = FindObjectOfType<InputHandler>();
     }
     private void Start()
@@ -120,6 +122,14 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
                 }
             }
         }
+
+        // Checks if a MobileJoystick exists and if it does then check if the touch is inside of the MobileJoystick
+        if (m_MobileJoystick != null && m_MobileJoystick.IsTheTouchInsideJoystick(mousePosition))
+        {
+            selectedObject = null;
+        }
+
+
         DraggingEventArgs myDraggingEventArgs = new DraggingEventArgs();
         if (selectedObject != null)
         {
