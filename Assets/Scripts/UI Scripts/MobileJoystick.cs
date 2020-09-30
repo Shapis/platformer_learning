@@ -22,6 +22,7 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
     public event EventHandler OnJoystickVerticalDownUnpressedEvent;
     private Vector2Int direction = new Vector2Int(0, 0);
     private Coroutine returnToCenterCoroutine;
+    float joystickHeight;
 
 
     private float timer;
@@ -50,6 +51,9 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         //     {
         //         gameObject.SetActive(false);
         //     }
+
+        // TODO: This should be in an event, it needs to update if the size of the joystick is ever changed.
+        joystickHeight = gameObject.GetComponent<RectTransform>().sizeDelta.y * (Screen.width / 1500f);
     }
 
     private void OnMouseHover(object sender, Vector2 e)
@@ -113,7 +117,7 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
 
     public bool IsTheTouchInsideJoystick(Vector2 e)
     {
-        return (e - (Vector2)joystickBackgroundCenter.position).magnitude < Screen.height / 6f;
+        return (e - (Vector2)joystickBackgroundCenter.position).magnitude < gameObject.GetComponent<RectTransform>().sizeDelta.y * (Screen.width / 1100f);
     }
 
     // I'm not 100% positive if this should be Update() or FixedUpdate(), I'm doing update because this is dealing with inputs and rendering, not physics directly.
@@ -122,7 +126,7 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         if (touchStarted)
         {
             Vector2 offset = mousePosition - (Vector2)joystickBackgroundCenter.position;
-            joystickCenterBall.position = (Vector2)joystickBackgroundCenter.position + Vector2.ClampMagnitude(offset, Screen.height / 9f);
+            joystickCenterBall.position = (Vector2)joystickBackgroundCenter.position + Vector2.ClampMagnitude(offset, joystickHeight);
 
             // Horizontal movement
             if (offset.x >= m_SensitivityTreshold && direction.x != 1)

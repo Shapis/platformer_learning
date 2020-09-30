@@ -348,6 +348,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2424019115893491643, guid: 91e774d36885b0043aad7d71584a3c47,
+        type: 3}
+      propertyPath: joyStick
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 2951563963109396915, guid: 91e774d36885b0043aad7d71584a3c47,
         type: 3}
       propertyPath: m_Name
@@ -4118,6 +4123,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3225318494963995442, guid: d0fa0b5211501db4787b0fcc733c2fb4,
+        type: 3}
+      propertyPath: orthographic size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3225318494963995443, guid: d0fa0b5211501db4787b0fcc733c2fb4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4131,7 +4141,7 @@ PrefabInstance:
     - target: {fileID: 3225318494963995443, guid: d0fa0b5211501db4787b0fcc733c2fb4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -3320
       objectReference: {fileID: 0}
     - target: {fileID: 3225318494963995443, guid: d0fa0b5211501db4787b0fcc733c2fb4,
         type: 3}

@@ -49,6 +49,6 @@ public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
     public void OnLevelEnds(object sender, EventArgs e)
     {
         myLevelEndsSwitch = true;
-        m_CurrentTime.text = String.Format("{0:0.00}", Time.timeSinceLevelLoad);
+        m_CurrentTime.text = timeFormatter.FormatTime(Time.timeSinceLevelLoad);
     }
 }
