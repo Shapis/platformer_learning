@@ -14,6 +14,7 @@ public class GeometryHandler
 
         myLineRenderer.startWidth = myWidths.x;
         myLineRenderer.endWidth = myWidths.y;
+        myLineRenderer.material = new Material(Shader.Find("Sprites/Default"));
 
         myLineRenderer.material.color = myColor;
 

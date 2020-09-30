@@ -21,7 +21,7 @@ public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
         GameObject.Find("Player").GetComponent<GemGrabber>().OnLevelEndsEvent += OnLevelEnds;
         initialScoreHolderSize = new Vector2(m_PanelScore.rect.width, m_PanelScore.rect.height);
         initialTimeHolderSize = new Vector2(m_PanelTime.rect.width, m_PanelTime.rect.height);
-        OnScoreUpdate(this, 500); // Initializing and refreshing the scoreboard as 0.
+        OnScoreUpdate(this, 0); // Initializing and refreshing the scoreboard as 0.
     }
 
     public void OnScoreUpdate(object sender, int totalScore)
