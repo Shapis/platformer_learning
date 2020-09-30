@@ -33,10 +33,12 @@ public class NodeLogicHandler : MonoBehaviour
         GameHandler.Resume(); // Unpauses the game, in case it's reaching the WorldMap after ending a level and pausing it.
 
         PopulateNodeMap();
+        //SavePlayerCurrentNode();
         LoadPlayerCurrentNode();
         PopulateNodeMenu();
         //m_NodeMenu.OpenMenu();
         m_PlayerNodeMovement.GetCurrentNode().IsAccessible = true;
+        SavePlayerCurrentNode();
     }
 
     private void OnTravelNodeReached(object sender, GameObject destination)
@@ -101,6 +103,7 @@ public class NodeLogicHandler : MonoBehaviour
     {
         CurrentNodeInfo myCurrentNodeInfo = new CurrentNodeInfo();
         myCurrentNodeInfo.currentNodePosition = m_PlayerNodeMovement.GetCurrentNode().transform.position;
+        myCurrentNodeInfo.currentNodeName = m_PlayerNodeMovement.GetCurrentNode().GetNodeName();
         SaveHandler<CurrentNodeInfo>.Save(myCurrentNodeInfo, SaveHandler<CurrentNodeInfo>.SaveFileName.currentPlayerNode);
     }
 
@@ -207,6 +210,7 @@ public class NodeLogicHandler : MonoBehaviour
     [System.Serializable]
     public struct CurrentNodeInfo
     {
+        public string currentNodeName;
         public Vector3 currentNodePosition; // I'd have prefered to save the actual <Node> instead of the position, but apparentyl monobehaviours cant be serialized.
     }
 

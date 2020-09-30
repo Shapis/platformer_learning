@@ -9,6 +9,7 @@ public class LevelCompletedMenu : MonoBehaviour, ILevelEndsEvents, IScoreKeeperE
     [SerializeField] private PopupMenuController m_LevelCompletedMenuPopUp;
     [SerializeField] TextMeshProUGUI m_FinalScore;
     [SerializeField] TextMeshProUGUI m_FinalTime;
+    [SerializeField] TextMeshProUGUI m_LevelName;
     [SerializeField] Button m_QuitToWorldMap;
     private InputHandler m_InputHandler;
     private GameObject m_Player;
@@ -40,7 +41,10 @@ public class LevelCompletedMenu : MonoBehaviour, ILevelEndsEvents, IScoreKeeperE
 
     public void OnLevelEnds(object sender, EventArgs e)
     {
+        NodeLogicHandler.CurrentNodeInfo myCurrentNodeInfo = new NodeLogicHandler.CurrentNodeInfo();
+        myCurrentNodeInfo = SaveHandler<NodeLogicHandler.CurrentNodeInfo>.Load(SaveHandler<NodeLogicHandler.CurrentNodeInfo>.SaveFileName.currentPlayerNode);
         m_LevelCompletedMenuPopUp.OpenMenu();
+        m_LevelName.text = myCurrentNodeInfo.currentNodeName;
         m_FinalTime.text = "TIME: " + timeFormatHandler.FormatTime(Time.timeSinceLevelLoad);
         m_FinalScore.text = "SCORE: " + totalScore.ToString();
         GameHandler.Pause();
