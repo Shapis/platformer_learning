@@ -1424,6 +1424,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1419306221602175241, guid: 91e774d36885b0043aad7d71584a3c47,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419306221602175241, guid: 91e774d36885b0043aad7d71584a3c47,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2333532141217414853, guid: 91e774d36885b0043aad7d71584a3c47,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2057,7 +2067,7 @@ PrefabInstance:
     - target: {fileID: 3225318494963995443, guid: d0fa0b5211501db4787b0fcc733c2fb4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9698.252
+      value: 9028.252
       objectReference: {fileID: 0}
     - target: {fileID: 3225318494963995443, guid: d0fa0b5211501db4787b0fcc733c2fb4,
         type: 3}
