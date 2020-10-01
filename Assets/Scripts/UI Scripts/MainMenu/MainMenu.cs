@@ -10,10 +10,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button m_QuitButton;
     [SerializeField] private InputHandler m_InputHandler;
     [SerializeField] private PopupMenuController m_PanelOptions;
-    [SerializeField] private Button m_BackgroundBackButton;
-    [SerializeField] private Button m_PanelOptionsReset;
-    [SerializeField] private GameObject m_LeftBackButton;
-    [SerializeField] private GameObject m_RightBackButton;
 
     private void Start()
     {
@@ -21,16 +17,17 @@ public class MainMenu : MonoBehaviour
         m_PlayButton.onClick.AddListener(() => { SceneHandler.Load(SceneHandler.Scene.OverworldMap); });
         m_OptionsButton.onClick.AddListener(OpenOptionsMenu);
         m_QuitButton.onClick.AddListener(() => { Application.Quit(); Debug.Log("Quit application!"); });
-        m_BackgroundBackButton.onClick.AddListener(() => { CloseOptionsMenu(this, EventArgs.Empty); });
-        m_PanelOptionsReset.onClick.AddListener(() => { ResetPlayerPrefs(this, EventArgs.Empty); CloseOptionsMenu(this, EventArgs.Empty); });
-        m_LeftBackButton.GetComponent<Button>().onClick.AddListener(() => CloseOptionsMenu(this, EventArgs.Empty));
-        m_RightBackButton.GetComponent<Button>().onClick.AddListener(() => CloseOptionsMenu(this, EventArgs.Empty));
+        m_InputHandler.OnMouseButtonLeftPressedEvent += OnMouseButtonLeftPressed;
+        // m_LeftBackButton.GetComponent<Button>().onClick.AddListener(() => CloseOptionsMenu(this, EventArgs.Empty));
+        // m_RightBackButton.GetComponent<Button>().onClick.AddListener(() => CloseOptionsMenu(this, EventArgs.Empty));
     }
 
-    private void ResetPlayerPrefs(object sender, EventArgs e)
+    private void OnMouseButtonLeftPressed(object sender, Vector2 e)
     {
-        PlayerPrefs.DeleteAll();
-        Debug.Log("Reset PlayerPrefs! With Cancel Button!");
+        if (m_PanelOptions.gameObject.activeSelf && !new GeometryHandler().IsTouchInsideObject(e, m_PanelOptions.gameObject))
+        {
+            m_PanelOptions.CloseMenu();
+        }
     }
 
     private void CloseOptionsMenu(object sender, EventArgs e)
@@ -39,21 +36,21 @@ public class MainMenu : MonoBehaviour
         {
             m_PanelOptions.CloseMenu();
         }
-        if (m_LeftBackButton.activeSelf)
-        {
-            m_LeftBackButton.GetComponent<PopupMenuController>().CloseMenu();
-        }
-        if (m_RightBackButton.gameObject.activeSelf)
-        {
-            m_RightBackButton.GetComponent<PopupMenuController>().CloseMenu();
-        }
+        // if (m_LeftBackButton.activeSelf)
+        // {
+        //     m_LeftBackButton.GetComponent<PopupMenuController>().CloseMenu();
+        // }
+        // if (m_RightBackButton.gameObject.activeSelf)
+        // {
+        //     m_RightBackButton.GetComponent<PopupMenuController>().CloseMenu();
+        // }
     }
 
 
     private void OpenOptionsMenu()
     {
         m_PanelOptions.OpenMenu();
-        m_LeftBackButton.GetComponent<PopupMenuController>().OpenMenu();
-        m_RightBackButton.GetComponent<PopupMenuController>().OpenMenu();
+        // m_LeftBackButton.GetComponent<PopupMenuController>().OpenMenu();
+        // m_RightBackButton.GetComponent<PopupMenuController>().OpenMenu();
     }
 }

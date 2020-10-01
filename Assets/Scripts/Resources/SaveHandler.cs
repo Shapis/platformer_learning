@@ -6,7 +6,7 @@ public static class SaveHandler<T>
     {
         levelCompletionInfo,
         currentPlayerNode,
-        gameSettings,
+        gameSettingsInfo,
     }
 
     // Saves the object of generic type <T> as the file of the name of enum SaveFileName.Whatever

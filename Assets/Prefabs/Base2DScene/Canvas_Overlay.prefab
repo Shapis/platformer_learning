@@ -3683,6 +3683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1419306221602175241}
   - component: {fileID: 2424019115893491643}
+  - component: {fileID: 8672646475115871430}
   m_Layer: 5
   m_Name: MobileJoystick
   m_TagString: Untagged
@@ -3727,6 +3728,18 @@ MonoBehaviour:
   joystickBackgroundCenter: {fileID: 2935127260720489606}
   joystickBackgroundOutline: {fileID: 9096784240334660610}
   joystickCenterBall: {fileID: 4432664094671149647}
+--- !u!114 &8672646475115871430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6799319932847076208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47d8eb6536ee331a998eb17bd9cdad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6924787994798186160
 GameObject:
   m_ObjectHideFlags: 0
