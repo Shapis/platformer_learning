@@ -13,7 +13,6 @@ public class MobileJoystickSettings : BaseSettings
     private Coroutine fade = null;
     private float hasChangedRecentlyTimer = 0f;
 
-
     private void InititalizeSprites()
     {
         m_JoystickSprites = GetComponentsInChildren<Image>();

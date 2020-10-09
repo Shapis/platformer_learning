@@ -69,12 +69,14 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
         }
 
         // TODO: This.
-        IEnumerator MoveOverTime(GameObject gameObject, Vector3 targetPosition, float timeInterval)
+        IEnumerator MoveOverTime(GameObject gameObject, Vector3 targetPosition, float durationInSeconds)
         {
+            float timer = 0f;
             Vector3 initialPosition = gameObject.transform.position;
             while (gameObject.transform.position != targetPosition)
             {
-                gameObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, timeInterval);
+                gameObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, timer);
+                timer += Time.deltaTime / durationInSeconds;
                 yield return null;
             }
         }

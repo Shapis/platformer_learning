@@ -32,6 +32,7 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
         MoveToAbovePlayer();
     }
 
+    // TODO: This needs to adapt to the screen height.
     private void MoveToAbovePlayer()
     {
         Vector3 offset = new Vector3(0f, textOffset, 0f);
