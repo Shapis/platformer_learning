@@ -131,8 +131,8 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
     private void ResizeDialogueBoxAccordingToTextSize(string sentence)
     {
         int numberOfLines = 0;
-        float letterHeight = 17.83f;
-        float padding = 0f;
+        float letterHeight = 41.9f * 0.001f;
+        float padding = 0.04f;
 
         dialogueText.text = sentence;
         dialogueText.ForceMeshUpdate();
@@ -148,6 +148,6 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
             default: textHeight = padding + numberOfLines * letterHeight; break;
         }
 
-        textOffset = textHeight;
+        textOffset = (textHeight * Screen.height);
     }
 }
