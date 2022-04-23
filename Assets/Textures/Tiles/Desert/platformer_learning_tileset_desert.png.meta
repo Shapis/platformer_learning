@@ -119,6 +119,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -128,8 +130,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -150,9 +152,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -876,6 +881,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      platformer_learning_tileset_desert_5: 1870341468637354504
+      platformer_learning_tileset_desert_17: -998221837186514814
+      platformer_learning_tileset_desert_27: -7659522447421031415
+      platformer_learning_tileset_desert_19: -3059407260690992398
+      platformer_learning_tileset_desert_6: 7702016648231281731
+      platformer_learning_tileset_desert_16: 5064221704344566380
+      platformer_learning_tileset_desert_26: -1101699858753637252
+      platformer_learning_tileset_desert_18: -9220919424543274365
+      platformer_learning_tileset_desert_4: 6907477897996192121
+      platformer_learning_tileset_desert_8: -3701386672081790166
+      platformer_learning_tileset_desert_25: 3555627152369362310
+      platformer_learning_tileset_desert_7: -8166050486811481334
+      platformer_learning_tileset_desert_21: 3672215728484247175
+      platformer_learning_tileset_desert_3: -3709745027688886263
+      platformer_learning_tileset_desert_15: 3930289456811107532
+      platformer_learning_tileset_desert_22: -560643595519862387
+      platformer_learning_tileset_desert_1: -7152648317859516318
+      platformer_learning_tileset_desert_0: -4428233218987706904
+      platformer_learning_tileset_desert_14: 180551463885672067
+      platformer_learning_tileset_desert_30: 1113306038777207876
+      platformer_learning_tileset_desert_28: -3300346039008610866
+      platformer_learning_tileset_desert_12: -4093425736856335115
+      platformer_learning_tileset_desert_23: -3051024510547897265
+      platformer_learning_tileset_desert_29: 2887502377231202645
+      platformer_learning_tileset_desert_31: -3156949683349561234
+      platformer_learning_tileset_desert_10: -8261058377571931264
+      platformer_learning_tileset_desert_20: -453857129698296917
+      platformer_learning_tileset_desert_9: 1481295103661983291
+      platformer_learning_tileset_desert_24: 2868090196683107430
+      platformer_learning_tileset_desert_11: -8727112250776158325
+      platformer_learning_tileset_desert_2: 1767832508640043569
+      platformer_learning_tileset_desert_13: -2368566176033605021
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

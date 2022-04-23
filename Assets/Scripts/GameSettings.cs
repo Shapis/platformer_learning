@@ -4,15 +4,16 @@ using UnityEngine.UI;
 public class GameSettings : MonoBehaviour, IGameSettingsEvents
 {
     [Header("Dependencies")]
-    [SerializeField] private Slider m_VolumeSlider;
+    [SerializeField] private Slider m_MusicVolumeSlider;
+    [SerializeField] private Slider m_SfxVolumeSlider;
     [SerializeField] private Slider m_RightHandedSlider;
     [SerializeField] private Slider m_JoystickSizeSlider;
     [SerializeField] private Button m_ResetButton;
     public EventHandler<GameSettingsInfo> OnGameSettingsChangedEvent;
-    private GameSettingsInfo myGameSettingsInfoDefault = new GameSettingsInfo { rightHandedMode = true, joystickSize = 0.5f, volume = 0.75f };
+    private GameSettingsInfo myGameSettingsInfoDefault = new GameSettingsInfo { rightHandedMode = true, joystickSize = 0.5f, volumeMusic = 0.75f, volumeSfx = 0.75f };
     private GameSettingsInfo myGameSettingsInfo = new GameSettingsInfo();
 
-    private void Start()
+    private void Awake()
     {
         myGameSettingsInfo = myGameSettingsInfoDefault;
 
@@ -31,15 +32,28 @@ public class GameSettings : MonoBehaviour, IGameSettingsEvents
             SaveInfo();
             //OnGameSettingsChanged(this, myGameSettingsInfo);
         }
-        m_VolumeSlider.onValueChanged.AddListener(i => VolumeChanged(i));
+    }
+
+    private void Start()
+    {
+
+        m_MusicVolumeSlider.onValueChanged.AddListener(i => VolumeMusicChanged(i));
+        m_SfxVolumeSlider.onValueChanged.AddListener(i => SfxVolumeChanged(i));
         m_RightHandedSlider.onValueChanged.AddListener(i => RightHandedModeChanged(i));
         m_JoystickSizeSlider.onValueChanged.AddListener(i => JoystickSizeChanged(i));
         m_ResetButton.onClick.AddListener(() => ResetPlayerPrefs());
     }
 
-    private void VolumeChanged(float volume)
+    private void VolumeMusicChanged(float volume)
     {
-        myGameSettingsInfo.volume = volume;
+        myGameSettingsInfo.volumeMusic = volume;
+        SaveInfo();
+        OnGameSettingsChanged(this, myGameSettingsInfo);
+    }
+
+    private void SfxVolumeChanged(float volume)
+    {
+        myGameSettingsInfo.volumeSfx = volume;
         SaveInfo();
         OnGameSettingsChanged(this, myGameSettingsInfo);
     }
@@ -69,7 +83,8 @@ public class GameSettings : MonoBehaviour, IGameSettingsEvents
 
     private void LoadGameSettings(GameSettingsInfo gameSettingsInfo)
     {
-        m_VolumeSlider.value = gameSettingsInfo.volume;
+        m_MusicVolumeSlider.value = gameSettingsInfo.volumeMusic;
+        m_SfxVolumeSlider.value = gameSettingsInfo.volumeSfx;
         m_JoystickSizeSlider.value = gameSettingsInfo.joystickSize;
         switch (gameSettingsInfo.rightHandedMode)
         {
@@ -98,6 +113,7 @@ public class GameSettings : MonoBehaviour, IGameSettingsEvents
     {
         public bool rightHandedMode;
         public float joystickSize;
-        public float volume;
+        public float volumeMusic;
+        public float volumeSfx;
     }
 }

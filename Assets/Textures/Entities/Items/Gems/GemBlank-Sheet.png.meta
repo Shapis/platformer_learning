@@ -68,6 +68,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -77,8 +79,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -99,9 +101,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -456,6 +461,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GemBlank-Sheet_9: -523561847590768114
+      GemBlank-Sheet_0: -2939106787910944346
+      GemBlank-Sheet_13: -2359562254097678705
+      GemBlank-Sheet_1: 6540930363853053858
+      GemBlank-Sheet_8: 1832173283435313034
+      GemBlank-Sheet_4: 8027726076199405309
+      GemBlank-Sheet_3: 7082891258890966938
+      GemBlank-Sheet_10: -4711915992878306696
+      GemBlank-Sheet_14: -6331177824726545968
+      GemBlank-Sheet_12: -2394124450362081503
+      GemBlank-Sheet_7: 659059739745790835
+      GemBlank-Sheet_2: -309946583562558306
+      GemBlank-Sheet_6: -5557534401590230000
+      GemBlank-Sheet_5: 7116760388461932718
+      GemBlank-Sheet_11: -1015241338563841654
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

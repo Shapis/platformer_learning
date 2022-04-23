@@ -119,6 +119,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -128,8 +130,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -150,9 +152,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -876,6 +881,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      platformer_learning_tileset_grasspurple_12: -3160267698479281388
+      platformer_learning_tileset_grasspurple_24: 9085065922423666487
+      platformer_learning_tileset_grasspurple_8: 3756552216824160858
+      platformer_learning_tileset_grasspurple_5: 849128321263885368
+      platformer_learning_tileset_grasspurple_6: -1003798927443198815
+      platformer_learning_tileset_grasspurple_1: -6983165086244910853
+      platformer_learning_tileset_grasspurple_28: 5711287076650607313
+      platformer_learning_tileset_grasspurple_29: 5908379031820183189
+      platformer_learning_tileset_grasspurple_17: -721272465399162477
+      platformer_learning_tileset_grasspurple_2: 4728499346589081947
+      platformer_learning_tileset_grasspurple_10: -2379137177385381334
+      platformer_learning_tileset_grasspurple_14: 5888034471709005051
+      platformer_learning_tileset_grasspurple_23: -1207703441746154038
+      platformer_learning_tileset_grasspurple_25: -2883724277357634911
+      platformer_learning_tileset_grasspurple_3: -3679247024751627607
+      platformer_learning_tileset_grasspurple_31: 4229221656318516219
+      platformer_learning_tileset_grasspurple_19: -889345601563495392
+      platformer_learning_tileset_grasspurple_30: 3248959120119667476
+      platformer_learning_tileset_grasspurple_7: 1941774242992215697
+      platformer_learning_tileset_grasspurple_27: 9089583176486654652
+      platformer_learning_tileset_grasspurple_21: -848640241905736421
+      platformer_learning_tileset_grasspurple_22: -1207950693976811669
+      platformer_learning_tileset_grasspurple_13: 1553526563846979037
+      platformer_learning_tileset_grasspurple_11: -8080814499274664074
+      platformer_learning_tileset_grasspurple_0: -2098022790458512839
+      platformer_learning_tileset_grasspurple_9: -5220506240557669553
+      platformer_learning_tileset_grasspurple_18: -7742306307590945642
+      platformer_learning_tileset_grasspurple_20: -7650615166656136793
+      platformer_learning_tileset_grasspurple_15: -2859074377424471593
+      platformer_learning_tileset_grasspurple_16: 201809545321342722
+      platformer_learning_tileset_grasspurple_4: -7676912631540613782
+      platformer_learning_tileset_grasspurple_26: 4173278821028325751
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -119,6 +119,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -128,8 +130,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -150,9 +152,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -876,6 +881,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      platformer_learning_tileset_grass_11: 7153762652098167183
+      platformer_learning_tileset_grass_15: 6354602128456402396
+      platformer_learning_tileset_grass_0: -6278427722103447909
+      platformer_learning_tileset_grass_14: -3805319625205950643
+      platformer_learning_tileset_grass_28: 1483627103172312346
+      platformer_learning_tileset_grass_2: -8323908800503268443
+      platformer_learning_tileset_grass_23: -1550430976000360440
+      platformer_learning_tileset_grass_12: -6445633646728105134
+      platformer_learning_tileset_grass_16: 2769073685674610209
+      platformer_learning_tileset_grass_19: 4731746611782070320
+      platformer_learning_tileset_grass_30: -2117700982908638658
+      platformer_learning_tileset_grass_18: -2548377658542115582
+      platformer_learning_tileset_grass_27: 8333929374213468446
+      platformer_learning_tileset_grass_1: 6881920478554155023
+      platformer_learning_tileset_grass_3: 7775033393779152224
+      platformer_learning_tileset_grass_4: -2996497030795039225
+      platformer_learning_tileset_grass_6: 429774345440573045
+      platformer_learning_tileset_grass_29: -8128554877474057073
+      platformer_learning_tileset_grass_24: -1422472211110724703
+      platformer_learning_tileset_grass_22: 7734573466436252558
+      platformer_learning_tileset_grass_31: -726245412085664230
+      platformer_learning_tileset_grass_17: 4175595340323005698
+      platformer_learning_tileset_grass_25: -6022473172395948764
+      platformer_learning_tileset_grass_8: -5268597358077877757
+      platformer_learning_tileset_grass_26: -5029271934919912740
+      platformer_learning_tileset_grass_5: 3443600460130168103
+      platformer_learning_tileset_grass_9: 648447813125885075
+      platformer_learning_tileset_grass_7: 7464707272668080136
+      platformer_learning_tileset_grass_10: -3358843380349088016
+      platformer_learning_tileset_grass_13: -6600533359005663352
+      platformer_learning_tileset_grass_20: -1951653874418862467
+      platformer_learning_tileset_grass_21: -3908376187256079687
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

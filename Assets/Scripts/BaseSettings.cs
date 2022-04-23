@@ -8,10 +8,21 @@ public abstract class BaseSettings : MonoBehaviour, IGameSettingsEvents
 
     private void Awake()
     {
+        InitAwake(); // This exists so you can call awake from a child class that doesn't get destroyed on load.
+
+    }
+
+    protected void InitAwake()
+    {
         m_GameSettings = GameObject.FindObjectOfType<GameSettings>();
     }
 
     private void Start()
+    {
+        InitStart(); // This exists so you can call start from a child class that doesn't get destroyed on load.
+    }
+
+    protected void InitStart()
     {
         try
         {

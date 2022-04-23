@@ -14,8 +14,8 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
     [SerializeField] private bool m_AirControl = true; // Whether or not a player can steer while jumping;
     [SerializeField] private float m_JumpIntensity = 400f; // Amount of force/velocity added when the unit jumps.
     [SerializeField] private bool m_UseVelocityForJumping = true; // Change the unit's y axis velocity instead of adding y force when jumping.
-    [SerializeField] [Range(0.0f, 5f)] private float m_CoyoteTime = 0.2f; // Duration of coyote time.
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
+    [SerializeField][Range(0.0f, 5f)] private float m_CoyoteTime = 0.2f; // Duration of coyote time.
+    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
 
     private const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up

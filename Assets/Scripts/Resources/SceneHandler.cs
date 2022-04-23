@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public static class SceneHandler
 {
-
     public enum Scene
     {
         Level01,
@@ -33,6 +32,11 @@ public static class SceneHandler
     public static void Load(Scene scene)
     {
         SceneManager.LoadScene(scene.ToString());
+    }
+
+    public static void OnSceneLoadEvent(Action<SceneHandler.Scene> myAction)
+    {
+        SceneManager.sceneLoaded += (scene, mode) => myAction(GetActiveSceneEnum());
     }
 
     public static void ReloadCurrentScene()

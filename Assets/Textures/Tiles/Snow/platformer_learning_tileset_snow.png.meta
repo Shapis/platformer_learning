@@ -119,6 +119,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -128,8 +130,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -150,9 +152,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -876,6 +881,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      platformer_learning_tileset_snow_11: -5248168566820512795
+      platformer_learning_tileset_snow_22: -1015962413022052797
+      platformer_learning_tileset_snow_30: -2352146610171254174
+      platformer_learning_tileset_snow_13: -3582122142361513282
+      platformer_learning_tileset_snow_0: 6728143883398892800
+      platformer_learning_tileset_snow_14: -4488894565478793467
+      platformer_learning_tileset_snow_9: -1776178860938876612
+      platformer_learning_tileset_snow_1: 6157506067125053483
+      platformer_learning_tileset_snow_27: 7929387890820990737
+      platformer_learning_tileset_snow_16: 5463659405267196164
+      platformer_learning_tileset_snow_19: -5979840187555084834
+      platformer_learning_tileset_snow_25: -7768779066723715391
+      platformer_learning_tileset_snow_17: 6521434306906366154
+      platformer_learning_tileset_snow_28: 4666426524373584014
+      platformer_learning_tileset_snow_8: -7083277877754316996
+      platformer_learning_tileset_snow_12: -8237895994755596335
+      platformer_learning_tileset_snow_5: 3080203274718573532
+      platformer_learning_tileset_snow_26: 6684675058128737220
+      platformer_learning_tileset_snow_23: -1409638337479566639
+      platformer_learning_tileset_snow_3: 626549809578095234
+      platformer_learning_tileset_snow_20: -6801876945454839770
+      platformer_learning_tileset_snow_18: -4044509065375602911
+      platformer_learning_tileset_snow_4: -917075956186608292
+      platformer_learning_tileset_snow_15: 5155136414603334915
+      platformer_learning_tileset_snow_31: 8375139508974272489
+      platformer_learning_tileset_snow_6: 3535594483758455543
+      platformer_learning_tileset_snow_29: 6803476446319229887
+      platformer_learning_tileset_snow_21: -4417873851443821452
+      platformer_learning_tileset_snow_2: 8753566071320356808
+      platformer_learning_tileset_snow_24: -2370215692110716622
+      platformer_learning_tileset_snow_10: -5388832069062886442
+      platformer_learning_tileset_snow_7: 664248373136559309
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

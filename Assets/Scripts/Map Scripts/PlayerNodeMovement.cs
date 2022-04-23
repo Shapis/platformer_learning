@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerNodeMovement : MonoBehaviour
+public class PlayerNodeMovement : MonoBehaviour, INodeMovementEvents
 {
     [SerializeField] private InputHandler m_InputHandler;
 
@@ -22,6 +22,7 @@ public class PlayerNodeMovement : MonoBehaviour
     [SerializeField] private bool m_DebugLoggingEnabled = false;
     [SerializeField] private float m_Speed = 3f;
 
+    public event EventHandler<GameObject> OnInitialTravelNodeLoadedEvent;
     public event EventHandler<GameObject> OnTravelNodeReachedEvent;
     public event EventHandler<GameObject> OnTravelNodeDepartedEvent;
     public event EventHandler<GameObject> OnDestinationNodeReachedEvent;
@@ -38,6 +39,7 @@ public class PlayerNodeMovement : MonoBehaviour
 
 
         gameObject.transform.position = m_CurrentNode.gameObject.transform.position;
+        OnInitialDestinationNodeLoaded(this, m_CurrentNode.gameObject);
     }
     private void MoveUp(object sender, EventArgs e)
     {
@@ -45,17 +47,17 @@ public class PlayerNodeMovement : MonoBehaviour
         {
             if (gameObject.transform.position == m_CurrentNode.transform.position && m_CurrentNode.m_UpDestination.GetComponent<Node>().IsAccessible)
             {
-                OnDestinationNodeDeparted();
+                OnDestinationNodeDeparted(this, m_CurrentNode.gameObject);
                 StartCoroutine(DoUp());
             }
             else if (gameObject.transform.position == m_CurrentNode.transform.position)
             {
-                OnDestinationNotAccessible(m_CurrentNode.m_UpDestination);
+                OnDestinationNotAccessible(this, m_CurrentNode.m_UpDestination);
             }
         }
         else if (gameObject.transform.position == m_CurrentNode.transform.position)
         {
-            OnNoDestinationFound("up");
+            OnNoDestinationFound(this, "up");
         }
     }
 
@@ -65,17 +67,17 @@ public class PlayerNodeMovement : MonoBehaviour
         {
             if (gameObject.transform.position == m_CurrentNode.transform.position && m_CurrentNode.m_DownDestination.GetComponent<Node>().IsAccessible)
             {
-                OnDestinationNodeDeparted();
+                OnDestinationNodeDeparted(this, m_CurrentNode.gameObject);
                 StartCoroutine(DoDown());
             }
             else if (gameObject.transform.position == m_CurrentNode.transform.position)
             {
-                OnDestinationNotAccessible(m_CurrentNode.m_DownDestination);
+                OnDestinationNotAccessible(this, m_CurrentNode.m_DownDestination);
             }
         }
         else if (gameObject.transform.position == m_CurrentNode.transform.position)
         {
-            OnNoDestinationFound("down");
+            OnNoDestinationFound(this, "down");
         }
     }
 
@@ -85,17 +87,17 @@ public class PlayerNodeMovement : MonoBehaviour
         {
             if (gameObject.transform.position == m_CurrentNode.transform.position && m_CurrentNode.m_LeftDestination.GetComponent<Node>().IsAccessible)
             {
-                OnDestinationNodeDeparted();
+                OnDestinationNodeDeparted(this, m_CurrentNode.gameObject);
                 StartCoroutine(DoLeft());
             }
             else if (gameObject.transform.position == m_CurrentNode.transform.position)
             {
-                OnDestinationNotAccessible(m_CurrentNode.m_LeftDestination);
+                OnDestinationNotAccessible(this, m_CurrentNode.m_LeftDestination);
             }
         }
         else if (gameObject.transform.position == m_CurrentNode.transform.position)
         {
-            OnNoDestinationFound("left");
+            OnNoDestinationFound(this, "left");
         }
     }
 
@@ -105,17 +107,17 @@ public class PlayerNodeMovement : MonoBehaviour
         {
             if (gameObject.transform.position == m_CurrentNode.transform.position && m_CurrentNode.m_RightDestination.GetComponent<Node>().IsAccessible)
             {
-                OnDestinationNodeDeparted();
+                OnDestinationNodeDeparted(this, m_CurrentNode.gameObject);
                 StartCoroutine(DoRight());
             }
             else if (gameObject.transform.position == m_CurrentNode.transform.position)
             {
-                OnDestinationNotAccessible(m_CurrentNode.m_RightDestination);
+                OnDestinationNotAccessible(this, m_CurrentNode.m_RightDestination);
             }
         }
         else if (gameObject.transform.position == m_CurrentNode.transform.position)
         {
-            OnNoDestinationFound("right");
+            OnNoDestinationFound(this, "right");
         }
     }
 
@@ -204,10 +206,10 @@ public class PlayerNodeMovement : MonoBehaviour
 
         switch (myDirection)
         {
-            case "up": OnTravelNodeDeparted(); StartCoroutine(DoUp()); break;
-            case "down": OnTravelNodeDeparted(); StartCoroutine(DoDown()); break;
-            case "left": OnTravelNodeDeparted(); StartCoroutine(DoLeft()); break;
-            case "right": OnTravelNodeDeparted(); StartCoroutine(DoRight()); break;
+            case "up": OnTravelNodeDeparted(this, m_CurrentNode.gameObject); StartCoroutine(DoUp()); break;
+            case "down": OnTravelNodeDeparted(this, m_CurrentNode.gameObject); StartCoroutine(DoDown()); break;
+            case "left": OnTravelNodeDeparted(this, m_CurrentNode.gameObject); StartCoroutine(DoLeft()); break;
+            case "right": OnTravelNodeDeparted(this, m_CurrentNode.gameObject); StartCoroutine(DoRight()); break;
             default: Debug.Log("Couldnt figure out which direction to go from the travel node! ps, if this happened, assign destinations at the node: " + m_CurrentNode); break;
         }
     }
@@ -218,68 +220,80 @@ public class PlayerNodeMovement : MonoBehaviour
         if ((gameObject.transform.position == destination.transform.position) && !destination.GetComponent<Node>().IsTravelNode)
         {
             m_CurrentNode = destination.GetComponent<Node>();
-            OnDestinationNodeReached();
+            OnDestinationNodeReached(this, m_CurrentNode.gameObject);
         }
         else if ((gameObject.transform.position == destination.transform.position) && destination.GetComponent<Node>().IsTravelNode)
         {
             Node previousNode = m_CurrentNode;
             m_CurrentNode = destination.GetComponent<Node>();
-            OnTravelNodeReached();
+            OnTravelNodeReached(this, m_CurrentNode.gameObject);
             DoFollow(previousNode);
         }
     }
 
-    private void OnDestinationNodeReached()
+    public void OnDestinationNodeReached(object sender, GameObject _currentNode)
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Destination node reached: " + m_CurrentNode);
+            Debug.Log("Destination node reached: " + _currentNode.GetComponent<Node>());
         }
-        OnDestinationNodeReachedEvent?.Invoke(this, m_CurrentNode.gameObject);
+        OnDestinationNodeReachedEvent?.Invoke(this, _currentNode);
     }
 
-    private void OnDestinationNodeDeparted()
+    public void OnDestinationNodeDeparted(object sender, GameObject _currentNode)
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Destination node departed: " + m_CurrentNode);
+            Debug.Log("Destination node departed: " + _currentNode.GetComponent<Node>());
         }
-        OnDestinationNodeDepartedEvent?.Invoke(this, m_CurrentNode.gameObject);
+        OnDestinationNodeDepartedEvent?.Invoke(this, _currentNode);
     }
 
-    private void OnTravelNodeReached()
+    public void OnTravelNodeReached(object sender, GameObject _currentNode)
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Travel node reached: " + m_CurrentNode);
+            Debug.Log("Travel node reached: " + _currentNode.GetComponent<Node>());
         }
-        OnTravelNodeReachedEvent?.Invoke(this, m_CurrentNode.gameObject);
+        OnTravelNodeReachedEvent?.Invoke(this, _currentNode);
     }
 
-    private void OnTravelNodeDeparted()
+    public void OnTravelNodeDeparted(object sender, GameObject _currentNode)
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Destination node departed: " + m_CurrentNode);
+            Debug.Log("Destination node departed: " + _currentNode.GetComponent<Node>());
         }
-        OnTravelNodeDepartedEvent?.Invoke(this, m_CurrentNode.gameObject);
+        OnTravelNodeDepartedEvent?.Invoke(this, _currentNode);
     }
 
-    private void OnNoDestinationFound(string targetDestination)
+    public void OnNoDestinationFound(object sender, string targetDestination)
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("No destination found!");
+            Debug.Log("No destination found! Target destination: " + targetDestination);
         }
         OnNoDestinationFoundEvent?.Invoke(this, targetDestination);
     }
 
-    private void OnDestinationNotAccessible(GameObject targetDestination)
+    public void OnDestinationNotAccessible(object sender, GameObject targetDestination)
     {
         if (m_DebugLoggingEnabled)
         {
-            Debug.Log("Destination not accessible!");
+            Debug.Log("Destination not accessible! Target destination: " + targetDestination.GetComponent<Node>());
         }
         OnDestinationNotAccessibleEvent?.Invoke(this, targetDestination);
     }
+
+    public void OnInitialDestinationNodeLoaded(object sender, GameObject _currentNode)
+    {
+        if (m_DebugLoggingEnabled)
+        {
+            Debug.Log("Initial destination node loaded: " + _currentNode.GetComponent<Node>());
+        }
+        OnInitialTravelNodeLoadedEvent?.Invoke(this, _currentNode);
+    }
+
+
 }
+

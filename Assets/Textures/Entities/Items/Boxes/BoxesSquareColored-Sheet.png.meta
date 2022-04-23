@@ -383,6 +383,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -392,8 +394,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -414,9 +416,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -2976,6 +2981,127 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BoxesSquare-Sheet_106: 5977375996640551869
+      BoxesSquare-Sheet_117: 3139039536783823219
+      BoxesSquare-Sheet_26: 8976021628022511874
+      BoxesSquare-Sheet_41: -1523663368786338390
+      BoxesSquare-Sheet_2: -355992407574385303
+      BoxesSquare-Sheet_11: -4711318917772931270
+      BoxesSquare-Sheet_17: -2983210154137324180
+      BoxesSquare-Sheet_32: -1220030590983776437
+      BoxesSquare-Sheet_46: -6022818866942410276
+      BoxesSquare-Sheet_59: 6003004562114723763
+      BoxesSquare-Sheet_7: 6362946734105748233
+      BoxesSquare-Sheet_52: -5825863391570669801
+      BoxesSquare-Sheet_25: 3127034144742697238
+      BoxesSquare-Sheet_4: 7387117056178734753
+      BoxesSquare-Sheet_48: -9133692300677011999
+      BoxesSquare-Sheet_51: 5308887895500537652
+      BoxesSquare-Sheet_91: -8650360260107135782
+      BoxesSquare-Sheet_113: -9087977812789869003
+      BoxesSquare-Sheet_97: -6039258407769679322
+      BoxesSquare-Sheet_44: -2866928440074922966
+      BoxesSquare-Sheet_114: 3596090804115774156
+      BoxesSquare-Sheet_104: -496813785721609829
+      BoxesSquare-Sheet_45: 6496809885511730551
+      BoxesSquare-Sheet_89: 2984852944823300152
+      BoxesSquare-Sheet_13: 6254091251402158641
+      BoxesSquare-Sheet_60: -7064588956201700680
+      BoxesSquare-Sheet_94: -2909398028077623389
+      BoxesSquare-Sheet_36: -2761306052150875214
+      BoxesSquare-Sheet_73: 6873576004388661946
+      BoxesSquare-Sheet_71: -1872584677172398220
+      BoxesSquare-Sheet_56: -3032407790636314019
+      BoxesSquare-Sheet_92: 3203738257975141431
+      BoxesSquare-Sheet_119: -4513699731421753312
+      BoxesSquare-Sheet_62: -6543667321794795753
+      BoxesSquare-Sheet_77: 3338946132069675179
+      BoxesSquare-Sheet_27: -5523876875052134318
+      BoxesSquare-Sheet_14: -2426531278933336833
+      BoxesSquare-Sheet_79: -2366737386993990408
+      BoxesSquare-Sheet_0: 4740393122847354665
+      BoxesSquare-Sheet_19: 4050152761727201106
+      BoxesSquare-Sheet_96: 5293978140194193250
+      BoxesSquare-Sheet_70: -127787352991434967
+      BoxesSquare-Sheet_55: -801015617211111226
+      BoxesSquare-Sheet_9: 8219976028923443113
+      BoxesSquare-Sheet_50: 1862818880358753959
+      BoxesSquare-Sheet_87: 5946673698720128521
+      BoxesSquare-Sheet_49: -2348107980858654437
+      BoxesSquare-Sheet_111: -5277449971522665661
+      BoxesSquare-Sheet_75: 1536028895017630068
+      BoxesSquare-Sheet_90: 8120440283546599294
+      BoxesSquare-Sheet_88: 2792291596303285286
+      BoxesSquare-Sheet_118: 5872203081073362274
+      BoxesSquare-Sheet_80: 3844574838881726350
+      BoxesSquare-Sheet_64: -2492811623509856410
+      BoxesSquare-Sheet_23: -4563067263328597105
+      BoxesSquare-Sheet_63: 579981900448385002
+      BoxesSquare-Sheet_108: 1477351432241855946
+      BoxesSquare-Sheet_15: 6394881971683974090
+      BoxesSquare-Sheet_39: 1519262361029441056
+      BoxesSquare-Sheet_109: 6545273061298552445
+      BoxesSquare-Sheet_112: -4496301588458553810
+      BoxesSquare-Sheet_116: 4460499733562989004
+      BoxesSquare-Sheet_24: -2359560808603521888
+      BoxesSquare-Sheet_8: 8106835364939753160
+      BoxesSquare-Sheet_18: -7174657373930703892
+      BoxesSquare-Sheet_69: -8935945530467859021
+      BoxesSquare-Sheet_100: 7817256998063029441
+      BoxesSquare-Sheet_85: 2293271242417968612
+      BoxesSquare-Sheet_99: 9023970780059172588
+      BoxesSquare-Sheet_57: -1580174207547957213
+      BoxesSquare-Sheet_37: 5478492831551080478
+      BoxesSquare-Sheet_30: -3618710500889169535
+      BoxesSquare-Sheet_38: 4218845416581587803
+      BoxesSquare-Sheet_35: -6429860263862364560
+      BoxesSquare-Sheet_6: -5565622720705639274
+      BoxesSquare-Sheet_3: 3310075449812887746
+      BoxesSquare-Sheet_40: 2351735928791644226
+      BoxesSquare-Sheet_86: -5730087414468229652
+      BoxesSquare-Sheet_16: -5653580435861542790
+      BoxesSquare-Sheet_61: -6555913576751022301
+      BoxesSquare-Sheet_74: -4264163306926241096
+      BoxesSquare-Sheet_107: 1867882265415569777
+      BoxesSquare-Sheet_47: -1365435377661336992
+      BoxesSquare-Sheet_34: 664284779664960543
+      BoxesSquare-Sheet_76: -4673449419820043302
+      BoxesSquare-Sheet_101: 8850713019199322995
+      BoxesSquare-Sheet_31: -8814207719703043089
+      BoxesSquare-Sheet_82: -491731605494440814
+      BoxesSquare-Sheet_72: 2177885545960467554
+      BoxesSquare-Sheet_21: 6729005202314510264
+      BoxesSquare-Sheet_83: 4241996672453319212
+      BoxesSquare-Sheet_12: -2379047777300694766
+      BoxesSquare-Sheet_33: 8978978560932368099
+      BoxesSquare-Sheet_66: 2235805384073926956
+      BoxesSquare-Sheet_28: -5562477287401295034
+      BoxesSquare-Sheet_1: 149777877877817425
+      BoxesSquare-Sheet_110: -835725093346877641
+      BoxesSquare-Sheet_105: 3942579289725872307
+      BoxesSquare-Sheet_102: -436822106089455137
+      BoxesSquare-Sheet_84: 3055157945077211267
+      BoxesSquare-Sheet_10: -8630945618367099023
+      BoxesSquare-Sheet_20: 1891363011502195110
+      BoxesSquare-Sheet_29: -4899616131080977255
+      BoxesSquare-Sheet_5: 6171903323358882698
+      BoxesSquare-Sheet_53: 8496006112629703755
+      BoxesSquare-Sheet_98: 1834643201122207169
+      BoxesSquare-Sheet_54: 5611877544157087983
+      BoxesSquare-Sheet_42: 1311924525396058834
+      BoxesSquare-Sheet_65: 7229605014414794535
+      BoxesSquare-Sheet_78: -8957749042749397405
+      BoxesSquare-Sheet_22: 421223015844459318
+      BoxesSquare-Sheet_103: 6433266166103560311
+      BoxesSquare-Sheet_93: 4865950685553440782
+      BoxesSquare-Sheet_43: -6975271598712232562
+      BoxesSquare-Sheet_115: 7923275826575865906
+      BoxesSquare-Sheet_95: 9036527465350093549
+      BoxesSquare-Sheet_68: -1370402835088173722
+      BoxesSquare-Sheet_67: 7259445161981351049
+      BoxesSquare-Sheet_81: -979844882294343255
+      BoxesSquare-Sheet_58: -9194384541440897230
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

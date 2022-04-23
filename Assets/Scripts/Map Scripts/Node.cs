@@ -11,6 +11,12 @@ public class Node : MonoBehaviour
     }
 
     [SerializeField] private SceneHandler.Scene m_Scene;
+    [SerializeField] private AudioClipCatalog.MusicName m_Music;
+
+    public AudioClipCatalog.MusicName GetMusic()
+    {
+        return m_Music;
+    }
 
     public SceneHandler.Scene GetScene()
     {
