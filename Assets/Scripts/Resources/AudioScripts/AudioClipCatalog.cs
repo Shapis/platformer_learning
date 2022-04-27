@@ -28,9 +28,10 @@ public class AudioClipCatalog : MonoBehaviour
         {
             default:
             case AudioClipCatalog.SfxName.LandingNormal:
+                _audioClip = m_SfxClip[0];
                 break;
             case AudioClipCatalog.SfxName.JumpingNormal:
-
+                _audioClip = m_SfxClip[1];
                 break;
 
         }

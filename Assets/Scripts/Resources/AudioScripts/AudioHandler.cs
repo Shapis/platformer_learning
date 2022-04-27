@@ -9,10 +9,8 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
 
 {
     [Header("Dependencies")]
-    [SerializeField] AudioHandlerSettings m_AudioHandlerSettings;
     [SerializeField] AudioClipCatalog m_AudioClipCatalog;
     [SerializeField] AudioSource m_MusicSource;
-    [SerializeField] AudioSource m_SfxSource;
     [SerializeField] private bool m_DebugLoggingEnabled = false;
     private AudioClipCatalog.MusicName _currentMusic;
     private PlayerNodeMovement m_PlayerNodeMovement;
