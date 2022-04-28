@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
-public class PopupMenuController : MonoBehaviour
+public class PopupMenuController : MonoBehaviour, IMenuEvents
 {
     [Header("Settings")]
     [SerializeField] private float m_TransitionTime = 0.3f;
@@ -9,6 +10,8 @@ public class PopupMenuController : MonoBehaviour
     private Vector3 myInitialScale;
     private float timer;
     private Coroutine myScalingCoroutine;
+    public event EventHandler OnMenuOpenEvent;
+    public event EventHandler OnMenuCloseEvent;
 
     private void Start()
     {
@@ -25,6 +28,11 @@ public class PopupMenuController : MonoBehaviour
         CancelScalingCoroutine();
         gameObject.SetActive(true);
         myScalingCoroutine = StartCoroutine("ScaleUp");
+        OnMenuOpen(this, EventArgs.Empty);
+    }
+    public void OnMenuOpen(object sender, EventArgs e)
+    {
+        OnMenuOpenEvent?.Invoke(sender, EventArgs.Empty);
     }
 
     private IEnumerator ScaleUp()
@@ -46,6 +54,12 @@ public class PopupMenuController : MonoBehaviour
     {
         CancelScalingCoroutine();
         myScalingCoroutine = StartCoroutine("ScaleDown");
+        OnMenuClose(this, EventArgs.Empty);
+    }
+
+    public void OnMenuClose(object sender, EventArgs e)
+    {
+        OnMenuCloseEvent?.Invoke(sender, EventArgs.Empty);
     }
 
     private IEnumerator ScaleDown()
@@ -70,5 +84,16 @@ public class PopupMenuController : MonoBehaviour
         {
             StopCoroutine(myScalingCoroutine);
         }
+    }
+
+
+    public void OnMenuButtonClick(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnMenuHover(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
     }
 }

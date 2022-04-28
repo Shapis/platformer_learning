@@ -23,7 +23,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
     private float myCoyoteStartTime;
     private bool myCoyoteJump = false;
     private bool isFalling;
-    public bool isGrounded;
+    private bool isGrounded;
     private bool jumpKeyPressed = false;
     private bool previouslyJumpKeyPressed = false;
     private Vector3 previousPosition;

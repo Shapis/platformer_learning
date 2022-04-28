@@ -1,9 +1,12 @@
 using System;
+using UnityEngine;
 using static AudioClipCatalog;
 
 public class PlayerAudioEmitter : BaseAudioEmitter, ICharacterEvents
 {
     private CharacterController2D m_CharacterController2D;
+
+
     public override void InitAwake()
     {
         m_CharacterController2D = GetComponent<CharacterController2D>();
@@ -40,6 +43,6 @@ public class PlayerAudioEmitter : BaseAudioEmitter, ICharacterEvents
 
     public void OnLanding(object sender, EventArgs e)
     {
-        PlaySfx(SfxName.LandingNormal, relativeVolume: 0.1f);
+        PlaySfx(SfxName.LandingNormal, relativeVolume: 0.12f);
     }
 }

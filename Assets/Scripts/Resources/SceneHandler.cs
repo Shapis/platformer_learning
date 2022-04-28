@@ -34,11 +34,6 @@ public static class SceneHandler
         SceneManager.LoadScene(scene.ToString());
     }
 
-    public static void OnSceneLoadEvent(Action<SceneHandler.Scene> myAction)
-    {
-        SceneManager.sceneLoaded += (scene, mode) => myAction(GetActiveSceneEnum());
-    }
-
     public static void ReloadCurrentScene()
     {
         SceneHandler.Load(GetActiveSceneEnum());

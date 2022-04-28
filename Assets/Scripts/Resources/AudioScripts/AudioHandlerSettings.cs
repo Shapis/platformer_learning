@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class AudioHandlerSettings : BaseSettings
+public class AudioHandlerSettings : BaseSettings, ISceneHandlerEvents
 {
 
     [Header("Dependencies")]
@@ -16,13 +17,13 @@ public class AudioHandlerSettings : BaseSettings
 
     private void Start()
     {
-        SceneHandler.OnSceneLoadEvent(OnSceneLoad); // subscribe to scene load event, Only needs to be done once since SceneHandler is static and AudioHandler never gets destroyed.
+        SceneManager.sceneLoaded += OnSceneLoad; // subscribe to scene load event, Only needs to be done once since SceneHandler is static and AudioHandler never gets destroyed.
         InitStart();
     }
 
-    private void OnSceneLoad(SceneHandler.Scene obj)
+    public void OnSceneLoad(Scene arg0, LoadSceneMode arg1)
     {
-        if (obj == SceneHandler.Scene.MainMenu)
+        if (arg0 == SceneManager.GetSceneByName("MainMenu"))
         {
             InitAwake();
             InitStart();
@@ -45,4 +46,6 @@ public class AudioHandlerSettings : BaseSettings
     {
         UpdateVolumeSettings(gameSettingsInfo);
     }
+
+
 }

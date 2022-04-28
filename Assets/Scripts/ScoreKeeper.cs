@@ -105,4 +105,14 @@ public class ScoreKeeper : MonoBehaviour, IKeyGrabberEvents, IKeyDoorEvents, ISc
         chestScore += 3;
         UpdateScore();
     }
+
+    public void OnKeyAdded(object sender, ColorPalette.ColorName keyType)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnKeyRemoved(object sender, ColorPalette.ColorName keyType)
+    {
+        throw new NotImplementedException();
+    }
 }
