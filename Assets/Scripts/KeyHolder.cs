@@ -45,4 +45,13 @@ public class KeyHolder : MonoBehaviour, IKeyGrabberEvents
         UpdateVisual(keyList);
     }
 
+    public void OnKeyAdded(object sender, ColorPalette.ColorName keyType)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnKeyRemoved(object sender, ColorPalette.ColorName keyType)
+    {
+        throw new System.NotImplementedException();
+    }
 }

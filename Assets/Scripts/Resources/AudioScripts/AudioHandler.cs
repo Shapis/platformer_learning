@@ -9,11 +9,14 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
 
 {
     [Header("Dependencies")]
-    [SerializeField] AudioClipCatalog m_AudioClipCatalog;
-    [SerializeField] AudioSource m_MusicSource;
+    [SerializeField] private AudioClipCatalog m_AudioClipCatalog;
+    [SerializeField] private AudioSource m_MusicSource;
+    [SerializeField] private AudioSource m_SfxSource; // Use this Sfx source for sfx that has to persist through scenes and can't be stopped on game pauses.
     [SerializeField] private bool m_DebugLoggingEnabled = false;
     private AudioClipCatalog.MusicName _currentMusic;
     private PlayerNodeMovement m_PlayerNodeMovement;
+
+    public AudioSource SfxSource { get => m_SfxSource; private set => m_SfxSource = value; }
 
     public event EventHandler OnMusicPlayEvent;
 
@@ -32,7 +35,7 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
     private void Start()
     {
         InitializeSceneMusic();
-        SceneHandler.OnSceneLoadEvent(OnSceneLoad); // subscribe to scene load event, Only needs to be done once since SceneHandler is static and AudioHandler never gets destroyed.
+        SceneManager.sceneLoaded += OnSceneLoad; // subscribe to scene load event, Only needs to be done once since SceneHandler is static and AudioHandler never gets destroyed.
         SubscribeToEvents(); // Needs to be run once at start because the SceneHandler doesnt call OnSceneLoadEvent when the very first scene is loaded. (Only when a scene is explicitly loaded from the SceneHandler)
     }
 
@@ -88,9 +91,9 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
         }
     }
 
-    public void OnSceneLoad(SceneHandler.Scene currentScene)
+    public void OnSceneLoad(Scene arg0, LoadSceneMode arg1)
     {
-        if (currentScene == SceneHandler.Scene.MainMenu)
+        if (arg0 == SceneManager.GetSceneByName("MainMenu"))
         {
             PlayMusic(AudioClipCatalog.MusicName.The_Journey_Is_The_Treasure);
         }
@@ -194,4 +197,5 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
             Debug.Log("AudioHandler: OnNoDestinationFound: " + s); // This is called when the player tries to travel to a destination node that is not accessible.
         }
     }
+
 }

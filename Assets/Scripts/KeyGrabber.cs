@@ -6,18 +6,8 @@ public class KeyGrabber : MonoBehaviour, IKeyGrabberEvents
 {
     private readonly List<ColorPalette.ColorName> keyList = new List<ColorPalette.ColorName>();
     public event EventHandler<List<ColorPalette.ColorName>> OnKeysChangedEvent;
-
-    public void AddKey(ColorPalette.ColorName keyType)
-    {
-        keyList.Add(keyType);
-        OnKeysChanged(this, keyList);
-    }
-
-    public void RemoveKey(ColorPalette.ColorName keyType)
-    {
-        keyList.Remove(keyType);
-        OnKeysChanged(this, keyList);
-    }
+    public event EventHandler<ColorPalette.ColorName> OnKeyAddedEvent;
+    public event EventHandler<ColorPalette.ColorName> OnKeyRemovedEvent;
 
     public bool ContainsKey(ColorPalette.ColorName keyType)
     {
@@ -30,7 +20,7 @@ public class KeyGrabber : MonoBehaviour, IKeyGrabberEvents
         if (key != null && key.Tangible)
         {
             key.Tangible = false;
-            AddKey(key.GetKeyType());
+            OnKeyAdded(this, key.GetKeyType());
             Destroy(key.gameObject);
         }
 
@@ -41,7 +31,7 @@ public class KeyGrabber : MonoBehaviour, IKeyGrabberEvents
             if (ContainsKey(keyDoor.GetKeyType()))
             {
                 // Currently holding Key to open this door;
-                RemoveKey(keyDoor.GetKeyType());
+                OnKeyRemoved(this, keyDoor.GetKeyType());
                 keyDoor.OpenDoorPermanently();
             }
         }
@@ -50,5 +40,19 @@ public class KeyGrabber : MonoBehaviour, IKeyGrabberEvents
     public void OnKeysChanged(object sender, List<ColorPalette.ColorName> keyList)
     {
         OnKeysChangedEvent?.Invoke(this, keyList);
+    }
+
+    public void OnKeyAdded(object sender, ColorPalette.ColorName keyType)
+    {
+        keyList.Add(keyType);
+        OnKeyAddedEvent?.Invoke(this, keyType);
+        OnKeysChanged(this, keyList);
+    }
+
+    public void OnKeyRemoved(object sender, ColorPalette.ColorName keyType)
+    {
+        keyList.Remove(keyType);
+        OnKeyRemovedEvent?.Invoke(this, keyType);
+        OnKeysChanged(this, keyList);
     }
 }
