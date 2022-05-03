@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3374235829591988558}
+  - component: {fileID: 5799590021834943779}
+  - component: {fileID: -3293310534773758536}
+  - component: {fileID: -3758983427948910266}
   - component: {fileID: 3374235829591988561}
   - component: {fileID: 3374235829591988560}
   - component: {fileID: 200076193656712240}
-  - component: {fileID: -3758983427948910266}
-  - component: {fileID: -3293310534773758536}
   m_Layer: 11
   m_Name: CoinBrown
   m_TagString: Untagged
@@ -36,6 +37,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5799590021834943779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3374235829591988563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c235bd1cb70cbe1692f77e9460867c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsActive: 1
+  m_GridSize: {x: 1, y: 1, z: 1}
+--- !u!114 &-3293310534773758536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3374235829591988563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3c65a6d60cd744ea985790a63418d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinType: 2
+--- !u!114 &-3758983427948910266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3374235829591988563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cf000958a6df942a56dcc2b681ebc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ItemType: 0
 --- !u!212 &3374235829591988561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -135,29 +176,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.50101423, y: 0.5052128}
   m_EdgeRadius: 0
---- !u!114 &-3758983427948910266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3374235829591988563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37cf000958a6df942a56dcc2b681ebc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ItemType: 0
---- !u!114 &-3293310534773758536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3374235829591988563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e3c65a6d60cd744ea985790a63418d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinType: 2

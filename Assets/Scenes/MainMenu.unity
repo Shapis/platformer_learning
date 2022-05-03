@@ -1781,6 +1781,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 582cb16647cc544048d0481143cd0b8e, type: 3}
   - {fileID: 8300000, guid: 700fbd6c31e6a3de2a888023aefa95ca, type: 3}
   - {fileID: 8300000, guid: 79da5e2f69da5e508bc42eab2a142931, type: 3}
+  - {fileID: 8300000, guid: f4779ea2638b1368a8525e3b106e97cb, type: 3}
   m_SfxClip:
   - {fileID: 8300000, guid: 36f6acaa2a9d970ca962ae99ece7e31e, type: 3}
   - {fileID: 8300000, guid: bb4221508d17169c6b9d09d934f96895, type: 3}

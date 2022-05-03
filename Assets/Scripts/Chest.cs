@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+// Chests will move key and purple coins to their specific location once opened. But brown coins will just drop around it.
+
 public class Chest : BaseItem
 {
     public List<Transform> ChestLoot { get; private set; } = new List<Transform>();

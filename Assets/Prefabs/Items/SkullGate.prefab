@@ -93,10 +93,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734936764878528158}
+  - component: {fileID: 5763177548680441788}
+  - component: {fileID: 2931172591601905627}
   - component: {fileID: 1734936764878528161}
   - component: {fileID: 1734936764878528160}
   - component: {fileID: 1734936764878528162}
-  - component: {fileID: 2931172591601905627}
   - component: {fileID: 9015607365722616461}
   m_Layer: 0
   m_Name: SkullGate
@@ -122,6 +123,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5763177548680441788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734936764878528165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c235bd1cb70cbe1692f77e9460867c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsActive: 1
+  m_GridSize: {x: 1, y: 1, z: 1}
+--- !u!114 &2931172591601905627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734936764878528165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c6845cff412144a9d3cd6362ad2b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 1734936764878528160}
+  m_GateKeyGameObject: {fileID: 1593385441645640663}
+  m_BoxColliders:
+  - {fileID: 1734936764878528162}
+  - {fileID: 1734936765690926067}
+  m_KeyType: 0
 --- !u!212 &1734936764878528161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -221,24 +254,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.2125864, y: 3.8743582}
   m_EdgeRadius: 0
---- !u!114 &2931172591601905627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734936764878528165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c6845cff412144a9d3cd6362ad2b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 1734936764878528160}
-  m_GateKeyGameObject: {fileID: 1593385441645640663}
-  m_BoxColliders:
-  - {fileID: 1734936764878528162}
-  - {fileID: 1734936765690926067}
-  m_KeyType: 0
 --- !u!114 &9015607365722616461
 MonoBehaviour:
   m_ObjectHideFlags: 0

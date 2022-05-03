@@ -30,6 +30,7 @@ public class AudioClipCatalog : MonoBehaviour
         The_Journey_Is_The_Treasure,
         World_Of_Nowhere,
         Call_For_Love,
+        Music_Of_Something,
     }
 
     public AudioClip GetSfxClip(AudioClipCatalog.SfxName _mySfxName)
@@ -99,6 +100,9 @@ public class AudioClipCatalog : MonoBehaviour
                 break;
             case AudioClipCatalog.MusicName.Call_For_Love:
                 _audioClip = m_MusicClip[2];
+                break;
+            case AudioClipCatalog.MusicName.Music_Of_Something:
+                _audioClip = m_MusicClip[3];
                 break;
         }
         return _audioClip;

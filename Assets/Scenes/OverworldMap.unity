@@ -7900,7 +7900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: level 02
+  m_NodeName: Main Road
   m_Scene: 1
   m_Music: 2
   m_UpDestination: {fileID: 0}
@@ -8265,7 +8265,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.416996, y: 1}
+    m_SensorSize: {x: 2.2727273, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14514,7 +14514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level 01
+  m_NodeName: Puppy's Island
   m_Scene: 0
   m_Music: 1
   m_UpDestination: {fileID: 0}
@@ -35537,9 +35537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Leve 003
+  m_NodeName: Grassy Plains
   m_Scene: 2
-  m_Music: 0
+  m_Music: 3
   m_UpDestination: {fileID: 277797048}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 425804791}
@@ -35625,7 +35625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Aqui eh o level 03 meu caro
+  - Wow it's so green here. So many possibilities!
 --- !u!1 &1768628159
 GameObject:
   m_ObjectHideFlags: 0
