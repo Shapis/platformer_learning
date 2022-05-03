@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+// https://lospec.com/palette-list/a64 I'm using this Color Palette
 public static class ColorPalette
 {
     public enum ColorName
