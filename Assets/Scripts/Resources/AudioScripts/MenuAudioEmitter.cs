@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static AudioClipCatalog;
@@ -42,11 +43,23 @@ public class MenuAudioEmitter : BaseAudioEmitter, IMenuEvents, ISceneHandlerEven
         {
             item.onClick.AddListener(() => OnMenuButtonClick(this, EventArgs.Empty));
         }
+        foreach (var item in FindObjectsOfType<Slider>())
+        {
+            EventTrigger trigger = item.gameObject.AddComponent<EventTrigger>();
+            EventTrigger.Entry entry = new EventTrigger.Entry();
+            entry.eventID = EventTriggerType.PointerUp;
+            entry.callback.AddListener((data) => { OnPointerUpDelegate((PointerEventData)data); });
+            trigger.triggers.Add(entry);
+        }
+    }
+
+    public void OnPointerUpDelegate(PointerEventData data)
+    {
+        PlaySfxPermanent(SfxName.MenuClicked, relativeVolume: 1f);
     }
 
     public void OnMenuButtonClick(object sender, EventArgs e)
     {
-        Debug.Log("MenuButtonClick");
         PlaySfxPermanent(SfxName.MenuClicked, relativeVolume: 1f);
     }
     public void OnMenuOpen(object sender, EventArgs e)
