@@ -9028,9 +9028,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
-  m_Scene: 3
-  m_Music: 0
+  m_NodeName: Riverside Bedrock
+  m_Scene: 6
+  m_Music: 3
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 897722159}
@@ -9116,7 +9116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Level 07 is here! woooo
+  - I really oughta be careful not to get my shoes wet near a river.
 --- !u!1 &448494801
 GameObject:
   m_ObjectHideFlags: 0
@@ -13937,9 +13937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
-  m_Scene: 8
-  m_Music: 0
+  m_NodeName: xxxx
+  m_Scene: 4
+  m_Music: 3
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 0}
@@ -14025,7 +14025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - here be lvl 9
+  - xxxx
 --- !u!1 &689650934
 GameObject:
   m_ObjectHideFlags: 0
@@ -35539,7 +35539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NodeName: Grassy Plains
   m_Scene: 2
-  m_Music: 3
+  m_Music: 5
   m_UpDestination: {fileID: 277797048}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 425804791}
@@ -37276,9 +37276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
-  m_Scene: 4
-  m_Music: 0
+  m_NodeName: Hilltop
+  m_Scene: 3
+  m_Music: 4
   m_UpDestination: {fileID: 1608461040}
   m_DownDestination: {fileID: 1850550188}
   m_LeftDestination: {fileID: 528747680}
@@ -37364,7 +37364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Empty dialogue!
+  - I can see the great desert from here. I hear the dunes are beautiful at sunset.
 --- !u!1 &1839918667
 GameObject:
   m_ObjectHideFlags: 0

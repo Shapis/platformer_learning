@@ -31,6 +31,9 @@ public class AudioClipCatalog : MonoBehaviour
         World_Of_Nowhere,
         Call_For_Love,
         Music_Of_Something,
+        Day_Of_What,
+        A_Day,
+
     }
 
     public AudioClip GetSfxClip(AudioClipCatalog.SfxName _mySfxName)
@@ -103,6 +106,12 @@ public class AudioClipCatalog : MonoBehaviour
                 break;
             case AudioClipCatalog.MusicName.Music_Of_Something:
                 _audioClip = m_MusicClip[3];
+                break;
+            case AudioClipCatalog.MusicName.Day_Of_What:
+                _audioClip = m_MusicClip[4];
+                break;
+            case AudioClipCatalog.MusicName.A_Day:
+                _audioClip = m_MusicClip[5];
                 break;
         }
         return _audioClip;

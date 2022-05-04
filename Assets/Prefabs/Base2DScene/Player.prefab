@@ -5085,7 +5085,7 @@ MonoBehaviour:
   m_WandTransform: {fileID: 5944554723865333425}
   m_WhatAreBarriers:
     serializedVersion: 2
-    m_Bits: 12288
+    m_Bits: 0
   m_MobileJoystick: {fileID: 0}
   m_DraggingSpeed: 50
   m_LineOfSightLeniencyTimer: 2

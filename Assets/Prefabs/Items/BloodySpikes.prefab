@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c235bd1cb70cbe1692f77e9460867c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsActive: 1
+  m_ContainerName: HarmfuItemsContainer
+  m_AutoMove: 1
+  m_SnappingActive: 1
   m_GridSize: {x: 0.5, y: 0.25, z: 1}
 --- !u!212 &9123142614898775050
 SpriteRenderer:

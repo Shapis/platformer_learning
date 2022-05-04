@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4036300775154967941}
+  - component: {fileID: -3962419331042485385}
   - component: {fileID: 4036300775154967939}
   - component: {fileID: 4036300775154967940}
   - component: {fileID: 4036300775154967938}
@@ -34,6 +35,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3962419331042485385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4036300775154967943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c235bd1cb70cbe1692f77e9460867c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ContainerName: Triggers
+  m_AutoMove: 1
+  m_SnappingActive: 1
+  m_GridSize: {x: 1, y: 1, z: 1}
 --- !u!114 &4036300775154967939
 MonoBehaviour:
   m_ObjectHideFlags: 0

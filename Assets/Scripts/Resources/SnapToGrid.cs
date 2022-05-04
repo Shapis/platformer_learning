@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class SnapToGrid : MonoBehaviour
 {
-    [SerializeField] private bool m_IsActive = true;
+    [SerializeField] private string m_ContainerName = "ItemsContainer";
+    [SerializeField] private bool m_AutoMove = true;
+    [SerializeField] private bool m_SnappingActive = true;
     [SerializeField] private Vector3 m_GridSize = new Vector3(1f, 1f, 1f);
 
     private void OnDrawGizmos()
     {
-        if (!Application.isPlaying && transform.hasChanged && m_IsActive)
+        if ((this.transform.parent != GameObject.Find(m_ContainerName).transform) && m_AutoMove)
+        {
+            MoveToDirectory();
+        }
+        if (!Application.isPlaying && transform.hasChanged && m_SnappingActive)
         {
             Snap();
         }
+    }
+
+    private void MoveToDirectory()
+    {
+        this.transform.parent = GameObject.Find(m_ContainerName).transform;
+        Debug.Log(this.gameObject + " moved to " + m_ContainerName);
     }
 
     private void Snap()
