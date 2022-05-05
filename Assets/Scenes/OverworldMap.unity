@@ -699,9 +699,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
+  m_NodeName: Spikey Place
   m_Scene: 11
-  m_Music: 0
+  m_Music: 13
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 1571715091}
@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - here be level 12 heathen!
+  - Wow. And I thought the desert was going ot be rough. I better watch my step!
 --- !u!1 &49455953
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,9 +939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
+  m_NodeName: Salt Marina
   m_Scene: 14
-  m_Music: 0
+  m_Music: 16
   m_UpDestination: {fileID: 779807698}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 0}
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - level 15 yeeeeeet water yeeet
+  - Wow so much water. I wish I knew how to swim!
 --- !u!1 &51247523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,9 +1361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
+  m_NodeName: Traveling Troupe
   m_Scene: 13
-  m_Music: 0
+  m_Music: 15
   m_UpDestination: {fileID: 1503722719}
   m_DownDestination: {fileID: 2101317769}
   m_LeftDestination: {fileID: 1021630242}
@@ -1449,7 +1449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - here be level 14
+  - A Circus! What the heck. This time of the year??
 --- !u!1 &79233438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,143 +2423,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &98433110
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 98433111}
-  - component: {fileID: 98433113}
-  - component: {fileID: 98433112}
-  - component: {fileID: 98433114}
-  - component: {fileID: 98433115}
-  m_Layer: 0
-  m_Name: Node (8)
-  m_TagString: Node
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &98433111
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98433110}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.18, y: -0.47, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1497567949}
-  m_Father: {fileID: 1349149451}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &98433112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98433110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NodeName: Level Name
-  m_Scene: 6
-  m_Music: 0
-  m_UpDestination: {fileID: 0}
-  m_DownDestination: {fileID: 0}
-  m_LeftDestination: {fileID: 315734665}
-  m_RightDestination: {fileID: 877206915}
-  IsTravelNode: 0
-  IsAccessible: 1
---- !u!212 &98433113
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98433110}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db952af7f19d29648899fab6f0b206ec, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &98433114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98433110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb69eb50e9c6ee4d385bc317a62a902f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlayerNodeMovement: {fileID: 0}
-  m_DialogueBox: {fileID: 0}
---- !u!114 &98433115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98433110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 051b1392cec24b54aa5bb49debd2f4e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sentences:
-  - Empty dialogue!
 --- !u!1 &115603172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,8 +3869,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NodeName: Level Name
-  m_Scene: 20
-  m_Music: 0
+  m_Scene: 18
+  m_Music: 20
   m_UpDestination: {fileID: 630255794}
   m_DownDestination: {fileID: 784875638}
   m_LeftDestination: {fileID: 666729761}
@@ -4831,9 +4694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
+  m_NodeName: Gondorra Castle
   m_Scene: 12
-  m_Music: 0
+  m_Music: 14
   m_UpDestination: {fileID: 319660575}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 1017750396}
@@ -4919,7 +4782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Here be level 13 yeee
+  - Wow the Crown Jewel of the Southeast. They have the best bards of the whole realm!
 --- !u!1 &223252510
 GameObject:
   m_ObjectHideFlags: 0
@@ -6956,7 +6819,7 @@ MonoBehaviour:
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 947427721}
-  m_RightDestination: {fileID: 98433110}
+  m_RightDestination: {fileID: 552137057}
   IsTravelNode: 1
   IsAccessible: 1
 --- !u!212 &315734668
@@ -8265,7 +8128,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.2727273, y: 1}
+    m_SensorSize: {x: 1.7786561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9030,7 +8893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NodeName: Riverside Bedrock
   m_Scene: 6
-  m_Music: 3
+  m_Music: 6
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 897722159}
@@ -10969,6 +10832,143 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &552137057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552137058}
+  - component: {fileID: 552137062}
+  - component: {fileID: 552137061}
+  - component: {fileID: 552137060}
+  - component: {fileID: 552137059}
+  m_Layer: 0
+  m_Name: Node (8)
+  m_TagString: Node
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &552137058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552137057}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.18, y: -0.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 896839349}
+  m_Father: {fileID: 1349149451}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552137059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552137057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051b1392cec24b54aa5bb49debd2f4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentences:
+  - All this water reminds me of home. I miss my island but I must go on.
+--- !u!114 &552137060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552137057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb69eb50e9c6ee4d385bc317a62a902f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerNodeMovement: {fileID: 0}
+  m_DialogueBox: {fileID: 0}
+--- !u!114 &552137061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552137057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NodeName: Southside Ankara
+  m_Scene: 7
+  m_Music: 7
+  m_UpDestination: {fileID: 0}
+  m_DownDestination: {fileID: 0}
+  m_LeftDestination: {fileID: 315734665}
+  m_RightDestination: {fileID: 877206915}
+  IsTravelNode: 0
+  IsAccessible: 1
+--- !u!212 &552137062
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552137057}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: db952af7f19d29648899fab6f0b206ec, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &552312428
 GameObject:
   m_ObjectHideFlags: 0
@@ -11621,7 +11621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NodeName: Level Name
   m_Scene: 20
-  m_Music: 0
+  m_Music: 22
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 146811443}
   m_LeftDestination: {fileID: 43433}
@@ -13937,9 +13937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: xxxx
+  m_NodeName: Flatline Coast
   m_Scene: 4
-  m_Music: 3
+  m_Music: 8
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 0}
@@ -14025,7 +14025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - xxxx
+  - The coast is always so peaceful. It truly allows you to let go of your past.
 --- !u!1 &689650934
 GameObject:
   m_ObjectHideFlags: 0
@@ -18407,7 +18407,7 @@ MonoBehaviour:
   m_Music: 0
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
-  m_LeftDestination: {fileID: 98433110}
+  m_LeftDestination: {fileID: 552137057}
   m_RightDestination: {fileID: 80086941}
   IsTravelNode: 1
   IsAccessible: 1
@@ -18565,6 +18565,109 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &896839348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896839349}
+  - component: {fileID: 896839351}
+  - component: {fileID: 896839350}
+  m_Layer: 0
+  m_Name: InnerCircle (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &896839349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896839348}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 552137058}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &896839350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896839348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f19c7088c34ef4780a7a18611f5236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotAccessibleColors:
+  - {r: 0.69411767, g: 0.28235295, b: 0.38823533, a: 1}
+  - {r: 0.80392164, g: 0.5764706, b: 0.45098042, a: 1}
+  m_AccessibleColors:
+  - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
+  - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
+--- !u!212 &896839351
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896839348}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 4b41c63fdf9d64f4c9ad2015de05da05, type: 3}
+  m_Color: {r: 0.69411767, g: 0.28235295, b: 0.38823533, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -19645,9 +19748,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
+  m_NodeName: Midcentral Highlands
   m_Scene: 9
-  m_Music: 0
+  m_Music: 11
   m_UpDestination: {fileID: 1090175092}
   m_DownDestination: {fileID: 857366043}
   m_LeftDestination: {fileID: 44180207}
@@ -19733,7 +19836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - here be level 10 yer scallywager
+  - I can see the twilight mountains from here. I better watch my step when attempting
+    to climb it. Wouldn't wanna lose a shoe!
 --- !u!1 &956390313
 GameObject:
   m_ObjectHideFlags: 0
@@ -21682,9 +21786,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
+  m_NodeName: Twilight Mountains
   m_Scene: 10
-  m_Music: 0
+  m_Music: 12
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 1146887052}
@@ -21770,7 +21874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Here be level 11
+  - These look so steep. I've never heard of anyone that was able to climb it before.
 --- !u!1 &1017750396
 GameObject:
   m_ObjectHideFlags: 0
@@ -25943,9 +26047,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
-  m_Scene: 7
-  m_Music: 0
+  m_NodeName: Cornetto Village
+  m_Scene: 8
+  m_Music: 10
   m_UpDestination: {fileID: 2068960170}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 759195600}
@@ -26031,7 +26135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - here be level 8
+  - I feel like I'm getting somewhere now.
 --- !u!1 &1297794520
 GameObject:
   m_ObjectHideFlags: 0
@@ -27107,7 +27211,7 @@ Transform:
   - {fileID: 686027552}
   - {fileID: 1511458954}
   - {fileID: 439169473}
-  - {fileID: 98433111}
+  - {fileID: 552137058}
   - {fileID: 1297608789}
   - {fileID: 954343115}
   - {fileID: 1016778645}
@@ -30603,109 +30707,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1497567948
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1497567949}
-  - component: {fileID: 1497567951}
-  - component: {fileID: 1497567950}
-  m_Layer: 0
-  m_Name: InnerCircle (8)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1497567949
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497567948}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 98433111}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1497567950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497567948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68f19c7088c34ef4780a7a18611f5236, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NotAccessibleColors:
-  - {r: 0.69411767, g: 0.28235295, b: 0.38823533, a: 1}
-  - {r: 0.80392164, g: 0.5764706, b: 0.45098042, a: 1}
-  m_AccessibleColors:
-  - {r: 0.3137255, g: 0.5803922, b: 0.3137255, a: 1}
-  - {r: 0.6117647, g: 0.8000001, b: 0.2784314, a: 1}
---- !u!212 &1497567951
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497567948}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4b41c63fdf9d64f4c9ad2015de05da05, type: 3}
-  m_Color: {r: 0.69411767, g: 0.28235295, b: 0.38823533, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1499802304
 GameObject:
   m_ObjectHideFlags: 0
@@ -31344,9 +31345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
+  m_NodeName: Centropia
   m_Scene: 5
-  m_Music: 0
+  m_Music: 9
   m_UpDestination: {fileID: 1924776447}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 761992129}
@@ -31432,7 +31433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Level06 be here
+  - It's now or never. Should I head north through the desert?
 --- !u!1 &1514029690
 GameObject:
   m_ObjectHideFlags: 0
@@ -32069,8 +32070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NodeName: Level Name
-  m_Scene: 20
-  m_Music: 0
+  m_Scene: 19
+  m_Music: 21
   m_UpDestination: {fileID: 0}
   m_DownDestination: {fileID: 990894311}
   m_LeftDestination: {fileID: 0}
@@ -33505,9 +33506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
-  m_Scene: 20
-  m_Music: 0
+  m_NodeName: Greeny Quadroads
+  m_Scene: 16
+  m_Music: 18
   m_UpDestination: {fileID: 674903577}
   m_DownDestination: {fileID: 2011657636}
   m_LeftDestination: {fileID: 552653004}
@@ -33593,7 +33594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Empty dialogue!
+  - I must go on.
 --- !u!1 &1640721527
 GameObject:
   m_ObjectHideFlags: 0
@@ -39259,9 +39260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
+  m_NodeName: Greeny Triroads
   m_Scene: 15
-  m_Music: 0
+  m_Music: 17
   m_UpDestination: {fileID: 138404440}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 1787303728}
@@ -39347,7 +39348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - LEVEL 16 HERE WHAT THE HECK
+  - I'm not lost. I know exactly where I'm going. Shush it.
 --- !u!1 &1936086217
 GameObject:
   m_ObjectHideFlags: 0
@@ -39709,9 +39710,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9494c97ad50dc41b0c9af6b1e52e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeName: Level Name
-  m_Scene: 20
-  m_Music: 0
+  m_NodeName: Tralala Market
+  m_Scene: 17
+  m_Music: 19
   m_UpDestination: {fileID: 1159021646}
   m_DownDestination: {fileID: 0}
   m_LeftDestination: {fileID: 327751258}
@@ -39797,7 +39798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - Empty dialogue!
+  - 
 --- !u!1 &1968117756
 GameObject:
   m_ObjectHideFlags: 0

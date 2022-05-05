@@ -33,12 +33,27 @@ public class AudioClipCatalog : MonoBehaviour
         Music_Of_Something,
         Day_Of_What,
         A_Day,
-
+        Easy_Dreams,
+        Gift,
+        Belong_To_Her_Place,
+        Free_Tonight,
+        Comfortless_Seasons,
+        Good_Moves,
+        Get_Out,
+        Give_Her_Shadow,
+        I_Dont_Care_About_Place,
+        Lets_Do_This,
+        Because_Of_Yesterday,
+        No_One_Needs_Silence,
+        On_My_Mind,
+        She_Will_Try,
+        Prayer_Of_My_Life,
+        Remember_Your_Place,
+        Story_For_Money,
     }
 
     public AudioClip GetSfxClip(AudioClipCatalog.SfxName _mySfxName)
     {
-
         AudioClip _audioClip = m_SfxClip[0];
         switch (_mySfxName)
         {
@@ -112,6 +127,39 @@ public class AudioClipCatalog : MonoBehaviour
                 break;
             case AudioClipCatalog.MusicName.A_Day:
                 _audioClip = m_MusicClip[5];
+                break;
+            case AudioClipCatalog.MusicName.Easy_Dreams:
+                _audioClip = m_MusicClip[6];
+                break;
+            case AudioClipCatalog.MusicName.Gift:
+                _audioClip = m_MusicClip[7];
+                break;
+            case AudioClipCatalog.MusicName.Belong_To_Her_Place:
+                _audioClip = m_MusicClip[8];
+                break;
+            case AudioClipCatalog.MusicName.Free_Tonight:
+                _audioClip = m_MusicClip[9];
+                break;
+            case AudioClipCatalog.MusicName.Comfortless_Seasons:
+                _audioClip = m_MusicClip[10];
+                break;
+            case AudioClipCatalog.MusicName.Good_Moves:
+                _audioClip = m_MusicClip[11];
+                break;
+            case AudioClipCatalog.MusicName.Get_Out:
+                _audioClip = m_MusicClip[12];
+                break;
+            case AudioClipCatalog.MusicName.Give_Her_Shadow:
+                _audioClip = m_MusicClip[13];
+                break;
+            case AudioClipCatalog.MusicName.I_Dont_Care_About_Place:
+                _audioClip = m_MusicClip[14];
+                break;
+            case AudioClipCatalog.MusicName.Lets_Do_This:
+                _audioClip = m_MusicClip[15];
+                break;
+            case AudioClipCatalog.MusicName.Because_Of_Yesterday:
+                _audioClip = m_MusicClip[16];
                 break;
         }
         return _audioClip;
