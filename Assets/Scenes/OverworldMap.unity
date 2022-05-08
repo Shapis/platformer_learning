@@ -664,6 +664,7 @@ GameObject:
   - component: {fileID: 48301736}
   - component: {fileID: 48301738}
   - component: {fileID: 48301739}
+  - component: {fileID: 48301740}
   m_Layer: 0
   m_Name: Node (12)
   m_TagString: Node
@@ -788,6 +789,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Wow. And I thought the desert was going ot be rough. I better watch my step!
+--- !u!114 &48301740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48301734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &49455953
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +917,7 @@ GameObject:
   - component: {fileID: 51066042}
   - component: {fileID: 51066044}
   - component: {fileID: 51066045}
+  - component: {fileID: 51066046}
   m_Layer: 0
   m_Name: Node (15)
   m_TagString: Node
@@ -1028,6 +1042,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Wow so much water. I wish I knew how to swim!
+--- !u!114 &51066046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51066040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &51247523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1352,7 @@ GameObject:
   - component: {fileID: 69397909}
   - component: {fileID: 69397911}
   - component: {fileID: 69397912}
+  - component: {fileID: 69397913}
   m_Layer: 0
   m_Name: Node (14)
   m_TagString: Node
@@ -1450,6 +1477,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - A Circus! What the heck. This time of the year??
+--- !u!114 &69397913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69397907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &79233438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1502,7 @@ GameObject:
   - component: {fileID: 79233442}
   - component: {fileID: 79233441}
   - component: {fileID: 79233440}
+  - component: {fileID: 79233444}
   m_Layer: 0
   m_Name: Node (36)
   m_TagString: Node
@@ -1587,6 +1627,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &79233444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79233438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &79434223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,6 +3431,7 @@ GameObject:
   - component: {fileID: 158541349}
   - component: {fileID: 158541348}
   - component: {fileID: 158541347}
+  - component: {fileID: 158541351}
   m_Layer: 0
   m_Name: Node (38)
   m_TagString: Node
@@ -3503,6 +3556,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &158541351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158541345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &159021266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,6 +3898,7 @@ GameObject:
   - component: {fileID: 165226585}
   - component: {fileID: 165226587}
   - component: {fileID: 165226588}
+  - component: {fileID: 165226589}
   m_Layer: 0
   m_Name: Node (19)
   m_TagString: Node
@@ -3957,6 +4023,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Empty dialogue!
+--- !u!114 &165226589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165226583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171721194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,6 +4737,7 @@ GameObject:
   - component: {fileID: 221519433}
   - component: {fileID: 221519435}
   - component: {fileID: 221519436}
+  - component: {fileID: 221519437}
   m_Layer: 0
   m_Name: Node (13)
   m_TagString: Node
@@ -4783,6 +4862,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Wow the Crown Jewel of the Southeast. They have the best bards of the whole realm!
+--- !u!114 &221519437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221519431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &223252510
 GameObject:
   m_ObjectHideFlags: 0
@@ -7385,6 +7476,7 @@ GameObject:
   - component: {fileID: 349374464}
   - component: {fileID: 349374463}
   - component: {fileID: 349374462}
+  - component: {fileID: 349374466}
   m_Layer: 0
   m_Name: Node (43)
   m_TagString: Node
@@ -7509,6 +7601,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &349374466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349374460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &359590626
 GameObject:
   m_ObjectHideFlags: 0
@@ -7728,6 +7832,7 @@ GameObject:
   - component: {fileID: 378412056}
   - component: {fileID: 378412058}
   - component: {fileID: 378412059}
+  - component: {fileID: 378412060}
   m_Layer: 0
   m_Name: Node (2)
   m_TagString: Node
@@ -7852,6 +7957,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerNodeMovement: {fileID: 0}
   m_DialogueBox: {fileID: 0}
+--- !u!114 &378412060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378412054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &380051451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8128,7 +8245,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7786561, y: 1}
+    m_SensorSize: {x: 1.7790698, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8856,6 +8973,7 @@ GameObject:
   - component: {fileID: 439169474}
   - component: {fileID: 439169476}
   - component: {fileID: 439169477}
+  - component: {fileID: 439169478}
   m_Layer: 0
   m_Name: Node (7)
   m_TagString: Node
@@ -8980,6 +9098,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - I really oughta be careful not to get my shoes wet near a river.
+--- !u!114 &439169478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439169472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &448494801
 GameObject:
   m_ObjectHideFlags: 0
@@ -10845,6 +10975,7 @@ GameObject:
   - component: {fileID: 552137061}
   - component: {fileID: 552137060}
   - component: {fileID: 552137059}
+  - component: {fileID: 552137063}
   m_Layer: 0
   m_Name: Node (8)
   m_TagString: Node
@@ -10969,6 +11100,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &552137063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552137057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552312428
 GameObject:
   m_ObjectHideFlags: 0
@@ -11344,6 +11487,7 @@ GameObject:
   - component: {fileID: 605701896}
   - component: {fileID: 605701895}
   - component: {fileID: 605701894}
+  - component: {fileID: 605701898}
   m_Layer: 0
   m_Name: Node (31)
   m_TagString: Node
@@ -11468,6 +11612,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &605701898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605701892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &606425800
 GameObject:
   m_ObjectHideFlags: 0
@@ -11584,6 +11740,7 @@ GameObject:
   - component: {fileID: 617580744}
   - component: {fileID: 617580746}
   - component: {fileID: 617580747}
+  - component: {fileID: 617580748}
   m_Layer: 0
   m_Name: Node (21)
   m_TagString: Node
@@ -11708,6 +11865,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Empty dialogue!
+--- !u!114 &617580748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617580742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &629111896
 GameObject:
   m_ObjectHideFlags: 0
@@ -12038,6 +12207,7 @@ GameObject:
   - component: {fileID: 632867745}
   - component: {fileID: 632867744}
   - component: {fileID: 632867743}
+  - component: {fileID: 632867747}
   m_Layer: 0
   m_Name: Node (33)
   m_TagString: Node
@@ -12162,6 +12332,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &632867747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632867741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &633307253
 GameObject:
   m_ObjectHideFlags: 0
@@ -12175,6 +12357,7 @@ GameObject:
   - component: {fileID: 633307257}
   - component: {fileID: 633307256}
   - component: {fileID: 633307255}
+  - component: {fileID: 633307259}
   m_Layer: 0
   m_Name: Node (23)
   m_TagString: Node
@@ -12299,6 +12482,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &633307259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633307253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &635085207
 GameObject:
   m_ObjectHideFlags: 0
@@ -13902,6 +14097,7 @@ GameObject:
   - component: {fileID: 686027553}
   - component: {fileID: 686027555}
   - component: {fileID: 686027556}
+  - component: {fileID: 686027557}
   m_Layer: 0
   m_Name: Node (5)
   m_TagString: Node
@@ -14026,6 +14222,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - The coast is always so peaceful. It truly allows you to let go of your past.
+--- !u!114 &686027557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686027551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &689650934
 GameObject:
   m_ObjectHideFlags: 0
@@ -14039,6 +14247,7 @@ GameObject:
   - component: {fileID: 689650938}
   - component: {fileID: 689650937}
   - component: {fileID: 689650936}
+  - component: {fileID: 689650940}
   m_Layer: 0
   m_Name: Node (47)
   m_TagString: Node
@@ -14163,6 +14372,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &689650940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689650934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &698829413
 GameObject:
   m_ObjectHideFlags: 0
@@ -14495,6 +14716,7 @@ GameObject:
   - component: {fileID: 743780657}
   - component: {fileID: 743780660}
   - component: {fileID: 743780661}
+  - component: {fileID: 743780662}
   m_Layer: 0
   m_Name: Node (1)
   m_TagString: Node
@@ -14619,6 +14841,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerNodeMovement: {fileID: 0}
   m_DialogueBox: {fileID: 0}
+--- !u!114 &743780662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743780656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &757010569
 GameObject:
   m_ObjectHideFlags: 0
@@ -16131,6 +16365,7 @@ GameObject:
   - component: {fileID: 797717308}
   - component: {fileID: 797717307}
   - component: {fileID: 797717306}
+  - component: {fileID: 797717310}
   m_Layer: 0
   m_Name: Node (42)
   m_TagString: Node
@@ -16255,6 +16490,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &797717310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797717304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &801828727
 GameObject:
   m_ObjectHideFlags: 0
@@ -16859,6 +17106,7 @@ GameObject:
   - component: {fileID: 813797514}
   - component: {fileID: 813797513}
   - component: {fileID: 813797512}
+  - component: {fileID: 813797516}
   m_Layer: 0
   m_Name: Node (41)
   m_TagString: Node
@@ -16983,6 +17231,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &813797516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813797510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &818554594
 GameObject:
   m_ObjectHideFlags: 0
@@ -19713,6 +19973,7 @@ GameObject:
   - component: {fileID: 954343116}
   - component: {fileID: 954343118}
   - component: {fileID: 954343119}
+  - component: {fileID: 954343120}
   m_Layer: 0
   m_Name: Node (10)
   m_TagString: Node
@@ -19838,6 +20099,18 @@ MonoBehaviour:
   sentences:
   - I can see the twilight mountains from here. I better watch my step when attempting
     to climb it. Wouldn't wanna lose a shoe!
+--- !u!114 &954343120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954343114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &956390313
 GameObject:
   m_ObjectHideFlags: 0
@@ -20061,6 +20334,7 @@ GameObject:
   - component: {fileID: 970771631}
   - component: {fileID: 970771630}
   - component: {fileID: 970771629}
+  - component: {fileID: 970771633}
   m_Layer: 0
   m_Name: Node (32)
   m_TagString: Node
@@ -20185,6 +20459,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &970771633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970771627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &977450895
 GameObject:
   m_ObjectHideFlags: 0
@@ -21003,6 +21289,7 @@ GameObject:
   - component: {fileID: 1000649708}
   - component: {fileID: 1000649707}
   - component: {fileID: 1000649706}
+  - component: {fileID: 1000649710}
   m_Layer: 0
   m_Name: Node (22)
   m_TagString: Node
@@ -21127,6 +21414,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1000649710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000649704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003786900
 GameObject:
   m_ObjectHideFlags: 0
@@ -21751,6 +22050,7 @@ GameObject:
   - component: {fileID: 1016778646}
   - component: {fileID: 1016778648}
   - component: {fileID: 1016778649}
+  - component: {fileID: 1016778650}
   m_Layer: 0
   m_Name: Node (11)
   m_TagString: Node
@@ -21875,6 +22175,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - These look so steep. I've never heard of anyone that was able to climb it before.
+--- !u!114 &1016778650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016778644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1017750396
 GameObject:
   m_ObjectHideFlags: 0
@@ -22415,6 +22727,7 @@ GameObject:
   - component: {fileID: 1060402398}
   - component: {fileID: 1060402397}
   - component: {fileID: 1060402396}
+  - component: {fileID: 1060402400}
   m_Layer: 0
   m_Name: Node (29)
   m_TagString: Node
@@ -22539,6 +22852,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1060402400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060402394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1062567655
 GameObject:
   m_ObjectHideFlags: 0
@@ -25558,6 +25883,7 @@ GameObject:
   - component: {fileID: 1282913611}
   - component: {fileID: 1282913610}
   - component: {fileID: 1282913609}
+  - component: {fileID: 1282913613}
   m_Layer: 0
   m_Name: Node (45)
   m_TagString: Node
@@ -25682,6 +26008,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1282913613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282913607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1284020865
 GameObject:
   m_ObjectHideFlags: 0
@@ -26012,6 +26350,7 @@ GameObject:
   - component: {fileID: 1297608790}
   - component: {fileID: 1297608792}
   - component: {fileID: 1297608793}
+  - component: {fileID: 1297608794}
   m_Layer: 0
   m_Name: Node (9)
   m_TagString: Node
@@ -26136,6 +26475,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - I feel like I'm getting somewhere now.
+--- !u!114 &1297608794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297608788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1297794520
 GameObject:
   m_ObjectHideFlags: 0
@@ -29655,6 +30006,7 @@ GameObject:
   - component: {fileID: 1458426690}
   - component: {fileID: 1458426689}
   - component: {fileID: 1458426688}
+  - component: {fileID: 1458426692}
   m_Layer: 0
   m_Name: Node (27)
   m_TagString: Node
@@ -29779,6 +30131,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1458426692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458426686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1463011448
 GameObject:
   m_ObjectHideFlags: 0
@@ -30476,6 +30840,7 @@ GameObject:
   - component: {fileID: 1493062222}
   - component: {fileID: 1493062221}
   - component: {fileID: 1493062220}
+  - component: {fileID: 1493062224}
   m_Layer: 0
   m_Name: Node (30)
   m_TagString: Node
@@ -30600,6 +30965,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1493062224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493062218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495136036
 GameObject:
   m_ObjectHideFlags: 0
@@ -31173,6 +31550,7 @@ GameObject:
   - component: {fileID: 1511019469}
   - component: {fileID: 1511019468}
   - component: {fileID: 1511019467}
+  - component: {fileID: 1511019471}
   m_Layer: 0
   m_Name: Node (26)
   m_TagString: Node
@@ -31297,6 +31675,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1511019471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511019465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1511458953
 GameObject:
   m_ObjectHideFlags: 0
@@ -31310,6 +31700,7 @@ GameObject:
   - component: {fileID: 1511458955}
   - component: {fileID: 1511458957}
   - component: {fileID: 1511458958}
+  - component: {fileID: 1511458959}
   m_Layer: 0
   m_Name: Node (6)
   m_TagString: Node
@@ -31434,6 +31825,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - It's now or never. Should I head north through the desert?
+--- !u!114 &1511458959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511458953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1514029690
 GameObject:
   m_ObjectHideFlags: 0
@@ -31657,6 +32060,7 @@ GameObject:
   - component: {fileID: 1529469447}
   - component: {fileID: 1529469446}
   - component: {fileID: 1529469445}
+  - component: {fileID: 1529469449}
   m_Layer: 0
   m_Name: Node (40)
   m_TagString: Node
@@ -31781,6 +32185,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1529469449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529469443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547025008
 GameObject:
   m_ObjectHideFlags: 0
@@ -31794,6 +32210,7 @@ GameObject:
   - component: {fileID: 1547025012}
   - component: {fileID: 1547025011}
   - component: {fileID: 1547025010}
+  - component: {fileID: 1547025014}
   m_Layer: 0
   m_Name: Node (39)
   m_TagString: Node
@@ -31918,6 +32335,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1547025014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547025008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1550159451
 GameObject:
   m_ObjectHideFlags: 0
@@ -32034,6 +32463,7 @@ GameObject:
   - component: {fileID: 1558106884}
   - component: {fileID: 1558106886}
   - component: {fileID: 1558106887}
+  - component: {fileID: 1558106888}
   m_Layer: 0
   m_Name: Node (20)
   m_TagString: Node
@@ -32158,6 +32588,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Empty dialogue!
+--- !u!114 &1558106888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558106882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1562208250
 GameObject:
   m_ObjectHideFlags: 0
@@ -32354,6 +32796,7 @@ GameObject:
   - component: {fileID: 1573079944}
   - component: {fileID: 1573079943}
   - component: {fileID: 1573079942}
+  - component: {fileID: 1573079946}
   m_Layer: 0
   m_Name: Node (44)
   m_TagString: Node
@@ -32478,6 +32921,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1573079946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573079940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1591638240
 GameObject:
   m_ObjectHideFlags: 0
@@ -33471,6 +33926,7 @@ GameObject:
   - component: {fileID: 1636304725}
   - component: {fileID: 1636304727}
   - component: {fileID: 1636304728}
+  - component: {fileID: 1636304729}
   m_Layer: 0
   m_Name: Node (17)
   m_TagString: Node
@@ -33595,6 +34051,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - I must go on.
+--- !u!114 &1636304729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636304723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1640721527
 GameObject:
   m_ObjectHideFlags: 0
@@ -35503,6 +35971,7 @@ GameObject:
   - component: {fileID: 1766399818}
   - component: {fileID: 1766399820}
   - component: {fileID: 1766399821}
+  - component: {fileID: 1766399822}
   m_Layer: 0
   m_Name: Node (3)
   m_TagString: Node
@@ -35627,6 +36096,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Wow it's so green here. So many possibilities!
+--- !u!114 &1766399822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766399816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1768628159
 GameObject:
   m_ObjectHideFlags: 0
@@ -35640,6 +36121,7 @@ GameObject:
   - component: {fileID: 1768628163}
   - component: {fileID: 1768628162}
   - component: {fileID: 1768628161}
+  - component: {fileID: 1768628165}
   m_Layer: 0
   m_Name: Node (24)
   m_TagString: Node
@@ -35764,6 +36246,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1768628165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768628159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1772987010
 GameObject:
   m_ObjectHideFlags: 0
@@ -37242,6 +37736,7 @@ GameObject:
   - component: {fileID: 1839236224}
   - component: {fileID: 1839236226}
   - component: {fileID: 1839236227}
+  - component: {fileID: 1839236228}
   m_Layer: 0
   m_Name: Node (4)
   m_TagString: Node
@@ -37366,6 +37861,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - I can see the great desert from here. I hear the dunes are beautiful at sunset.
+--- !u!114 &1839236228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839236222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1839918667
 GameObject:
   m_ObjectHideFlags: 0
@@ -37589,6 +38096,7 @@ GameObject:
   - component: {fileID: 1850199731}
   - component: {fileID: 1850199730}
   - component: {fileID: 1850199729}
+  - component: {fileID: 1850199733}
   m_Layer: 0
   m_Name: Node (28)
   m_TagString: Node
@@ -37713,6 +38221,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1850199733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850199727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850550188
 GameObject:
   m_ObjectHideFlags: 0
@@ -38115,6 +38635,7 @@ GameObject:
   - component: {fileID: 1863470859}
   - component: {fileID: 1863470858}
   - component: {fileID: 1863470857}
+  - component: {fileID: 1863470861}
   m_Layer: 0
   m_Name: Node (25)
   m_TagString: Node
@@ -38239,6 +38760,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1863470861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863470855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867618734
 GameObject:
   m_ObjectHideFlags: 0
@@ -38462,6 +38995,7 @@ GameObject:
   - component: {fileID: 1876824637}
   - component: {fileID: 1876824636}
   - component: {fileID: 1876824635}
+  - component: {fileID: 1876824639}
   m_Layer: 0
   m_Name: Node (46)
   m_TagString: Node
@@ -38586,6 +39120,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1876824639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876824633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1899223758
 GameObject:
   m_ObjectHideFlags: 0
@@ -39225,6 +39771,7 @@ GameObject:
   - component: {fileID: 1925174850}
   - component: {fileID: 1925174852}
   - component: {fileID: 1925174853}
+  - component: {fileID: 1925174854}
   m_Layer: 0
   m_Name: Node (16)
   m_TagString: Node
@@ -39349,6 +39896,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - I'm not lost. I know exactly where I'm going. Shush it.
+--- !u!114 &1925174854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925174848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1936086217
 GameObject:
   m_ObjectHideFlags: 0
@@ -39675,6 +40234,7 @@ GameObject:
   - component: {fileID: 1946284845}
   - component: {fileID: 1946284847}
   - component: {fileID: 1946284848}
+  - component: {fileID: 1946284849}
   m_Layer: 0
   m_Name: Node (18)
   m_TagString: Node
@@ -39799,6 +40359,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - 
+--- !u!114 &1946284849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946284843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1968117756
 GameObject:
   m_ObjectHideFlags: 0
@@ -41448,6 +42020,7 @@ GameObject:
   - component: {fileID: 2040751737}
   - component: {fileID: 2040751736}
   - component: {fileID: 2040751735}
+  - component: {fileID: 2040751739}
   m_Layer: 0
   m_Name: Node (35)
   m_TagString: Node
@@ -41572,6 +42145,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2040751739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040751733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2046394706
 GameObject:
   m_ObjectHideFlags: 0
@@ -42425,6 +43010,7 @@ GameObject:
   - component: {fileID: 2085835985}
   - component: {fileID: 2085835984}
   - component: {fileID: 2085835983}
+  - component: {fileID: 2085835987}
   m_Layer: 0
   m_Name: Node (37)
   m_TagString: Node
@@ -42549,6 +43135,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2085835987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085835981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2085847658
 GameObject:
   m_ObjectHideFlags: 0
@@ -43597,6 +44195,7 @@ GameObject:
   - component: {fileID: 2112050937}
   - component: {fileID: 2112050936}
   - component: {fileID: 2112050935}
+  - component: {fileID: 2112050939}
   m_Layer: 0
   m_Name: Node (34)
   m_TagString: Node
@@ -43721,6 +44320,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2112050939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112050933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b1a851a373e8d03ad5b78d2c19129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2112343796
 GameObject:
   m_ObjectHideFlags: 0
