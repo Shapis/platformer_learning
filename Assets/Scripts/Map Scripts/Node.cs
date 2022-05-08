@@ -2,6 +2,13 @@
 
 public class Node : MonoBehaviour
 {
+    // Stuff for NodePathFinding.cs
+    public float f;
+    public float g;
+    public float h;
+    public Node previousPathNode;
+    //
+
     [Header("Node Information")]
     [SerializeField] private string m_NodeName = "Level Name";
 
