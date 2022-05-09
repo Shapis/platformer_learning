@@ -18,7 +18,7 @@ public class MobileJoystickSettings : BaseSettings
         // Check if the device running this is a desktop
         if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            //this.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 
