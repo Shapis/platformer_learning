@@ -13,6 +13,20 @@ public class MobileJoystickSettings : BaseSettings
     private Coroutine fade = null;
     private float hasChangedRecentlyTimer = 0f;
 
+    protected override void InitAwake()
+    {
+        //Check if the device running this is a desktop
+        if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    protected override void InitStart()
+    {
+        //throw new System.NotImplementedException();
+    }
+
     private void InititalizeSprites()
     {
         m_JoystickSprites = GetComponentsInChildren<Image>();

@@ -8,21 +8,14 @@ public abstract class BaseSettings : MonoBehaviour, IGameSettingsEvents
 
     private void Awake()
     {
+        m_GameSettings = GameObject.FindObjectOfType<GameSettings>();
         InitAwake(); // This exists so you can call awake from a child class that doesn't get destroyed on load.
 
     }
 
-    protected void InitAwake()
-    {
-        m_GameSettings = GameObject.FindObjectOfType<GameSettings>();
-    }
+    protected abstract void InitAwake();
 
     private void Start()
-    {
-        InitStart(); // This exists so you can call start from a child class that doesn't get destroyed on load.
-    }
-
-    protected void InitStart()
     {
         try
         {
@@ -38,7 +31,10 @@ public abstract class BaseSettings : MonoBehaviour, IGameSettingsEvents
         {
             m_GameSettings.OnGameSettingsChangedEvent += OnGameSettingsChanged;
         }
+        InitStart(); // This exists so you can call start from a child class that doesn't get destroyed on load.
     }
+
+    protected abstract void InitStart();
 
     // This method will be called once the first time the scene is initialized during the Start() method.
     public abstract void OnGameSettingsInitialized(object sender, GameSettings.GameSettingsInfo gameSettingsInfo);

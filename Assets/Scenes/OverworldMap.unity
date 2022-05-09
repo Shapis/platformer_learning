@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 43434}
   - component: {fileID: 43436}
   - component: {fileID: 43435}
-  - component: {fileID: 43437}
   m_Layer: 0
   m_Name: TravelNode (126)
   m_TagString: Node
@@ -236,19 +235,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &43437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2631460
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +452,6 @@ GameObject:
   - component: {fileID: 29765117}
   - component: {fileID: 29765119}
   - component: {fileID: 29765118}
-  - component: {fileID: 29765120}
   m_Layer: 0
   m_Name: TravelNode (115)
   m_TagString: Node
@@ -567,19 +552,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &29765120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29765116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &44180207
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +563,6 @@ GameObject:
   - component: {fileID: 44180208}
   - component: {fileID: 44180210}
   - component: {fileID: 44180209}
-  - component: {fileID: 44180211}
   m_Layer: 0
   m_Name: TravelNode (31)
   m_TagString: Node
@@ -692,19 +663,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &44180211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44180207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &48301734
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,7 +817,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &49455953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &51247523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1160,6 @@ GameObject:
   - component: {fileID: 59567171}
   - component: {fileID: 59567173}
   - component: {fileID: 59567172}
-  - component: {fileID: 59567174}
   m_Layer: 0
   m_Name: TravelNode (113)
   m_TagString: Node
@@ -1305,19 +1260,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &59567174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59567170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &68880756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &79233438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,7 +1671,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &79434223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,7 +1682,6 @@ GameObject:
   - component: {fileID: 79434224}
   - component: {fileID: 79434226}
   - component: {fileID: 79434225}
-  - component: {fileID: 79434227}
   m_Layer: 0
   m_Name: TravelNode (87)
   m_TagString: Node
@@ -1843,19 +1782,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &79434227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79434223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &80086941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,7 +1793,6 @@ GameObject:
   - component: {fileID: 80086942}
   - component: {fileID: 80086944}
   - component: {fileID: 80086943}
-  - component: {fileID: 80086945}
   m_Layer: 0
   m_Name: TravelNode (25)
   m_TagString: Node
@@ -1968,19 +1893,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &80086945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80086941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &80193828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +1904,6 @@ GameObject:
   - component: {fileID: 80193829}
   - component: {fileID: 80193831}
   - component: {fileID: 80193830}
-  - component: {fileID: 80193832}
   m_Layer: 0
   m_Name: TravelNode (88)
   m_TagString: Node
@@ -2093,19 +2004,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &80193832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80193828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &83191221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,7 +2839,6 @@ GameObject:
   - component: {fileID: 131411253}
   - component: {fileID: 131411255}
   - component: {fileID: 131411254}
-  - component: {fileID: 131411256}
   m_Layer: 0
   m_Name: TravelNode (86)
   m_TagString: Node
@@ -3042,19 +2939,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &131411256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131411252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &138028578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,7 +3053,6 @@ GameObject:
   - component: {fileID: 138404441}
   - component: {fileID: 138404443}
   - component: {fileID: 138404442}
-  - component: {fileID: 138404444}
   m_Layer: 0
   m_Name: TravelNode (55)
   m_TagString: Node
@@ -3270,19 +3153,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &138404444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138404440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &144638458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,7 +3164,6 @@ GameObject:
   - component: {fileID: 144638459}
   - component: {fileID: 144638461}
   - component: {fileID: 144638460}
-  - component: {fileID: 144638462}
   m_Layer: 0
   m_Name: TravelNode (13)
   m_TagString: Node
@@ -3395,19 +3264,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &144638462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144638458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &146811443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,7 +3275,6 @@ GameObject:
   - component: {fileID: 146811444}
   - component: {fileID: 146811446}
   - component: {fileID: 146811445}
-  - component: {fileID: 146811447}
   m_Layer: 0
   m_Name: TravelNode (127)
   m_TagString: Node
@@ -3520,19 +3375,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &146811447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146811443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &149179787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +3632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &159021266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3802,7 +3643,6 @@ GameObject:
   - component: {fileID: 159021267}
   - component: {fileID: 159021269}
   - component: {fileID: 159021268}
-  - component: {fileID: 159021270}
   m_Layer: 0
   m_Name: TravelNode (2)
   m_TagString: Node
@@ -3903,19 +3743,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &159021270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159021266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &161265604
 GameObject:
   m_ObjectHideFlags: 0
@@ -4030,7 +3857,6 @@ GameObject:
   - component: {fileID: 163510283}
   - component: {fileID: 163510285}
   - component: {fileID: 163510284}
-  - component: {fileID: 163510286}
   m_Layer: 0
   m_Name: TravelNode (80)
   m_TagString: Node
@@ -4131,19 +3957,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &163510286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163510282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &165226583
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,7 +4111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &171721194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4413,7 +4225,6 @@ GameObject:
   - component: {fileID: 181132454}
   - component: {fileID: 181132456}
   - component: {fileID: 181132455}
-  - component: {fileID: 181132457}
   m_Layer: 0
   m_Name: TravelNode (121)
   m_TagString: Node
@@ -4514,19 +4325,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &181132457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181132453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &183402468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,7 +4498,6 @@ GameObject:
   - component: {fileID: 217764761}
   - component: {fileID: 217764763}
   - component: {fileID: 217764762}
-  - component: {fileID: 217764764}
   m_Layer: 0
   m_Name: TravelNode (9)
   m_TagString: Node
@@ -4801,19 +4598,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &217764764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217764760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &219227638
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,7 +4712,6 @@ GameObject:
   - component: {fileID: 220825017}
   - component: {fileID: 220825019}
   - component: {fileID: 220825018}
-  - component: {fileID: 220825020}
   m_Layer: 0
   m_Name: TravelNode (102)
   m_TagString: Node
@@ -5029,19 +4812,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &220825020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220825016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &221519431
 GameObject:
   m_ObjectHideFlags: 0
@@ -5196,7 +4966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &223252510
 GameObject:
   m_ObjectHideFlags: 0
@@ -5876,7 +5645,6 @@ GameObject:
   - component: {fileID: 256279385}
   - component: {fileID: 256279387}
   - component: {fileID: 256279386}
-  - component: {fileID: 256279388}
   m_Layer: 0
   m_Name: TravelNode (108)
   m_TagString: Node
@@ -5977,19 +5745,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &256279388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256279384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &257930481
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,7 +6244,6 @@ GameObject:
   - component: {fileID: 277797049}
   - component: {fileID: 277797051}
   - component: {fileID: 277797050}
-  - component: {fileID: 277797052}
   m_Layer: 0
   m_Name: TravelNode (8)
   m_TagString: Node
@@ -6590,19 +6344,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &277797052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277797048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &282606628
 GameObject:
   m_ObjectHideFlags: 0
@@ -6614,7 +6355,6 @@ GameObject:
   - component: {fileID: 282606629}
   - component: {fileID: 282606631}
   - component: {fileID: 282606630}
-  - component: {fileID: 282606632}
   m_Layer: 0
   m_Name: TravelNode (37)
   m_TagString: Node
@@ -6715,19 +6455,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &282606632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282606628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &285054615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7139,7 +6866,6 @@ GameObject:
   - component: {fileID: 303509166}
   - component: {fileID: 303509168}
   - component: {fileID: 303509167}
-  - component: {fileID: 303509169}
   m_Layer: 0
   m_Name: TravelNode (4)
   m_TagString: Node
@@ -7240,19 +6966,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &303509169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303509165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &315734665
 GameObject:
   m_ObjectHideFlags: 0
@@ -7264,7 +6977,6 @@ GameObject:
   - component: {fileID: 315734666}
   - component: {fileID: 315734668}
   - component: {fileID: 315734667}
-  - component: {fileID: 315734669}
   m_Layer: 0
   m_Name: TravelNode (23)
   m_TagString: Node
@@ -7365,19 +7077,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &315734669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315734665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &319660575
 GameObject:
   m_ObjectHideFlags: 0
@@ -7389,7 +7088,6 @@ GameObject:
   - component: {fileID: 319660576}
   - component: {fileID: 319660578}
   - component: {fileID: 319660577}
-  - component: {fileID: 319660579}
   m_Layer: 0
   m_Name: TravelNode (54)
   m_TagString: Node
@@ -7490,19 +7188,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &319660579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319660575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &327751258
 GameObject:
   m_ObjectHideFlags: 0
@@ -7514,7 +7199,6 @@ GameObject:
   - component: {fileID: 327751259}
   - component: {fileID: 327751261}
   - component: {fileID: 327751260}
-  - component: {fileID: 327751262}
   m_Layer: 0
   m_Name: TravelNode (61)
   m_TagString: Node
@@ -7615,19 +7299,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &327751262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 327751258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &331620164
 GameObject:
   m_ObjectHideFlags: 0
@@ -8066,7 +7737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &359590626
 GameObject:
   m_ObjectHideFlags: 0
@@ -8427,7 +8097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &380051451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8439,7 +8108,6 @@ GameObject:
   - component: {fileID: 380051452}
   - component: {fileID: 380051454}
   - component: {fileID: 380051453}
-  - component: {fileID: 380051455}
   m_Layer: 0
   m_Name: TravelNode (95)
   m_TagString: Node
@@ -8540,19 +8208,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &380051455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380051451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &384100125
 GameObject:
   m_ObjectHideFlags: 0
@@ -8564,7 +8219,6 @@ GameObject:
   - component: {fileID: 384100126}
   - component: {fileID: 384100128}
   - component: {fileID: 384100127}
-  - component: {fileID: 384100129}
   m_Layer: 0
   m_Name: TravelNode (100)
   m_TagString: Node
@@ -8665,19 +8319,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &384100129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384100125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &386677556
 GameObject:
   m_ObjectHideFlags: 0
@@ -8740,7 +8381,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7786561, y: 1}
+    m_SensorSize: {x: 1.7782178, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8939,7 +8580,6 @@ GameObject:
   - component: {fileID: 415995874}
   - component: {fileID: 415995876}
   - component: {fileID: 415995875}
-  - component: {fileID: 415995877}
   m_Layer: 0
   m_Name: TravelNode (30)
   m_TagString: Node
@@ -9040,19 +8680,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &415995877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415995873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &421369760
 GameObject:
   m_ObjectHideFlags: 0
@@ -9064,7 +8691,6 @@ GameObject:
   - component: {fileID: 421369761}
   - component: {fileID: 421369763}
   - component: {fileID: 421369762}
-  - component: {fileID: 421369764}
   m_Layer: 0
   m_Name: TravelNode (83)
   m_TagString: Node
@@ -9165,19 +8791,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &421369764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421369760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &425804791
 GameObject:
   m_ObjectHideFlags: 0
@@ -9189,7 +8802,6 @@ GameObject:
   - component: {fileID: 425804792}
   - component: {fileID: 425804794}
   - component: {fileID: 425804793}
-  - component: {fileID: 425804795}
   m_Layer: 0
   m_Name: TravelNode (7)
   m_TagString: Node
@@ -9290,19 +8902,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &425804795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425804791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &427318453
 GameObject:
   m_ObjectHideFlags: 0
@@ -9663,7 +9262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &448494801
 GameObject:
   m_ObjectHideFlags: 0
@@ -9675,7 +9273,6 @@ GameObject:
   - component: {fileID: 448494802}
   - component: {fileID: 448494804}
   - component: {fileID: 448494803}
-  - component: {fileID: 448494805}
   m_Layer: 0
   m_Name: TravelNode (134)
   m_TagString: Node
@@ -9776,19 +9373,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &448494805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448494801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &456875289
 GameObject:
   m_ObjectHideFlags: 0
@@ -9800,7 +9384,6 @@ GameObject:
   - component: {fileID: 456875290}
   - component: {fileID: 456875292}
   - component: {fileID: 456875291}
-  - component: {fileID: 456875293}
   m_Layer: 0
   m_Name: TravelNode (90)
   m_TagString: Node
@@ -9901,19 +9484,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &456875293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456875289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &461405448
 GameObject:
   m_ObjectHideFlags: 0
@@ -10337,7 +9907,6 @@ GameObject:
   - component: {fileID: 501414466}
   - component: {fileID: 501414468}
   - component: {fileID: 501414467}
-  - component: {fileID: 501414469}
   m_Layer: 0
   m_Name: TravelNode (116)
   m_TagString: Node
@@ -10438,19 +10007,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &501414469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501414465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &503907654
 GameObject:
   m_ObjectHideFlags: 0
@@ -10642,7 +10198,6 @@ GameObject:
   - component: {fileID: 508141282}
   - component: {fileID: 508141284}
   - component: {fileID: 508141283}
-  - component: {fileID: 508141285}
   m_Layer: 0
   m_Name: TravelNode (107)
   m_TagString: Node
@@ -10743,19 +10298,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &508141285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508141281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &512764088
 GameObject:
   m_ObjectHideFlags: 0
@@ -10973,7 +10515,6 @@ GameObject:
   - component: {fileID: 518662451}
   - component: {fileID: 518662453}
   - component: {fileID: 518662452}
-  - component: {fileID: 518662454}
   m_Layer: 0
   m_Name: TravelNode (5)
   m_TagString: Node
@@ -11074,19 +10615,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &518662454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518662450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &521572616
 GameObject:
   m_ObjectHideFlags: 0
@@ -11201,7 +10729,6 @@ GameObject:
   - component: {fileID: 528747681}
   - component: {fileID: 528747683}
   - component: {fileID: 528747682}
-  - component: {fileID: 528747684}
   m_Layer: 0
   m_Name: TravelNode (11)
   m_TagString: Node
@@ -11302,19 +10829,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &528747684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528747680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &542291558
 GameObject:
   m_ObjectHideFlags: 0
@@ -11778,7 +11292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &552312428
 GameObject:
   m_ObjectHideFlags: 0
@@ -11893,7 +11406,6 @@ GameObject:
   - component: {fileID: 552653005}
   - component: {fileID: 552653007}
   - component: {fileID: 552653006}
-  - component: {fileID: 552653008}
   m_Layer: 0
   m_Name: TravelNode (132)
   m_TagString: Node
@@ -11994,19 +11506,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &552653008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552653004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &566070110
 GameObject:
   m_ObjectHideFlags: 0
@@ -12018,7 +11517,6 @@ GameObject:
   - component: {fileID: 566070111}
   - component: {fileID: 566070113}
   - component: {fileID: 566070112}
-  - component: {fileID: 566070114}
   m_Layer: 0
   m_Name: TravelNode (99)
   m_TagString: Node
@@ -12119,19 +11617,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &566070114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566070110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &589640473
 GameObject:
   m_ObjectHideFlags: 0
@@ -12331,7 +11816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &606425800
 GameObject:
   m_ObjectHideFlags: 0
@@ -12589,7 +12073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &629111896
 GameObject:
   m_ObjectHideFlags: 0
@@ -12704,7 +12187,6 @@ GameObject:
   - component: {fileID: 630255795}
   - component: {fileID: 630255797}
   - component: {fileID: 630255796}
-  - component: {fileID: 630255798}
   m_Layer: 0
   m_Name: TravelNode (65)
   m_TagString: Node
@@ -12805,19 +12287,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &630255798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630255794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &630770476
 GameObject:
   m_ObjectHideFlags: 0
@@ -12829,7 +12298,6 @@ GameObject:
   - component: {fileID: 630770477}
   - component: {fileID: 630770479}
   - component: {fileID: 630770478}
-  - component: {fileID: 630770480}
   m_Layer: 0
   m_Name: TravelNode (123)
   m_TagString: Node
@@ -12930,19 +12398,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &630770480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630770476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &632867741
 GameObject:
   m_ObjectHideFlags: 0
@@ -13097,7 +12552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &633307253
 GameObject:
   m_ObjectHideFlags: 0
@@ -13252,7 +12706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &635085207
 GameObject:
   m_ObjectHideFlags: 0
@@ -13510,7 +12963,6 @@ GameObject:
   - component: {fileID: 639805879}
   - component: {fileID: 639805881}
   - component: {fileID: 639805880}
-  - component: {fileID: 639805882}
   m_Layer: 0
   m_Name: TravelNode (109)
   m_TagString: Node
@@ -13611,19 +13063,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &639805882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 639805878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &642068850
 GameObject:
   m_ObjectHideFlags: 0
@@ -13738,7 +13177,6 @@ GameObject:
   - component: {fileID: 649483159}
   - component: {fileID: 649483161}
   - component: {fileID: 649483160}
-  - component: {fileID: 649483162}
   m_Layer: 0
   m_Name: TravelNode (112)
   m_TagString: Node
@@ -13839,19 +13277,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &649483162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649483158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &650598254
 GameObject:
   m_ObjectHideFlags: 0
@@ -13939,7 +13364,6 @@ GameObject:
   - component: {fileID: 661353810}
   - component: {fileID: 661353809}
   - component: {fileID: 661353808}
-  - component: {fileID: 661353811}
   m_Layer: 0
   m_Name: TravelNode (77)
   m_TagString: Node
@@ -14040,19 +13464,6 @@ Transform:
   m_Father: {fileID: 1484075859}
   m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &661353811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661353807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &662737647
 GameObject:
   m_ObjectHideFlags: 0
@@ -14064,7 +13475,6 @@ GameObject:
   - component: {fileID: 662737648}
   - component: {fileID: 662737650}
   - component: {fileID: 662737649}
-  - component: {fileID: 662737651}
   m_Layer: 0
   m_Name: TravelNode (6)
   m_TagString: Node
@@ -14165,19 +13575,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &662737651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662737647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &666729761
 GameObject:
   m_ObjectHideFlags: 0
@@ -14189,7 +13586,6 @@ GameObject:
   - component: {fileID: 666729762}
   - component: {fileID: 666729764}
   - component: {fileID: 666729763}
-  - component: {fileID: 666729765}
   m_Layer: 0
   m_Name: TravelNode (67)
   m_TagString: Node
@@ -14290,19 +13686,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &666729765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666729761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &672385026
 GameObject:
   m_ObjectHideFlags: 0
@@ -14314,7 +13697,6 @@ GameObject:
   - component: {fileID: 672385027}
   - component: {fileID: 672385029}
   - component: {fileID: 672385028}
-  - component: {fileID: 672385030}
   m_Layer: 0
   m_Name: TravelNode (98)
   m_TagString: Node
@@ -14415,19 +13797,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &672385030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672385026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &674903577
 GameObject:
   m_ObjectHideFlags: 0
@@ -14439,7 +13808,6 @@ GameObject:
   - component: {fileID: 674903578}
   - component: {fileID: 674903580}
   - component: {fileID: 674903579}
-  - component: {fileID: 674903581}
   m_Layer: 0
   m_Name: TravelNode (130)
   m_TagString: Node
@@ -14540,19 +13908,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &674903581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674903577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &677640581
 GameObject:
   m_ObjectHideFlags: 0
@@ -14873,7 +14228,6 @@ GameObject:
   - component: {fileID: 685912840}
   - component: {fileID: 685912842}
   - component: {fileID: 685912841}
-  - component: {fileID: 685912843}
   m_Layer: 0
   m_Name: TravelNode (58)
   m_TagString: Node
@@ -14974,19 +14328,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &685912843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685912839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &686027551
 GameObject:
   m_ObjectHideFlags: 0
@@ -15141,7 +14482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &689650934
 GameObject:
   m_ObjectHideFlags: 0
@@ -15296,7 +14636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &698829413
 GameObject:
   m_ObjectHideFlags: 0
@@ -15444,7 +14783,6 @@ GameObject:
   - component: {fileID: 700397246}
   - component: {fileID: 700397248}
   - component: {fileID: 700397247}
-  - component: {fileID: 700397249}
   m_Layer: 0
   m_Name: TravelNode (50)
   m_TagString: Node
@@ -15545,19 +14883,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &700397249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700397245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &736847948
 GameObject:
   m_ObjectHideFlags: 0
@@ -15788,7 +15113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &757010569
 GameObject:
   m_ObjectHideFlags: 0
@@ -16006,7 +15330,6 @@ GameObject:
   - component: {fileID: 759195601}
   - component: {fileID: 759195603}
   - component: {fileID: 759195602}
-  - component: {fileID: 759195604}
   m_Layer: 0
   m_Name: TravelNode (26)
   m_TagString: Node
@@ -16107,19 +15430,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &759195604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759195600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &761992129
 GameObject:
   m_ObjectHideFlags: 0
@@ -16131,7 +15441,6 @@ GameObject:
   - component: {fileID: 761992130}
   - component: {fileID: 761992132}
   - component: {fileID: 761992131}
-  - component: {fileID: 761992133}
   m_Layer: 0
   m_Name: TravelNode (17)
   m_TagString: Node
@@ -16232,19 +15541,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &761992133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761992129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &762961061
 GameObject:
   m_ObjectHideFlags: 0
@@ -16256,7 +15552,6 @@ GameObject:
   - component: {fileID: 762961062}
   - component: {fileID: 762961064}
   - component: {fileID: 762961063}
-  - component: {fileID: 762961065}
   m_Layer: 0
   m_Name: TravelNode (44)
   m_TagString: Node
@@ -16357,19 +15652,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &762961065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762961061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &768398623
 GameObject:
   m_ObjectHideFlags: 0
@@ -16484,7 +15766,6 @@ GameObject:
   - component: {fileID: 772803093}
   - component: {fileID: 772803095}
   - component: {fileID: 772803094}
-  - component: {fileID: 772803096}
   m_Layer: 0
   m_Name: TravelNode (135)
   m_TagString: Node
@@ -16585,19 +15866,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &772803096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772803092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &775695781
 GameObject:
   m_ObjectHideFlags: 0
@@ -16745,7 +16013,6 @@ GameObject:
   - component: {fileID: 779807699}
   - component: {fileID: 779807701}
   - component: {fileID: 779807700}
-  - component: {fileID: 779807702}
   m_Layer: 0
   m_Name: TravelNode (48)
   m_TagString: Node
@@ -16846,19 +16113,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &779807702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779807698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &781837394
 GameObject:
   m_ObjectHideFlags: 0
@@ -16973,7 +16227,6 @@ GameObject:
   - component: {fileID: 784875639}
   - component: {fileID: 784875641}
   - component: {fileID: 784875640}
-  - component: {fileID: 784875642}
   m_Layer: 0
   m_Name: TravelNode (64)
   m_TagString: Node
@@ -17074,19 +16327,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &784875642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784875638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &785852372
 GameObject:
   m_ObjectHideFlags: 0
@@ -17550,7 +16790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &801828727
 GameObject:
   m_ObjectHideFlags: 0
@@ -17729,7 +16968,6 @@ GameObject:
   - component: {fileID: 803781461}
   - component: {fileID: 803781463}
   - component: {fileID: 803781462}
-  - component: {fileID: 803781464}
   m_Layer: 0
   m_Name: TravelNode (33)
   m_TagString: Node
@@ -17830,19 +17068,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &803781464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803781460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &805285794
 GameObject:
   m_ObjectHideFlags: 0
@@ -17854,7 +17079,6 @@ GameObject:
   - component: {fileID: 805285795}
   - component: {fileID: 805285797}
   - component: {fileID: 805285796}
-  - component: {fileID: 805285798}
   m_Layer: 0
   m_Name: TravelNode (125)
   m_TagString: Node
@@ -17955,19 +17179,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &805285798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805285794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &809043133
 GameObject:
   m_ObjectHideFlags: 0
@@ -18082,7 +17293,6 @@ GameObject:
   - component: {fileID: 812815046}
   - component: {fileID: 812815048}
   - component: {fileID: 812815047}
-  - component: {fileID: 812815049}
   m_Layer: 0
   m_Name: TravelNode (111)
   m_TagString: Node
@@ -18183,19 +17393,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &812815049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812815045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &813797510
 GameObject:
   m_ObjectHideFlags: 0
@@ -18350,7 +17547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &818554594
 GameObject:
   m_ObjectHideFlags: 0
@@ -18362,7 +17558,6 @@ GameObject:
   - component: {fileID: 818554595}
   - component: {fileID: 818554597}
   - component: {fileID: 818554596}
-  - component: {fileID: 818554598}
   m_Layer: 0
   m_Name: TravelNode (19)
   m_TagString: Node
@@ -18463,19 +17658,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &818554598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818554594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &824268010
 GameObject:
   m_ObjectHideFlags: 0
@@ -18487,7 +17669,6 @@ GameObject:
   - component: {fileID: 824268011}
   - component: {fileID: 824268013}
   - component: {fileID: 824268012}
-  - component: {fileID: 824268014}
   m_Layer: 0
   m_Name: TravelNode (84)
   m_TagString: Node
@@ -18588,19 +17769,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &824268014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824268010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &827717252
 GameObject:
   m_ObjectHideFlags: 0
@@ -19108,7 +18276,6 @@ GameObject:
   - component: {fileID: 842558205}
   - component: {fileID: 842558207}
   - component: {fileID: 842558206}
-  - component: {fileID: 842558208}
   m_Layer: 0
   m_Name: TravelNode (18)
   m_TagString: Node
@@ -19209,19 +18376,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &842558208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842558204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &843476120
 GameObject:
   m_ObjectHideFlags: 0
@@ -19233,7 +18387,6 @@ GameObject:
   - component: {fileID: 843476121}
   - component: {fileID: 843476123}
   - component: {fileID: 843476122}
-  - component: {fileID: 843476124}
   m_Layer: 0
   m_Name: TravelNode (72)
   m_TagString: Node
@@ -19334,19 +18487,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &843476124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843476120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &850304860
 GameObject:
   m_ObjectHideFlags: 0
@@ -19700,7 +18840,6 @@ GameObject:
   - component: {fileID: 857366044}
   - component: {fileID: 857366046}
   - component: {fileID: 857366045}
-  - component: {fileID: 857366047}
   m_Layer: 0
   m_Name: TravelNode (29)
   m_TagString: Node
@@ -19801,19 +18940,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &857366047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857366043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &877206915
 GameObject:
   m_ObjectHideFlags: 0
@@ -19825,7 +18951,6 @@ GameObject:
   - component: {fileID: 877206916}
   - component: {fileID: 877206918}
   - component: {fileID: 877206917}
-  - component: {fileID: 877206919}
   m_Layer: 0
   m_Name: TravelNode (24)
   m_TagString: Node
@@ -19926,19 +19051,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &877206919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877206915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &884584939
 GameObject:
   m_ObjectHideFlags: 0
@@ -19950,7 +19062,6 @@ GameObject:
   - component: {fileID: 884584940}
   - component: {fileID: 884584942}
   - component: {fileID: 884584941}
-  - component: {fileID: 884584943}
   m_Layer: 0
   m_Name: TravelNode (122)
   m_TagString: Node
@@ -20051,19 +19162,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &884584943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884584939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &896839348
 GameObject:
   m_ObjectHideFlags: 0
@@ -20178,7 +19276,6 @@ GameObject:
   - component: {fileID: 897722160}
   - component: {fileID: 897722162}
   - component: {fileID: 897722161}
-  - component: {fileID: 897722163}
   m_Layer: 0
   m_Name: TravelNode (20)
   m_TagString: Node
@@ -20279,19 +19376,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &897722163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897722159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &903750249
 GameObject:
   m_ObjectHideFlags: 0
@@ -20406,7 +19490,6 @@ GameObject:
   - component: {fileID: 906552484}
   - component: {fileID: 906552486}
   - component: {fileID: 906552485}
-  - component: {fileID: 906552487}
   m_Layer: 0
   m_Name: TravelNode (79)
   m_TagString: Node
@@ -20507,19 +19590,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &906552487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906552483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &912562081
 GameObject:
   m_ObjectHideFlags: 0
@@ -20634,7 +19704,6 @@ GameObject:
   - component: {fileID: 915715803}
   - component: {fileID: 915715805}
   - component: {fileID: 915715804}
-  - component: {fileID: 915715806}
   m_Layer: 0
   m_Name: TravelNode (82)
   m_TagString: Node
@@ -20735,19 +19804,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &915715806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915715802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &925460037
 GameObject:
   m_ObjectHideFlags: 0
@@ -20759,7 +19815,6 @@ GameObject:
   - component: {fileID: 925460038}
   - component: {fileID: 925460040}
   - component: {fileID: 925460039}
-  - component: {fileID: 925460041}
   m_Layer: 0
   m_Name: TravelNode (128)
   m_TagString: Node
@@ -20860,19 +19915,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &925460041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925460037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &926306775
 GameObject:
   m_ObjectHideFlags: 0
@@ -20987,7 +20029,6 @@ GameObject:
   - component: {fileID: 943838115}
   - component: {fileID: 943838117}
   - component: {fileID: 943838116}
-  - component: {fileID: 943838118}
   m_Layer: 0
   m_Name: TravelNode (106)
   m_TagString: Node
@@ -21088,19 +20129,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &943838118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943838114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &944962446
 GameObject:
   m_ObjectHideFlags: 0
@@ -21188,7 +20216,6 @@ GameObject:
   - component: {fileID: 947427722}
   - component: {fileID: 947427724}
   - component: {fileID: 947427723}
-  - component: {fileID: 947427725}
   m_Layer: 0
   m_Name: TravelNode (22)
   m_TagString: Node
@@ -21289,19 +20316,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &947427725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947427721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &954343114
 GameObject:
   m_ObjectHideFlags: 0
@@ -21457,7 +20471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &956390313
 GameObject:
   m_ObjectHideFlags: 0
@@ -21572,7 +20585,6 @@ GameObject:
   - component: {fileID: 966291011}
   - component: {fileID: 966291013}
   - component: {fileID: 966291012}
-  - component: {fileID: 966291014}
   m_Layer: 0
   m_Name: TravelNode (81)
   m_TagString: Node
@@ -21673,19 +20685,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &966291014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966291010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &970771627
 GameObject:
   m_ObjectHideFlags: 0
@@ -21840,7 +20839,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &977450895
 GameObject:
   m_ObjectHideFlags: 0
@@ -22058,7 +21056,6 @@ GameObject:
   - component: {fileID: 990894312}
   - component: {fileID: 990894314}
   - component: {fileID: 990894313}
-  - component: {fileID: 990894315}
   m_Layer: 0
   m_Name: TravelNode (66)
   m_TagString: Node
@@ -22159,19 +21156,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &990894315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990894311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &991989756
 GameObject:
   m_ObjectHideFlags: 0
@@ -22465,7 +21449,6 @@ GameObject:
   - component: {fileID: 997404349}
   - component: {fileID: 997404351}
   - component: {fileID: 997404350}
-  - component: {fileID: 997404352}
   m_Layer: 0
   m_Name: TravelNode (131)
   m_TagString: Node
@@ -22566,19 +21549,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &997404352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997404348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &997722317
 GameObject:
   m_ObjectHideFlags: 0
@@ -22836,7 +21806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1003786900
 GameObject:
   m_ObjectHideFlags: 0
@@ -22848,7 +21817,6 @@ GameObject:
   - component: {fileID: 1003786901}
   - component: {fileID: 1003786903}
   - component: {fileID: 1003786902}
-  - component: {fileID: 1003786904}
   m_Layer: 0
   m_Name: TravelNode (110)
   m_TagString: Node
@@ -22949,19 +21917,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1003786904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003786900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1005858138
 GameObject:
   m_ObjectHideFlags: 0
@@ -23370,7 +22325,6 @@ GameObject:
   - component: {fileID: 1012946666}
   - component: {fileID: 1012946668}
   - component: {fileID: 1012946667}
-  - component: {fileID: 1012946669}
   m_Layer: 0
   m_Name: TravelNode (117)
   m_TagString: Node
@@ -23471,19 +22425,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1012946669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012946665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1016778644
 GameObject:
   m_ObjectHideFlags: 0
@@ -23638,7 +22579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1017750396
 GameObject:
   m_ObjectHideFlags: 0
@@ -23650,7 +22590,6 @@ GameObject:
   - component: {fileID: 1017750397}
   - component: {fileID: 1017750399}
   - component: {fileID: 1017750398}
-  - component: {fileID: 1017750400}
   m_Layer: 0
   m_Name: TravelNode (42)
   m_TagString: Node
@@ -23751,19 +22690,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1017750400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017750396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1021630242
 GameObject:
   m_ObjectHideFlags: 0
@@ -23775,7 +22701,6 @@ GameObject:
   - component: {fileID: 1021630243}
   - component: {fileID: 1021630245}
   - component: {fileID: 1021630244}
-  - component: {fileID: 1021630246}
   m_Layer: 0
   m_Name: TravelNode (45)
   m_TagString: Node
@@ -23876,19 +22801,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1021630246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021630242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1030714252
 GameObject:
   m_ObjectHideFlags: 0
@@ -24106,7 +23018,6 @@ GameObject:
   - component: {fileID: 1033889725}
   - component: {fileID: 1033889727}
   - component: {fileID: 1033889726}
-  - component: {fileID: 1033889728}
   m_Layer: 0
   m_Name: TravelNode (133)
   m_TagString: Node
@@ -24207,19 +23118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1033889728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033889724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1060402394
 GameObject:
   m_ObjectHideFlags: 0
@@ -24374,7 +23272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1062567655
 GameObject:
   m_ObjectHideFlags: 0
@@ -24386,7 +23283,6 @@ GameObject:
   - component: {fileID: 1062567656}
   - component: {fileID: 1062567658}
   - component: {fileID: 1062567657}
-  - component: {fileID: 1062567659}
   m_Layer: 0
   m_Name: TravelNode (138)
   m_TagString: Node
@@ -24487,19 +23383,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1062567659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062567655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1068275044
 GameObject:
   m_ObjectHideFlags: 0
@@ -24511,7 +23394,6 @@ GameObject:
   - component: {fileID: 1068275045}
   - component: {fileID: 1068275047}
   - component: {fileID: 1068275046}
-  - component: {fileID: 1068275048}
   m_Layer: 0
   m_Name: TravelNode (91)
   m_TagString: Node
@@ -24612,19 +23494,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1068275048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068275044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1090175092
 GameObject:
   m_ObjectHideFlags: 0
@@ -24636,7 +23505,6 @@ GameObject:
   - component: {fileID: 1090175093}
   - component: {fileID: 1090175095}
   - component: {fileID: 1090175094}
-  - component: {fileID: 1090175096}
   m_Layer: 0
   m_Name: TravelNode (89)
   m_TagString: Node
@@ -24737,19 +23605,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1090175096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090175092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1097116181
 GameObject:
   m_ObjectHideFlags: 0
@@ -24761,7 +23616,6 @@ GameObject:
   - component: {fileID: 1097116182}
   - component: {fileID: 1097116184}
   - component: {fileID: 1097116183}
-  - component: {fileID: 1097116185}
   m_Layer: 0
   m_Name: TravelNode (74)
   m_TagString: Node
@@ -24862,19 +23716,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1097116185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1097116181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1100083607
 GameObject:
   m_ObjectHideFlags: 0
@@ -24989,7 +23830,6 @@ GameObject:
   - component: {fileID: 1121392604}
   - component: {fileID: 1121392606}
   - component: {fileID: 1121392605}
-  - component: {fileID: 1121392607}
   m_Layer: 0
   m_Name: TravelNode (68)
   m_TagString: Node
@@ -25090,19 +23930,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1121392607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121392603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1123036233
 GameObject:
   m_ObjectHideFlags: 0
@@ -25320,7 +24147,6 @@ GameObject:
   - component: {fileID: 1146887053}
   - component: {fileID: 1146887055}
   - component: {fileID: 1146887054}
-  - component: {fileID: 1146887056}
   m_Layer: 0
   m_Name: TravelNode (36)
   m_TagString: Node
@@ -25421,19 +24247,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1146887056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146887052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1154858230
 GameObject:
   m_ObjectHideFlags: 0
@@ -25548,7 +24361,6 @@ GameObject:
   - component: {fileID: 1157646023}
   - component: {fileID: 1157646025}
   - component: {fileID: 1157646024}
-  - component: {fileID: 1157646026}
   m_Layer: 0
   m_Name: TravelNode (114)
   m_TagString: Node
@@ -25649,19 +24461,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1157646026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157646022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1159021646
 GameObject:
   m_ObjectHideFlags: 0
@@ -25673,7 +24472,6 @@ GameObject:
   - component: {fileID: 1159021647}
   - component: {fileID: 1159021649}
   - component: {fileID: 1159021648}
-  - component: {fileID: 1159021650}
   m_Layer: 0
   m_Name: TravelNode (62)
   m_TagString: Node
@@ -25774,19 +24572,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1159021650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159021646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1172159208
 GameObject:
   m_ObjectHideFlags: 0
@@ -26457,7 +25242,6 @@ GameObject:
   - component: {fileID: 1221871297}
   - component: {fileID: 1221871299}
   - component: {fileID: 1221871298}
-  - component: {fileID: 1221871300}
   m_Layer: 0
   m_Name: TravelNode (3)
   m_TagString: Node
@@ -26558,19 +25342,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1221871300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221871296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1222979740
 GameObject:
   m_ObjectHideFlags: 0
@@ -26788,7 +25559,6 @@ GameObject:
   - component: {fileID: 1240636987}
   - component: {fileID: 1240636989}
   - component: {fileID: 1240636988}
-  - component: {fileID: 1240636990}
   m_Layer: 0
   m_Name: TravelNode (78)
   m_TagString: Node
@@ -26889,19 +25659,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1240636990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240636986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1242526054
 GameObject:
   m_ObjectHideFlags: 0
@@ -26913,7 +25670,6 @@ GameObject:
   - component: {fileID: 1242526055}
   - component: {fileID: 1242526057}
   - component: {fileID: 1242526056}
-  - component: {fileID: 1242526058}
   m_Layer: 0
   m_Name: TravelNode (105)
   m_TagString: Node
@@ -27014,19 +25770,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1242526058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242526054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1244146785
 GameObject:
   m_ObjectHideFlags: 0
@@ -27244,7 +25987,6 @@ GameObject:
   - component: {fileID: 1250518804}
   - component: {fileID: 1250518806}
   - component: {fileID: 1250518805}
-  - component: {fileID: 1250518807}
   m_Layer: 0
   m_Name: TravelNode (40)
   m_TagString: Node
@@ -27345,19 +26087,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1250518807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250518803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1267833760
 GameObject:
   m_ObjectHideFlags: 0
@@ -27751,7 +26480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1284020865
 GameObject:
   m_ObjectHideFlags: 0
@@ -27866,7 +26594,6 @@ GameObject:
   - component: {fileID: 1287486284}
   - component: {fileID: 1287486286}
   - component: {fileID: 1287486285}
-  - component: {fileID: 1287486287}
   m_Layer: 0
   m_Name: TravelNode (38)
   m_TagString: Node
@@ -27967,19 +26694,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1287486287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287486283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1293318070
 GameObject:
   m_ObjectHideFlags: 0
@@ -27991,7 +26705,6 @@ GameObject:
   - component: {fileID: 1293318071}
   - component: {fileID: 1293318073}
   - component: {fileID: 1293318072}
-  - component: {fileID: 1293318074}
   m_Layer: 0
   m_Name: TravelNode (51)
   m_TagString: Node
@@ -28092,19 +26805,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1293318074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1293318070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1297608788
 GameObject:
   m_ObjectHideFlags: 0
@@ -28259,7 +26959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1297794520
 GameObject:
   m_ObjectHideFlags: 0
@@ -28271,7 +26970,6 @@ GameObject:
   - component: {fileID: 1297794521}
   - component: {fileID: 1297794523}
   - component: {fileID: 1297794522}
-  - component: {fileID: 1297794524}
   m_Layer: 0
   m_Name: TravelNode (69)
   m_TagString: Node
@@ -28372,19 +27070,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1297794524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297794520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1303988533
 GameObject:
   m_ObjectHideFlags: 0
@@ -29716,7 +28401,6 @@ GameObject:
   - component: {fileID: 1384996414}
   - component: {fileID: 1384996416}
   - component: {fileID: 1384996415}
-  - component: {fileID: 1384996417}
   m_Layer: 0
   m_Name: TravelNode (96)
   m_TagString: Node
@@ -29817,19 +28501,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1384996417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384996413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1387188086
 GameObject:
   m_ObjectHideFlags: 0
@@ -29841,7 +28512,6 @@ GameObject:
   - component: {fileID: 1387188087}
   - component: {fileID: 1387188089}
   - component: {fileID: 1387188088}
-  - component: {fileID: 1387188090}
   m_Layer: 0
   m_Name: TravelNode (119)
   m_TagString: Node
@@ -29942,19 +28612,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1387188090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387188086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1388474882
 GameObject:
   m_ObjectHideFlags: 0
@@ -30190,7 +28847,6 @@ GameObject:
   - component: {fileID: 1396930137}
   - component: {fileID: 1396930139}
   - component: {fileID: 1396930138}
-  - component: {fileID: 1396930140}
   m_Layer: 0
   m_Name: TravelNode (34)
   m_TagString: Node
@@ -30291,19 +28947,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1396930140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396930136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1401007368
 GameObject:
   m_ObjectHideFlags: 0
@@ -30803,7 +29446,6 @@ GameObject:
   - component: {fileID: 1414137138}
   - component: {fileID: 1414137140}
   - component: {fileID: 1414137139}
-  - component: {fileID: 1414137141}
   m_Layer: 0
   m_Name: TravelNode (35)
   m_TagString: Node
@@ -30904,19 +29546,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1414137141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414137137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1414256787
 GameObject:
   m_ObjectHideFlags: 0
@@ -30928,7 +29557,6 @@ GameObject:
   - component: {fileID: 1414256788}
   - component: {fileID: 1414256790}
   - component: {fileID: 1414256789}
-  - component: {fileID: 1414256791}
   m_Layer: 0
   m_Name: TravelNode (41)
   m_TagString: Node
@@ -31029,19 +29657,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1414256791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414256787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1417410769
 GameObject:
   m_ObjectHideFlags: 0
@@ -31568,7 +30183,6 @@ GameObject:
   - component: {fileID: 1440713885}
   - component: {fileID: 1440713887}
   - component: {fileID: 1440713886}
-  - component: {fileID: 1440713888}
   m_Layer: 0
   m_Name: TravelNode (101)
   m_TagString: Node
@@ -31669,19 +30283,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1440713888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440713884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1443928937
 GameObject:
   m_ObjectHideFlags: 0
@@ -31796,7 +30397,6 @@ GameObject:
   - component: {fileID: 1447331731}
   - component: {fileID: 1447331730}
   - component: {fileID: 1447331729}
-  - component: {fileID: 1447331732}
   m_Layer: 0
   m_Name: TravelNode (71)
   m_TagString: Node
@@ -31897,19 +30497,6 @@ Transform:
   m_Father: {fileID: 1484075859}
   m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1447331732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447331728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1458426686
 GameObject:
   m_ObjectHideFlags: 0
@@ -32064,7 +30651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1463011448
 GameObject:
   m_ObjectHideFlags: 0
@@ -32903,7 +31489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1495136036
 GameObject:
   m_ObjectHideFlags: 0
@@ -32915,7 +31500,6 @@ GameObject:
   - component: {fileID: 1495136037}
   - component: {fileID: 1495136039}
   - component: {fileID: 1495136038}
-  - component: {fileID: 1495136040}
   m_Layer: 0
   m_Name: TravelNode (120)
   m_TagString: Node
@@ -33016,19 +31600,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1495136040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495136036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1499802304
 GameObject:
   m_ObjectHideFlags: 0
@@ -33040,7 +31611,6 @@ GameObject:
   - component: {fileID: 1499802305}
   - component: {fileID: 1499802307}
   - component: {fileID: 1499802306}
-  - component: {fileID: 1499802308}
   m_Layer: 0
   m_Name: TravelNode (15)
   m_TagString: Node
@@ -33141,19 +31711,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1499802308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499802304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1499981467
 GameObject:
   m_ObjectHideFlags: 0
@@ -33404,7 +31961,6 @@ GameObject:
   - component: {fileID: 1503722720}
   - component: {fileID: 1503722722}
   - component: {fileID: 1503722721}
-  - component: {fileID: 1503722723}
   m_Layer: 0
   m_Name: TravelNode (49)
   m_TagString: Node
@@ -33505,19 +32061,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1503722723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503722719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1511019465
 GameObject:
   m_ObjectHideFlags: 0
@@ -33672,7 +32215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1511458953
 GameObject:
   m_ObjectHideFlags: 0
@@ -33827,7 +32369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1514029690
 GameObject:
   m_ObjectHideFlags: 0
@@ -33839,7 +32380,6 @@ GameObject:
   - component: {fileID: 1514029691}
   - component: {fileID: 1514029693}
   - component: {fileID: 1514029692}
-  - component: {fileID: 1514029694}
   m_Layer: 0
   m_Name: TravelNode (56)
   m_TagString: Node
@@ -33940,19 +32480,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1514029694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514029690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1518416416
 GameObject:
   m_ObjectHideFlags: 0
@@ -34210,7 +32737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1547025008
 GameObject:
   m_ObjectHideFlags: 0
@@ -34365,7 +32891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1550159451
 GameObject:
   m_ObjectHideFlags: 0
@@ -34623,7 +33148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1562208250
 GameObject:
   m_ObjectHideFlags: 0
@@ -34711,7 +33235,6 @@ GameObject:
   - component: {fileID: 1571715092}
   - component: {fileID: 1571715094}
   - component: {fileID: 1571715093}
-  - component: {fileID: 1571715095}
   m_Layer: 0
   m_Name: TravelNode (39)
   m_TagString: Node
@@ -34812,19 +33335,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1571715095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571715091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1573079940
 GameObject:
   m_ObjectHideFlags: 0
@@ -34979,7 +33489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1591638240
 GameObject:
   m_ObjectHideFlags: 0
@@ -35094,7 +33603,6 @@ GameObject:
   - component: {fileID: 1603193674}
   - component: {fileID: 1603193676}
   - component: {fileID: 1603193675}
-  - component: {fileID: 1603193677}
   m_Layer: 0
   m_Name: TravelNode (28)
   m_TagString: Node
@@ -35195,19 +33703,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1603193677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603193673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1608262499
 GameObject:
   m_ObjectHideFlags: 0
@@ -35252,7 +33747,6 @@ GameObject:
   - component: {fileID: 1608461041}
   - component: {fileID: 1608461043}
   - component: {fileID: 1608461042}
-  - component: {fileID: 1608461044}
   m_Layer: 0
   m_Name: TravelNode (70)
   m_TagString: Node
@@ -35353,19 +33847,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1608461044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608461040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1609177779
 GameObject:
   m_ObjectHideFlags: 0
@@ -35583,7 +34064,6 @@ GameObject:
   - component: {fileID: 1614632916}
   - component: {fileID: 1614632918}
   - component: {fileID: 1614632917}
-  - component: {fileID: 1614632919}
   m_Layer: 0
   m_Name: TravelNode (60)
   m_TagString: Node
@@ -35684,19 +34164,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1614632919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614632915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1615889732
 GameObject:
   m_ObjectHideFlags: 0
@@ -35708,7 +34175,6 @@ GameObject:
   - component: {fileID: 1615889733}
   - component: {fileID: 1615889735}
   - component: {fileID: 1615889734}
-  - component: {fileID: 1615889736}
   m_Layer: 0
   m_Name: TravelNode (76)
   m_TagString: Node
@@ -35809,19 +34275,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1615889736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615889732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1620218364
 GameObject:
   m_ObjectHideFlags: 0
@@ -35936,7 +34389,6 @@ GameObject:
   - component: {fileID: 1624245076}
   - component: {fileID: 1624245078}
   - component: {fileID: 1624245077}
-  - component: {fileID: 1624245079}
   m_Layer: 0
   m_Name: TravelNode (103)
   m_TagString: Node
@@ -36037,19 +34489,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1624245079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624245075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1636304723
 GameObject:
   m_ObjectHideFlags: 0
@@ -36204,7 +34643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1640721527
 GameObject:
   m_ObjectHideFlags: 0
@@ -36319,7 +34757,6 @@ GameObject:
   - component: {fileID: 1641590345}
   - component: {fileID: 1641590347}
   - component: {fileID: 1641590346}
-  - component: {fileID: 1641590348}
   m_Layer: 0
   m_Name: TravelNode (43)
   m_TagString: Node
@@ -36420,19 +34857,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1641590348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641590344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1643831467
 GameObject:
   m_ObjectHideFlags: 0
@@ -37083,7 +35507,6 @@ GameObject:
   - component: {fileID: 1699434673}
   - component: {fileID: 1699434675}
   - component: {fileID: 1699434674}
-  - component: {fileID: 1699434676}
   m_Layer: 0
   m_Name: TravelNode (1)
   m_TagString: Node
@@ -37184,19 +35607,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1699434676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699434672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1701410958
 GameObject:
   m_ObjectHideFlags: 0
@@ -37826,7 +36236,6 @@ GameObject:
   - component: {fileID: 1739710365}
   - component: {fileID: 1739710367}
   - component: {fileID: 1739710366}
-  - component: {fileID: 1739710368}
   m_Layer: 0
   m_Name: TravelNode (93)
   m_TagString: Node
@@ -37927,19 +36336,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1739710368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739710364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1744975077
 GameObject:
   m_ObjectHideFlags: 0
@@ -37951,7 +36347,6 @@ GameObject:
   - component: {fileID: 1744975078}
   - component: {fileID: 1744975080}
   - component: {fileID: 1744975079}
-  - component: {fileID: 1744975081}
   m_Layer: 0
   m_Name: TravelNode (59)
   m_TagString: Node
@@ -38052,19 +36447,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1744975081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744975077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1763653609
 GameObject:
   m_ObjectHideFlags: 0
@@ -38076,7 +36458,6 @@ GameObject:
   - component: {fileID: 1763653610}
   - component: {fileID: 1763653612}
   - component: {fileID: 1763653611}
-  - component: {fileID: 1763653613}
   m_Layer: 0
   m_Name: TravelNode (63)
   m_TagString: Node
@@ -38177,19 +36558,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1763653613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763653609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1766399816
 GameObject:
   m_ObjectHideFlags: 0
@@ -38344,7 +36712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1768628159
 GameObject:
   m_ObjectHideFlags: 0
@@ -38499,7 +36866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1772987010
 GameObject:
   m_ObjectHideFlags: 0
@@ -38511,7 +36877,6 @@ GameObject:
   - component: {fileID: 1772987011}
   - component: {fileID: 1772987013}
   - component: {fileID: 1772987012}
-  - component: {fileID: 1772987014}
   m_Layer: 0
   m_Name: TravelNode (32)
   m_TagString: Node
@@ -38612,19 +36977,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1772987014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772987010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1783417030
 GameObject:
   m_ObjectHideFlags: 0
@@ -38739,7 +37091,6 @@ GameObject:
   - component: {fileID: 1787303729}
   - component: {fileID: 1787303731}
   - component: {fileID: 1787303730}
-  - component: {fileID: 1787303732}
   m_Layer: 0
   m_Name: TravelNode (52)
   m_TagString: Node
@@ -38840,19 +37191,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1787303732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787303728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1789184209
 GameObject:
   m_ObjectHideFlags: 0
@@ -39070,7 +37408,6 @@ GameObject:
   - component: {fileID: 1798875902}
   - component: {fileID: 1798875904}
   - component: {fileID: 1798875903}
-  - component: {fileID: 1798875905}
   m_Layer: 0
   m_Name: TravelNode (129)
   m_TagString: Node
@@ -39171,19 +37508,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1798875905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798875901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1800492805
 GameObject:
   m_ObjectHideFlags: 0
@@ -39607,7 +37931,6 @@ GameObject:
   - component: {fileID: 1818197695}
   - component: {fileID: 1818197697}
   - component: {fileID: 1818197696}
-  - component: {fileID: 1818197698}
   m_Layer: 0
   m_Name: TravelNode (94)
   m_TagString: Node
@@ -39708,19 +38031,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1818197698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818197694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1826149951
 GameObject:
   m_ObjectHideFlags: 0
@@ -39941,7 +38251,6 @@ GameObject:
   - component: {fileID: 1837421712}
   - component: {fileID: 1837421714}
   - component: {fileID: 1837421713}
-  - component: {fileID: 1837421715}
   m_Layer: 0
   m_Name: TravelNode (136)
   m_TagString: Node
@@ -40042,19 +38351,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1837421715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837421711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1839236222
 GameObject:
   m_ObjectHideFlags: 0
@@ -40209,7 +38505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1839918667
 GameObject:
   m_ObjectHideFlags: 0
@@ -40324,7 +38619,6 @@ GameObject:
   - component: {fileID: 1847061570}
   - component: {fileID: 1847061572}
   - component: {fileID: 1847061571}
-  - component: {fileID: 1847061573}
   m_Layer: 0
   m_Name: TravelNode (124)
   m_TagString: Node
@@ -40425,19 +38719,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1847061573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847061569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1850199727
 GameObject:
   m_ObjectHideFlags: 0
@@ -40592,7 +38873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1850550188
 GameObject:
   m_ObjectHideFlags: 0
@@ -40604,7 +38884,6 @@ GameObject:
   - component: {fileID: 1850550189}
   - component: {fileID: 1850550191}
   - component: {fileID: 1850550190}
-  - component: {fileID: 1850550192}
   m_Layer: 0
   m_Name: TravelNode (10)
   m_TagString: Node
@@ -40705,19 +38984,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1850550192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850550188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1855228040
 GameObject:
   m_ObjectHideFlags: 0
@@ -41154,7 +39420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1867618734
 GameObject:
   m_ObjectHideFlags: 0
@@ -41269,7 +39534,6 @@ GameObject:
   - component: {fileID: 1875683630}
   - component: {fileID: 1875683632}
   - component: {fileID: 1875683631}
-  - component: {fileID: 1875683633}
   m_Layer: 0
   m_Name: TravelNode (53)
   m_TagString: Node
@@ -41370,19 +39634,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1875683633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875683629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1876824633
 GameObject:
   m_ObjectHideFlags: 0
@@ -41537,7 +39788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1899223758
 GameObject:
   m_ObjectHideFlags: 0
@@ -41755,7 +40005,6 @@ GameObject:
   - component: {fileID: 1903518085}
   - component: {fileID: 1903518087}
   - component: {fileID: 1903518086}
-  - component: {fileID: 1903518088}
   m_Layer: 0
   m_Name: TravelNode (92)
   m_TagString: Node
@@ -41856,19 +40105,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1903518088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903518084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1920035043
 GameObject:
   m_ObjectHideFlags: 0
@@ -42086,7 +40322,6 @@ GameObject:
   - component: {fileID: 1924776448}
   - component: {fileID: 1924776450}
   - component: {fileID: 1924776449}
-  - component: {fileID: 1924776451}
   m_Layer: 0
   m_Name: TravelNode (75)
   m_TagString: Node
@@ -42187,19 +40422,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1924776451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924776447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1925174848
 GameObject:
   m_ObjectHideFlags: 0
@@ -42354,7 +40576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1936086217
 GameObject:
   m_ObjectHideFlags: 0
@@ -42572,7 +40793,6 @@ GameObject:
   - component: {fileID: 1944137008}
   - component: {fileID: 1944137007}
   - component: {fileID: 1944137006}
-  - component: {fileID: 1944137009}
   m_Layer: 0
   m_Name: TravelNode (73)
   m_TagString: Node
@@ -42673,19 +40893,6 @@ Transform:
   m_Father: {fileID: 1484075859}
   m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1944137009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944137005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1946284843
 GameObject:
   m_ObjectHideFlags: 0
@@ -42840,7 +41047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &1968117756
 GameObject:
   m_ObjectHideFlags: 0
@@ -43545,7 +41751,6 @@ GameObject:
   - component: {fileID: 2006512961}
   - component: {fileID: 2006512963}
   - component: {fileID: 2006512962}
-  - component: {fileID: 2006512964}
   m_Layer: 0
   m_Name: TravelNode (12)
   m_TagString: Node
@@ -43646,19 +41851,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2006512964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006512960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2007576281
 GameObject:
   m_ObjectHideFlags: 0
@@ -43773,7 +41965,6 @@ GameObject:
   - component: {fileID: 2010582461}
   - component: {fileID: 2010582463}
   - component: {fileID: 2010582462}
-  - component: {fileID: 2010582464}
   m_Layer: 0
   m_Name: TravelNode (137)
   m_TagString: Node
@@ -43874,19 +42065,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2010582464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010582460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2011657636
 GameObject:
   m_ObjectHideFlags: 0
@@ -43898,7 +42076,6 @@ GameObject:
   - component: {fileID: 2011657637}
   - component: {fileID: 2011657639}
   - component: {fileID: 2011657638}
-  - component: {fileID: 2011657640}
   m_Layer: 0
   m_Name: TravelNode (57)
   m_TagString: Node
@@ -43999,19 +42176,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2011657640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011657636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2013209379
 GameObject:
   m_ObjectHideFlags: 0
@@ -44435,7 +42599,6 @@ GameObject:
   - component: {fileID: 2032773320}
   - component: {fileID: 2032773322}
   - component: {fileID: 2032773321}
-  - component: {fileID: 2032773323}
   m_Layer: 0
   m_Name: TravelNode (118)
   m_TagString: Node
@@ -44536,19 +42699,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2032773323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032773319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2040751733
 GameObject:
   m_ObjectHideFlags: 0
@@ -44703,7 +42853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2046394706
 GameObject:
   m_ObjectHideFlags: 0
@@ -44818,7 +42967,6 @@ GameObject:
   - component: {fileID: 2050425019}
   - component: {fileID: 2050425021}
   - component: {fileID: 2050425020}
-  - component: {fileID: 2050425022}
   m_Layer: 0
   m_Name: TravelNode (14)
   m_TagString: Node
@@ -44919,19 +43067,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2050425022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050425018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2051283996
 GameObject:
   m_ObjectHideFlags: 0
@@ -45252,7 +43387,6 @@ GameObject:
   - component: {fileID: 2067725239}
   - component: {fileID: 2067725241}
   - component: {fileID: 2067725240}
-  - component: {fileID: 2067725242}
   m_Layer: 0
   m_Name: TravelNode (47)
   m_TagString: Node
@@ -45353,19 +43487,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2067725242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067725238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2068960170
 GameObject:
   m_ObjectHideFlags: 0
@@ -45377,7 +43498,6 @@ GameObject:
   - component: {fileID: 2068960171}
   - component: {fileID: 2068960173}
   - component: {fileID: 2068960172}
-  - component: {fileID: 2068960174}
   m_Layer: 0
   m_Name: TravelNode (27)
   m_TagString: Node
@@ -45478,19 +43598,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2068960174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068960170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2076308701
 GameObject:
   m_ObjectHideFlags: 0
@@ -45502,7 +43609,6 @@ GameObject:
   - component: {fileID: 2076308702}
   - component: {fileID: 2076308704}
   - component: {fileID: 2076308703}
-  - component: {fileID: 2076308705}
   m_Layer: 0
   m_Name: TravelNode (85)
   m_TagString: Node
@@ -45603,19 +43709,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2076308705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076308701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2085835981
 GameObject:
   m_ObjectHideFlags: 0
@@ -45770,7 +43863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2085847658
 GameObject:
   m_ObjectHideFlags: 0
@@ -45885,7 +43977,6 @@ GameObject:
   - component: {fileID: 2088720595}
   - component: {fileID: 2088720597}
   - component: {fileID: 2088720596}
-  - component: {fileID: 2088720598}
   m_Layer: 0
   m_Name: TravelNode (21)
   m_TagString: Node
@@ -45986,19 +44077,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2088720598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088720594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2090597507
 GameObject:
   m_ObjectHideFlags: 0
@@ -46113,7 +44191,6 @@ GameObject:
   - component: {fileID: 2093223835}
   - component: {fileID: 2093223837}
   - component: {fileID: 2093223836}
-  - component: {fileID: 2093223838}
   m_Layer: 0
   m_Name: TravelNode (16)
   m_TagString: Node
@@ -46214,19 +44291,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2093223838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2093223834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2094269714
 GameObject:
   m_ObjectHideFlags: 0
@@ -46360,7 +44424,6 @@ GameObject:
   - component: {fileID: 2101317770}
   - component: {fileID: 2101317772}
   - component: {fileID: 2101317771}
-  - component: {fileID: 2101317773}
   m_Layer: 0
   m_Name: TravelNode (46)
   m_TagString: Node
@@ -46461,19 +44524,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2101317773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101317769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2102465044
 GameObject:
   m_ObjectHideFlags: 0
@@ -47014,7 +45064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2112343796
 GameObject:
   m_ObjectHideFlags: 0
@@ -47026,7 +45075,6 @@ GameObject:
   - component: {fileID: 2112343797}
   - component: {fileID: 2112343799}
   - component: {fileID: 2112343798}
-  - component: {fileID: 2112343800}
   m_Layer: 0
   m_Name: TravelNode (104)
   m_TagString: Node
@@ -47127,19 +45175,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2112343800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112343796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2113679242
 GameObject:
   m_ObjectHideFlags: 0
@@ -47563,7 +45598,6 @@ GameObject:
   - component: {fileID: 2132960635}
   - component: {fileID: 2132960637}
   - component: {fileID: 2132960636}
-  - component: {fileID: 2132960638}
   m_Layer: 0
   m_Name: TravelNode (97)
   m_TagString: Node
@@ -47664,19 +45698,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2132960638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132960634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21df33b147859268cbd3690ca9c92e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Node: {fileID: 0}
 --- !u!1 &2136851311
 GameObject:
   m_ObjectHideFlags: 0

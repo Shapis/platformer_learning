@@ -20,7 +20,7 @@ public class NodeTouchMovement : MonoBehaviour, INodeMovementEvents
 
     }
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         OnNodeTouched(this, GetNodePathList());
     }
