@@ -1,9 +1,13 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerNodeMovement : MonoBehaviour, INodeMovementEvents
 {
+    private Coroutine _followPathCoroutine;
+
+
     [SerializeField] private InputHandler m_InputHandler;
 
     [SerializeField] private Node m_CurrentNode;
@@ -36,6 +40,11 @@ public class PlayerNodeMovement : MonoBehaviour, INodeMovementEvents
         m_InputHandler.OnVerticalDownPressedEvent += MoveDown;
         m_InputHandler.OnHorizontalLeftPressedEvent += MoveLeft;
         m_InputHandler.OnHorizontalRightPressedEvent += MoveRight;
+
+        foreach (var item in GameObject.FindObjectsOfType<NodeTouchMovement>())
+        {
+            item.OnNodeTouchedEvent += OnNodeTouched;
+        }
 
 
         gameObject.transform.position = m_CurrentNode.gameObject.transform.position;
@@ -294,6 +303,62 @@ public class PlayerNodeMovement : MonoBehaviour, INodeMovementEvents
         OnInitialTravelNodeLoadedEvent?.Invoke(this, _currentNode);
     }
 
+    // This doesn't work well with travel nodes. Since if you are on a travel node, the nodePath you will receive will have your current travel node as the first element in the list. Meaning that the coroutine will start from the current travel node, and not the initial node that the player will end up on once the previous traveling concludes.
+    public void OnNodeTouched(object sender, List<Node> nodePath)
+    {
+        if (!m_CurrentNode.IsTravelNode && nodePath != null)
+        {
+            if (_followPathCoroutine != null)
+            {
+                StopCoroutine(_followPathCoroutine);
+            }
+            _followPathCoroutine = StartCoroutine("DoFollowPath", nodePath);
+        }
+    }
 
+
+    // TODO: Make it so it doesn't call MoveUp/Down/Left/Right when travel nodes are reached. It's unnecessary.
+    IEnumerator DoFollowPath(List<Node> nodePath)
+    {
+
+        if (m_DebugLoggingEnabled)
+        {
+            Debug.Log("Following path...");
+        }
+
+        bool inTransit = false;
+        while (nodePath.Count > 1)
+        {
+            if (!inTransit)
+            {
+                if (nodePath[1].gameObject == nodePath[0].m_UpDestination)
+                {
+                    inTransit = true;
+                    MoveUp(this, EventArgs.Empty);
+                }
+                else if (nodePath[1].gameObject == nodePath[0].m_DownDestination)
+                {
+                    inTransit = true;
+                    MoveDown(this, EventArgs.Empty);
+                }
+                else if (nodePath[1].gameObject == nodePath[0].m_LeftDestination)
+                {
+                    inTransit = true;
+                    MoveLeft(this, EventArgs.Empty);
+                }
+                else if (nodePath[1].gameObject == nodePath[0].m_RightDestination)
+                {
+                    inTransit = true;
+                    MoveRight(this, EventArgs.Empty);
+                }
+            }
+
+            if (m_CurrentNode == nodePath[1])
+            {
+                inTransit = false;
+                nodePath.RemoveAt(0);
+            }
+            yield return null;
+        }
+    }
 }
-

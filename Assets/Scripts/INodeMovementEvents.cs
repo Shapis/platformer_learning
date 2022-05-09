@@ -11,5 +11,5 @@ public interface INodeMovementEvents
     void OnDestinationNodeDeparted(object sender, GameObject nodeInfo); // Invoked from PlayerNodeMovement.cs
     void OnDestinationNotAccessible(object sender, GameObject nodeInfo); // Invoked from PlayerNodeMovement.cs
     void OnNoDestinationFound(object sender, string s); // Invoked from PlayerNodeMovement.cs
-
+    void OnNodeTouched(object sender, List<Node> nodePath); // Invoked from NodeTouchMovement.cs
 }

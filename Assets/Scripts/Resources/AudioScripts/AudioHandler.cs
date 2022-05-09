@@ -198,4 +198,8 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
         }
     }
 
+    public void OnNodeTouched(object sender, List<Node> nodePath)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -1,20 +1,21 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+// A* Implementation, heavily based on https://www.geeksforgeeks.org/a-search-algorithm/ and https://www.youtube.com/watch?v=alU04hvz6L4
+
 public class NodePathFinding
 {
-    private List<Node> openList;
-    private List<Node> closedList;
+    private List<Node> _openList;
+    private List<Node> _closedList;
 
-    public List<Node> FindPath(Node originNode, Node destinationNode, List<Node> AllNodes)
+    public List<Node> FindPath(Node originNode, Node destinationNode, List<Node> allNodes)
     {
         // Add origin to the openList
-        openList = new List<Node> { originNode };
-        closedList = new List<Node>();
+        _openList = new List<Node> { originNode };
+        _closedList = new List<Node>();
 
 
-        foreach (var item in AllNodes)
+        foreach (var item in allNodes)
         {
             item.g = int.MaxValue;
             item.h = int.MaxValue;
@@ -26,19 +27,26 @@ public class NodePathFinding
         originNode.h = CalculateDistanceCost(originNode, destinationNode);
         originNode.f = CalculateF(originNode);
 
-        while (openList.Count > 0)
+        while (_openList.Count > 0)
         {
-            Node currentNode = GetLowestFCostNode(openList);
+            Node currentNode = GetLowestFCostNode(_openList);
             if (currentNode == destinationNode)
             {
                 return GetPath(currentNode);
             }
 
-            openList.Remove(currentNode);
-            closedList.Add(currentNode);
-            foreach (Node neighbourNode in GetNeighboursList(currentNode, AllNodes))
+            _openList.Remove(currentNode);
+            _closedList.Add(currentNode);
+            foreach (Node neighbourNode in GetNeighboursList(currentNode, allNodes))
             {
-                if (closedList.Contains(neighbourNode)) continue;
+                if (_closedList.Contains(neighbourNode)) continue;
+
+
+                if (!neighbourNode.IsAccessible)
+                {
+                    _closedList.Add(neighbourNode);
+                    continue;
+                }
 
                 float tentativeGCost = currentNode.g + CalculateDistanceCost(currentNode, neighbourNode);
 
@@ -49,9 +57,9 @@ public class NodePathFinding
                     neighbourNode.h = CalculateDistanceCost(neighbourNode, destinationNode);
                     neighbourNode.f = CalculateF(neighbourNode);
 
-                    if (!openList.Contains(neighbourNode))
+                    if (!_openList.Contains(neighbourNode))
                     {
-                        openList.Add(neighbourNode);
+                        _openList.Add(neighbourNode);
                     }
                 }
             }
