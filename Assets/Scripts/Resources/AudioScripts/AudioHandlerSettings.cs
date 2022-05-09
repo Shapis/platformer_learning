@@ -47,13 +47,13 @@ public class AudioHandlerSettings : BaseSettings, ISceneHandlerEvents
         UpdateVolumeSettings(gameSettingsInfo);
     }
 
-    protected override void InitAwake()
+    protected override void AddToAwake()
     {
-        //throw new NotImplementedException();
+
     }
 
-    protected override void InitStart()
+    protected override void AddToStart()
     {
-        //throw new NotImplementedException();
+
     }
 }

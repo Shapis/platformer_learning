@@ -13,18 +13,18 @@ public class MobileJoystickSettings : BaseSettings
     private Coroutine fade = null;
     private float hasChangedRecentlyTimer = 0f;
 
-    protected override void InitAwake()
+    protected override void AddToAwake()
     {
-        //Check if the device running this is a desktop
+        // Check if the device running this is a desktop
         if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
         }
     }
 
-    protected override void InitStart()
+    protected override void AddToStart()
     {
-        //throw new System.NotImplementedException();
+
     }
 
     private void InititalizeSprites()
@@ -112,4 +112,6 @@ public class MobileJoystickSettings : BaseSettings
             case false: m_RectTransform.anchoredPosition = new Vector2(50f, 50f); m_RectTransform.anchorMax = new Vector2(0f, 0f); m_RectTransform.anchorMin = new Vector2(0f, 0f); m_RectTransform.pivot = new Vector2(0f, 0f); break;
         }
     }
+
+
 }

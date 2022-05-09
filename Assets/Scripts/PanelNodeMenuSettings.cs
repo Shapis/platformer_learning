@@ -41,13 +41,13 @@ public class PanelNodeMenuSettings : BaseSettings
         }
     }
 
-    protected override void InitAwake()
+    protected override void AddToAwake()
     {
-        //throw new System.NotImplementedException();
+
     }
 
-    protected override void InitStart()
+    protected override void AddToStart()
     {
-        //throw new System.NotImplementedException();
+
     }
 }

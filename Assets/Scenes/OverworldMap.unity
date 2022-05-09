@@ -12637,7 +12637,7 @@ MonoBehaviour:
   m_Scene: 20
   m_Music: 0
   m_UpDestination: {fileID: 0}
-  m_DownDestination: {fileID: 843476120}
+  m_DownDestination: {fileID: 1615889732}
   m_LeftDestination: {fileID: 661353807}
   m_RightDestination: {fileID: 79434223}
   IsTravelNode: 0
