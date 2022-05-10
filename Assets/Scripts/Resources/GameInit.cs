@@ -8,5 +8,10 @@ public class GameInit : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Screen.currentResolution.refreshRate;
+
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        }
     }
 }
