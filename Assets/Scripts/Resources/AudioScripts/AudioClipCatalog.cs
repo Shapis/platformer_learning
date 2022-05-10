@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class AudioClipCatalog : MonoBehaviour
 {
+    [Header("Dependencies")]
+    [SerializeField] private AudioClip[] m_MusicClip;
+    [SerializeField] private AudioClip[] m_SfxClip;
+
+
     public enum SfxName
     {
         LandingNormal,
@@ -49,51 +54,51 @@ public class AudioClipCatalog : MonoBehaviour
 
     public AudioClip GetSfxClip(AudioClipCatalog.SfxName _mySfxName)
     {
-        AudioClip _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/zapsplat_impact_thud_light_small_soft_object_001_17766");
+        AudioClip _audioClip = m_SfxClip[0];
         switch (_mySfxName)
         {
             default:
             case AudioClipCatalog.SfxName.LandingNormal:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/zapsplat_impact_thud_light_small_soft_object_001_17766");
+                _audioClip = m_SfxClip[0];
                 break;
             case AudioClipCatalog.SfxName.JumpingNormal:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/jump exported");
+                _audioClip = m_SfxClip[1];
                 break;
             case AudioClipCatalog.SfxName.ConstantBuzz:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/smartsound_ANIMAL_HORNET_Hum_Glass_Constant_Soft_01-trimmed");
+                _audioClip = m_SfxClip[2];
                 break;
             case AudioClipCatalog.SfxName.HollowWoodKnock:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/zapsplat_foley_wood_3x_knocks_hollow_70874-trimmed");
+                _audioClip = m_SfxClip[3];
                 break;
             case AudioClipCatalog.SfxName.ChestOpening:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/344_audio_treasure_chest_open_gold_victory_fantasy_1596-trimmed");
+                _audioClip = m_SfxClip[4];
                 break;
             case AudioClipCatalog.SfxName.MetalFalling:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/transportation_bicycle_fall_over_001-trimmed");
+                _audioClip = m_SfxClip[5];
                 break;
             case AudioClipCatalog.SfxName.PortcullisOpening:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/344_audio_drawbridge_raise_creak_slam_drop_284-trimmed");
+                _audioClip = m_SfxClip[6];
                 break;
             case AudioClipCatalog.SfxName.PortcullisClosing:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/344_audio_drawbridge_lower_creak_slam_drop_284-trimmed");
+                _audioClip = m_SfxClip[7];
                 break;
             case AudioClipCatalog.SfxName.CoinCollecting:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/jessey_drake_oldschool_COIN_COLLECT_video_retro_game_chip_set_8BIT_JD-trimmed");
+                _audioClip = m_SfxClip[8];
                 break;
             case AudioClipCatalog.SfxName.ContinuousPressurePlateBuzz:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/smartsound_WEAPONS_ARTILLERY_Missile_Truck_Move_Loop-trimmed");
+                _audioClip = m_SfxClip[9];
                 break;
             case AudioClipCatalog.SfxName.WaterSplash:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/zapsplat_multimedia_game_designed_water_splash_002_26382-trimmed");
+                _audioClip = m_SfxClip[10];
                 break;
             case AudioClipCatalog.SfxName.KeyObtained:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/zapsplat_multimedia_game_sound_coins_collect_several_at_once_002_40813-trimmed");
+                _audioClip = m_SfxClip[11];
                 break;
             case AudioClipCatalog.SfxName.KeyTurning:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/344_audio_mortice_key_turn_lock_3_1445-trimmed");
+                _audioClip = m_SfxClip[12];
                 break;
             case AudioClipCatalog.SfxName.MenuClicked:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Sfx/esm_perfect_clean_app_button_click_organic_simple_classic_game_click.mp3");
+                _audioClip = m_SfxClip[13];
                 break;
         }
         return _audioClip;
@@ -101,60 +106,60 @@ public class AudioClipCatalog : MonoBehaviour
 
     public AudioClip GetMusicClip(AudioClipCatalog.MusicName _myMusicName)
     {
-        AudioClip _audioClip = (AudioClip)Resources.Load("Sounds/Music/The Journey Is The Treasure _Copyright Free Music_ _ chill beats _chiptune");
+        AudioClip _audioClip = m_MusicClip[0];
         switch (_myMusicName)
         {
             default:
             case AudioClipCatalog.MusicName.The_Journey_Is_The_Treasure:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/The Journey Is The Treasure _Copyright Free Music_ _ chill beats _chiptune");
+                _audioClip = m_MusicClip[0];
                 break;
             case AudioClipCatalog.MusicName.World_Of_Nowhere:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/World Of Nowhere");
+                _audioClip = m_MusicClip[1];
                 break;
             case AudioClipCatalog.MusicName.Call_For_Love:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Call For Love");
+                _audioClip = m_MusicClip[2];
                 break;
             case AudioClipCatalog.MusicName.Music_Of_Something:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Music Of Something");
+                _audioClip = m_MusicClip[3];
                 break;
             case AudioClipCatalog.MusicName.Day_Of_What:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Day Of What");
+                _audioClip = m_MusicClip[4];
                 break;
             case AudioClipCatalog.MusicName.A_Day:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/A Day");
+                _audioClip = m_MusicClip[5];
                 break;
             case AudioClipCatalog.MusicName.Easy_Dreams:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Easy Dreams");
+                _audioClip = m_MusicClip[6];
                 break;
             case AudioClipCatalog.MusicName.Gift:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Gift");
+                _audioClip = m_MusicClip[7];
                 break;
             case AudioClipCatalog.MusicName.Belong_To_Her_Place:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Belong To Her Place");
+                _audioClip = m_MusicClip[8];
                 break;
             case AudioClipCatalog.MusicName.Free_Tonight:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Free Tonight");
+                _audioClip = m_MusicClip[9];
                 break;
             case AudioClipCatalog.MusicName.Comfortless_Seasons:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Comfortless Seasons");
+                _audioClip = m_MusicClip[10];
                 break;
             case AudioClipCatalog.MusicName.Good_Moves:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Good Moves");
+                _audioClip = m_MusicClip[11];
                 break;
             case AudioClipCatalog.MusicName.Get_Out:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Get Out");
+                _audioClip = m_MusicClip[12];
                 break;
             case AudioClipCatalog.MusicName.Give_Her_Shadow:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Give Her Shadow");
+                _audioClip = m_MusicClip[13];
                 break;
             case AudioClipCatalog.MusicName.I_Dont_Care_About_Place:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/I Don_t Care About Place");
+                _audioClip = m_MusicClip[14];
                 break;
             case AudioClipCatalog.MusicName.Lets_Do_This:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Let_s Do This");
+                _audioClip = m_MusicClip[15];
                 break;
             case AudioClipCatalog.MusicName.Because_Of_Yesterday:
-                _audioClip = (AudioClip)Resources.Load("Sounds/Music/Because Of Yesterday");
+                _audioClip = m_MusicClip[16];
                 break;
         }
         return _audioClip;
