@@ -7,6 +7,11 @@ public class GameInit : MonoBehaviour
     private void Awake()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        Application.targetFrameRate = -1;
+
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        }
     }
 }
