@@ -43,7 +43,7 @@ public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
         if (selectedObject.GetComponent<Rigidbody2D>().IsTouching(m_BottomCollider) || selectedObject.GetComponent<Rigidbody2D>().IsTouching(m_TopCollider))
         {
             selectedObject.layer = 30;
-            selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.Normalize(selectedObject.transform.position - this.transform.position) * 3f;
+            selectedObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize(selectedObject.transform.position - this.transform.position) * 3f;
             Debug.Log("a");
             yield return new WaitForSeconds(1.5f);
             Debug.Log("b");
@@ -60,7 +60,7 @@ public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
     private IEnumerator PushItemAway()
     {
         selectedObject.layer = 30;
-        selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.Normalize(selectedObject.transform.position - this.transform.position);
+        selectedObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize(selectedObject.transform.position - this.transform.position);
         float timer = 0;
         while (timer <= 1.5f)
         {

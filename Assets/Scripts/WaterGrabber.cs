@@ -71,18 +71,18 @@ public class WaterGrabber : MonoBehaviour, IWaterEvents
     {
         if (isUnderwater)
         {
-            if (rb.velocity.y < -m_MaxVelocity * 3)
+            if (rb.linearVelocity.y < -m_MaxVelocity * 3)
             {
-                rb.velocity = new Vector2(rb.velocity.x, -m_MaxVelocity * 3);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, -m_MaxVelocity * 3);
             }
-            if (rb.velocity.y < m_MaxVelocity)
+            if (rb.linearVelocity.y < m_MaxVelocity)
             {
                 upwardsVelocity++;
-                rb.velocity += Vector2.up * upwardsVelocity * Time.fixedDeltaTime;
+                rb.linearVelocity += Vector2.up * upwardsVelocity * Time.fixedDeltaTime;
 
-                if (rb.velocity.y > 1.5f * m_MaxVelocity)
+                if (rb.linearVelocity.y > 1.5f * m_MaxVelocity)
                 {
-                    rb.velocity = Vector2.up * m_MaxVelocity * 1.5f;
+                    rb.linearVelocity = Vector2.up * m_MaxVelocity * 1.5f;
                 }
             }
         }

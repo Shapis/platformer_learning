@@ -150,9 +150,9 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
         if (isGrounded || m_AirControl)
         {
             // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(movementDirection * movementSpeed, m_Rigidbody2D.velocity.y);
+            Vector3 targetVelocity = new Vector2(movementDirection * movementSpeed, m_Rigidbody2D.linearVelocity.y);
             // And then smoothing it out and applying it to the character
-            m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+            m_Rigidbody2D.linearVelocity = Vector3.SmoothDamp(m_Rigidbody2D.linearVelocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
             MovementDirectionChangesChecker(movementDirection);
         }
@@ -171,9 +171,9 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
         if (previouslyJumpKeyPressed && !jumpKeyPressed)
         {
             previouslyJumpKeyPressed = false;
-            if (m_Rigidbody2D.velocity.y > 0)
+            if (m_Rigidbody2D.linearVelocity.y > 0)
             {
-                m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_Rigidbody2D.velocity.y * 0.9f);
+                m_Rigidbody2D.linearVelocity = new Vector2(m_Rigidbody2D.linearVelocity.x, m_Rigidbody2D.linearVelocity.y * 0.9f);
 
                 StartCoroutine("SlowDown");
             }
@@ -183,9 +183,9 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
     IEnumerator SlowDown()
     {
         yield return new WaitForFixedUpdate();
-        while (m_Rigidbody2D.velocity.y > 0)
+        while (m_Rigidbody2D.linearVelocity.y > 0)
         {
-            m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_Rigidbody2D.velocity.y * 0.95f);
+            m_Rigidbody2D.linearVelocity = new Vector2(m_Rigidbody2D.linearVelocity.x, m_Rigidbody2D.linearVelocity.y * 0.95f);
             yield return null;
         }
     }
@@ -244,7 +244,7 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
 
         if (m_UseVelocityForJumping)
         {
-            m_Rigidbody2D.velocity = new Vector3(m_Rigidbody2D.velocity.x, m_JumpIntensity / 50, 0);
+            m_Rigidbody2D.linearVelocity = new Vector3(m_Rigidbody2D.linearVelocity.x, m_JumpIntensity / 50, 0);
         }
         else
         {

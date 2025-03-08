@@ -166,7 +166,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
         }
 
         // set object velocity
-        selectedObject.GetComponent<Rigidbody2D>().velocity = vel;
+        selectedObject.GetComponent<Rigidbody2D>().linearVelocity = vel;
     }
 
     private GameObject LineOfSightCheck(Vector3 origin, Vector3 target)
@@ -218,7 +218,7 @@ public class PlayerItemDragger : MonoBehaviour, IDraggableEvents
 
     public void OnDraggingEnds(object sender, EventArgs e)
     {
-        selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        selectedObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
         selectedObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
         rotationTimer = 0f;
         initiallyInLos = false;

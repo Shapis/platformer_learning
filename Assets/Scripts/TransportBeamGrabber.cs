@@ -41,14 +41,14 @@ public class TransportBeamGrabber : MonoBehaviour, ITransportBeamEvents
     {
         if (insideBeam)
         {
-            if (rb.velocity.y < 0)
+            if (rb.linearVelocity.y < 0)
             {
-                rb.velocity = new Vector2(rb.velocity.x, 0f);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             }
-            if (rb.velocity.y < m_MaxVelocity)
+            if (rb.linearVelocity.y < m_MaxVelocity)
             {
                 upwardsVelocity++;
-                rb.velocity += Vector2.up * upwardsVelocity * Time.fixedDeltaTime;
+                rb.linearVelocity += Vector2.up * upwardsVelocity * Time.fixedDeltaTime;
             }
         }
         else if (upwardsVelocity > 0)

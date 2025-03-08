@@ -7,7 +7,7 @@ public class MagneticPull : MonoBehaviour
         if (other.GetComponent<Coin>() && other.GetComponent<Magnet>() && other.GetComponent<Coin>().Tangible && other.GetComponent<Rigidbody2D>())
         {
             other.GetComponent<Rigidbody2D>().gravityScale = 0;
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(1.5f * (this.transform.position - other.transform.position).x, 1.5f * (this.transform.position - other.transform.position).y);
+            other.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(1.5f * (this.transform.position - other.transform.position).x, 1.5f * (this.transform.position - other.transform.position).y);
         }
     }
 
@@ -16,7 +16,7 @@ public class MagneticPull : MonoBehaviour
         if (other.GetComponent<Coin>() && other.GetComponent<Magnet>() && other.GetComponent<Coin>().Tangible && other.GetComponent<Rigidbody2D>())
         {
             other.GetComponent<Rigidbody2D>().gravityScale = 1;
-            other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            other.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         }
     }
 }
