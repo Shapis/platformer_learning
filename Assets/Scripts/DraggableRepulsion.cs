@@ -5,13 +5,17 @@ using UnityEngine;
 public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
 {
     // TODO: Change this class so it's not awkward when you let go of an object on top of the player.
-    [SerializeField] private PlayerItemDragger m_PlayerItemDragger;
-    [SerializeField] private Collider2D m_TopCollider;
-    [SerializeField] private Collider2D m_BottomCollider;
+    [SerializeField]
+    private PlayerItemDragger m_PlayerItemDragger;
+
+    [SerializeField]
+    private Collider2D m_TopCollider;
+
+    [SerializeField]
+    private Collider2D m_BottomCollider;
     private GameObject selectedObject;
     private int originalLayer = 0;
     private int originalSortingLayerOrder;
-
 
     void Start()
     {
@@ -19,7 +23,10 @@ public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
         m_PlayerItemDragger.OnDraggingEndsEvent += OnDraggingEnds;
     }
 
-    public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnDraggingBegins(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         selectedObject = draggingEventArgs.TargetGameObject;
         originalLayer = selectedObject.layer;
@@ -40,10 +47,14 @@ public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
         selectedObject.layer = originalLayer;
         yield return new WaitForFixedUpdate();
         yield return new WaitForFixedUpdate();
-        if (selectedObject.GetComponent<Rigidbody2D>().IsTouching(m_BottomCollider) || selectedObject.GetComponent<Rigidbody2D>().IsTouching(m_TopCollider))
+        if (
+            selectedObject.GetComponent<Rigidbody2D>().IsTouching(m_BottomCollider)
+            || selectedObject.GetComponent<Rigidbody2D>().IsTouching(m_TopCollider)
+        )
         {
             selectedObject.layer = 30;
-            selectedObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize(selectedObject.transform.position - this.transform.position) * 3f;
+            selectedObject.GetComponent<Rigidbody2D>().linearVelocity =
+                Vector3.Normalize(selectedObject.transform.position - this.transform.position) * 3f;
             Debug.Log("a");
             yield return new WaitForSeconds(1.5f);
             Debug.Log("b");
@@ -51,7 +62,6 @@ public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
             selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortingLayerOrder;
             selectedObject = null;
             yield break;
-
         }
         selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortingLayerOrder;
         selectedObject = null;
@@ -60,7 +70,9 @@ public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
     private IEnumerator PushItemAway()
     {
         selectedObject.layer = 30;
-        selectedObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize(selectedObject.transform.position - this.transform.position);
+        selectedObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.Normalize(
+            selectedObject.transform.position - this.transform.position
+        );
         float timer = 0;
         while (timer <= 1.5f)
         {
@@ -70,7 +82,10 @@ public class DraggableRepulsion : MonoBehaviour, IDraggableEvents
         selectedObject.layer = originalLayer;
     }
 
-    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnLineOfSightBlocked(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         throw new NotImplementedException();
     }

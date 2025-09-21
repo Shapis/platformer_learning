@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class TransportBeamGrabber : MonoBehaviour, ITransportBeamEvents
 {
-    [SerializeField] private float m_MaxVelocity = 2f;
+    [SerializeField]
+    private float m_MaxVelocity = 2f;
     private Rigidbody2D rb;
     private TransportBeam transportBeam;
     private TransportBeam[] myTransportBeams;
@@ -22,7 +23,10 @@ public class TransportBeamGrabber : MonoBehaviour, ITransportBeamEvents
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<TransportBeam>() != null && other.gameObject.GetComponent<TransportBeam>().Tangible)
+        if (
+            other.gameObject.GetComponent<TransportBeam>() != null
+            && other.gameObject.GetComponent<TransportBeam>().Tangible
+        )
         {
             transportBeam = other.gameObject.GetComponent<TransportBeam>();
             insideBeam = true;
@@ -31,7 +35,10 @@ public class TransportBeamGrabber : MonoBehaviour, ITransportBeamEvents
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<TransportBeam>() != null && other.gameObject.GetComponent<TransportBeam>().Tangible)
+        if (
+            other.gameObject.GetComponent<TransportBeam>() != null
+            && other.gameObject.GetComponent<TransportBeam>().Tangible
+        )
         {
             ExitTrigger2D();
         }

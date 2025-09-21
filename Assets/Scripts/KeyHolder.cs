@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class KeyHolder : MonoBehaviour, IKeyGrabberEvents
 {
     [Header("Dependencies")]
-
-    [SerializeField] private Transform m_KeyTemplate;
+    [SerializeField]
+    private Transform m_KeyTemplate;
     private GameObject m_Player;
     private KeyGrabber m_KeyGrabber;
     private Transform m_Container;
@@ -24,7 +24,8 @@ public class KeyHolder : MonoBehaviour, IKeyGrabberEvents
         // Clean up old keys
         foreach (Transform child in m_Container)
         {
-            if (child == m_KeyTemplate) continue;
+            if (child == m_KeyTemplate)
+                continue;
             Destroy(child.gameObject);
         }
 

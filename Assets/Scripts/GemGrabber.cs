@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class GemGrabber : MonoBehaviour, ILevelEndsEvents, IScoreKeeperEvents
 {
-    [SerializeField] private ScoreKeeper m_ScoreKeeper;
+    [SerializeField]
+    private ScoreKeeper m_ScoreKeeper;
     public event EventHandler OnLevelEndsEvent;
 
     private int totalScore;
@@ -17,13 +18,20 @@ public class GemGrabber : MonoBehaviour, ILevelEndsEvents, IScoreKeeperEvents
     {
         LevelCompletionInfo myLevelCompletionInfo = new LevelCompletionInfo();
         myLevelCompletionInfo = myLevelCompletionInfo.Load();
-        myLevelCompletionInfo.AddLevelCompletionInfo(SceneHandler.GetActiveSceneEnum(), totalScore, Time.timeSinceLevelLoad);
+        myLevelCompletionInfo.AddLevelCompletionInfo(
+            SceneHandler.GetActiveSceneEnum(),
+            totalScore,
+            Time.timeSinceLevelLoad
+        );
         return;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<Gem>() != null && other.gameObject.GetComponent<Gem>().Tangible)
+        if (
+            other.gameObject.GetComponent<Gem>() != null
+            && other.gameObject.GetComponent<Gem>().Tangible
+        )
         {
             other.gameObject.GetComponent<Gem>().Tangible = false;
             LevelHasBeenCompleted();

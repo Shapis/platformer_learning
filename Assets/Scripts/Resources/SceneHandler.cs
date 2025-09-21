@@ -37,7 +37,6 @@ public static class SceneHandler
     public static void ReloadCurrentScene()
     {
         SceneHandler.Load(GetActiveSceneEnum());
-
     }
 
     public static Scene GetActiveSceneEnum()

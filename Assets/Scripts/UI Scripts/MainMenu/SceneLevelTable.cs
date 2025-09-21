@@ -5,18 +5,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class SceneLevelTable : MonoBehaviour
 {
-
     private Transform entryContainer;
     private Transform entryTemplate;
 
-    [SerializeField] private TextMeshProUGUI m_LevelName;
-    [SerializeField] private TextMeshProUGUI m_HighestScore;
+    [SerializeField]
+    private TextMeshProUGUI m_LevelName;
 
-
-
+    [SerializeField]
+    private TextMeshProUGUI m_HighestScore;
 
     //[SerializeField] Scene[] myScene = new Scene[0];
 
@@ -29,18 +27,20 @@ public class SceneLevelTable : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
-
-
         LevelCompletionInfo levelCompletionInfo = new LevelCompletionInfo();
-        levelCompletionInfo = levelCompletionInfo.Load(); ;
+        levelCompletionInfo = levelCompletionInfo.Load();
+        ;
 
-
-
-        InstantiateSceneLevelEntryTable(entryContainer, levelCompletionInfo.LevelCompletionEntryList);
+        InstantiateSceneLevelEntryTable(
+            entryContainer,
+            levelCompletionInfo.LevelCompletionEntryList
+        );
     }
 
-
-    private void InstantiateSceneLevelEntryTable(Transform container, List<LevelCompletionInfo.LevelCompletionEntry> levelCompletionEntryList)
+    private void InstantiateSceneLevelEntryTable(
+        Transform container,
+        List<LevelCompletionInfo.LevelCompletionEntry> levelCompletionEntryList
+    )
     {
         // float myMargin = 25f;
         // float templateHeight = 250f + myMargin;
@@ -54,35 +54,70 @@ public class SceneLevelTable : MonoBehaviour
             SceneHandler.Scene? myScene;
             switch (i)
             {
-                case 0: myScene = SceneHandler.Scene.Level01; break;
-                case 1: myScene = SceneHandler.Scene.Level02; break;
-                case 2: myScene = SceneHandler.Scene.Level03; break;
-                default: myScene = null; break;
+                case 0:
+                    myScene = SceneHandler.Scene.Level01;
+                    break;
+                case 1:
+                    myScene = SceneHandler.Scene.Level02;
+                    break;
+                case 2:
+                    myScene = SceneHandler.Scene.Level03;
+                    break;
+                default:
+                    myScene = null;
+                    break;
             }
-
 
             foreach (var o in levelCompletionEntryList)
             {
                 if (o.scene == myScene)
                 {
-                    entryTransform.gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => { SceneHandler.Load(o.scene); });
-                    entryTransform.gameObject.GetComponentInChildren<Button>().gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = o.scene.ToString();
-                    entryTransform.gameObject.GetComponentInChildren<Button>().gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = o.score.ToString();
+                    entryTransform
+                        .gameObject.GetComponentInChildren<Button>()
+                        .onClick.AddListener(() =>
+                        {
+                            SceneHandler.Load(o.scene);
+                        });
+                    entryTransform
+                        .gameObject.GetComponentInChildren<Button>()
+                        .gameObject.transform.GetChild(0)
+                        .GetComponent<TextMeshProUGUI>()
+                        .text = o.scene.ToString();
+                    entryTransform
+                        .gameObject.GetComponentInChildren<Button>()
+                        .gameObject.transform.GetChild(1)
+                        .GetComponent<TextMeshProUGUI>()
+                        .text = o.score.ToString();
                     break;
                 }
                 else
                 {
-                    entryTransform.gameObject.GetComponentInChildren<Button>().gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = myScene.ToString();
-                    entryTransform.gameObject.GetComponentInChildren<Button>().gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "0";
+                    entryTransform
+                        .gameObject.GetComponentInChildren<Button>()
+                        .gameObject.transform.GetChild(0)
+                        .GetComponent<TextMeshProUGUI>()
+                        .text = myScene.ToString();
+                    entryTransform
+                        .gameObject.GetComponentInChildren<Button>()
+                        .gameObject.transform.GetChild(1)
+                        .GetComponent<TextMeshProUGUI>()
+                        .text = "0";
                 }
-
             }
 
             if (myScene == null)
             {
                 //Debug.Log(i);
-                entryTransform.gameObject.GetComponentInChildren<Button>().gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Under Construction!";
-                entryTransform.gameObject.GetComponentInChildren<Button>().gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "0";
+                entryTransform
+                    .gameObject.GetComponentInChildren<Button>()
+                    .gameObject.transform.GetChild(0)
+                    .GetComponent<TextMeshProUGUI>()
+                    .text = "Under Construction!";
+                entryTransform
+                    .gameObject.GetComponentInChildren<Button>()
+                    .gameObject.transform.GetChild(1)
+                    .GetComponent<TextMeshProUGUI>()
+                    .text = "0";
             }
 
             // // if (i < levelCompletionEntryList.Count)

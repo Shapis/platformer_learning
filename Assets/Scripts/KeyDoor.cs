@@ -4,12 +4,19 @@ using UnityEngine;
 public class KeyDoor : MonoBehaviour, IKeyDoorEvents
 {
     [Header("Dependencies")]
-    [SerializeField] private Animator m_Animator;
-    [SerializeField] private GameObject m_GateKeyGameObject;
-    [SerializeField] private BoxCollider2D[] m_BoxColliders;
+    [SerializeField]
+    private Animator m_Animator;
+
+    [SerializeField]
+    private GameObject m_GateKeyGameObject;
+
+    [SerializeField]
+    private BoxCollider2D[] m_BoxColliders;
 
     [Header("Settings")]
-    [SerializeField] private ColorPalette.ColorName m_KeyType;
+    [SerializeField]
+    private ColorPalette.ColorName m_KeyType;
+
     public ColorPalette.ColorName GetKeyType()
     {
         return m_KeyType;
@@ -22,7 +29,9 @@ public class KeyDoor : MonoBehaviour, IKeyDoorEvents
 
     private void Start()
     {
-        m_GateKeyGameObject.GetComponent<SpriteRenderer>().color = ColorPalette.GetColor32(m_KeyType);
+        m_GateKeyGameObject.GetComponent<SpriteRenderer>().color = ColorPalette.GetColor32(
+            m_KeyType
+        );
     }
 
     public void OpenDoor()
@@ -57,7 +66,6 @@ public class KeyDoor : MonoBehaviour, IKeyDoorEvents
         OnDoorOpenPermanently(this, EventArgs.Empty);
     }
 
-
     private void EnableDoorColliders()
     {
         foreach (var o in m_BoxColliders)
@@ -65,6 +73,7 @@ public class KeyDoor : MonoBehaviour, IKeyDoorEvents
             o.enabled = true;
         }
     }
+
     private void DisableDoorColliders()
     {
         foreach (var o in m_BoxColliders)

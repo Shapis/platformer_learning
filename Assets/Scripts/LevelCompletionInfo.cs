@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 public class LevelCompletionInfo
 {
     public List<LevelCompletionEntry> LevelCompletionEntryList = new List<LevelCompletionEntry>();
@@ -6,12 +7,17 @@ public class LevelCompletionInfo
     public LevelCompletionInfo Load()
     {
         LevelCompletionInfo myTempLevelCompletionInfo;
-        myTempLevelCompletionInfo = SaveHandler<LevelCompletionInfo>.Load(SaveHandler<LevelCompletionInfo>.SaveFileName.levelCompletionInfo);
+        myTempLevelCompletionInfo = SaveHandler<LevelCompletionInfo>.Load(
+            SaveHandler<LevelCompletionInfo>.SaveFileName.levelCompletionInfo
+        );
 
         if (myTempLevelCompletionInfo == null)
         {
             myTempLevelCompletionInfo = new LevelCompletionInfo();
-            SaveHandler<LevelCompletionInfo>.Save(myTempLevelCompletionInfo, SaveHandler<LevelCompletionInfo>.SaveFileName.levelCompletionInfo);
+            SaveHandler<LevelCompletionInfo>.Save(
+                myTempLevelCompletionInfo,
+                SaveHandler<LevelCompletionInfo>.SaveFileName.levelCompletionInfo
+            );
         }
         return myTempLevelCompletionInfo;
     }
@@ -19,7 +25,12 @@ public class LevelCompletionInfo
     public void AddLevelCompletionInfo(SceneHandler.Scene scene, int score, float time)
     {
         bool sceneExists = false;
-        LevelCompletionEntry levelCompletionEntry = new LevelCompletionEntry { scene = scene, score = score, time = time };
+        LevelCompletionEntry levelCompletionEntry = new LevelCompletionEntry
+        {
+            scene = scene,
+            score = score,
+            time = time,
+        };
         LevelCompletionInfo levelCompletionInfo = new LevelCompletionInfo();
         levelCompletionInfo = levelCompletionInfo.Load();
         for (int i = 0; i < levelCompletionInfo.LevelCompletionEntryList.Count; i++)
@@ -30,9 +41,11 @@ public class LevelCompletionInfo
                 if (levelCompletionInfo.LevelCompletionEntryList[i].score < score)
                 {
                     levelCompletionInfo.LevelCompletionEntryList[i] = levelCompletionEntry;
-
                 }
-                else if (levelCompletionInfo.LevelCompletionEntryList[i].score == score && levelCompletionInfo.LevelCompletionEntryList[i].time > time)
+                else if (
+                    levelCompletionInfo.LevelCompletionEntryList[i].score == score
+                    && levelCompletionInfo.LevelCompletionEntryList[i].time > time
+                )
                 {
                     levelCompletionInfo.LevelCompletionEntryList[i] = levelCompletionEntry;
                 }
@@ -43,7 +56,10 @@ public class LevelCompletionInfo
         {
             levelCompletionInfo.LevelCompletionEntryList.Add(levelCompletionEntry);
         }
-        SaveHandler<LevelCompletionInfo>.Save(levelCompletionInfo, SaveHandler<LevelCompletionInfo>.SaveFileName.levelCompletionInfo);
+        SaveHandler<LevelCompletionInfo>.Save(
+            levelCompletionInfo,
+            SaveHandler<LevelCompletionInfo>.SaveFileName.levelCompletionInfo
+        );
     }
 
     [System.Serializable]

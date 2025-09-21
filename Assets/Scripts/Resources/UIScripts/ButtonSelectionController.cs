@@ -13,11 +13,14 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
 
     private bool keyDown;
 
-    [SerializeField] private Color m_UnselectedColor = Color.white;
+    [SerializeField]
+    private Color m_UnselectedColor = Color.white;
 
-    [SerializeField] private Color m_SelectedColor = Color.yellow;
+    [SerializeField]
+    private Color m_SelectedColor = Color.yellow;
 
-    [SerializeField] private float enlargeButtonTo = 1.5f;
+    [SerializeField]
+    private float enlargeButtonTo = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,61 +34,63 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
 
         maxButtonIndex = gameObject.transform.childCount - 1;
 
-        myButtonList[selectedButtonIndex].gameObject.GetComponent<RectTransform>().localScale = new Vector3(enlargeButtonTo, enlargeButtonTo, enlargeButtonTo);
-
+        myButtonList[selectedButtonIndex].gameObject.GetComponent<RectTransform>().localScale =
+            new Vector3(enlargeButtonTo, enlargeButtonTo, enlargeButtonTo);
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // Detects input to change the selection up and down.
         InputDetectionUpdater();
 
-        // If nothing gets selected as in, you click somewhere not in a button and it gets de-selected, automatically re-select the previously selected button. 
+        // If nothing gets selected as in, you click somewhere not in a button and it gets de-selected, automatically re-select the previously selected button.
         // This makes sure there's a button always selected.
         SelectCurrentIndex();
 
         EnlargeAndChangeChangeColorOfSelectedButton();
 
         PlaySoundWhenSelected();
-
     }
 
-    private void PlaySoundWhenSelected()
-    {
-    }
+    private void PlaySoundWhenSelected() { }
 
     private void EnlargeAndChangeChangeColorOfSelectedButton()
     {
         for (int i = 0; i < maxButtonIndex + 1; i++)
         {
-
             if (i != selectedButtonIndex)
             {
-                myButtonList[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().color = m_UnselectedColor;
+                myButtonList[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().color =
+                    m_UnselectedColor;
 
-                if ((myButtonList[i].gameObject.GetComponent<RectTransform>().localScale != new Vector3(1, 1, 1)))
+                if (
+                    (
+                        myButtonList[i].gameObject.GetComponent<RectTransform>().localScale
+                        != new Vector3(1, 1, 1)
+                    )
+                )
                 {
-
                     Vector3 myTempVector = new Vector3(0.01f, 0.01f, 0.01f);
-                    myButtonList[i].gameObject.GetComponent<RectTransform>().localScale -= myTempVector;
-
+                    myButtonList[i].gameObject.GetComponent<RectTransform>().localScale -=
+                        myTempVector;
                 }
-
             }
             else if (i == selectedButtonIndex)
             {
-                myButtonList[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().color = m_SelectedColor;
+                myButtonList[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().color =
+                    m_SelectedColor;
 
-                if (myButtonList[i].gameObject.GetComponent<RectTransform>().localScale != new Vector3(enlargeButtonTo, enlargeButtonTo, enlargeButtonTo))
+                if (
+                    myButtonList[i].gameObject.GetComponent<RectTransform>().localScale
+                    != new Vector3(enlargeButtonTo, enlargeButtonTo, enlargeButtonTo)
+                )
                 {
                     Vector3 myTempVector = new Vector3(0.01f, 0.01f, 0.01f);
-                    myButtonList[i].gameObject.GetComponent<RectTransform>().localScale += myTempVector;
+                    myButtonList[i].gameObject.GetComponent<RectTransform>().localScale +=
+                        myTempVector;
                 }
-
             }
-
         }
     }
 
@@ -93,7 +98,6 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
     {
         if (Input.GetAxis("Vertical") != 0)
         {
-
             if (!keyDown)
             {
                 if (Input.GetAxis("Vertical") < 0)
@@ -106,7 +110,6 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
                     {
                         selectedButtonIndex = 0;
                     }
-
                 }
                 else if (Input.GetAxis("Vertical") > 0)
                 {
@@ -118,9 +121,7 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
                     {
                         selectedButtonIndex = maxButtonIndex;
                     }
-
                 }
-
             }
 
             keyDown = true;
@@ -145,7 +146,6 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
     public void WhenSelected(Button b)
     {
         b.Select();
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -153,17 +153,14 @@ public class ButtonSelectionController : MonoBehaviour, IPointerEnterHandler, IP
         //Debug.Log(eventData);
         for (int i = 0; i < myButtonList.Count; i++)
         {
-
             if (myButtonList[i] == eventData.pointerEnter.GetComponent<Button>())
             {
                 selectedButtonIndex = i;
                 // Debug.Log(i);
             }
-
         }
 
         WhenSelected(myButtonList[selectedButtonIndex]);
-
     }
 
     public void OnPointerClick(PointerEventData eventData)

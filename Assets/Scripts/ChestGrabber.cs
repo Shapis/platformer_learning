@@ -30,7 +30,13 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
 
         foreach (var o in myChest.ChestLoot)
         {
-            instancedDrops.Add(m_LootHandler.DropLoot(o.gameObject.GetComponent<LootTable>().GetItemType(), myChest.transform.position, Quaternion.identity));
+            instancedDrops.Add(
+                m_LootHandler.DropLoot(
+                    o.gameObject.GetComponent<LootTable>().GetItemType(),
+                    myChest.transform.position,
+                    Quaternion.identity
+                )
+            );
         }
         MoveDrops(myChest.ChestLootInitialPositions, instancedDrops);
     }
@@ -49,33 +55,57 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
             }
             switch (instancedDrops[i].GetComponent<LootTable>().GetItemType())
             {
-                case LootTable.ItemType.BrownCoin: BrownCoin(i); break;
-                case LootTable.ItemType.PurpleCoin: PurpleCoin(i); break;
-                case LootTable.ItemType.Key: Key(i); break;
+                case LootTable.ItemType.BrownCoin:
+                    BrownCoin(i);
+                    break;
+                case LootTable.ItemType.PurpleCoin:
+                    PurpleCoin(i);
+                    break;
+                case LootTable.ItemType.Key:
+                    Key(i);
+                    break;
             }
         }
         void Key(int i)
         {
             StartCoroutine(MoveOverTime(instancedDrops[i], myInitialPositions[i], 1f));
             instancedDrops[i].transform.SetParent(m_KeysContainer.transform);
-            StartCoroutine(DelayHandler.DelayAction(1, () => instancedDrops[i].GetComponent<Key>().Tangible = true));
+            StartCoroutine(
+                DelayHandler.DelayAction(
+                    1,
+                    () => instancedDrops[i].GetComponent<Key>().Tangible = true
+                )
+            );
         }
 
         void PurpleCoin(int i)
         {
             StartCoroutine(MoveOverTime(instancedDrops[i], myInitialPositions[i], 1f));
             instancedDrops[i].transform.SetParent(m_CoinsContainer.transform);
-            StartCoroutine(DelayHandler.DelayAction(1, () => instancedDrops[i].GetComponent<Coin>().Tangible = true));
+            StartCoroutine(
+                DelayHandler.DelayAction(
+                    1,
+                    () => instancedDrops[i].GetComponent<Coin>().Tangible = true
+                )
+            );
         }
 
         // TODO: This.
-        IEnumerator MoveOverTime(GameObject gameObject, Vector3 targetPosition, float durationInSeconds)
+        IEnumerator MoveOverTime(
+            GameObject gameObject,
+            Vector3 targetPosition,
+            float durationInSeconds
+        )
         {
             float timer = 0f;
             Vector3 initialPosition = gameObject.transform.position;
             while (gameObject.transform.position != targetPosition)
             {
-                gameObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, timer);
+                gameObject.transform.position = Vector3.Lerp(
+                    initialPosition,
+                    targetPosition,
+                    timer
+                );
                 timer += Time.deltaTime / durationInSeconds;
                 yield return null;
             }
@@ -107,13 +137,21 @@ public class ChestGrabber : MonoBehaviour, IChestGrabberEvents
                 rb.AddForce(new Vector2(-(brownCoinCount) * 4, 60));
             }
             brownCoinCount++;
-            StartCoroutine(DelayHandler.DelayAction(1, () => instancedDrops[i].GetComponent<Coin>().Tangible = true));
+            StartCoroutine(
+                DelayHandler.DelayAction(
+                    1,
+                    () => instancedDrops[i].GetComponent<Coin>().Tangible = true
+                )
+            );
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.GetComponent<Chest>() != null && other.gameObject.GetComponent<Chest>().Tangible)
+        if (
+            other.gameObject.GetComponent<Chest>() != null
+            && other.gameObject.GetComponent<Chest>().Tangible
+        )
         {
             other.gameObject.GetComponent<Chest>().Tangible = false;
             OpenChest(other.gameObject.GetComponent<Chest>());

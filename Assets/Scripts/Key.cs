@@ -2,7 +2,8 @@
 
 public class Key : MonoBehaviour
 {
-    [SerializeField] private ColorPalette.ColorName keyType;
+    [SerializeField]
+    private ColorPalette.ColorName keyType;
     public bool Tangible { get; set; } = true;
 
     private void Start()

@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class LootTable : MonoBehaviour
 {
-
-    [SerializeField] private ItemType m_ItemType;
-
+    [SerializeField]
+    private ItemType m_ItemType;
 
     public enum ItemType
     {
@@ -14,7 +13,6 @@ public class LootTable : MonoBehaviour
         PurpleCoin,
         Key,
     }
-
 
     public ItemType GetItemType()
     {

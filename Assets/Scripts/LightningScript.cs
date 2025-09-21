@@ -3,12 +3,23 @@
 public class LightningScript : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private GameObject m_EffectsContainer;
-    [SerializeField] private int m_LightningLines = 5;
-    [SerializeField] private float m_LineWidth = 0.03f;
-    [SerializeField] private float updateTimer = 0.05f;
-    [SerializeField] private Color[] m_PossibleColors;
-    [SerializeField] private float randomnessFactor;
+    [SerializeField]
+    private GameObject m_EffectsContainer;
+
+    [SerializeField]
+    private int m_LightningLines = 5;
+
+    [SerializeField]
+    private float m_LineWidth = 0.03f;
+
+    [SerializeField]
+    private float updateTimer = 0.05f;
+
+    [SerializeField]
+    private Color[] m_PossibleColors;
+
+    [SerializeField]
+    private float randomnessFactor;
     private GameObject[] myLightningLinesArray;
     private Vector3[] myPoints;
     private Transform originTransform;
@@ -18,7 +29,6 @@ public class LightningScript : MonoBehaviour
     private bool hasBegun;
     private float timer;
     private float randomness;
-
 
     private void Start()
     {
@@ -41,11 +51,13 @@ public class LightningScript : MonoBehaviour
 
     private Vector2 TargetHitPoint()
     {
-        RaycastHit2D[] myRayInfoArray = Physics2D.RaycastAll(originTransform.position, (Vector2)targetTransform.position - (Vector2)originTransform.position);
+        RaycastHit2D[] myRayInfoArray = Physics2D.RaycastAll(
+            originTransform.position,
+            (Vector2)targetTransform.position - (Vector2)originTransform.position
+        );
 
         foreach (var o in myRayInfoArray)
         {
-
             if (o.transform.gameObject == targetTransform.gameObject)
             {
                 return o.point;
@@ -55,14 +67,23 @@ public class LightningScript : MonoBehaviour
         return Vector2.zero; // this should never happen
     }
 
-    public void Begin(Transform originTransform, Transform targetTransform, GameObject closestBlockingTransform)
+    public void Begin(
+        Transform originTransform,
+        Transform targetTransform,
+        GameObject closestBlockingTransform
+    )
     {
         this.originTransform = originTransform;
         this.targetTransform = targetTransform;
         this.ClosestBlockingObject = closestBlockingTransform;
         for (int i = 0; i < m_LightningLines; i++)
         {
-            myLightningLinesArray[i] = myGeometryHandler.DrawLine(m_EffectsContainer, myPoints, new Vector2(m_LineWidth, m_LineWidth), ReturnRandomColor());
+            myLightningLinesArray[i] = myGeometryHandler.DrawLine(
+                m_EffectsContainer,
+                myPoints,
+                new Vector2(m_LineWidth, m_LineWidth),
+                ReturnRandomColor()
+            );
         }
         hasBegun = true;
     }
@@ -86,9 +107,27 @@ public class LightningScript : MonoBehaviour
         timer = 0;
         myLineRenderer.SetPosition(0, origin.position);
         myLineRenderer.SetPosition(4, target);
-        myLineRenderer.SetPosition(2, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(0), myLineRenderer.GetPosition(4)));
-        myLineRenderer.SetPosition(1, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(0), myLineRenderer.GetPosition(2)));
-        myLineRenderer.SetPosition(3, myGeometryHandler.GetCenter(myLineRenderer.GetPosition(2), myLineRenderer.GetPosition(4)));
+        myLineRenderer.SetPosition(
+            2,
+            myGeometryHandler.GetCenter(
+                myLineRenderer.GetPosition(0),
+                myLineRenderer.GetPosition(4)
+            )
+        );
+        myLineRenderer.SetPosition(
+            1,
+            myGeometryHandler.GetCenter(
+                myLineRenderer.GetPosition(0),
+                myLineRenderer.GetPosition(2)
+            )
+        );
+        myLineRenderer.SetPosition(
+            3,
+            myGeometryHandler.GetCenter(
+                myLineRenderer.GetPosition(2),
+                myLineRenderer.GetPosition(4)
+            )
+        );
         float distance = Vector3.Distance(origin.position, target) / myLineRenderer.positionCount;
         randomness = randomnessFactor * distance / (myLineRenderer.positionCount * 2);
         SetRandomness(myLineRenderer);
@@ -123,7 +162,15 @@ public class LightningScript : MonoBehaviour
         {
             if (i != 0 && i != myLightningLinesArray.Length - 1)
             {
-                myLineRenderer.SetPosition(i, myLineRenderer.GetPosition(i) + new Vector3(UnityEngine.Random.Range(-randomness, randomness), UnityEngine.Random.Range(-randomness, randomness), UnityEngine.Random.Range(-randomness, randomness)));
+                myLineRenderer.SetPosition(
+                    i,
+                    myLineRenderer.GetPosition(i)
+                        + new Vector3(
+                            UnityEngine.Random.Range(-randomness, randomness),
+                            UnityEngine.Random.Range(-randomness, randomness),
+                            UnityEngine.Random.Range(-randomness, randomness)
+                        )
+                );
             }
         }
     }

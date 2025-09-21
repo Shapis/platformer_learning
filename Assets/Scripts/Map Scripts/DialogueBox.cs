@@ -7,10 +7,17 @@ using UnityEngine.UI;
 public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
 {
     [Header("Dependencies")]
-    [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private PopupMenuController m_PopUpMenuController;
-    [SerializeField] private InputHandler m_InputHandler;
-    [SerializeField] private Button m_DialogueBoxButton;
+    [SerializeField]
+    private TextMeshProUGUI dialogueText;
+
+    [SerializeField]
+    private PopupMenuController m_PopUpMenuController;
+
+    [SerializeField]
+    private InputHandler m_InputHandler;
+
+    [SerializeField]
+    private Button m_DialogueBoxButton;
     private DialogueHandler myDialogueHandler;
 
     public event EventHandler OnDialogueBoxStartsEvent;
@@ -19,10 +26,17 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
     public event EventHandler OnDialogueBoxTextCompletesEvent;
 
     [Header("Settings")]
-    [SerializeField] private bool m_CloseAfterDialogueOver = false;
-    [SerializeField] private bool m_ClickAnywhereForNext = true;
-    [SerializeField] private bool m_ClickOnDialogueBoxForNext = false;
-    [SerializeField] private bool m_CanGoToNextBeforeTextIsDone = false;
+    [SerializeField]
+    private bool m_CloseAfterDialogueOver = false;
+
+    [SerializeField]
+    private bool m_ClickAnywhereForNext = true;
+
+    [SerializeField]
+    private bool m_ClickOnDialogueBoxForNext = false;
+
+    [SerializeField]
+    private bool m_CanGoToNextBeforeTextIsDone = false;
     private bool CanGoToNextBeforeTextIsDoneSwitch = true;
     private bool dialogueBoxIsActive = false;
 
@@ -81,17 +95,29 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
         float textHeight = 0;
         switch (numberOfLines)
         {
-            case 0: textHeight = 11 + 2 * 22.5f; break;
-            case 1: textHeight = 11 + 2 * 22.5f; break;
-            default: textHeight = 11 + numberOfLines * 22.5f; break;
+            case 0:
+                textHeight = 11 + 2 * 22.5f;
+                break;
+            case 1:
+                textHeight = 11 + 2 * 22.5f;
+                break;
+            default:
+                textHeight = 11 + numberOfLines * 22.5f;
+                break;
         }
 
-        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(gameObject.GetComponent<RectTransform>().sizeDelta.x, textHeight);
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(
+            gameObject.GetComponent<RectTransform>().sizeDelta.x,
+            textHeight
+        );
     }
 
     private void NextSentence()
     {
-        if (m_CanGoToNextBeforeTextIsDone && dialogueBoxIsActive || CanGoToNextBeforeTextIsDoneSwitch && dialogueBoxIsActive)
+        if (
+            m_CanGoToNextBeforeTextIsDone && dialogueBoxIsActive
+            || CanGoToNextBeforeTextIsDoneSwitch && dialogueBoxIsActive
+        )
         {
             CanGoToNextBeforeTextIsDoneSwitch = false;
             if (myDialogueHandler.GetSentencesCount() > 0)
@@ -100,13 +126,14 @@ public class DialogueBox : MonoBehaviour, IDialogueBoxEvents
                 {
                     StopCoroutine(typeSentenceCoroutine);
                 }
-                typeSentenceCoroutine = StartCoroutine(TypeSentence(myDialogueHandler.NextSentence()));
+                typeSentenceCoroutine = StartCoroutine(
+                    TypeSentence(myDialogueHandler.NextSentence())
+                );
             }
             else if (myDialogueHandler.GetSentencesCount() == 0 && m_CloseAfterDialogueOver)
             {
                 EndDialogueBox();
             }
-
         }
     }
 

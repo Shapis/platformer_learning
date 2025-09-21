@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
+using UnityEngine;
 
 public static class GameHandler
 {
-
     public static event EventHandler OnGamePauseEvent;
     public static event EventHandler OnGameResumeEvent;
     public static bool isPaused = false;

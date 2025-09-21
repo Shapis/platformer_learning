@@ -7,6 +7,7 @@ using static AudioClipCatalog;
 public class PressurePlateAudioEmitter : BaseAudioEmitter, IPressurePlateEvents
 {
     private PressurePlate m_PressurePlate;
+
     public override void InitAwake()
     {
         m_PressurePlate = GetComponent<PressurePlate>();

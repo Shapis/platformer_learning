@@ -96,13 +96,16 @@ public class WaterGrabber : MonoBehaviour, IWaterEvents
     {
         while (gameObject.transform.rotation != Quaternion.Euler(0, 0, 0))
         {
-            gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, Quaternion.Euler(0, 0, 0), timeCount / 1.5f);
+            gameObject.transform.rotation = Quaternion.Slerp(
+                gameObject.transform.rotation,
+                Quaternion.Euler(0, 0, 0),
+                timeCount / 1.5f
+            );
             timeCount += Time.deltaTime;
             yield return null;
         }
         gameObject.GetComponent<Rigidbody2D>().freezeRotation = true;
     }
-
 
     public void OnWaterTriggerEnter2D(object sender, EventArgs e)
     {

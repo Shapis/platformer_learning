@@ -2,5 +2,6 @@
 
 public class Dialogue : MonoBehaviour
 {
-    [TextArea(2, 10)] public string[] sentences;
+    [TextArea(2, 10)]
+    public string[] sentences;
 }

@@ -4,9 +4,9 @@ using static AudioClipCatalog;
 
 public class SkullGateAudioEmitter : BaseAudioEmitter, IKeyDoorEvents
 {
-
     private KeyDoor m_KeyDoor;
     private float _relativeVolume = 1f;
+
     public override void InitAwake()
     {
         m_KeyDoor = GetComponent<KeyDoor>();

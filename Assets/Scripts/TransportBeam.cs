@@ -1,14 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
-using System;
 
 public class TransportBeam : BaseItem, IPressurePlateEvents, ITransportBeamEvents
 {
     [Header("Settings")]
-    [SerializeField] private ColorPalette.ColorName m_BeamColor;
-    [SerializeField] private float m_FullAnimationTimeInSeconds = 1f;
-    [SerializeField] private bool m_StartMinimized = true;
-    [SerializeField] private float m_FloatingStrength = 1f;
+    [SerializeField]
+    private ColorPalette.ColorName m_BeamColor;
+
+    [SerializeField]
+    private float m_FullAnimationTimeInSeconds = 1f;
+
+    [SerializeField]
+    private bool m_StartMinimized = true;
+
+    [SerializeField]
+    private float m_FloatingStrength = 1f;
 
     private bool m_DebugLoggingEnabled = false;
 
@@ -31,7 +38,9 @@ public class TransportBeam : BaseItem, IPressurePlateEvents, ITransportBeamEvent
     {
         //gameObject.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red); is a generic way of interacting with the color variable.
         // material.color will only be available if the name of the reference of the color is set to _Color in shadergraph
-        gameObject.GetComponent<SpriteRenderer>().material.color = ColorPalette.GetColor32(m_BeamColor);
+        gameObject.GetComponent<SpriteRenderer>().material.color = ColorPalette.GetColor32(
+            m_BeamColor
+        );
 
         // Subscribes to every pressure plate in the scene.
         foreach (var o in (PressurePlate[])GameObject.FindObjectsOfType(typeof(PressurePlate)))
@@ -42,7 +51,11 @@ public class TransportBeam : BaseItem, IPressurePlateEvents, ITransportBeamEvent
 
         totalLength = gameObject.transform.localScale;
 
-        minimizedLength = new Vector3(gameObject.transform.localScale.x, 0, gameObject.transform.localScale.z);
+        minimizedLength = new Vector3(
+            gameObject.transform.localScale.x,
+            0,
+            gameObject.transform.localScale.z
+        );
 
         initialPosition = gameObject.transform.position;
 
@@ -88,11 +101,19 @@ public class TransportBeam : BaseItem, IPressurePlateEvents, ITransportBeamEvent
         while (gameObject.transform.localScale != totalLength)
         {
             animationCompletionPercentage += 1 / 60f;
-            gameObject.transform.localScale = Vector3.Lerp(minimizedLength, totalLength, animationCompletionPercentage / m_FullAnimationTimeInSeconds);
+            gameObject.transform.localScale = Vector3.Lerp(
+                minimizedLength,
+                totalLength,
+                animationCompletionPercentage / m_FullAnimationTimeInSeconds
+            );
 
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x,
-            initialPosition.y + (gameObject.transform.localScale.y * 0.01f / 2f) - (totalLength.y * 0.01f / 2f),
-            gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(
+                gameObject.transform.position.x,
+                initialPosition.y
+                    + (gameObject.transform.localScale.y * 0.01f / 2f)
+                    - (totalLength.y * 0.01f / 2f),
+                gameObject.transform.position.z
+            );
 
             yield return null;
         }
@@ -101,7 +122,6 @@ public class TransportBeam : BaseItem, IPressurePlateEvents, ITransportBeamEvent
             animationCompletionPercentage = 1f;
         }
         OnTransportBeamExpandEnds(this, EventArgs.Empty);
-
     }
 
     // TODO: This doesn't pause when the game is paused even though WaitForSeconds() is supposed to respect the time scale.
@@ -112,11 +132,19 @@ public class TransportBeam : BaseItem, IPressurePlateEvents, ITransportBeamEvent
         while (gameObject.transform.localScale != minimizedLength)
         {
             animationCompletionPercentage -= 1 / 60f;
-            gameObject.transform.localScale = Vector3.Lerp(minimizedLength, totalLength, animationCompletionPercentage / m_FullAnimationTimeInSeconds);
+            gameObject.transform.localScale = Vector3.Lerp(
+                minimizedLength,
+                totalLength,
+                animationCompletionPercentage / m_FullAnimationTimeInSeconds
+            );
 
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x,
-            initialPosition.y + (gameObject.transform.localScale.y * 0.01f / 2f) - (totalLength.y * 0.01f / 2f),
-            gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(
+                gameObject.transform.position.x,
+                initialPosition.y
+                    + (gameObject.transform.localScale.y * 0.01f / 2f)
+                    - (totalLength.y * 0.01f / 2f),
+                gameObject.transform.position.z
+            );
 
             yield return null;
         }

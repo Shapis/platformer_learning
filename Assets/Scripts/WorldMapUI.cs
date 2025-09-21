@@ -2,15 +2,15 @@
 
 public class WorldMapUI : MonoBehaviour
 {
-    [SerializeField] private InputHandler m_InputHandler;
+    [SerializeField]
+    private InputHandler m_InputHandler;
+
     void Awake()
     {
-        m_InputHandler.OnCancelPressedEvent += (a, b) => SceneHandler.Load(SceneHandler.Scene.MainMenu);
+        m_InputHandler.OnCancelPressedEvent += (a, b) =>
+            SceneHandler.Load(SceneHandler.Scene.MainMenu);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+    void Update() { }
 }

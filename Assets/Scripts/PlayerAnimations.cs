@@ -2,13 +2,27 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEvents, IWaterEvents, IDraggableEvents
+public class PlayerAnimations
+    : MonoBehaviour,
+        ICharacterEvents,
+        IBloodySpikesEvents,
+        IWaterEvents,
+        IDraggableEvents
 {
-    [SerializeField] private Animator m_Animator;
-    [SerializeField] private CharacterController2D m_CharacterController2D;
-    [SerializeField] private BloodySpikesGrabber m_BloodySpikesGrabber;
-    [SerializeField] private WaterGrabber m_WaterGrabber;
-    [SerializeField] private PlayerItemDragger m_PlayerItemDragger;
+    [SerializeField]
+    private Animator m_Animator;
+
+    [SerializeField]
+    private CharacterController2D m_CharacterController2D;
+
+    [SerializeField]
+    private BloodySpikesGrabber m_BloodySpikesGrabber;
+
+    [SerializeField]
+    private WaterGrabber m_WaterGrabber;
+
+    [SerializeField]
+    private PlayerItemDragger m_PlayerItemDragger;
     private GameObject gameObjectCurrentlyBeingDragged = null;
     private Coroutine squeezeCoroutine;
     private float airbourneTimer;
@@ -49,7 +63,6 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
 
     public void OnFalling(object sender, EventArgs e)
     {
-
         m_Animator.SetBool("isAirbourne", true);
     }
 
@@ -82,7 +95,10 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         {
             timer += Time.deltaTime / seconds;
             transform.localScale = Vector3.Lerp(originalSize, newSize, timer);
-            transform.localPosition = new Vector2(transform.localPosition.x, -(1 - transform.localScale.y) / 2);
+            transform.localPosition = new Vector2(
+                transform.localPosition.x,
+                -(1 - transform.localScale.y) / 2
+            );
             yield return null;
         }
         timer = 0f;
@@ -90,7 +106,10 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         {
             timer += Time.deltaTime / seconds;
             transform.localScale = Vector3.Lerp(newSize, Vector3.one, timer);
-            transform.localPosition = new Vector2(transform.localPosition.x, -(1 - transform.localScale.y) / 2);
+            transform.localPosition = new Vector2(
+                transform.localPosition.x,
+                -(1 - transform.localScale.y) / 2
+            );
             yield return null;
         }
     }
@@ -110,7 +129,10 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         throw new NotImplementedException();
     }
 
-    public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnDraggingBegins(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         m_Animator.SetBool("isCasting", true);
     }
@@ -120,7 +142,10 @@ public class PlayerAnimations : MonoBehaviour, ICharacterEvents, IBloodySpikesEv
         m_Animator.SetBool("isCasting", false);
     }
 
-    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnLineOfSightBlocked(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         throw new NotImplementedException();
     }

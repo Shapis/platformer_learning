@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DustTrail : MonoBehaviour, ICharacterEvents
 {
-    [SerializeField] private CharacterController2D m_CharacterController2D;
-    [SerializeField] private ParticleSystem m_DustTrail;
+    [SerializeField]
+    private CharacterController2D m_CharacterController2D;
+
+    [SerializeField]
+    private ParticleSystem m_DustTrail;
     private bool isAirbourne = false;
     Coroutine landingDustCoroutine;
 
@@ -16,7 +19,6 @@ public class DustTrail : MonoBehaviour, ICharacterEvents
         m_CharacterController2D.OnLandingEvent += OnLanding;
         m_CharacterController2D.OnAirbourneEvent += OnAirbourne;
     }
-
 
     private void CreateDust()
     {
@@ -70,5 +72,4 @@ public class DustTrail : MonoBehaviour, ICharacterEvents
         yield return new WaitForSeconds(0.1f);
         CreateDust();
     }
-
 }

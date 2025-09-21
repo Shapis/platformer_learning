@@ -5,7 +5,9 @@ using UnityEngine;
 public class Corner : MonoBehaviour, INodeable
 {
     [Header("Corner Destination")]
-    [SerializeField] public GameObject m_Destination;
-    [SerializeField] public GameObject m_DestinationReverse;
+    [SerializeField]
+    public GameObject m_Destination;
 
+    [SerializeField]
+    public GameObject m_DestinationReverse;
 }

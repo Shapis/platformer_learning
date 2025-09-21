@@ -14,7 +14,6 @@ public class NodePathFinding
         _openList = new List<Node> { originNode };
         _closedList = new List<Node>();
 
-
         foreach (var item in allNodes)
         {
             item.g = int.MaxValue;
@@ -39,8 +38,8 @@ public class NodePathFinding
             _closedList.Add(currentNode);
             foreach (Node neighbourNode in GetNeighboursList(currentNode, allNodes))
             {
-                if (_closedList.Contains(neighbourNode)) continue;
-
+                if (_closedList.Contains(neighbourNode))
+                    continue;
 
                 if (!neighbourNode.IsAccessible)
                 {
@@ -48,7 +47,8 @@ public class NodePathFinding
                     continue;
                 }
 
-                float tentativeGCost = currentNode.g + CalculateDistanceCost(currentNode, neighbourNode);
+                float tentativeGCost =
+                    currentNode.g + CalculateDistanceCost(currentNode, neighbourNode);
 
                 if (tentativeGCost < neighbourNode.g)
                 {
@@ -70,7 +70,6 @@ public class NodePathFinding
     private List<Node> GetNeighboursList(Node currentNode, List<Node> AllNodes)
     {
         List<Node> neighbours = new List<Node>();
-
 
         if (currentNode.m_UpDestination != null)
         {
@@ -105,7 +104,6 @@ public class NodePathFinding
         path.Reverse();
         return path;
     }
-
 
     private float CalculateF(Node node)
     {

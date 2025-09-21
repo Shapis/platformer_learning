@@ -6,7 +6,6 @@ public class PlayerAudioEmitter : BaseAudioEmitter, ICharacterEvents
 {
     private CharacterController2D m_CharacterController2D;
 
-
     public override void InitAwake()
     {
         m_CharacterController2D = GetComponent<CharacterController2D>();
@@ -19,7 +18,6 @@ public class PlayerAudioEmitter : BaseAudioEmitter, ICharacterEvents
         // m_CharacterController2D.OnFallingEvent += OnFalling;
         m_CharacterController2D.OnJumpEvent += OnJump;
     }
-
 
     public void OnAirbourne(object sender, EventArgs e)
     {

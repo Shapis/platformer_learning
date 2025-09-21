@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class PressurePlate : BaseItem, IPressurePlateEvents
 {
-    [SerializeField] private Animator m_Animator;
-    [SerializeField] private ColorPalette.ColorName m_KeyType;
+    [SerializeField]
+    private Animator m_Animator;
+
+    [SerializeField]
+    private ColorPalette.ColorName m_KeyType;
     private KeyDoor[] myDoors;
     private int numberOfColliders = 0;
     public event EventHandler<ColorPalette.ColorName> OnPressurePlateActivatedEvent;
@@ -12,7 +15,7 @@ public class PressurePlate : BaseItem, IPressurePlateEvents
 
     void Awake()
     {
-        // On initialization add all GameObjects with the component KeyDoor to the myDoors array. 
+        // On initialization add all GameObjects with the component KeyDoor to the myDoors array.
         // This is done so we can check later which KeyDoors match the color of each pressure plate so they open when you step on the pressure plate
         myDoors = (KeyDoor[])GameObject.FindObjectsOfType(typeof(KeyDoor));
     }

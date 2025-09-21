@@ -2,7 +2,6 @@
 
 public class PressurePlateGrabber : MonoBehaviour
 {
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         PressurePlate pressurePlate = other.gameObject.GetComponent<PressurePlate>();

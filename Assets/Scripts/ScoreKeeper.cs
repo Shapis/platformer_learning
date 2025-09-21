@@ -2,11 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreKeeper : MonoBehaviour, IKeyGrabberEvents, IKeyDoorEvents, IScoreKeeperEvents, ICoinEvents, IPressurePlateEvents, IChestGrabberEvents
+public class ScoreKeeper
+    : MonoBehaviour,
+        IKeyGrabberEvents,
+        IKeyDoorEvents,
+        IScoreKeeperEvents,
+        ICoinEvents,
+        IPressurePlateEvents,
+        IChestGrabberEvents
 {
-    [SerializeField] private KeyGrabber m_KeyGrabber;
-    [SerializeField] private CoinGrabber m_CoinGrabber;
-    [SerializeField] private ChestGrabber m_ChestGrabber;
+    [SerializeField]
+    private KeyGrabber m_KeyGrabber;
+
+    [SerializeField]
+    private CoinGrabber m_CoinGrabber;
+
+    [SerializeField]
+    private ChestGrabber m_ChestGrabber;
 
     public EventHandler<int> OnScoreUpdateEvent;
 
@@ -66,7 +78,10 @@ public class ScoreKeeper : MonoBehaviour, IKeyGrabberEvents, IKeyDoorEvents, ISc
 
     private void UpdateScore()
     {
-        OnScoreUpdate(this, doorScore + keyListScore + coinListScore + pressurePlateScore + chestScore);
+        OnScoreUpdate(
+            this,
+            doorScore + keyListScore + coinListScore + pressurePlateScore + chestScore
+        );
     }
 
     public void OnScoreUpdate(object sender, int totalScore)
@@ -81,13 +96,20 @@ public class ScoreKeeper : MonoBehaviour, IKeyGrabberEvents, IKeyDoorEvents, ISc
         {
             switch (o)
             {
-                case ColorPalette.ColorName.Brown: coinListScore += 1; break;   // How many points a brown coin is worth
-                case ColorPalette.ColorName.Purple: coinListScore += 3; break;  // How many points a Purple coin is worth
-                default: Debug.Log("Error: Coin not assigned a color!"); break;
+                case ColorPalette.ColorName.Brown:
+                    coinListScore += 1;
+                    break; // How many points a brown coin is worth
+                case ColorPalette.ColorName.Purple:
+                    coinListScore += 3;
+                    break; // How many points a Purple coin is worth
+                default:
+                    Debug.Log("Error: Coin not assigned a color!");
+                    break;
             }
         }
         UpdateScore();
     }
+
     public void OnPressurePlateActivated(object sender, ColorPalette.ColorName pressurePlateColor)
     {
         pressurePlateScore += 3;

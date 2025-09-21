@@ -10,11 +10,9 @@ public abstract class BaseSettings : MonoBehaviour, IGameSettingsEvents
     {
         InitAwake(); // This exists so you can call awake from a child class that doesn't get destroyed on load.
         AddToAwake();
-
     }
 
     protected abstract void AddToAwake();
-
 
     protected void InitAwake()
     {
@@ -29,18 +27,21 @@ public abstract class BaseSettings : MonoBehaviour, IGameSettingsEvents
 
     protected abstract void AddToStart();
 
-
     protected void InitStart()
     {
         try
         {
-            gameSettingsInfo = SaveHandler<GameSettings.GameSettingsInfo>.Load(SaveHandler<GameSettings.GameSettingsInfo>.SaveFileName.gameSettingsInfo);
+            gameSettingsInfo = SaveHandler<GameSettings.GameSettingsInfo>.Load(
+                SaveHandler<GameSettings.GameSettingsInfo>.SaveFileName.gameSettingsInfo
+            );
             OnGameSettingsInitialized(this, gameSettingsInfo);
         }
         catch (Exception e)
         {
             Debug.Log(e);
-            Debug.Log("No game settings info file has been found, this should only ever happen in the first initialization, and only in the main menu scene");
+            Debug.Log(
+                "No game settings info file has been found, this should only ever happen in the first initialization, and only in the main menu scene"
+            );
         }
         if (m_GameSettings != null)
         {
@@ -49,8 +50,14 @@ public abstract class BaseSettings : MonoBehaviour, IGameSettingsEvents
     }
 
     // This method will be called once the first time the scene is initialized during the Start() method.
-    public abstract void OnGameSettingsInitialized(object sender, GameSettings.GameSettingsInfo gameSettingsInfo);
+    public abstract void OnGameSettingsInitialized(
+        object sender,
+        GameSettings.GameSettingsInfo gameSettingsInfo
+    );
 
     // This method will be called every time there's a change to the GameSettings
-    public abstract void OnGameSettingsChanged(object sender, GameSettings.GameSettingsInfo gameSettingsInfo);
+    public abstract void OnGameSettingsChanged(
+        object sender,
+        GameSettings.GameSettingsInfo gameSettingsInfo
+    );
 }

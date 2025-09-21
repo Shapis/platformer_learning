@@ -1,14 +1,20 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using System.Collections;
+using UnityEngine;
 
 public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
 {
     [Header("Dependencies")]
     private InputHandler m_InputHandler;
-    [SerializeField] private Transform joystickBackgroundCenter;
-    [SerializeField] private Transform joystickBackgroundOutline;
-    [SerializeField] private Transform joystickCenterBall;
+
+    [SerializeField]
+    private Transform joystickBackgroundCenter;
+
+    [SerializeField]
+    private Transform joystickBackgroundOutline;
+
+    [SerializeField]
+    private Transform joystickCenterBall;
     private bool touchStarted = false;
     private Vector2 mousePosition = new Vector2();
     private float m_SensitivityTreshold = Screen.height / 30f;
@@ -40,8 +46,8 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         m_InputHandler.OnMouseButtonLeftUnpressedEvent += OnMouseButtonLeftUnpressed;
         m_InputHandler.OnMouseHoverEvent += OnMouseHover;
 
-        // Doing this to make the joystick only detect the first touch, if this isn't enabled 
-        // if multitouch is enabled then you could hold the joystick and touch the screen elsewhere 
+        // Doing this to make the joystick only detect the first touch, if this isn't enabled
+        // if multitouch is enabled then you could hold the joystick and touch the screen elsewhere
         // and the joystick consider that secondary touch as a joystick moving touch
         Input.multiTouchEnabled = false;
         // }
@@ -64,7 +70,6 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         touchStarted = false;
         returnToCenterCoroutine = StartCoroutine("ReturnToCenter");
 
-
         if (direction.x == 1)
         {
             OnJoystickHorizontalRightUnpressed(this, EventArgs.Empty);
@@ -83,7 +88,6 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
             OnJoystickVerticalDownUnpressed(this, EventArgs.Empty);
         }
 
-
         direction.x = 0;
         direction.y = 0;
     }
@@ -93,7 +97,11 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         while (joystickCenterBall.position != joystickBackgroundCenter.position)
         {
             timer += 1 / 60f;
-            joystickCenterBall.position = Vector2.Lerp(joystickCenterBall.position, joystickBackgroundCenter.position, timer / 1f);
+            joystickCenterBall.position = Vector2.Lerp(
+                joystickCenterBall.position,
+                joystickBackgroundCenter.position,
+                timer / 1f
+            );
             yield return null;
         }
         timer = 0f;
@@ -106,7 +114,6 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
             StopCoroutine(returnToCenterCoroutine);
         }
 
-
         if (IsTheTouchInsideJoystick(e))
         {
             touchStarted = true;
@@ -115,7 +122,8 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
 
     public bool IsTheTouchInsideJoystick(Vector2 e)
     {
-        return (e - (Vector2)joystickBackgroundCenter.position).magnitude < ((transform.localScale.y / 2f) * (Screen.height / 23f));
+        return (e - (Vector2)joystickBackgroundCenter.position).magnitude
+            < ((transform.localScale.y / 2f) * (Screen.height / 23f));
     }
 
     // I'm not 100% positive if this should be Update() or FixedUpdate(), I'm doing update because this is dealing with inputs and rendering, not physics directly.
@@ -127,7 +135,9 @@ public class MobileJoystick : MonoBehaviour, IMobileJoystickEvents
         if (touchStarted)
         {
             Vector2 offset = mousePosition - (Vector2)joystickBackgroundCenter.position;
-            joystickCenterBall.position = (Vector2)joystickBackgroundCenter.position + Vector2.ClampMagnitude(offset, joystickHeight);
+            joystickCenterBall.position =
+                (Vector2)joystickBackgroundCenter.position
+                + Vector2.ClampMagnitude(offset, joystickHeight);
 
             // Horizontal movement
             if (offset.x >= m_SensitivityTreshold && direction.x != 1)

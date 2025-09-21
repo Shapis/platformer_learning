@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour, IMobileJoystickEvents
 {
-    [SerializeField] private bool m_DebugLoggingEnabled = false;
+    [SerializeField]
+    private bool m_DebugLoggingEnabled = false;
 
     #region Cancel Events
     public event EventHandler OnCancelPressedEvent; // Escape on PC, Back button on Android.
@@ -55,16 +56,22 @@ public class InputHandler : MonoBehaviour, IMobileJoystickEvents
     {
         if (m_MobileJoystick != null)
         {
-            m_MobileJoystick.OnJoystickHorizontalLeftPressedEvent += OnJoystickHorizontalLeftPressed;
-            m_MobileJoystick.OnJoystickHorizontalLeftUnpressedEvent += OnJoystickHorizontalLeftUnpressed;
-            m_MobileJoystick.OnJoystickHorizontalRightPressedEvent += OnJoystickHorizontalRightPressed;
-            m_MobileJoystick.OnJoystickHorizontalRightUnpressedEvent += OnJoystickHorizontalRightUnpressed;
+            m_MobileJoystick.OnJoystickHorizontalLeftPressedEvent +=
+                OnJoystickHorizontalLeftPressed;
+            m_MobileJoystick.OnJoystickHorizontalLeftUnpressedEvent +=
+                OnJoystickHorizontalLeftUnpressed;
+            m_MobileJoystick.OnJoystickHorizontalRightPressedEvent +=
+                OnJoystickHorizontalRightPressed;
+            m_MobileJoystick.OnJoystickHorizontalRightUnpressedEvent +=
+                OnJoystickHorizontalRightUnpressed;
             m_MobileJoystick.OnJoystickVerticalDownPressedEvent += OnJoystickVerticalDownPressed;
-            m_MobileJoystick.OnJoystickVerticalDownUnpressedEvent += OnJoystickVerticalDownUnpressed;
+            m_MobileJoystick.OnJoystickVerticalDownUnpressedEvent +=
+                OnJoystickVerticalDownUnpressed;
             m_MobileJoystick.OnJoystickVerticalUpPressedEvent += OnJoystickVerticalUpPressed;
             m_MobileJoystick.OnJoystickVerticalUpUnpressedEvent += OnJoystickVerticalUpUnpressed;
         }
     }
+
     void Update()
     {
         #region Cancel events
@@ -163,7 +170,6 @@ public class InputHandler : MonoBehaviour, IMobileJoystickEvents
         }
         if (Input.GetButtonUp("Vertical"))
         {
-
             if ((Input.GetAxisRaw("Vertical") >= 0 && verticalDirection < 0))
             {
                 OnVerticalDownUnpressed(this, EventArgs.Empty);
@@ -233,6 +239,7 @@ public class InputHandler : MonoBehaviour, IMobileJoystickEvents
     {
         OnCancelPressedEvent?.Invoke(this, EventArgs.Empty);
     }
+
     private void OnCancelUnpressed()
     {
         OnCancelUnpressedEvent?.Invoke(this, EventArgs.Empty);
@@ -244,14 +251,17 @@ public class InputHandler : MonoBehaviour, IMobileJoystickEvents
     {
         OnVerticalUpPressedEvent?.Invoke(sender, EventArgs.Empty);
     }
+
     private void OnVerticalUpUnpressed(object sender, EventArgs e)
     {
         OnVerticalUpUnpressedEvent?.Invoke(sender, EventArgs.Empty);
     }
+
     private void OnVerticalDownPressed(object sender, EventArgs e)
     {
         OnVerticalDownPressedEvent?.Invoke(sender, EventArgs.Empty);
     }
+
     private void OnVerticalDownUnpressed(object sender, EventArgs e)
     {
         OnVerticalDownUnpressedEvent?.Invoke(sender, EventArgs.Empty);
@@ -263,14 +273,17 @@ public class InputHandler : MonoBehaviour, IMobileJoystickEvents
     {
         OnHorizontalLeftPressedEvent?.Invoke(sender, EventArgs.Empty);
     }
+
     private void OnHorizontalLeftUnpressed(object sender, EventArgs e)
     {
         OnHorizontalLeftUnpressedEvent?.Invoke(sender, EventArgs.Empty);
     }
+
     private void OnHorizontalRightPressed(object sender, EventArgs e)
     {
         OnHorizontalRightPressedEvent?.Invoke(sender, EventArgs.Empty);
     }
+
     private void OnHorizontalRightUnpressed(object sender, EventArgs e)
     {
         OnHorizontalRightUnpressedEvent?.Invoke(sender, EventArgs.Empty);
@@ -282,6 +295,7 @@ public class InputHandler : MonoBehaviour, IMobileJoystickEvents
     {
         OnJumpPressedEvent?.Invoke(this, EventArgs.Empty);
     }
+
     private void OnJumpUnpressed()
     {
         OnJumpUnpressedEvent?.Invoke(this, EventArgs.Empty);
@@ -299,6 +313,7 @@ public class InputHandler : MonoBehaviour, IMobileJoystickEvents
     {
         OnMouseButtonLeftPressedEvent?.Invoke(this, myMousePosition);
     }
+
     private void OnMouseButtonLeftUnpressed(Vector2 myMousePosition)
     {
         OnMouseButtonLeftUnpressedEvent?.Invoke(this, myMousePosition);

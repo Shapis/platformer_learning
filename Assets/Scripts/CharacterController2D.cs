@@ -5,17 +5,35 @@ using UnityEngine;
 public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggableEvents
 {
     [Header("Dependencies")]
-    [SerializeField] private Rigidbody2D m_Rigidbody2D;
-    [SerializeField] private LayerMask m_WhatIsGround; // A mask determining what is ground to the character A position marking where to check for ceilings
-    [SerializeField] private PlayerItemDragger m_PlayerItemDragger; // Dependency so we know when to flip the character to face the direction of the item that is being dragged.
+    [SerializeField]
+    private Rigidbody2D m_Rigidbody2D;
+
+    [SerializeField]
+    private LayerMask m_WhatIsGround; // A mask determining what is ground to the character A position marking where to check for ceilings
+
+    [SerializeField]
+    private PlayerItemDragger m_PlayerItemDragger; // Dependency so we know when to flip the character to face the direction of the item that is being dragged.
 
     [Header("Settings")]
-    [SerializeField] private float movementSpeed = 5f;
-    [SerializeField] private bool m_AirControl = true; // Whether or not a player can steer while jumping;
-    [SerializeField] private float m_JumpIntensity = 400f; // Amount of force/velocity added when the unit jumps.
-    [SerializeField] private bool m_UseVelocityForJumping = true; // Change the unit's y axis velocity instead of adding y force when jumping.
-    [SerializeField][Range(0.0f, 5f)] private float m_CoyoteTime = 0.2f; // Duration of coyote time.
-    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
+    [SerializeField]
+    private float movementSpeed = 5f;
+
+    [SerializeField]
+    private bool m_AirControl = true; // Whether or not a player can steer while jumping;
+
+    [SerializeField]
+    private float m_JumpIntensity = 400f; // Amount of force/velocity added when the unit jumps.
+
+    [SerializeField]
+    private bool m_UseVelocityForJumping = true; // Change the unit's y axis velocity instead of adding y force when jumping.
+
+    [SerializeField]
+    [Range(0.0f, 5f)]
+    private float m_CoyoteTime = 0.2f; // Duration of coyote time.
+
+    [Range(0, .3f)]
+    [SerializeField]
+    private float m_MovementSmoothing = .05f; // How much to smooth out the movement
 
     private const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -35,7 +53,6 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
     public event EventHandler OnJumpEvent;
     private bool isFacingRight = true;
     GameObject gameObjectCurrentlyBeingDragged = null;
-
 
     private void Start()
     {
@@ -65,14 +82,17 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
 
         CoyoteTime();
         FaceTheObjectBeingDragged(); // ? I'm not sure if this should be in FixedUpdate() or in Update() but it seems to be workign fine in here ?
-
     }
 
     private void FaceTheObjectBeingDragged()
     {
         if (gameObjectCurrentlyBeingDragged != null)
         {
-            if (gameObject.transform.position.x - gameObjectCurrentlyBeingDragged.transform.position.x > 0)
+            if (
+                gameObject.transform.position.x
+                    - gameObjectCurrentlyBeingDragged.transform.position.x
+                > 0
+            )
             {
                 Flip(-1); // If the player is to the left of the object being dragged, make the player face left if he isn't currently facing left.
             }
@@ -94,10 +114,29 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
     private bool GroundedCheck()
     {
         float rayCastLength = 0.54f;
-        Debug.DrawRay(transform.position + Vector3.left * 0.25f, Vector3.down * rayCastLength, Color.red);
-        Debug.DrawRay(transform.position + Vector3.right * 0.15f, Vector3.down * rayCastLength, Color.red);
+        Debug.DrawRay(
+            transform.position + Vector3.left * 0.25f,
+            Vector3.down * rayCastLength,
+            Color.red
+        );
+        Debug.DrawRay(
+            transform.position + Vector3.right * 0.15f,
+            Vector3.down * rayCastLength,
+            Color.red
+        );
         //RaycastHit2D abc = Physics2D.Raycast(transform.position + Vector3.left * 0.25f, Vector2.down, rayCastLength, m_WhatIsGround);
-        return Physics2D.Raycast(transform.position + Vector3.left * 0.25f, Vector2.down, rayCastLength, m_WhatIsGround) || Physics2D.Raycast(transform.position + Vector3.right * 0.15f, Vector2.down, rayCastLength, m_WhatIsGround);
+        return Physics2D.Raycast(
+                transform.position + Vector3.left * 0.25f,
+                Vector2.down,
+                rayCastLength,
+                m_WhatIsGround
+            )
+            || Physics2D.Raycast(
+                transform.position + Vector3.right * 0.15f,
+                Vector2.down,
+                rayCastLength,
+                m_WhatIsGround
+            );
     }
 
     private bool LandingCheck(bool previouslyGrounded)
@@ -150,14 +189,25 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
         if (isGrounded || m_AirControl)
         {
             // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(movementDirection * movementSpeed, m_Rigidbody2D.linearVelocity.y);
+            Vector3 targetVelocity = new Vector2(
+                movementDirection * movementSpeed,
+                m_Rigidbody2D.linearVelocity.y
+            );
             // And then smoothing it out and applying it to the character
-            m_Rigidbody2D.linearVelocity = Vector3.SmoothDamp(m_Rigidbody2D.linearVelocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+            m_Rigidbody2D.linearVelocity = Vector3.SmoothDamp(
+                m_Rigidbody2D.linearVelocity,
+                targetVelocity,
+                ref m_Velocity,
+                m_MovementSmoothing
+            );
 
             MovementDirectionChangesChecker(movementDirection);
         }
         // If the player should jump...
-        if ((isGrounded && jumpKeyPressed && !previouslyJumpKeyPressed) || (myCoyoteJump && jumpKeyPressed && !previouslyJumpKeyPressed))
+        if (
+            (isGrounded && jumpKeyPressed && !previouslyJumpKeyPressed)
+            || (myCoyoteJump && jumpKeyPressed && !previouslyJumpKeyPressed)
+        )
         {
             // If unit is falling and outside of coyote time then don't jump.
             if (isFalling && !myCoyoteJump)
@@ -173,7 +223,10 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
             previouslyJumpKeyPressed = false;
             if (m_Rigidbody2D.linearVelocity.y > 0)
             {
-                m_Rigidbody2D.linearVelocity = new Vector2(m_Rigidbody2D.linearVelocity.x, m_Rigidbody2D.linearVelocity.y * 0.9f);
+                m_Rigidbody2D.linearVelocity = new Vector2(
+                    m_Rigidbody2D.linearVelocity.x,
+                    m_Rigidbody2D.linearVelocity.y * 0.9f
+                );
 
                 StartCoroutine("SlowDown");
             }
@@ -185,7 +238,10 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
         yield return new WaitForFixedUpdate();
         while (m_Rigidbody2D.linearVelocity.y > 0)
         {
-            m_Rigidbody2D.linearVelocity = new Vector2(m_Rigidbody2D.linearVelocity.x, m_Rigidbody2D.linearVelocity.y * 0.95f);
+            m_Rigidbody2D.linearVelocity = new Vector2(
+                m_Rigidbody2D.linearVelocity.x,
+                m_Rigidbody2D.linearVelocity.y * 0.95f
+            );
             yield return null;
         }
     }
@@ -244,7 +300,11 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
 
         if (m_UseVelocityForJumping)
         {
-            m_Rigidbody2D.linearVelocity = new Vector3(m_Rigidbody2D.linearVelocity.x, m_JumpIntensity / 50, 0);
+            m_Rigidbody2D.linearVelocity = new Vector3(
+                m_Rigidbody2D.linearVelocity.x,
+                m_JumpIntensity / 50,
+                0
+            );
         }
         else
         {
@@ -256,7 +316,10 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
         myCoyoteJump = false;
     }
 
-    public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnDraggingBegins(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         gameObjectCurrentlyBeingDragged = draggingEventArgs.TargetGameObject;
     }
@@ -266,7 +329,10 @@ public class CharacterController2D : MonoBehaviour, ICharacterEvents, IDraggable
         gameObjectCurrentlyBeingDragged = null;
     }
 
-    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnLineOfSightBlocked(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         throw new NotImplementedException();
     }

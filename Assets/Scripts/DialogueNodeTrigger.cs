@@ -2,21 +2,28 @@
 
 public class DialogueNodeTrigger : MonoBehaviour
 {
-    [SerializeField] private PlayerNodeMovement m_PlayerNodeMovement;
-    [SerializeField] private DialogueBox m_DialogueBox;
+    [SerializeField]
+    private PlayerNodeMovement m_PlayerNodeMovement;
+
+    [SerializeField]
+    private DialogueBox m_DialogueBox;
+
     private void Awake()
     {
         m_PlayerNodeMovement = GameObject.Find("Player").GetComponent<PlayerNodeMovement>();
         m_DialogueBox = GameObject.Find("Panel_DialogueBox").GetComponent<DialogueBox>();
-
     }
+
     private void Start()
     {
         m_PlayerNodeMovement.OnDestinationNodeReachedEvent += OnDestinationNodeReachedTrigger;
         m_PlayerNodeMovement.OnDestinationNodeDepartedEvent += OnDestinationNodeDepartedTrigger;
         if (m_PlayerNodeMovement.GetCurrentNode() == this.gameObject.GetComponent<Node>())
         {
-            m_DialogueBox.StartDialogueBox(this, m_PlayerNodeMovement.GetCurrentNode().gameObject.GetComponent<Dialogue>());
+            m_DialogueBox.StartDialogueBox(
+                this,
+                m_PlayerNodeMovement.GetCurrentNode().gameObject.GetComponent<Dialogue>()
+            );
         }
     }
 

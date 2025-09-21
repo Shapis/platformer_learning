@@ -9,10 +9,8 @@ using static AudioClipCatalog;
 public class MenuAudioEmitter : BaseAudioEmitter, IMenuEvents, ISceneHandlerEvents
 {
     private List<PopupMenuController> testControler = new List<PopupMenuController>();
-    public override void InitAwake()
-    {
 
-    }
+    public override void InitAwake() { }
 
     private void OnCancelPressed(object sender, EventArgs e)
     {
@@ -48,7 +46,12 @@ public class MenuAudioEmitter : BaseAudioEmitter, IMenuEvents, ISceneHandlerEven
             EventTrigger trigger = item.gameObject.AddComponent<EventTrigger>();
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerUp;
-            entry.callback.AddListener((data) => { OnPointerUpDelegate((PointerEventData)data); });
+            entry.callback.AddListener(
+                (data) =>
+                {
+                    OnPointerUpDelegate((PointerEventData)data);
+                }
+            );
             trigger.triggers.Add(entry);
         }
     }
@@ -62,17 +65,19 @@ public class MenuAudioEmitter : BaseAudioEmitter, IMenuEvents, ISceneHandlerEven
     {
         PlaySfxPermanent(SfxName.MenuClicked, relativeVolume: 1f);
     }
+
     public void OnMenuOpen(object sender, EventArgs e)
     {
         PlaySfxPermanent(SfxName.MenuClicked, relativeVolume: 1f);
     }
+
     public void OnMenuClose(object sender, EventArgs e)
     {
         PlaySfxPermanent(SfxName.MenuClicked, relativeVolume: 1f);
     }
+
     public void OnMenuHover(object sender, EventArgs e)
     {
         throw new NotImplementedException();
     }
-
 }

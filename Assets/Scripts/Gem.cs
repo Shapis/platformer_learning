@@ -1,5 +1,3 @@
 ﻿using UnityEngine;
 
-public class Gem : BaseItem
-{
-}
+public class Gem : BaseItem { }

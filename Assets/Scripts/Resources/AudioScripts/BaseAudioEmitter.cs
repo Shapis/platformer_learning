@@ -22,7 +22,6 @@ public abstract class BaseAudioEmitter : MonoBehaviour, IGameHandlerEvents
         GameHandler.OnGamePauseEvent += OnGamePause;
         GameHandler.OnGameResumeEvent += OnGameResume;
         InitAwake();
-
     }
 
     // This runs once when the game first reaches the main menu screen.
@@ -34,13 +33,17 @@ public abstract class BaseAudioEmitter : MonoBehaviour, IGameHandlerEvents
     public abstract void InitAwake();
     public abstract void InitStart();
 
-
     // Start(); On the start method, you should subscribe in the child class to the events that you want to listen to.
 
     // You should inherit on the child class to Event Interfaces you want to listen to and implement PlaySfx on them with the specific SfxName you want to play.
 
-
-    public virtual void PlaySfx(AudioClipCatalog.SfxName sfxName, float relativeVolume = 1f, bool loop = false, float pitch = 1f, float maxDistance = 5f)
+    public virtual void PlaySfx(
+        AudioClipCatalog.SfxName sfxName,
+        float relativeVolume = 1f,
+        bool loop = false,
+        float pitch = 1f,
+        float maxDistance = 5f
+    )
     {
         m_AudioSource.clip = m_AudioClipCatalog.GetSfxClip(sfxName);
         m_AudioSource.loop = loop;
@@ -49,8 +52,9 @@ public abstract class BaseAudioEmitter : MonoBehaviour, IGameHandlerEvents
         m_AudioSource.pitch = pitch;
         m_AudioSource.volume = relativeVolume * m_AudioHandlerSettings.CurrentSfxVolume;
         m_AudioSource.spatialBlend = 1f;
-        m_AudioSource.minDistance =
-        Math.Abs(FindObjectOfType<AudioListener>().transform.position.z);
+        m_AudioSource.minDistance = Math.Abs(
+            FindObjectOfType<AudioListener>().transform.position.z
+        );
         m_AudioSource.maxDistance = m_AudioSource.minDistance + maxDistance;
         m_AudioSource.rolloffMode = AudioRolloffMode.Linear;
         if (m_AudioSource.isPlaying == true)
@@ -60,7 +64,13 @@ public abstract class BaseAudioEmitter : MonoBehaviour, IGameHandlerEvents
         m_AudioSource.Play(); // The way I have this implemented, only one sound can be played at a time from each AudioEmitter, this is intentional, ex. I don't want the same sound of jumping and landing playing at the same time.
     }
 
-    public virtual void PlaySfxPermanent(AudioClipCatalog.SfxName sfxName, float relativeVolume = 1f, bool loop = false, float pitch = 1f, float maxDistance = 5f)
+    public virtual void PlaySfxPermanent(
+        AudioClipCatalog.SfxName sfxName,
+        float relativeVolume = 1f,
+        bool loop = false,
+        float pitch = 1f,
+        float maxDistance = 5f
+    )
     {
         m_PermanentAudioSource.clip = m_AudioClipCatalog.GetSfxClip(sfxName);
         m_PermanentAudioSource.loop = loop;
@@ -69,8 +79,9 @@ public abstract class BaseAudioEmitter : MonoBehaviour, IGameHandlerEvents
         m_PermanentAudioSource.pitch = pitch;
         m_PermanentAudioSource.volume = relativeVolume * m_AudioHandlerSettings.CurrentSfxVolume;
         m_PermanentAudioSource.spatialBlend = 1f;
-        m_PermanentAudioSource.minDistance =
-        Math.Abs(FindObjectOfType<AudioListener>().transform.position.z);
+        m_PermanentAudioSource.minDistance = Math.Abs(
+            FindObjectOfType<AudioListener>().transform.position.z
+        );
         m_PermanentAudioSource.maxDistance = m_PermanentAudioSource.minDistance + maxDistance;
         m_PermanentAudioSource.rolloffMode = AudioRolloffMode.Linear;
         if (m_PermanentAudioSource.isPlaying == true)
@@ -84,7 +95,6 @@ public abstract class BaseAudioEmitter : MonoBehaviour, IGameHandlerEvents
     {
         m_AudioSource.Stop();
     }
-
 
     // The null checks in these methods are because the AudioHandler is not always present in the scene. The GameHandler persists through scenes. So if you pause the game, the audiosource might be destroyed in a change of scenes, but the gamehandler will keep listening to it.
     public void OnGamePause(object sender, EventArgs e)

@@ -4,7 +4,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private CharacterController2D m_CharacterController2D;
+    [SerializeField]
+    private CharacterController2D m_CharacterController2D;
     private InputHandler m_InputHandler;
 
     [Header("Settings")]
@@ -13,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        m_InputHandler = FindObjectOfType<InputHandler>();
+        m_InputHandler = FindFirstObjectByType<InputHandler>();
     }
 
     private void Start()

@@ -1,21 +1,30 @@
-﻿using UnityEngine.UI;
-using UnityEngine;
+﻿using System.Collections;
 using TMPro;
-using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class NodeMenuBottom : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private Image m_BackgroundCenter;
-    [SerializeField] private Image m_BackgroundOutline;
-    [SerializeField] private TextMeshProUGUI m_PlayText;
+    [SerializeField]
+    private Image m_BackgroundCenter;
+
+    [SerializeField]
+    private Image m_BackgroundOutline;
+
+    [SerializeField]
+    private TextMeshProUGUI m_PlayText;
 
     [Header("Settings")]
-    [SerializeField] private Color[] m_PlayTextColors;
-    [SerializeField] private Color[] m_PlayBackgroundCenterColors;
-    [SerializeField] private Color[] m_PlayBackgroundOutlineColors;
-    private int myCurrentColor = 0;
+    [SerializeField]
+    private Color[] m_PlayTextColors;
 
+    [SerializeField]
+    private Color[] m_PlayBackgroundCenterColors;
+
+    [SerializeField]
+    private Color[] m_PlayBackgroundOutlineColors;
+    private int myCurrentColor = 0;
 
     // Start is called before the first frame update
     void Start()

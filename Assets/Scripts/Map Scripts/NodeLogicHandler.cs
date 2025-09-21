@@ -8,18 +8,24 @@ using UnityEngine.UI;
 public class NodeLogicHandler : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private PlayerNodeMovement m_PlayerNodeMovement;
+    [SerializeField]
+    private PlayerNodeMovement m_PlayerNodeMovement;
 
-    [SerializeField] private PopupMenuController m_NodeMenu;
+    [SerializeField]
+    private PopupMenuController m_NodeMenu;
 
     [Header("Node Menu Stuff")]
-    [SerializeField] private TextMeshProUGUI m_LevelNameText;
+    [SerializeField]
+    private TextMeshProUGUI m_LevelNameText;
 
-    [SerializeField] private TextMeshProUGUI m_BestScoreText;
+    [SerializeField]
+    private TextMeshProUGUI m_BestScoreText;
 
-    [SerializeField] private TextMeshProUGUI m_BestTimeText;
+    [SerializeField]
+    private TextMeshProUGUI m_BestTimeText;
 
-    [SerializeField] private Button m_PlayButton;
+    [SerializeField]
+    private Button m_PlayButton;
 
     Node[] nodeArray;
 
@@ -63,18 +69,28 @@ public class NodeLogicHandler : MonoBehaviour
     private void PopulateNodeMenu()
     {
         m_LevelNameText.text = m_PlayerNodeMovement.GetCurrentNode().GetNodeName();
-        if ((m_PlayerNodeMovement.GetCurrentNode().BestScore != null) && (m_PlayerNodeMovement.GetCurrentNode().BestTime != null))
+        if (
+            (m_PlayerNodeMovement.GetCurrentNode().BestScore != null)
+            && (m_PlayerNodeMovement.GetCurrentNode().BestTime != null)
+        )
         {
-            m_BestScoreText.text = "SCORE: " + m_PlayerNodeMovement.GetCurrentNode().BestScore.ToString();
-            m_BestTimeText.text = "TIME: " + new TimeFormatHandler().FormatTime((float)m_PlayerNodeMovement.GetCurrentNode().BestTime);
+            m_BestScoreText.text =
+                "SCORE: " + m_PlayerNodeMovement.GetCurrentNode().BestScore.ToString();
+            m_BestTimeText.text =
+                "TIME: "
+                + new TimeFormatHandler().FormatTime(
+                    (float)m_PlayerNodeMovement.GetCurrentNode().BestTime
+                );
         }
         else
         {
             m_BestScoreText.text = "SCORE: N/A";
             m_BestTimeText.text = "TIME: N/A";
         }
-        m_PlayButton.onClick.AddListener(() => { SceneHandler.Load(m_PlayerNodeMovement.GetCurrentNode().GetScene()); });
-
+        m_PlayButton.onClick.AddListener(() =>
+        {
+            SceneHandler.Load(m_PlayerNodeMovement.GetCurrentNode().GetScene());
+        });
     }
 
     private void LoadPlayerCurrentNode()
@@ -82,7 +98,9 @@ public class NodeLogicHandler : MonoBehaviour
         CurrentNodeInfo myNodeInfo = new CurrentNodeInfo();
         try
         {
-            myNodeInfo = SaveHandler<CurrentNodeInfo>.Load(SaveHandler<CurrentNodeInfo>.SaveFileName.currentPlayerNode);
+            myNodeInfo = SaveHandler<CurrentNodeInfo>.Load(
+                SaveHandler<CurrentNodeInfo>.SaveFileName.currentPlayerNode
+            );
 
             foreach (var o in nodeArray)
             {
@@ -94,7 +112,9 @@ public class NodeLogicHandler : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.Log("Failed at loading the player current saved position. Probably because the SavePlayerCurrentNode method hasnt been executed yet.");
+            Debug.Log(
+                "Failed at loading the player current saved position. Probably because the SavePlayerCurrentNode method hasnt been executed yet."
+            );
             Debug.Log(e);
         }
     }
@@ -102,9 +122,14 @@ public class NodeLogicHandler : MonoBehaviour
     private void SavePlayerCurrentNode()
     {
         CurrentNodeInfo myCurrentNodeInfo = new CurrentNodeInfo();
-        myCurrentNodeInfo.currentNodePosition = m_PlayerNodeMovement.GetCurrentNode().transform.position;
+        myCurrentNodeInfo.currentNodePosition = m_PlayerNodeMovement
+            .GetCurrentNode()
+            .transform.position;
         myCurrentNodeInfo.currentNodeName = m_PlayerNodeMovement.GetCurrentNode().GetNodeName();
-        SaveHandler<CurrentNodeInfo>.Save(myCurrentNodeInfo, SaveHandler<CurrentNodeInfo>.SaveFileName.currentPlayerNode);
+        SaveHandler<CurrentNodeInfo>.Save(
+            myCurrentNodeInfo,
+            SaveHandler<CurrentNodeInfo>.SaveFileName.currentPlayerNode
+        );
     }
 
     private void PopulateNodeMap()
@@ -213,5 +238,4 @@ public class NodeLogicHandler : MonoBehaviour
         public string currentNodeName;
         public Vector3 currentNodePosition; // I'd have prefered to save the actual <Node> instead of the position, but apparentyl monobehaviours cant be serialized.
     }
-
 }

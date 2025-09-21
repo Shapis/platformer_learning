@@ -9,7 +9,9 @@ public class MobileJoystickSettings : BaseSettings
 
     [Header("Settings")]
     private float defaultScale = 6f;
-    [SerializeField] private bool m_InvisibleByDefault = false;
+
+    [SerializeField]
+    private bool m_InvisibleByDefault = false;
     private Coroutine fade = null;
     private float hasChangedRecentlyTimer = 0f;
 
@@ -22,10 +24,7 @@ public class MobileJoystickSettings : BaseSettings
         }
     }
 
-    protected override void AddToStart()
-    {
-
-    }
+    protected override void AddToStart() { }
 
     private void InititalizeSprites()
     {
@@ -40,13 +39,19 @@ public class MobileJoystickSettings : BaseSettings
         }
     }
 
-    public override void OnGameSettingsInitialized(object sender, GameSettings.GameSettingsInfo gameSettingsInfo)
+    public override void OnGameSettingsInitialized(
+        object sender,
+        GameSettings.GameSettingsInfo gameSettingsInfo
+    )
     {
         InititalizeSprites();
         UpdateJoystickSettings(gameSettingsInfo);
     }
 
-    public override void OnGameSettingsChanged(object sender, GameSettings.GameSettingsInfo myGameSettingsInfo)
+    public override void OnGameSettingsChanged(
+        object sender,
+        GameSettings.GameSettingsInfo myGameSettingsInfo
+    )
     {
         hasChangedRecentlyTimer = 0f;
         UpdateJoystickSettings(myGameSettingsInfo);
@@ -98,7 +103,11 @@ public class MobileJoystickSettings : BaseSettings
     private void UpdateJoystickSettings(GameSettings.GameSettingsInfo myGameSettingsInfo)
     {
         JoystickSide(myGameSettingsInfo.rightHandedMode);
-        transform.localScale = new Vector3(defaultScale + myGameSettingsInfo.joystickSize * 3f, defaultScale + myGameSettingsInfo.joystickSize * 3f, 1f);
+        transform.localScale = new Vector3(
+            defaultScale + myGameSettingsInfo.joystickSize * 3f,
+            defaultScale + myGameSettingsInfo.joystickSize * 3f,
+            1f
+        );
     }
 
     private void JoystickSide(bool rightSide)
@@ -108,10 +117,18 @@ public class MobileJoystickSettings : BaseSettings
 
         switch (rightSide)
         {
-            case true: m_RectTransform.anchoredPosition = new Vector2(-50f, 50f); m_RectTransform.anchorMax = new Vector2(1f, 0f); m_RectTransform.anchorMin = new Vector2(1f, 0f); m_RectTransform.pivot = new Vector2(1f, 0f); break;
-            case false: m_RectTransform.anchoredPosition = new Vector2(50f, 50f); m_RectTransform.anchorMax = new Vector2(0f, 0f); m_RectTransform.anchorMin = new Vector2(0f, 0f); m_RectTransform.pivot = new Vector2(0f, 0f); break;
+            case true:
+                m_RectTransform.anchoredPosition = new Vector2(-50f, 50f);
+                m_RectTransform.anchorMax = new Vector2(1f, 0f);
+                m_RectTransform.anchorMin = new Vector2(1f, 0f);
+                m_RectTransform.pivot = new Vector2(1f, 0f);
+                break;
+            case false:
+                m_RectTransform.anchoredPosition = new Vector2(50f, 50f);
+                m_RectTransform.anchorMax = new Vector2(0f, 0f);
+                m_RectTransform.anchorMin = new Vector2(0f, 0f);
+                m_RectTransform.pivot = new Vector2(0f, 0f);
+                break;
         }
     }
-
-
 }

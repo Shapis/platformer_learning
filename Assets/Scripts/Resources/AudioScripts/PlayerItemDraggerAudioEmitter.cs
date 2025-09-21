@@ -17,7 +17,10 @@ public class PlayerItemDraggerAudioEmitter : BaseAudioEmitter, IDraggableEvents
         m_PlayerItemDragger.OnDraggingEndsEvent += OnDraggingEnds;
     }
 
-    public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnDraggingBegins(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         PlaySfx(SfxName.ConstantBuzz, loop: true, relativeVolume: 0.5f, pitch: 1f);
     }
@@ -27,7 +30,10 @@ public class PlayerItemDraggerAudioEmitter : BaseAudioEmitter, IDraggableEvents
         StopSfx();
     }
 
-    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnLineOfSightBlocked(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         throw new NotImplementedException();
     }

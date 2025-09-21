@@ -7,18 +7,23 @@ public class Node : MonoBehaviour
     public float g;
     public float h;
     public Node previousPathNode;
+
     //
 
     [Header("Node Information")]
-    [SerializeField] private string m_NodeName = "Level Name";
+    [SerializeField]
+    private string m_NodeName = "Level Name";
 
     public string GetNodeName()
     {
         return m_NodeName;
     }
 
-    [SerializeField] private SceneHandler.Scene m_Scene;
-    [SerializeField] private AudioClipCatalog.MusicName m_Music;
+    [SerializeField]
+    private SceneHandler.Scene m_Scene;
+
+    [SerializeField]
+    private AudioClipCatalog.MusicName m_Music;
 
     public AudioClipCatalog.MusicName GetMusic()
     {
@@ -35,14 +40,23 @@ public class Node : MonoBehaviour
     public float? BestTime { get; set; } = null; // These are nullables so the nodelogichandler knows they havent been initialized.
 
     [Header("Node Destinations")]
+    [SerializeField]
+    public GameObject m_UpDestination;
 
-    [SerializeField] public GameObject m_UpDestination;
-    [SerializeField] public GameObject m_DownDestination;
-    [SerializeField] public GameObject m_LeftDestination;
-    [SerializeField] public GameObject m_RightDestination;
-    [SerializeField] public bool IsTravelNode;
-    [SerializeField] public bool IsAccessible = true;
+    [SerializeField]
+    public GameObject m_DownDestination;
 
+    [SerializeField]
+    public GameObject m_LeftDestination;
+
+    [SerializeField]
+    public GameObject m_RightDestination;
+
+    [SerializeField]
+    public bool IsTravelNode;
+
+    [SerializeField]
+    public bool IsAccessible = true;
 
     private void Start()
     {

@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class PlayerMagic : MonoBehaviour, IDraggableEvents
 {
-    [SerializeField] private PlayerItemDragger m_PlayerItemDragger;
-    [SerializeField] private LightningScript m_LightningScript;
+    [SerializeField]
+    private PlayerItemDragger m_PlayerItemDragger;
+
+    [SerializeField]
+    private LightningScript m_LightningScript;
 
     private void Start()
     {
@@ -14,9 +17,16 @@ public class PlayerMagic : MonoBehaviour, IDraggableEvents
         m_PlayerItemDragger.OnLineOfSightUnblockedEvent += OnLineOfSightUnblocked;
     }
 
-    public void OnDraggingBegins(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnDraggingBegins(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
-        m_LightningScript.Begin(draggingEventArgs.OriginGameObject.transform, draggingEventArgs.TargetGameObject.transform, draggingEventArgs.ClosestBlockingGameObject);
+        m_LightningScript.Begin(
+            draggingEventArgs.OriginGameObject.transform,
+            draggingEventArgs.TargetGameObject.transform,
+            draggingEventArgs.ClosestBlockingGameObject
+        );
     }
 
     public void OnDraggingEnds(object sender, EventArgs e)
@@ -24,7 +34,10 @@ public class PlayerMagic : MonoBehaviour, IDraggableEvents
         m_LightningScript.End();
     }
 
-    public void OnLineOfSightBlocked(object sender, PlayerItemDragger.DraggingEventArgs draggingEventArgs)
+    public void OnLineOfSightBlocked(
+        object sender,
+        PlayerItemDragger.DraggingEventArgs draggingEventArgs
+    )
     {
         m_LightningScript.ClosestBlockingObject = draggingEventArgs.ClosestBlockingGameObject;
     }

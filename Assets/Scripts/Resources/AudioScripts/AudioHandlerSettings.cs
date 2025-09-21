@@ -6,14 +6,22 @@ using UnityEngine.UI;
 
 public class AudioHandlerSettings : BaseSettings, ISceneHandlerEvents
 {
-
     [Header("Dependencies")]
-    [SerializeField] private AudioSource m_MusicSource;
+    [SerializeField]
+    private AudioSource m_MusicSource;
     private float m_CurrentMusicVolume;
     private float m_CurrentSfxVolume;
 
-    public float CurrentMusicVolume { get => m_CurrentMusicVolume; private set => m_CurrentMusicVolume = value; }
-    public float CurrentSfxVolume { get => m_CurrentSfxVolume; private set => m_CurrentSfxVolume = value; }
+    public float CurrentMusicVolume
+    {
+        get => m_CurrentMusicVolume;
+        private set => m_CurrentMusicVolume = value;
+    }
+    public float CurrentSfxVolume
+    {
+        get => m_CurrentSfxVolume;
+        private set => m_CurrentSfxVolume = value;
+    }
 
     private void Start()
     {
@@ -36,24 +44,25 @@ public class AudioHandlerSettings : BaseSettings, ISceneHandlerEvents
         CurrentMusicVolume = gameSettingsInfo.volumeMusic;
         CurrentSfxVolume = gameSettingsInfo.volumeSfx;
     }
-    public override void OnGameSettingsInitialized(object sender, GameSettings.GameSettingsInfo gameSettingsInfo)
+
+    public override void OnGameSettingsInitialized(
+        object sender,
+        GameSettings.GameSettingsInfo gameSettingsInfo
+    )
     {
         m_MusicSource.loop = true;
         UpdateVolumeSettings(gameSettingsInfo);
     }
 
-    public override void OnGameSettingsChanged(object sender, GameSettings.GameSettingsInfo gameSettingsInfo)
+    public override void OnGameSettingsChanged(
+        object sender,
+        GameSettings.GameSettingsInfo gameSettingsInfo
+    )
     {
         UpdateVolumeSettings(gameSettingsInfo);
     }
 
-    protected override void AddToAwake()
-    {
+    protected override void AddToAwake() { }
 
-    }
-
-    protected override void AddToStart()
-    {
-
-    }
+    protected override void AddToStart() { }
 }

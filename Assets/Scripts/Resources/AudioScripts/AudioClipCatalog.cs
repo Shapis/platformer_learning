@@ -3,9 +3,11 @@ using UnityEngine;
 public class AudioClipCatalog : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private AudioClip[] m_MusicClip;
-    [SerializeField] private AudioClip[] m_SfxClip;
+    [SerializeField]
+    private AudioClip[] m_MusicClip;
 
+    [SerializeField]
+    private AudioClip[] m_SfxClip;
 
     public enum SfxName
     {

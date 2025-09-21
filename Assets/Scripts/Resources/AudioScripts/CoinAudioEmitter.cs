@@ -5,8 +5,8 @@ using static AudioClipCatalog;
 
 public class CoinAudioEmitter : BaseAudioEmitter, ICoinEvents
 {
-
     private CoinGrabber m_CoinGrabber;
+
     public override void InitAwake()
     {
         m_CoinGrabber = GetComponent<CoinGrabber>();

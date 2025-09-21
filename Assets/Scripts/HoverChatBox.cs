@@ -6,8 +6,11 @@ using UnityEngine;
 public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
 {
     [Header("Dependencies")]
-    [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private Transform m_Player;
+    [SerializeField]
+    private TextMeshProUGUI dialogueText;
+
+    [SerializeField]
+    private Transform m_Player;
     private float textOffset;
 
     public event EventHandler OnHoverChatBoxEndsEvent;
@@ -16,9 +19,8 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
     private DialogueHandler myDialogueHandler = new DialogueHandler();
     private bool currentlyTyping = false;
     private Coroutine typeSentenceCoroutine;
+
     //private float timer = 0;
-
-
 
     private void Start()
     {
@@ -37,10 +39,12 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
     {
         Vector3 offset = new Vector3(0f, textOffset, 0f);
         Vector3 abc = new Vector3();
-        GetComponent<RectTransform>().position = Vector3.SmoothDamp(GetComponent<RectTransform>().position,
-        Camera.main.WorldToScreenPoint(m_Player.transform.position) + offset,
-        ref abc,
-        0.02f);
+        GetComponent<RectTransform>().position = Vector3.SmoothDamp(
+            GetComponent<RectTransform>().position,
+            Camera.main.WorldToScreenPoint(m_Player.transform.position) + offset,
+            ref abc,
+            0.02f
+        );
     }
 
     public void OnHoverChatBoxEnds(object sender, EventArgs e)
@@ -143,9 +147,15 @@ public class HoverChatBox : MonoBehaviour, IHoverChatBoxEvents
         float textHeight = 0;
         switch (numberOfLines)
         {
-            case 0: textHeight = padding + 2 * letterHeight; break;
-            case 1: textHeight = padding + 2 * letterHeight; break;
-            default: textHeight = padding + numberOfLines * letterHeight; break;
+            case 0:
+                textHeight = padding + 2 * letterHeight;
+                break;
+            case 1:
+                textHeight = padding + 2 * letterHeight;
+                break;
+            default:
+                textHeight = padding + numberOfLines * letterHeight;
+                break;
         }
 
         textOffset = (textHeight * Screen.height);

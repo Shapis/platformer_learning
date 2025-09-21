@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class NodeInnerCircleColor : MonoBehaviour
 {
+    [SerializeField]
+    private Color[] m_NotAccessibleColors;
 
-    [SerializeField] private Color[] m_NotAccessibleColors;
-    [SerializeField] private Color[] m_AccessibleColors;
+    [SerializeField]
+    private Color[] m_AccessibleColors;
     private SpriteRenderer mySpriteRenderer;
 
     private int myCurrentColor = 0;
-
-
 
     private void Start()
     {
@@ -50,10 +50,6 @@ public class NodeInnerCircleColor : MonoBehaviour
             }
             mySpriteRenderer.color = m_AccessibleColors[myCurrentColor];
             myCurrentColor++;
-
         }
     }
-
-
-
 }

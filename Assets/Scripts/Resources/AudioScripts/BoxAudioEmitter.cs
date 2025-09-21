@@ -4,15 +4,9 @@ using static AudioClipCatalog;
 
 public class BoxAudioEmitter : BaseAudioEmitter
 {
-    public override void InitAwake()
-    {
+    public override void InitAwake() { }
 
-    }
-
-    public override void InitStart()
-    {
-
-    }
+    public override void InitStart() { }
 
     // Gotta double check there's no bugs in the sound normalization here
     private void OnCollisionEnter2D(Collision2D other)
@@ -22,14 +16,15 @@ public class BoxAudioEmitter : BaseAudioEmitter
         {
             if (other.relativeVelocity.magnitude > 2 && other.relativeVelocity.magnitude < 10f)
             {
-                PlaySfx(SfxName.HollowWoodKnock, relativeVolume: vol * (other.relativeVelocity.magnitude - 2f) / (10f - 2f));
+                PlaySfx(
+                    SfxName.HollowWoodKnock,
+                    relativeVolume: vol * (other.relativeVelocity.magnitude - 2f) / (10f - 2f)
+                );
             }
             else if (other.relativeVelocity.magnitude >= 10f)
             {
                 PlaySfx(SfxName.HollowWoodKnock, relativeVolume: vol);
             }
         }
-
     }
 }
-

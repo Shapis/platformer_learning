@@ -25,7 +25,7 @@ public class EscMenu : MonoBehaviour
 
     private void Awake()
     {
-        m_InputHandler = FindObjectOfType<InputHandler>();
+        m_InputHandler = FindFirstObjectByType<InputHandler>();
         m_Player = GameObject.Find("Player");
     }
 

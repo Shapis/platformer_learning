@@ -7,6 +7,7 @@ using static AudioClipCatalog;
 public class KeyGrabberAudioEmitter : BaseAudioEmitter, IKeyGrabberEvents
 {
     private KeyGrabber m_KeyGrabber;
+
     public override void InitAwake()
     {
         m_KeyGrabber = GetComponent<KeyGrabber>();

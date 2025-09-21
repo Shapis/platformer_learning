@@ -6,17 +6,27 @@ using UnityEngine.SceneManagement;
 using static GameSettings;
 
 public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, ISceneHandlerEvents
-
 {
     [Header("Dependencies")]
-    [SerializeField] private AudioClipCatalog m_AudioClipCatalog;
-    [SerializeField] private AudioSource m_MusicSource;
-    [SerializeField] private AudioSource m_SfxSource; // Use this Sfx source for sfx that has to persist through scenes and can't be stopped on game pauses.
-    [SerializeField] private bool m_DebugLoggingEnabled = false;
+    [SerializeField]
+    private AudioClipCatalog m_AudioClipCatalog;
+
+    [SerializeField]
+    private AudioSource m_MusicSource;
+
+    [SerializeField]
+    private AudioSource m_SfxSource; // Use this Sfx source for sfx that has to persist through scenes and can't be stopped on game pauses.
+
+    [SerializeField]
+    private bool m_DebugLoggingEnabled = false;
     private AudioClipCatalog.MusicName _currentMusic;
     private PlayerNodeMovement m_PlayerNodeMovement;
 
-    public AudioSource SfxSource { get => m_SfxSource; private set => m_SfxSource = value; }
+    public AudioSource SfxSource
+    {
+        get => m_SfxSource;
+        private set => m_SfxSource = value;
+    }
 
     public event EventHandler OnMusicPlayEvent;
 
@@ -63,13 +73,13 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
                 Debug.Log("AudioHandler: PlayerNodeMovement not found " + e.Message);
             }
         }
-
     }
-
 
     private void InitializeSceneMusic()
     {
-        m_MusicSource.clip = m_AudioClipCatalog.GetMusicClip(AudioClipCatalog.MusicName.The_Journey_Is_The_Treasure);
+        m_MusicSource.clip = m_AudioClipCatalog.GetMusicClip(
+            AudioClipCatalog.MusicName.The_Journey_Is_The_Treasure
+        );
         m_MusicSource.Play();
         _currentMusic = AudioClipCatalog.MusicName.The_Journey_Is_The_Treasure;
         OnMusicPlay(this, EventArgs.Empty);
@@ -110,7 +120,6 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
         DontDestroyOnLoad(this.gameObject);
     }
 
-
     public void OnSfxPlay(object sender, EventArgs e)
     {
         throw new NotImplementedException();
@@ -125,6 +134,7 @@ public class AudioHandler : MonoBehaviour, IAudioEvents, INodeMovementEvents, IS
     {
         throw new NotImplementedException();
     }
+
     public void OnMusicStop(object sender, EventArgs e)
     {
         throw new NotImplementedException();

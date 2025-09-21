@@ -1,3 +1,1 @@
-﻿public class BloodySpikes : BaseItem
-{
-}
+﻿public class BloodySpikes : BaseItem { }

@@ -5,6 +5,7 @@ using static AudioClipCatalog;
 public class ChestAudioEmitter : BaseAudioEmitter, IChestGrabberEvents
 {
     private ChestGrabber m_ChestGrabber;
+
     public override void InitAwake()
     {
         m_ChestGrabber = FindObjectOfType<ChestGrabber>(); // There should onl ever be 1 chest grabber in the scene, which is attached to the Player
@@ -28,14 +29,15 @@ public class ChestAudioEmitter : BaseAudioEmitter, IChestGrabberEvents
         {
             if (other.relativeVelocity.magnitude > 2 && other.relativeVelocity.magnitude < 10f)
             {
-                PlaySfx(SfxName.MetalFalling, relativeVolume: vol * (other.relativeVelocity.magnitude - 2f) / (10f - 2f));
+                PlaySfx(
+                    SfxName.MetalFalling,
+                    relativeVolume: vol * (other.relativeVelocity.magnitude - 2f) / (10f - 2f)
+                );
             }
             else if (other.relativeVelocity.magnitude >= 10f)
             {
                 PlaySfx(SfxName.MetalFalling, relativeVolume: vol);
             }
         }
-
     }
 }
-

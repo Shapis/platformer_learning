@@ -1,2 +1,1 @@
-﻿public interface INodeable
-{ }
+﻿public interface INodeable { }

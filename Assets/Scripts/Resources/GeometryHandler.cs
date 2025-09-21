@@ -4,7 +4,12 @@ using UnityEngine.EventSystems;
 
 public class GeometryHandler
 {
-    public GameObject DrawLine(GameObject myContainer, Vector3[] myPoints, Vector2 myWidths, Color myColor)
+    public GameObject DrawLine(
+        GameObject myContainer,
+        Vector3[] myPoints,
+        Vector2 myWidths,
+        Color myColor
+    )
     {
         GameObject myLine = new GameObject();
         myLine.transform.SetParent(myContainer.transform);
@@ -28,15 +33,20 @@ public class GeometryHandler
         return (a + b) / half;
     }
 
-
     // This whole idea was adapted from here: https://answers.unity.com/questions/1095047/detect-mouse-events-for-ui-canvas.html oct 1st 2020
     public bool IsTouchInsideObject(Vector3 touchPosition, GameObject objectToBeChecked)
     {
-        return IsPointerOverUIElement(GetEventSystemRaycastResults(touchPosition), objectToBeChecked);
+        return IsPointerOverUIElement(
+            GetEventSystemRaycastResults(touchPosition),
+            objectToBeChecked
+        );
     }
 
     ///Returns 'true' if we touched or hovering over a specific UI element
-    private bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaycastResults, GameObject objectToBeChecked)
+    private bool IsPointerOverUIElement(
+        List<RaycastResult> eventSystemRaycastResults,
+        GameObject objectToBeChecked
+    )
     {
         foreach (var o in eventSystemRaycastResults)
         {

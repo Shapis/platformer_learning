@@ -5,10 +5,17 @@ using UnityEngine;
 public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
 {
     [Header("Dependencies")]
-    [SerializeField] private TextMeshProUGUI m_CurrentScore;
-    [SerializeField] private RectTransform m_PanelScore;
-    [SerializeField] private TextMeshProUGUI m_CurrentTime;
-    [SerializeField] private RectTransform m_PanelTime;
+    [SerializeField]
+    private TextMeshProUGUI m_CurrentScore;
+
+    [SerializeField]
+    private RectTransform m_PanelScore;
+
+    [SerializeField]
+    private TextMeshProUGUI m_CurrentTime;
+
+    [SerializeField]
+    private RectTransform m_PanelTime;
     private Vector2 initialScoreHolderSize;
     private Vector2 initialTimeHolderSize;
     private readonly TimeFormatHandler timeFormatter = new TimeFormatHandler();
@@ -27,7 +34,10 @@ public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
     public void OnScoreUpdate(object sender, int totalScore)
     {
         m_CurrentScore.text = "SCORE: " + totalScore.ToString();
-        m_PanelScore.sizeDelta = new Vector2(ResizeHolder(m_CurrentScore.text.Length, initialScoreHolderSize.x), initialScoreHolderSize.y);
+        m_PanelScore.sizeDelta = new Vector2(
+            ResizeHolder(m_CurrentScore.text.Length, initialScoreHolderSize.x),
+            initialScoreHolderSize.y
+        );
         //Debug.Log(initialScoreHolderSize);
     }
 
@@ -42,7 +52,10 @@ public class ScoreHolder : MonoBehaviour, IScoreKeeperEvents, ILevelEndsEvents
         if (!myLevelEndsSwitch)
         {
             m_CurrentTime.text = timeFormatter.FormatTime(Time.timeSinceLevelLoad);
-            m_PanelTime.sizeDelta = new Vector2(ResizeHolder(m_CurrentTime.text.Length, initialTimeHolderSize.x), initialTimeHolderSize.y);
+            m_PanelTime.sizeDelta = new Vector2(
+                ResizeHolder(m_CurrentTime.text.Length, initialTimeHolderSize.x),
+                initialTimeHolderSize.y
+            );
         }
     }
 

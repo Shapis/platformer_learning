@@ -8,7 +8,6 @@ public class JumpsRemainingUI : MonoBehaviour
     [SerializeField]
     private Transform myTransform;
 
-
     private GameObject myPlayer;
 
     [SerializeField]
@@ -33,7 +32,6 @@ public class JumpsRemainingUI : MonoBehaviour
     [SerializeField]
     private Vector2 m_JumpChargeAlpha = new Vector2(1f, 1f);
 
-
     private void Awake()
     {
         myPlayer = GameObject.Find("Player");
@@ -45,15 +43,11 @@ public class JumpsRemainingUI : MonoBehaviour
 
         myJumpChargeContainer.GetComponent<SpriteRenderer>().sprite = null;
 
-
-
         myPlayer.GetComponent<CharacterController2D>().OnLandingEvent += OnLanding;
         myPlayer.GetComponent<CharacterController2D>().OnAirbourneEvent += OnAirbourne;
         myPlayer.GetComponent<CharacterController2D>().OnFallingEvent += OnFalling;
         //myPlayer.GetComponent<CharacterController2D>().OnCrouchingEvent.AddListener(OnCrouching);
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -165,11 +159,7 @@ public class JumpsRemainingUI : MonoBehaviour
                 tempArray[i] = myJumpChargeArray[i];
             }
 
-            for (
-                int i = 0;
-                i < myJumpChargeArray.Length - myNumberOfJumpsLeft;
-                i++
-            )
+            for (int i = 0; i < myJumpChargeArray.Length - myNumberOfJumpsLeft; i++)
             {
                 Destroy(myJumpChargeArray[myJumpChargeArray.Length - 1 - i]);
             }
@@ -199,17 +189,7 @@ public class JumpsRemainingUI : MonoBehaviour
         myPlayerIsGrounded = false;
     }
 
-    public void OnFalling(object sender, EventArgs e)
-    {
+    public void OnFalling(object sender, EventArgs e) { }
 
-    }
-
-    public void OnCrouching()
-    {
-
-    }
-
+    public void OnCrouching() { }
 }
-
-
-

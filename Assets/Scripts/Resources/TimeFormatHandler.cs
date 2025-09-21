@@ -20,11 +20,21 @@ public class TimeFormatHandler
         }
         else if (timeSpan.Minutes != 0 && timeSpan.Minutes <= 9)
         {
-            return string.Format("{0:D1}m{1:D2}.{2}s", timeSpan.Minutes, timeSpan.Seconds, milliseconds);
+            return string.Format(
+                "{0:D1}m{1:D2}.{2}s",
+                timeSpan.Minutes,
+                timeSpan.Seconds,
+                milliseconds
+            );
         }
         else if (timeSpan.Minutes != 0)
         {
-            return string.Format("{0:D2}m{1:D2}.{2}s", timeSpan.Minutes, timeSpan.Seconds, milliseconds);
+            return string.Format(
+                "{0:D2}m{1:D2}.{2}s",
+                timeSpan.Minutes,
+                timeSpan.Seconds,
+                milliseconds
+            );
         }
         else
         {
@@ -47,5 +57,4 @@ public class TimeFormatHandler
         else
             return number;
     }
-
 }

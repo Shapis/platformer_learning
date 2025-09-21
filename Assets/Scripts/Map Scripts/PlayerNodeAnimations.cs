@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerNodeAnimations : MonoBehaviour
 {
+    [SerializeField]
+    private Animator m_Animator;
 
-    [SerializeField] private Animator m_Animator;
-
-    [SerializeField] private PlayerNodeMovement m_PlayerNodeMovement;
+    [SerializeField]
+    private PlayerNodeMovement m_PlayerNodeMovement;
     private Vector3 previousPosition;
     private bool isFacingRight = true;
 
     private bool isMovingRight = true;
-
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +21,6 @@ public class PlayerNodeAnimations : MonoBehaviour
         m_PlayerNodeMovement.OnDestinationNodeReachedEvent += OnDestinationNodeReached;
         m_PlayerNodeMovement.OnTravelNodeDepartedEvent += OnTravelNodeDeparted;
     }
-
-
 
     private void OnDestinationNodeReached(object sender, GameObject e)
     {

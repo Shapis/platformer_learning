@@ -4,6 +4,7 @@ using UnityEngine;
 public interface INodeMovementEvents
 {
     void OnInitialDestinationNodeLoaded(object sender, GameObject nodeInfo);
+
     // Invoked from PlayerNodeMovement.cs
     void OnTravelNodeReached(object sender, GameObject nodeInfo); // Invoked from PlayerNodeMovement.cs
     void OnTravelNodeDeparted(object sender, GameObject nodeInfo); // Invoked from PlayerNodeMovement.cs

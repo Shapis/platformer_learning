@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Overworld : MonoBehaviour
 {
-    [SerializeField] private Sprite[] m_OverworldSprites = new Sprite[4];
+    [SerializeField]
+    private Sprite[] m_OverworldSprites = new Sprite[4];
     private Coroutine spriteChangerCoroutine;
     private int myCurrentColor = 0;
 

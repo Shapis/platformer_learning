@@ -1,6 +1,3 @@
 ﻿using System;
 
-public interface IPlayerDiedEvents
-{
-
-}
+public interface IPlayerDiedEvents { }

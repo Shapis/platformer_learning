@@ -5,19 +5,12 @@ using UnityEngine;
 public class HighScores
 {
 
-
     // public List<HighScoreEntry> highScoreEntryList;
-
-
-
-
-
 
     // public HighScores Load()
     // {
     //     HighScores myTempHighScores;
     //     myTempHighScores = SaveHandler<HighScores>.Load(SaveHandler<HighScores>.SaveFileName.highScoreTable);
-
 
     //     if (myTempHighScores == null)
     //     {
@@ -43,7 +36,6 @@ public class HighScores
     //     return myTempHighScores;
     // }
 
-
     // public void SortAndTrim(HighScores myTempHighScores)
     // {
     //     for (int i = 0; i < myTempHighScores.highScoreEntryList.Count; i++)
@@ -66,13 +58,10 @@ public class HighScores
 
     //         myTempHighScores.highScoreEntryList.RemoveRange(9, myTempHighScores.highScoreEntryList.Count - 9);
 
-
-
     //         SaveHandler<HighScores>.Save(myTempHighScores, SaveHandler<HighScores>.SaveFileName.highScoreTable);
 
     //     }
     // }
-
 
     // public void AddHighScoreEntry(int score)
     // {
@@ -89,18 +78,12 @@ public class HighScores
 
     //     SaveHandler<HighScores>.Save(highScores, SaveHandler<HighScores>.SaveFileName.highScoreTable);
 
-
     // }
-
-
-
 
     // [System.Serializable]
     // public class HighScoreEntry
     // {
     //     public int score;
 
-
     // }
-
 }

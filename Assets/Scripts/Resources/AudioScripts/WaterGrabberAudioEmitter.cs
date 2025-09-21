@@ -8,6 +8,7 @@ using static AudioClipCatalog;
 public class WaterGrabberAudioEmitter : BaseAudioEmitter, IWaterEvents
 {
     private WaterGrabber m_WaterGrabber;
+
     public override void InitAwake()
     {
         m_WaterGrabber = GetComponent<WaterGrabber>();
