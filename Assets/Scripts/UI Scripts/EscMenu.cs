@@ -1,15 +1,24 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EscMenu : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private Button m_ResumeButton;
-    [SerializeField] private Button m_BigBackButton;
-    [SerializeField] private Button m_QuitToWorldMap;
-    [SerializeField] private GameObject m_Player;
-    [SerializeField] private PopupMenuController m_PopUpEscMenuPanel;
+    [SerializeField]
+    private Button m_ResumeButton;
+
+    [SerializeField]
+    private Button m_BigBackButton;
+
+    [SerializeField]
+    private Button m_QuitToWorldMap;
+
+    [SerializeField]
+    private GameObject m_Player;
+
+    [SerializeField]
+    private PopupMenuController m_PopUpEscMenuPanel;
     private InputHandler m_InputHandler;
     private bool myCancelSwitch = true;
     private bool myLevelHasEnded = false;
